@@ -131,7 +131,7 @@ tags:
 
 ניקח שני מרחבים וקטוריים {% equation %}V,W{% endequation %}. יש כמובן המון פונקציות בילינאריות שניתן להגדיר עליהם, שהולכות למרחבים רבים ושונים. הרעיון במכפלה טנזורית הוא לתאר את המכפלה הבילינארית <strong>הכללית ביותר</strong> שאפשר להגדיר על {% equation %}V\times W{% endequation %}. מה זה אומר? ובכן, בואו נניח שקיים מרחב וקטורי {% equation %}E{% endequation %} ופונקציה בילינארית {% equation %}h:V\times W\to E{% endequation %} שמקיימים את התכונה הבאה: אם {% equation %}U{% endequation %} הוא מרחב וקטורי <strong>כלשהו</strong> ו-{% equation %}f:V\times W\to U{% endequation %} היא פונקציה בילינארית <strong>כלשהי</strong>, אז אפשר לבנות את {% equation %}f{% endequation %} על ידי הרכבה של פונקציה לינארית מתאימה על {% equation %}h{% endequation %}, באופן שהוא <strong>יחיד</strong>. פורמלית, קיימת {% equation %}T:E\to U{% endequation %} <strong>יחידה</strong> כך ש-{% equation %}f=Th{% endequation %} (כלומר, {% equation %}f\left(v,w\right)=T\left(h\left(v,w\right)\right){% endequation %} לכל {% equation %}v\in V,w\in W{% endequation %}). זה אומר ש-{% equation %}h{% endequation %} היא אכן "כללית ביותר" כי היא לא מאבדת שום מידע; אחרי שמפעילים אותה אפשר לבצע "תיקון" ולקבל כל פונקציה בילינארית אחרת. ככה זה נראה בדיאגרמה קומוטטיבית:
 
-{% equation %}\xymatrix{ &amp; E\ar[dd]^{T}\\V\times W\ar[ur]^{h}\ar[dr]^{f}\\ &amp; U}{% endequation %}
+<img src="{{site.baseurl}}{{site.post_images}}/2014/06/tensor_product_diagram.png" alt="\xymatrix{ & E\ar[dd]^{T}\\V\times W\ar[ur]^h}\ar[dr]^{f}\\ & U}"/>
 
 הכוונה ב"קומוטטיבית" כאן היא שלא משנה איך הולכים עם החצים - אם הולכים עם {% equation %}f{% endequation %} או אם הולכים עם {% equation %}h{% endequation %} ואז עם {% equation %}T{% endequation %} - בסוף מגיעים לאותו דבר (אם התחלנו מאותו איבר קלט).
 
@@ -139,7 +139,7 @@ tags:
 
 שימו לב מה קיבלנו:
 
-{% equation %}\xymatrix{ &amp; E_{1}\ar[dd]^{T_{2}T_{1}}\\V\times W\ar[ur]^{h_{1}}\ar[dr]^{h_{1}}\\ &amp; E_{1}}{% endequation %}
+<img src="{{site.baseurl}}{{site.post_images}}/2014/06/tensor_product_diagram2.png" alt="\xymatrix{ & E_{1}\ar[dd]^{T_{2}T_{1}}\\V\times W\ar[ur]^{h_{1}}\ar[dr]^{h_{1}}\\ & E_{1}}"/>
 
 מה שקורה כאן הוא שראינו שאת ההעתקה {% equation %}h_{1}:V\times W\to E_{1}{% endequation %} אפשר לבנות בתור ההרכבה {% equation %}T_{2}T_{1}h_{1}{% endequation %}. אבל מצד שני, אפשר לבנות אותה גם בתור ההרכבה של פונקציית הזהות על {% equation %}h_{1}{% endequation %}. כאן נכנסת לתמונה הדרישה שלי שאופן הבניה הזה יהיה <strong>יחיד</strong> - זה אומר ש-{% equation %}T_{2}T_{1}{% endequation %} היא פונקציית הזהות על {% equation %}E_{1}{% endequation %}, ולכן {% equation %}T_{1}{% endequation %} בפרט הפיכה, ולכן היא איזומורפיזם. הצלחתם לעקוב אחרי הטיעון הזה? (כי אני לא ממש) באלגברה מופשטת זה מה שקורה כל הזמן.
 

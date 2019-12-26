@@ -7,8 +7,8 @@
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="המשפט היסודי של תורת גלואה" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="בלוג על מתמטיקה ומדעי המחשב" />
-<meta property="og:description" content="בלוג על מתמטיקה ומדעי המחשב" />
+<meta name="description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<meta property="og:description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
 <link rel="canonical" href="http://gadial.net/2018/05/21/fundamental_theorem_of_galois_theory/" />
 <meta property="og:url" content="http://gadial.net/2018/05/21/fundamental_theorem_of_galois_theory/" />
 <meta property="og:site_name" content="לא מדויק" />
@@ -20,7 +20,7 @@
 <meta property="twitter:title" content="המשפט היסודי של תורת גלואה" />
 <meta name="twitter:site" content="@" />
 <script type="application/ld+json">
-{"dateModified":"2018-05-21T13:46:02+00:00","datePublished":"2018-05-21T13:46:02+00:00","@type":"BlogPosting","image":"http://gadial.net/assets/img/main/default-card.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2018/05/21/fundamental_theorem_of_galois_theory/"},"url":"http://gadial.net/2018/05/21/fundamental_theorem_of_galois_theory/","description":"בלוג על מתמטיקה ומדעי המחשב","headline":"המשפט היסודי של תורת גלואה","@context":"https://schema.org"}</script>
+{"dateModified":"2018-05-21T13:46:02+00:00","datePublished":"2018-05-21T13:46:02+00:00","@type":"BlogPosting","image":"http://gadial.net/assets/img/main/default-card.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2018/05/21/fundamental_theorem_of_galois_theory/"},"url":"http://gadial.net/2018/05/21/fundamental_theorem_of_galois_theory/","description":"לא מדויק - בלוג על מתמטיקה ומדעי המחשב","headline":"המשפט היסודי של תורת גלואה","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link href="/assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -140,9 +140,9 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 </ul>
 <p>אני רוצה להסביר את הקטע עם הסריג קצת יותר בפירוט, אבל קודם - תמונות. כאן תמונה אחת באמת שווה אלף מילים.</p>
 
-<p><span>$latex \xymatrix{ &amp; \mathbb{Q}\left(\sqrt{2},\sqrt{3}\right)\ar[dl]^{2}\ar[d]^{2}\ar[dr]^{2}\\ \mathbb{Q}\left(\sqrt{2}\right)\ar[dr]^{2} &amp; \mathbb{Q}\left(\sqrt{6}\right)\ar[d]^{2} &amp; \mathbb{Q}\left(\sqrt{3}\right)\ar[dl]^{2}\\ &amp; \mathbb{Q} } $</span></p>
+<p><img src="/assets/img/2018/05/galois_diagram1.png" alt="\xymatrix{ &amp; \mathbb{Q}\left(\sqrt{2},\sqrt{3}\right)\ar[dl]^{2}\ar[d]^{2}\ar[dr]^{2}\\ \mathbb{Q}\left(\sqrt{2}\right)\ar[dr]^{2} &amp; \mathbb{Q}\left(\sqrt{6}\right)\ar[d]^{2} &amp; \mathbb{Q}\left(\sqrt{3}\right)\ar[dl]^{2}\\ &amp; \mathbb{Q}" /></p>
 
-<p><span>$latex \xymatrix{ &amp; \left\{ e\right\} \ar[dl]^{2}\ar[d]^{2}\ar[dr]^{2}\\ \left\{ e,\left(1,0\right)\right\} \ar[dr]^{2} &amp; \left\{ e,\left(1,1\right)\right\} \ar[d]^{2} &amp; \left\{ e,\left(0,1\right)\right\} \ar[dl]^{2}\\ &amp; \left\{ e,\left(1,0\right),\left(0,1\right),\left(1,1\right)\right\} } $</span></p>
+<p><img src="/assets/img/2018/05/galois_diagram2.png" alt="\xymatrix{ &amp; \left\{ e\right\} \ar[dl]^{2}\ar[d]^{2}\ar[dr]^{2}\\ \left\{ e,\left(1,0\right)\right\} \ar[dr]^{2} &amp; \left\{ e,\left(1,1\right)\right\} \ar[d]^{2} &amp; \left\{ e,\left(0,1\right)\right\} \ar[dl]^{2}\\ &amp; \left\{ e,\left(1,0\right),\left(0,1\right),\left(1,1\right)\right\} }" /></p>
 
 <p>מה אנחנו רואים פה? בתמונה הראשונה יש לנו את ההרחבה <span>$latex \mathbb{Q}\left(\sqrt{2},\sqrt{3}\right)/\mathbb{Q}$</span> (שדה הפיצול של הפולינום <span>$latex \left(x^{2}-2\right)\left(x^{2}-3\right)$</span> מעל <span>$latex \mathbb{Q}$</span> עם כל תת-השדות שלה. המספרים ליד החצים מתארים את המימדים של ההרחבות. למשל, <span>$latex \left[\mathbb{Q}\left(\sqrt{2},\sqrt{3}\right):\mathbb{Q}\left(\sqrt{6}\right)\right]=2$</span>.</p>
 
@@ -152,7 +152,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>עוד דוגמא? עוד דוגמא. ראינו גם את עלילות שדה הפיצול של <span>$latex x^{3}-2$</span>. השורשים של הפולינום הזה היו <span>$latex \sqrt[3]{2},\omega\sqrt[3]{2},\omega^{2}\sqrt[3]{2}$</span>, כאשר <span>$latex \omega=e^{\frac{2\pi i}{3}}$</span> הוא <strong>שורש יחידה פרימיטיבי</strong> מסדר 3 - מספר מרוכב שמקיים <span>$latex \omega^{3}=1$</span> והחזקות שלו הן כל הפתרונות המרוכבים של המשוואה <span>$latex x^{3}=1$</span>. כל תמורה אפשרית של השורשים הללו נותנת אוטומורפיזם של שדה הפיצול, כך שחבורת הגלואה המתאימה היא <span>$latex S_{3}$</span> - חבורת כל התמורות על שלושה איברים. איך החבורה הזו נראית, אנחנו יודעים טוב: היא כוללת את תמורת היחידה <span>$latex e$</span>, את החילופים <span>$latex \left(1\ 2\right),\left(1\ 3\right),\left(2\ 3\right)$</span> ואת המעגלים מאורך 3 <span>$latex \left(1\ 2\ 3\right)$</span> ו-<span>$latex \left(1\ 3\ 2\right)$</span>. כל חילוף יוצר תת-חבורה מסדר 2 שכוללת את <span>$latex e$</span> ועצמו; התמורה <span>$latex \left(1\ 2\ 3\right)$</span> יוצרת תת-חבורה מסדר 3 שכוללת גם את <span>$latex \left(1\ 3\ 2\right)$</span>; וזהו. אלו תתי-החבורות הלא טריוויאליות היחידות. אם מנסים למשל ליצור תת-חבורה מ-<span>$latex \left(1\ 2\right)$</span> ו-<span>$latex \left(1\ 3\right)$</span> אז המכפלה שלהם נותנת גם את <span>$latex \left(1\ 2\ 3\right)$</span> ו-<span>$latex \left(1\ 3\ 2\right)$</span> ומכאן כבר אפשר לקבל את כל <span>$latex S_{3}$</span>. אם כן, את מבנה הסריג של <span>$latex S_{3}$</span> אפשר לצייר כך:</p>
 
-<p><span>$latex \xymatrix{ &amp; \left\{ e\right\} \ar[ddl]^{3}\ar[d]^{2}\ar[dr]^{2}\ar[drr]\\ &amp; \left\{ e,\left(1\ 2\right)\right\} \ar[dd]^{3} &amp; \left\{ e,\left(1\ 3\right)\right\} \ar[ddl]^{3} &amp; \left\{ e,\left(2\ 3\right)\right\} \ar[ddll]^{3}\\ \left\{ e,\left(1\ 2\ 3\right),\left(1\ 3\ 2\right)\right\} \ar[dr]^{2}\\ &amp; S_{3} } $</span></p>
+<p><img src="/assets/img/2018/05/galois_diagram3.png" alt="\xymatrix{ &amp; \left\{ e\right\} \ar[ddl]^{3}\ar[d]^{2}\ar[dr]^{2}\ar[drr]\\ &amp; \left\{ e,\left(1\ 2\right)\right\} \ar[dd]^{3} &amp; \left\{ e,\left(1\ 3\right)\right\} \ar[ddl]^{3} &amp; \left\{ e,\left(2\ 3\right)\right\} \ar[ddll]^{3}\\ \left\{ e,\left(1\ 2\ 3\right),\left(1\ 3\ 2\right)\right\} \ar[dr]^{2}\\ &amp; S_{3} } " /></p>
 
 <p>מה השדות שמשתמרים על ידי תת-החבורות המתאימות? ובכן, <span>$latex \left\{ e,\left(1\ 2\right)\right\} $</span> מחליפה שניים מהשורשים - נאמר ש”1” מתאר את <span>$latex \sqrt[3]{2}$</span> ואילו “2” מתאר את <span>$latex \omega\sqrt[3]{2}$</span>, אז <span>$latex \left(1\ 2\right)$</span> מחליפה אותם ולא משנה את <span>$latex \omega^{2}\sqrt[3]{2}$</span>, כך שנקבל את שדה השבת <span>$latex \mathbb{Q}\left(\omega^{2}\sqrt[3]{2}\right)$</span> ומשהו דומה יקרה עם שתי החבורות האחרות מסדר 2. ומה עם החבורה מסדר 3? היא כוללת תמורות שמזיזות את כל השורשים, אז אף שורש לא יהיה שייך לשדה השבת שלה. אם כך, מי כן יהיה שם? הנה תעלול שיאפשר לנו לראות את זה בקלות: התמורה <span>$latex \sigma=\left(1\ 2\ 3\right)$</span> מבצעת את הדברים הבאים:</p>
 
@@ -178,7 +178,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>אם כן, <span>$latex \omega$</span> בוודאי <strong>שייך</strong> לשדה ש-<span>$latex \left\{ e,\left(1\ 2\ 3\right),\left(1\ 3\ 2\right)\right\} $</span> משמרת. מכיוון שהפולינום המינימלי של <span>$latex \omega$</span> מעל <span>$latex \mathbb{Q}$</span> הוא <span>$latex x^{2}+x+1$</span> (כי <span>$latex x^{3}-1=\left(x-1\right)\left(x^{2}+x+1\right)$</span>) אז מימד ההרחבה <span>$latex \mathbb{Q}\left(\omega\right)/\mathbb{Q}$</span> הוא 2, בהתאם לאינדקס של <span>$latex \left\{ e,\left(1\ 2\ 3\right),\left(1\ 3\ 2\right)\right\} $</span> ב-<span>$latex S_{3}$</span>, כך שכבר ברור שזה כל שדה השבת, וקיבלנו את דיאגרמת השדות:</p>
 
-<p><span>$latex \xymatrix{ &amp; \mathbb{Q}\left(\sqrt[3]{2},\omega\right)\ar[ddl]^{3}\ar[d]^{2}\ar[dr]^{2}\ar[drr]\\ &amp; \mathbb{Q}\left(\omega^{2}\sqrt[3]{2}\right)\ar[dd]^{3} &amp; \mathbb{Q}\left(\omega\sqrt[3]{2}\right)\ar[ddl]^{3} &amp; \mathbb{Q}\left(\sqrt[3]{2}\right)\ar[ddll]^{3}\\ \mathbb{Q}\left(\omega\right)\ar[dr]^{2}\\ &amp; \mathbb{Q} } $</span></p>
+<p><img src="/assets/img/2018/05/galois_diagram4.png" alt="\xymatrix{ &amp; \mathbb{Q}\left(\sqrt[3]{2},\omega\right)\ar[ddl]^{3}\ar[d]^{2}\ar[dr]^{2}\ar[drr]\\ &amp; \mathbb{Q}\left(\omega^{2}\sqrt[3]{2}\right)\ar[dd]^{3} &amp; \mathbb{Q}\left(\omega\sqrt[3]{2}\right)\ar[ddl]^{3} &amp; \mathbb{Q}\left(\sqrt[3]{2}\right)\ar[ddll]^{3}\\ \mathbb{Q}\left(\omega\right)\ar[dr]^{2}\\ &amp; \mathbb{Q} }" /></p>
 
 <p>והמשפט היסודי של תורת גלואה גם מבטיח לנו שאלו כל שדות הביניים שיש. זו בעצם התכונה החשובה של המשפט היסודי: הוא הופך את הבעיה הקשה מאוד של מציאת שדות ביניים של הרחבות סופיות לבעיה הקצת פחות קשה של להבין את המבנה של חבורות סופיות.</p>
 

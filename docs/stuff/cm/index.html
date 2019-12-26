@@ -3,32 +3,35 @@
     <title>CM [beta]</title>
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <link rel="icon" type="gif" href="cm.gif">
+    <link rel="preload" as="style" href="https://ajax.googleapis.com/ajax/libs/dojo/1.3/dijit/themes/tundra/tundra.css" />
+    <style type="text/css" src="https://ajax.googleapis.com/ajax/libs/dojo/1.3/dijit/themes/tundra/tundra.css"></style>
     <style type="text/css">
-        @import "tundra.css";
-        @import "dojo.css";
-        @import "cm.css";
-   </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script>
+            @import "https://ajax.googleapis.com/ajax/libs/dojo/1.3/dijit/themes/tundra/tundra.css";
+            @import "cm.css";
+            @import "dojo.css";
+    </style>
+    <link rel="preload" as="script" href="https://ssl.google-analytics.com/ga.js">
+    <link rel="preload" as="script" href="https://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js">
+    <link rel="preload" as="script" href="cm.js">
+    <link rel="preload" as="script" href="print.js">
+    <script type="text/javascript" src="https://ssl.google-analytics.com/ga.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script>
     <script type="text/javascript" src="cm.js"></script>
     <script type="text/javascript" src="print.js"></script>
-	<!-- google "+1" -->
-	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>    
   </head>
-
   <body class="tundra">
      <div id="loading" style="width:100%; height:100%; z-index:99; text-align:center; font-size:150%; background-color:#fcfcfc;">
 	<h3>	המערכת נטענת...</h3>
 	באקספלורר ייתכן שהאתר לא יעבוד
   </div>
 
-  <div id="footer">© כל הזכויות שמורות, <a href="http://www.technion.ac.il/~gai/">גיא שקד</a>, 2009; המערכת נכתבה באמצעות <a href="http://www.dojotoolkit.org/">Dojo</a> ומשוחררת תחת רשיון <a href="http://www.gnu.org/licenses/gpl.html">GNU/GPL</a></div>
-  
   <div id="hint"></div>
-  <div id="content"  data-dojo-type="dijit.layout.BorderContainer"  design="sidebar" data-dojo-id="content"> 
+  <div id="content"  data-dojo-type="dijit.layout.BorderContainer"  design="sidebar" data-dojo-id="content">
+    <div id="contentPanel" style="position: fixed; left: 30%; top: 10px; width:20%; z-index:90;"></div>
     <div id="right"  data-dojo-type="dijit.layout.ContentPane" region="trailing">
       <div id="inputDiv">
 	לתחילת עבודה - יש להכנס לגליון הציונים ב-UG, לסמן הכל (Ctrl-a) להעתיק (Ctrl-c) ולהדביק לתיבת הטקסט (Ctrl-v) -
-	<textarea data-dojo-type="dijit.form.Textarea" id="mainIn" intermediateChanges="true" onchange="parseInput();"></textarea>
+	<textarea data-dojo-type="dijit.form.Textarea" id="mainIn" intermediateChanges="true" onkeyup="parseInput();" onpropertychange="parseInput();"></textarea>
       </div>
       <ul id="semesters"></ul>
     </div>
@@ -36,43 +39,31 @@
     <div id="bottomLeft"  data-dojo-type="dijit.layout.AccordionContainer" data-dojo-id="bottomLeft" region="center">
       <div id="bottomLeftOptions"></div>
       <div id="bottomLeftGraphs"></div>
-      <div data-dojo-type="dijit.layout.AccordionPane" title="מה? מי? למה?">
-      <span style="float:left"><g:plusone size="small"></g:plusone></span>
-
-      <h1>המערכת לא עובדת כרגע!</h1>
-      <p>היי, זה גדי. אני מארח את המערכת כרגע אצלי בבלוג. הבלוג עבר דירה לא מזמן לאכסון סטטי ב-github pages ולצערי התוצאה היא שהמערכת הפסיקה לעבוד.</p>
-      <p>ניסיתי לתקן קצת אבל לא נראה שהצלחתי. המערכת נכתבה על ידי גיא ולא על ידי, בספריה dojo שאני לא באמת מכיר, והנסיונות שלי להטליא לא עובדים.</p>
-      <p>אז מה עושים עכשיו? שתי אפשרויות. אפשרות אחת היא שאכתוב את המערכת מחדש בעצמי בעזרת ספריות שאני מכיר והתבססות על הקוד של גיא. זה כנראה יקרה מתישהו.</p>
-      <p>אפשרות שניה היא שתציעו לי תיקון. הקוד של המערכת זמין <a href="https://github.com/gadial/blog/tree/master/stuff/cm">כאן בגיטהאב</a> ואם יש לכם פתרון לבעיות שלו אשמח לדעת.</p>
-      <p>שיהיה לנו בהצלחה!</p>
-
-	<h2>מה זה עושה?</h2>
-	<p>
-	    מציג את גליון הציונים בצורה נוחה, ומאפשר לבדוק בזריזות השפעה של שינויים עתידיים בציונים על הממוצע. בהמשך אולי יתאפשר גם לבדוק אוטומטית איזה קורסים חסרים כדי להשלים תואר, לתכנן סמסטרים קדימה וכו'...
-	</p>
-	<h2>פרטיות? אמינות?</h2>	
-	<p>אין מדובר במערכת רשמית של הטכניון אלא ביוזמה פרטית.</p>
-	<p>
-	  עד כמה שאני יודע - המידע לא נשמר על השרת, ולמעשה אפילו לא מועבר אליו - כל העבודה מתבצעת אך ורק אצלך על המחשב. עם כל זאת - תוכנית זו מופצת בתקווה שתהיה שימושית אבל בלא כל אחריות; בלא אפילו אחריות משתמעת למסחריות או התאמה לשימוש מסוים. ראו את <a href="http://law.co.il/media/computer-law/gplv3-hebrew.html">הרישיון הציבורי הכללי</a> של גנו לפרטים נוספים.
-	</p>
-	<h2>זה לא עובד!</h2>
-	<p>
-	  כרגע מדובר בגרסת בטא - כלומר זה כנראה עובד לא רע, אבל למעשה המערכת נמצאת עדיין בשלבי פיתוח. אני אשמח לקבל פידבק, דיווחי באגים ובקשות - אבל קחו בחשבון שזה עדיין סוג של "מגרש ניסויים".
-	  </p><p>
-	  ייתכן שחלק מהבעיות נובעות מחוסר תאימות של אקספלורר - מי שמשתמש בו מוזמן לנסות עם פיירפוקס, כרום, אופרה או כל דפדפן אחר. אם יש בעיה אחרת עם משהו שעבד לפני כן אני מן הסתם עושה שינויים בקוד - נסו שוב בעוד כמה דקות.
-	  </p><p>
-	בעייה ידועה - המערכת לא יודעת להתחשב בקורסים מכילים/מוכלים/ללא זיכוי נוסף. כלומר - אם לקחת גם חדוו"א 1 וגם חדוו"א 1מ1 - המערכת תתחשב בשני הקורסים בחישוב הממוצע ומספר הנקודות, במקום להתחשב רק באחרון שבהם. אותה תופעה חוזרת גם אם לקחת "מערכות ספרתיות" בחשמל ובמדעי המחשב, או כל קבוצה אחרת של קורסים כנ"ל.</br>
-      	ניתן לעקוף את הבעייה על ידי הסרת הקורס הבעייתי באמצעות ה"X" שמימין לו. פתרון אחר הוא לא לחזור על קורסים כנ"ל :)
-	</div>
+      <div id="mamilama" data-dojo-type="dijit.layout.AccordionPane" title="מה? מי? למה?">
+        <h2>מה זה עושה?</h2>
+        <p>
+            מציג את גליון הציונים בצורה נוחה, ומאפשר לבדוק בזריזות השפעה של שינויים עתידיים בציונים על הממוצע. בהמשך אולי יתאפשר גם לבדוק אוטומטית איזה קורסים חסרים כדי להשלים תואר, לתכנן סמסטרים קדימה וכו'...
+        </p>
+        <h2>פרטיות? אמינות?</h2>	
+        <p>אין מדובר במערכת רשמית של הטכניון אלא ביוזמה פרטית.</p>
+        <p>
+          עד כמה שאני יודע - המידע לא נשמר על השרת, ולמעשה אפילו לא מועבר אליו - כל העבודה מתבצעת אך ורק אצלך על המחשב. עם כל זאת - תוכנית זו מופצת בתקווה שתהיה שימושית אבל בלא כל אחריות; בלא אפילו אחריות משתמעת למסחריות או התאמה לשימוש מסוים. ראו את <a href="http://law.co.il/media/computer-law/gplv3-hebrew.html">הרישיון הציבורי הכללי</a> של גנו לפרטים נוספים.
+        </p>
+        <p>
+          כרגע מדובר בגרסת בטא - כלומר זה כנראה עובד לא רע, אבל למעשה המערכת נמצאת עדיין בשלבי פיתוח. אני אשמח לקבל פידבק, דיווחי באגים ובקשות - אבל קחו בחשבון שזה עדיין סוג של "מגרש ניסויים".
+          </p><p>
+          ייתכן שחלק מהבעיות נובעות מחוסר תאימות של אקספלורר - מי שמשתמש בו מוזמן לנסות עם פיירפוקס, כרום, אופרה או כל דפדפן אחר. אם יש בעיה אחרת עם משהו שעבד לפני כן אני מן הסתם עושה שינויים בקוד - נסו שוב בעוד כמה דקות.
+          </p><p>
+        בעייה ידועה - המערכת לא יודעת להתחשב בקורסים מכילים/מוכלים/ללא זיכוי נוסף. כלומר - אם לקחת גם חדוו"א 1 וגם חדוו"א 1מ1 - המערכת תתחשב בשני הקורסים בחישוב הממוצע ומספר הנקודות, במקום להתחשב רק באחרון שבהם. אותה תופעה חוזרת גם אם לקחת "מערכות ספרתיות" בחשמל ובמדעי המחשב, או כל קבוצה אחרת של קורסים כנ"ל.</br>
+            ניתן לעקוף את הבעייה על ידי הסרת הקורס הבעייתי באמצעות ה"X" שמימין לו. פתרון אחר הוא לא לחזור על קורסים כנ"ל :)
+       </div>
     </div>
-    <div id="contentPanel"></div>
   </div>
-    <div id="courseListFrame"><a href="javascript:var n = '';" onclick="hideCL();" style="position:fixed; top:30px; left:30%; z-index99; backgound-color:#fff; font-size:150%;">X</a><span id="courseListMsg"></span><div id="courseList"></div></div>
-    <!-- Google Analytics --> 
-	<script type="text/javascript">
-	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-	</script>
+    <div id="courseListFrame" style="z-index: 100;"><a href="javascript:var n = '';" onclick="hideCL();" style="cursor:pointer; position:relative; top:0px; right:0px; z-index:99; backgound-color:#fff; font-size:150%;">[סגור]</a><span id="courseListMsg"></span><div id="courseList"></div></div>
+  
+  <div id="footer">© כל הזכויות שמורות, <a href="http://www.technion.ac.il/~gai/">גיא שקד</a>, 2009; המערכת נכתבה באמצעות <a href="http://www.dojotoolkit.org/">Dojo</a> ומשוחררת תחת רשיון <a href="http://www.gnu.org/licenses/gpl.html">GNU/GPL</a></div>
+  
+  <!-- Google Analytics -->
 	<script type="text/javascript">
 	try {
 	var pageTracker = _gat._getTracker("UA-1163114-2");

@@ -103,7 +103,7 @@ function loadXML(XMLnum) {
 	    var s="";
 	    for (var i = 0; i < items.length; i++){
 		var item = items[i];
-		addCourse(ul, store.getValue(item, "num"), store.getValue(item, "points"), String(store.getValue(item, "name")), "-");
+		addCourse(ul, store.getValue(item, "num"), store.getValue(item, "points"), String(store.getValue(item, "name")).reverse(), "-");
 	    }
 	};
 	var request = store.fetch({onComplete: gotCourse});
@@ -224,76 +224,82 @@ function updateSemester(sem) {
 
 
 function parseInput() {
-    dojo.byId("inputDiv").style.display="none";
-    var sem=undefined; var count=0;
-    var prev_line="";
-  
-  
-    var semesterRE=/ציון\s+\נק.\s+מקצוע/;
-    var englishRE=/פטור עם ניקוד\s+3.0\s+אנגלית טכנית/;
-    var courseRE=/^(\d+|-|עבר|לא השלים)\s+\*?\s*(\d+\.\d)\s+(.+)\s+(\d+)$/;
-    var ptorRE=/^(פטור עם ניקוד)\s+\*?\s*(\d+\.\d)\s+(.+)\s+(\d+)$/;  
-    var zikuyimRE=/זיכויים/;
-  
-    var input = dojo.byId("mainIn").value.split("\n");
-    for (var i=0; i<input.length; i++) {
-        var line=input[i];
-        if (i > 0) {
-          prev_line = input[i-1];
-        }
-        if (semesterRE.test(line) && !zikuyimRE.test(prev_line)) {
-            if ((sem != undefined) && (count==0)) {dojo.destroy(sem);}
-            sem=addSemester(); 
-            continue;
-        }
-        last_zik = false;
-        if ((sem != undefined) && (courseRE.test(line))) {
-            var data = courseRE.exec(line);
-            addCourse(sem, data[4], data[2], data[3], data[1]);
-            count++;
-            continue;
-        }
-        if ((ptorRE.test(line)) || (courseRE.test(line))) {
-            var ptorim=dojo.byId("ptorim");
-            if (!(ptorim)) {
-		          if (sem) {
-	            	  dojo.destroy(sem);
-	            	  sem=undefined;
-		          }
-		          ptorim = dojo.create("li", {class:"semester", id:"ptorim"}, semesters, "last");
-		          var title = dojo.create("ul", {class:"semesterTitle"}, ptorim, "last");
-		          dojo.create("li", { innerHTML: "-", class:"hide"}, title);		
-		          dojo.create("li", { innerHTML: "זיכויים"}, title);	
-		          var title = dojo.create("ul", {class:"semesterTitle"}, ptorim, "last");
-		          dojo.create("li", { innerHTML: "מס' קורס"}, title);
-		          dojo.create("li", { innerHTML: "שם הקורס"}, title);
-		          dojo.create("li", { innerHTML: "נק'"}, title);
-		          dojo.create("li", { innerHTML: "ציון" }, title);	
+    try
+    {
+        dojo.byId("inputDiv").style.display="none";
+        
+        var sem=undefined; var count=0;
+        var prev_line="";
+      
+      
+        var semesterRE=/ציון\s+\נק.\s+מקצוע/;
+        var englishRE=/פטור עם ניקוד\s+3.0\s+אנגלית טכנית/;
+        var courseRE=/^(\d+|-|עבר|לא השלים)\s+\*?\s*(\d+\.\d)\s+(.+)\s+(\d+)$/;
+        var ptorRE=/^(פטור עם ניקוד)\s+\*?\s*(\d+\.\d)\s+(.+)\s+(\d+)$/;  
+        var zikuyimRE=/זיכויים/;
+      
+        var input = dojo.byId("mainIn").value.split("\n");
+        if(input.length == 0) return;
+        for (var i=0; i<input.length; i++) {
+            var line=input[i];
+            if (i > 0) {
+              prev_line = input[i-1];
             }
-            if (ptorRE.test(line)) {
-              var data = ptorRE.exec(line);
-              addCourse(ptorim, data[4], data[2], data[3], "עבר");
-            } else {
-              var data = courseRE.exec(line);
-              addCourse(ptorim, data[4], data[2], data[3], data[1]);
+            if (semesterRE.test(line) && !zikuyimRE.test(prev_line)) {
+                if ((sem != undefined) && (count==0)) {dojo.destroy(sem);}
+                sem=addSemester(); 
+                continue;
             }
-            count++;
-            continue;
+            last_zik = false;
+            if ((sem != undefined) && (courseRE.test(line))) {
+                var data = courseRE.exec(line);
+                addCourse(sem, data[4], data[2], data[3], data[1]);
+                count++;
+                continue;
+            }
+            if ((ptorRE.test(line)) || (courseRE.test(line))) {
+                var ptorim=dojo.byId("ptorim");
+                if (!(ptorim)) {
+                      if (sem) {
+                          dojo.destroy(sem);
+                          sem=undefined;
+                      }
+                      ptorim = dojo.create("li", {class:"semester", id:"ptorim"}, semesters, "last");
+                      var title = dojo.create("ul", {class:"semesterTitle"}, ptorim, "last");
+                      dojo.create("li", { innerHTML: "-", class:"hide"}, title);		
+                      dojo.create("li", { innerHTML: "זיכויים"}, title);	
+                      var title = dojo.create("ul", {class:"semesterTitle"}, ptorim, "last");
+                      dojo.create("li", { innerHTML: "מס' קורס"}, title);
+                      dojo.create("li", { innerHTML: "שם הקורס"}, title);
+                      dojo.create("li", { innerHTML: "נק'"}, title);
+                      dojo.create("li", { innerHTML: "ציון" }, title);	
+                }
+                if (ptorRE.test(line)) {
+                  var data = ptorRE.exec(line);
+                  addCourse(ptorim, data[4], data[2], data[3], "עבר");
+                } else {
+                  var data = courseRE.exec(line);
+                  addCourse(ptorim, data[4], data[2], data[3], data[1]);
+                }
+                count++;
+                continue;
+            }
         }
-    }
 
 
-    if (count) {
-    new dijit.layout.ContentPane({title:"אפשרויות", href:"options.html", id:"options"}).placeAt("bottomLeftOptions").startup();
-    new dijit.layout.ContentPane({title:"גרפים", href:"graphs.html", id:"charts", /*onShow:function(){setTimeout("makeCharts()", 300);}*/}).placeAt("bottomLeftGraphs").startup();;
-	//dijit.byId("bottomLeft").addChild(new dijit.layout.ContentPane({title:"אפשרויות", href:"options.html", id:"options"}));
-	//dijit.byId("bottomLeft").addChild(new dijit.layout.ContentPane({title:"גרפים", href:"graphs.html", id:"charts", /*onShow:function(){setTimeout("makeCharts()", 300);}*/}));
-        createSum();
-        sumTotal();
-        displayHint();
-	//var dndCL = new dojo.dnd.Source(dojo.byId("CourseList"), {copyOnly:true});
+        if (count) {
+            new dijit.layout.ContentPane({title:"אפשרויות", content:"\t<span style=\"width:100%; align:right; text-align:right; direction:RTL;\"><input type=\"checkbox\" id=\"cleanSheet\" onclick=\"cleanSheet();\" \/> \u05D2\u05DC\u05D9\u05D5\u05DF \u05E6\u05D9\u05D5\u05E0\u05D9\u05DD \u05E0\u05E7\u05D9<\/span>\r\n\t<p><!--input  type=\"button\" value=\"\u05D4\u05D3\u05E4\u05E1\u05D4 (alpha)\" onclick=\"printContent(\\\'semesters\\\',\\ \\\'CM\\\');\" \/--><\/p>\r\n\t<p><\/p>\r\n\t<p>\r\n\t\u05D1\u05EA\u05D5\u05D0\u05E8 \u05E9\u05DC\u05D9 \u05D9\u05E9 \u05D1\u05E1\u05DA \u05D4\u05DB\u05DC <input id=\"TotalPoint\" value=\"120\" size=\"4\" onChange=\"sumTotal()\" \/> \u05E0\u05E7\u05D5\u05D3\u05D5\u05EA. <br>\r\n\t\u05D0\u05DD \u05D0\u05E0\u05D9 \u05E8\u05D5\u05E6\u05D4 \u05DE\u05DE\u05D5\u05E6\u05E2 <input onChange=\"sumTotal()\" size=\"3\" id=\"want\" value=\"85\"\/>. \u05DE\u05E2\u05DB\u05E9\u05D9\u05D5 \u05E6\u05E8\u05D9\u05DA \u05DC\u05E9\u05DE\u05D5\u05E8 \u05E2\u05DC \u05DE\u05DE\u05D5\u05E6\u05E2 - <span id=\"fromNow\" style=\"font-weight:bold;\"><\/span><br>\r\n\u05DC\u05E2\u05D5\u05DE\u05EA \u05D6\u05D0\u05EA, \u05D0\u05DD \u05DE\u05E2\u05DB\u05E9\u05D9\u05D5 \u05D0\u05E0\u05D9 \u05D0\u05E9\u05DE\u05D5\u05E8 \u05E2\u05DC \u05DE\u05DE\u05D5\u05E6\u05E2 <input onChange=\"sumTotal()\" size=\"3\" id=\"fromNowIn\" value=\"85\"\/>, \u05D1\u05E1\u05D5\u05E3 \u05D4\u05EA\u05D5\u05D0\u05E8 \u05D9\u05D4\u05D9\u05D4 \u05DC\u05D9 \u05DE\u05DE\u05D5\u05E6\u05E2 <span id=\"finalWish\" style=\"font-weight:bold;\"><\/span>\r\n<\/p>", id:"options"}).placeAt("bottomLeftOptions").startup();        
+            new dijit.layout.ContentPane({title:"גרפים", content:"<span id=\"chartHide\" style=\"position: absolute; left:16px; z-index:11; top:14px; font-weight:bold; display:none;\"><a href=\"javascript:hideGraph()\">\u05D2\u05E8\u05E3 \u05D0\u05D7\u05E8<\/a><\/span>\r\n<span id=\"chartTitle\" style=\"position: absolute; left:auto; right:auto; z-index:10; top:12px; font-size:16px; width:100%; text-align:center; font-weight:bold; display:none;\">\u05E0\u05E7\u05D5\u05D3\u05D5\u05EA \u05D0\u05E7\u05D3\u05DE\u05D9\u05D5\u05EA \u05DC\u05E4\u05D9 \u05E4\u05E7\u05D5\u05DC\u05D8\u05D4<\/span>\r\n  <div style=\"width:100%; height:100%; direction:ltr; display:none;\" id=\"chartMain\"><\/div>\r\n  \r\n<div style=\"text-align:center; \" id=\"chratMenu\">\r\n  <div style=\"margin:15px; width:130px; display:inline-block;\"><!--a href=\"javascript:void(0)\" onClick=\"showGraph(PlotPointsPerFaculty);\">\u05E0\u05E7\u05D5\u05D3\u05D5\u05EA \u05D0\u05E7\u05D3\u05DE\u05D9\u05D5\u05EA \u05DC\u05E4\u05D9 \u05E4\u05E7\u05D5\u05DC\u05D8\u05D4<br \/><img src=\"graph2.jpeg\"><\/a--><\/div>\r\n  <div style=\"margin:15px; width:130px; display:inline-block;\"><!-- a href=\"javascript:void(0)\" onClick=\"showGraph(PlotAverageToPoints);\">\u05DE\u05DE\u05D5\u05E6\u05E2 \u05E1\u05DE\u05E1\u05D8\u05E8\u05D9\u05D0\u05DC\u05D9 \u05DC\u05E4\u05D9 \u05DE\u05E1\u05E4\u05E8 \u05E0\u05E7\'<br \/><img src=\"graph1.jpeg\"><\/a--><\/div>\r\n<\/div>\r\n", id:"charts"}).placeAt("bottomLeftGraphs").startup();;
+            createSum();
+            sumTotal();
+            displayHint();
+            //var dndCL = new dojo.dnd.Source(dojo.byId("CourseList"), {copyOnly:true});
+            document.getElementById("mamilama").style.display="none";
+        }
+        else dojo.byId("inputDiv").style.display="block";
+        
     }
-    else dojo.byId("inputDiv").style.display="block";
+    catch(err) { }
 }
 
 
@@ -515,11 +521,9 @@ function hideGraph() {
     PlotFunction=0;    
 }
 
-
 dojo.addOnLoad(function(){
     hideCL();
  
     dojo.byId("loading").style.display="none";
     dojo.byId("mainIn").focus();
- 
 });

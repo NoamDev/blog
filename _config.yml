@@ -21,7 +21,7 @@ defaults:
       path: ""
     values:
       image: /assets/img/main/default-card.png
-      description: "בלוג על מתמטיקה ומדעי המחשב"
+      description: "לא מדויק - בלוג על מתמטיקה ומדעי המחשב"
 
 # Trackers
 google_analytics: "UA-3924539-2"

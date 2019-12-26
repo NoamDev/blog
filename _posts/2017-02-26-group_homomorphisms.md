@@ -36,10 +36,7 @@ tags:
 
 את רעיון ה"יש לי שתי דרכים שבהן אני מגיע לאותה תוצאה" אוהבים לתאר באלגברה גם באופן ציורי, בעזרת משהו שנקרא <strong>דיאגרמה קומוטטיבית</strong>. אין בה צורך של ממש כאן, אבל למה לא לנצל את ההזדמנות כדי להראות לכם את הדבר הזה. הנה הדיאגרמה הקומוטטיבית שמתאימה לסיטואציה שלנו:
 
-$$\xymatrix{G\times G\ar[r]^{\cdot}\ar[d]^{f\times f} &amp; G\ar[d]^{f}\\
-H\times H\ar[r]^{*} &amp; H
-}
-$$
+<img src="{{site.baseurl}}{{site.post_images}}/2017/02/group_homomorphisms_diagram1.png" alt="\xymatrix{G\times G\ar[r]^{\cdot}\ar[d]^{f\times f} && G\ar[d]^{f}\\H\times H\ar[r]^{*} && H}"/>
 
 מה יש לנו פה? הדיאגרמה מורכבת משני מרכיבים: <strong>אובייקטים וחצים</strong>. האובייקטים אצלנו הם {% equation %}G\times G{% endequation %} (כל הזוגות של איברים מ-{% equation %}G{% endequation %}), {% equation %}G{% endequation %}, {% equation %}H\times H{% endequation %} (כל הזוגות של איברים מ-{% equation %}H{% endequation %}) ו-{% equation %}H{% endequation %}. כלומר, האובייקטים הם קבוצות. על כל חץ יש סימון של פונקציה כלשהי שמוגדרת מקבוצה אחת אל הקבוצה השניה. למשל, החץ {% equation %}G\times G\overset{\cdot}{\to}G{% endequation %} אומר שיש לנו פונקציה שמסומנת ב-{% equation %}\cdot{% endequation %} ומעבירה זוג מ-{% equation %}G\times G{% endequation %} אל איבר ב-{% equation %}G{% endequation %} - זה הרי מה שכפל באמת עושה. אותו דבר גם עם {% equation %}H\times H\overset{*}{\to}H{% endequation %} למטה. גם החץ {% equation %}G\overset{f}{\to}H{% endequation %} ברור - הוא בא לתאר את ההומומורפיזם מ-{% equation %}G{% endequation %} ל-{% equation %}H{% endequation %} שלכבודו נתכנסנו. אבל מה זה {% equation %}G\times G\overset{f\times f}{\to}H\times H{% endequation %}? שום דבר מחוכם - פשוט דרך להגיד "יש לך זוג איברים מ-{% equation %}G{% endequation %}? תפעיל את {% equation %}f{% endequation %} על כל אחד מהם". כלומר, זה בא לתאר את האופן שבו {% equation %}\left(a,b\right){% endequation %} הופך ל-{% equation %}\left(f\left(a\right),f\left(b\right)\right){% endequation %}.
 
@@ -91,10 +88,7 @@ $$
 
 אז תהא {% equation %}G{% endequation %} חבורה עם תת-חבורה נורמלית {% equation %}N{% endequation %} וההטלה {% equation %}\pi:G\to G/N{% endequation %}. כעת, יהא {% equation %}f:G\to H{% endequation %} הומומורפיזם כלשהו מ-{% equation %}G{% endequation %} לחבורה כלשהי {% equation %}H{% endequation %} שאנחנו דורשים ממנו רק דבר אחד: {% equation %}N\subseteq\ker f{% endequation %}. זו דרך אחרת לומר "איברים שנמצאים באותו קוסט של {% equation %}N{% endequation %} מועתקים על ידי {% equation %}f{% endequation %} לאותו פלט" (כי אם {% equation %}x,y{% endequation %} באותו קוסט אז {% equation %}xy^{-1}\in N{% endequation %} ולכן {% equation %}xy^{-1}\in\ker f{% endequation %} ולכן {% equation %}f\left(x\right)=f\left(y\right){% endequation %}). עכשיו מתקיים הקסם הבא: קיים הומומורפיזם <strong>יחיד</strong> {% equation %}h:G/N\to H{% endequation %} כך שמתקיים {% equation %}f=h\circ\pi{% endequation %}. כלומר, אפשר <strong>לפרק</strong> את {% equation %}f{% endequation %} להרכבה של שני הומומורפיזמים: קודם הולכים אל המנה עם {% equation %}\pi{% endequation %} ואחר כך הולכים מהמנה אל {% equation %}H{% endequation %} עם ה-{% equation %}h{% endequation %} החדש הזה. בניסוח אחר, {% equation %}G/N{% endequation %} היא בעלת התכונה שלכל {% equation %}f:G\to H{% endequation %} עם {% equation %}N\subseteq\ker f{% endequation %} <strong>קיים ויחיד</strong> {% equation %}h:G/N\to H{% endequation %} שגורם לדיאגרמה הבאה להיות קומוטטיבית:
 
-$$\xymatrix{G\ar[d]_{\pi}\ar[dr]^{f}\\
-G/N\ar[r]_{h} &amp; H
-}
-$$
+<img src="{{site.baseurl}}{{site.post_images}}/2017/02/group_homomorphisms_diagram2.png" alt="\xymatrix{G\ar[d]_{\pi}\ar[dr]^{f}\\G/N\ar[r]_{h} & H}"/>
 
 זה אומר שעל כל ההומומורפיזמים מ-{% equation %}G{% endequation %} שהגרעין שלהם מכיל את {% equation %}N{% endequation %} אפשר לחשוב כאילו הם בנויים מאיזה "מקטע התחלתי" שהוא תמיד אותו דבר - {% equation %}\pi{% endequation %} - ואחרי המקטע ההתחלתי הזה מגיע "התוכן האמיתי" של ההומומורפיזם, כשאותו "תוכן אמיתי" מוגדר כבר על אברי {% equation %}G/N{% endequation %}. דהיינו, האובייקט שאנחנו באמת רוצים להבין כשאנחנו מדברים על הומומורפיזמים כאלו הוא {% equation %}G/N{% endequation %}.
 

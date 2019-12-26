@@ -7,8 +7,8 @@
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="משפטי האיזומורפיזם של חבורות" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="בלוג על מתמטיקה ומדעי המחשב" />
-<meta property="og:description" content="בלוג על מתמטיקה ומדעי המחשב" />
+<meta name="description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<meta property="og:description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
 <link rel="canonical" href="http://gadial.net/2017/03/06/group_isomorphism_theorems/" />
 <meta property="og:url" content="http://gadial.net/2017/03/06/group_isomorphism_theorems/" />
 <meta property="og:site_name" content="לא מדויק" />
@@ -20,7 +20,7 @@
 <meta property="twitter:title" content="משפטי האיזומורפיזם של חבורות" />
 <meta name="twitter:site" content="@" />
 <script type="application/ld+json">
-{"dateModified":"2017-03-06T18:13:14+00:00","datePublished":"2017-03-06T18:13:14+00:00","@type":"BlogPosting","image":"http://gadial.net/assets/img/main/default-card.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2017/03/06/group_isomorphism_theorems/"},"url":"http://gadial.net/2017/03/06/group_isomorphism_theorems/","description":"בלוג על מתמטיקה ומדעי המחשב","headline":"משפטי האיזומורפיזם של חבורות","@context":"https://schema.org"}</script>
+{"dateModified":"2017-03-06T18:13:14+00:00","datePublished":"2017-03-06T18:13:14+00:00","@type":"BlogPosting","image":"http://gadial.net/assets/img/main/default-card.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2017/03/06/group_isomorphism_theorems/"},"url":"http://gadial.net/2017/03/06/group_isomorphism_theorems/","description":"לא מדויק - בלוג על מתמטיקה ומדעי המחשב","headline":"משפטי האיזומורפיזם של חבורות","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link href="/assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -132,7 +132,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>מהן תת-החבורות של <span>$latex \mathbb{Z}$</span> אנחנו כבר יודעים. כל תת-החבורות הן מהצורה <span>$latex n\mathbb{Z}=\left\{ na\ |\ a\in\mathbb{Z}\right\} $</span> עבור <span>$latex n\ge0$</span> כלשהו. אבל מה יחסי ההכלה ביניהן? בואו ניקח את תת-החבורה <span>$latex 12\mathbb{Z}$</span>. היא נוצרת על ידי 12, ולכן כל תת-חבורה שמכילה את 12 תכיל גם אותה. אם <span>$latex 12$</span> שייך ל-<span>$latex n\mathbb{Z}$</span> זה אומר ש-<span>$latex 12=na$</span> עבור <span>$latex n$</span> טבעי כלשהו. כלומר, <span>$latex n$</span> מחלק את <span>$latex 12$</span>. מי המחלקים של <span>$latex 12$</span>? קל למצוא אותם במפורש: <span>$latex 1,2,3,4,6,12$</span>. בואו נצייר דיאגרמה שבה מצויירות כל החבורות המתאימות, כשיש חץ מחבורה אחת אל תתי-החבורות שלה:</p>
 
-<p><span>$latex \xymatrix{ &amp; \mathbb{Z}\ar[dl]\ar[dr]\\ 3\mathbb{Z}\ar[dr] &amp; &amp; 2\mathbb{Z}\ar[dl]\ar[d]\\ &amp; 6\mathbb{Z}\ar[d] &amp; 4\mathbb{Z}\ar[dl]\\ &amp; 12\mathbb{Z} } $</span></p>
+<p><img src="/assets/img/2017/03/group_isomorphism_theorems_diagram1.png" alt="\xymatrix{ &amp; \mathbb{Z}\ar[dl]\ar[dr]\\ 3\mathbb{Z}\ar[dr] &amp;&amp;; 2\mathbb{Z}\ar[dl]\ar[d]\\ &amp; 6\mathbb{Z}\ar[d] &amp; 4\mathbb{Z}\ar[dl]\\ &amp; 12\mathbb{Z} }" /></p>
 
 <p>הדיאגרמה הזו חסכונית במובן זה שאני לא מצייר את כל החצים. אין חץ מ-<span>$latex \mathbb{Z}$</span> אל <span>$latex 6\mathbb{Z}$</span> למשל, פשוט כי אין בו צורך - הכלה היא יחס טרנזיטיבי ולכן אני יכול להסיק את קיום החץ הזה מקיום החצים מ-<span>$latex \mathbb{Z}$</span> אל <span>$latex 3\mathbb{Z}$</span> ומ-<span>$latex 3\mathbb{Z}$</span> אל <span>$latex 6\mathbb{Z}$</span>. הדיאגרמה מכילה רק את המידע שהכרחי לי לראות, כי זה יוצא יותר אלגנטי ככה.</p>
 
@@ -140,7 +140,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>אם כן, תת-החבורות של <span>$latex \mathbb{Z}_{12}$</span> הן <span>$latex \mathbb{Z}_{12},\mathbb{Z}_{6},\mathbb{Z}_{4},\mathbb{Z}_{3},\mathbb{Z}_{2}$</span> וגם <span>$latex \left\langle e\right\rangle $</span> שאסמן פשוט בתור <span>$latex \mathbb{Z}_{1}$</span>. בואו נצייר את דיאגרמת ההכלות שמתאימה לה. איך נדע מי מכיל את מי? ובכן, זכרו - חבורה ציקלית מכילה כל תת-חבורה ציקלית כך שסדר תת-החבורה מחלק את סדר החבורה. אז למשל <span>$latex \mathbb{Z}_{6}$</span> תכיל את <span>$latex \mathbb{Z}_{3}$</span> ואת <span>$latex \mathbb{Z}_{2}$</span>. לכן נקבל את הדיאגרמה:</p>
 
-<p><span>$latex \xymatrix{ &amp; \mathbb{Z}_{12}\ar[dl]\ar[dr]\\ \mathbb{Z}_{4}\ar[dr] &amp; &amp; \mathbb{Z}_{6}\ar[dl]\ar[d]\\ &amp; \mathbb{Z}_{2}\ar[d] &amp; \mathbb{Z}_{3}\ar[dl]\\ &amp; \mathbb{Z}_{1} } $</span></p>
+<p><img src="/assets/img/2017/03/group_isomorphism_theorems_diagram2.png" alt="\xymatrix{ &amp; \mathbb{Z}_{12}\ar[dl]\ar[dr]\\ \mathbb{Z}_{4}\ar[dr] &amp; &amp; \mathbb{Z}_{6}\ar[dl]\ar[d]\\ &amp; \mathbb{Z}_{2}\ar[d] &amp; \mathbb{Z}_{3}\ar[dl]\\ &amp; \mathbb{Z}_{1} }" /></p>
 
 <p>הדיאגרמה הזו נראית בדיוק כמו הדיאגרמה הקודמת, רק עם שמות שונים עבור הצמתים. “אותו הדבר עד כדי שמות”? זו הרי ההגדרה האינטואיטיבית של איזומורפיזם; הרי לכם משפט האיזומורפיזם הרביעי במלוא הדרו. אבל זה לא נגמר כאן. יש קשר מאוד ברור בין האיברים בשתי הדיאגרמות. למשל, <span>$latex 2\mathbb{Z}$</span> הפכה להיות <span>$latex \mathbb{Z}_{6}$</span> ואילו <span>$latex 3\mathbb{Z}$</span> הפכה להיות <span>$latex \mathbb{Z}_{4}$</span> וכדומה. רואים את הקשר? תזכרו שבמקום לכתוב <span>$latex \mathbb{Z}_{6}$</span> אפשר גם לכתוב <span>$latex \mathbb{Z}/6\mathbb{Z}$</span> (זה משפט האיזומורפיזם הראשון), אז הנה משחק: מה זו <span>$latex 2\mathbb{Z}/12\mathbb{Z}$</span>? מכיוון שאנחנו משתמשים בסימונים של “חלוקה” כאן, מדגדג לנו בקצה האינטואיציה “לצמצמם” את הגורם המשותף ולקבל <span>$latex 2\mathbb{Z}/12\mathbb{Z}\cong\mathbb{Z}/6\mathbb{Z}\cong\mathbb{Z}_{6}$</span>. זו רק אינטואיציה, כמובן, אבל אפשר לפרמל אותה: כל איבר בדיאגרמה השניה מתקבל מלקיחת האיבר בדיאגרמה הראשונה וחלוקה שלו ב-<span>$latex 12\mathbb{Z}$</span>.</p>
 
@@ -162,7 +162,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>אם כן, זה היה משפט האיזומורפיזם הרביעי, ועכשיו אני רוצה לעבור אל השלישי דווקא. הניסוח הכללי שלו הוא זה: אם <span>$latex G$</span> חבורה עם תתי-חבורות נורמליות <span>$latex H,K$</span> כך ש-<span>$latex K$</span> מכילה את <span>$latex H$</span> ולכן יש לנו שרשרת הכלות <span>$latex H\le K\le G$</span>, אז אפשר לדבר על חבורת המנה שמתקבלת כשמחלקים את כל העסק הזה ב-<span>$latex H$</span>. במקרה הזה, <span>$latex G$</span> עוברת לחבורת מנה <span>$latex G/H$</span> וכפי שראינו, <span>$latex K$</span> עוברת לתת-חבורת מנה <span>$latex K/H$</span>. השאלה של משפט האיזומורפיזם השלישי היא מה קורה בחבורת המנה הזו שהתקבלה אם אנחנו רוצים לבנות <strong>עוד</strong> חבורת מנה: לקחת את החבורה <span>$latex G/H$</span> ולחלק אותה בתת-החבורה <span>$latex K/H$</span>. התשובה היא שאפשר לעשות את זה - כלומר, ש-<span>$latex K/H$</span> נורמלית ב-<span>$latex G/H$</span>, ושמקבלים משהו שאיזומורפי ל-<span>$latex G/K$</span>, דהיינו <span>$latex \left(G/H\right)/\left(K/H\right)\cong G/K$</span>. זה מעין “כלל צמצום” שכזה. הנה דיאגרמה של הסיטואציה (לא דיאגרמה קומוטטיבית; סתם כלי עזר להמחשה).</p>
 
-<p><span>$latex \xymatrix{G\ar[r]^{\pi}\ar[d] &amp; G/H\ar[d]\\ K\ar[r]^{\pi}\ar[d] &amp; K/H\ar[d]\\ H\ar[r]^{\pi} &amp; \left\{ e\right\} } $</span></p>
+<p><img src="/assets/img/2017/03/group_isomorphism_theorems_diagram3.png" alt="\xymatrix{G\ar[r]^{\pi}\ar[d] &amp; G/H\ar[d]\\ K\ar[r]^{\pi}\ar[d] &amp; K/H\ar[d]\\ H\ar[r]^{\pi} &amp; \left\{ e\right\} }" /></p>
 
 <p>איך מוכיחים את זה? צריך לעשות שני דברים - להוכיח ש-<span>$latex K/H$</span> נורמלית ב-<span>$latex G/H$</span>, ולהוכיח שהמנה איזומורפית ל-<span>$latex G/K$</span>. את שני אלו אפשר לעשות במכה אחת, תוך הסתמכות על משפט האיזומורפיזם הראשון. כזכור, תת-חבורה היא נורמלית אם ורק אם היא גרעין של הומומורפיזם. אז בואו ננסה למצוא הומומורפיזם שתחומו <span>$latex G/H$</span> והגרעין שלו הוא בדיוק <span>$latex K/H$</span>. זה יוכיח מייד ש-<span>$latex K/H$</span> נורמלית; כמו כן זה יוכיח ש-<span>$latex \left(G/H\right)/\left(K/H\right)$</span> איזומורפית לתמונה של ההומומורפיזם הזה, אז משתלם לנו לנסות למצוא הומומורפיזם שכזה שיהיה <strong>על</strong> החבורה <span>$latex G/K$</span>.</p>
 
@@ -188,7 +188,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>טרם הצגתי את <span>$latex AB$</span> עד כה כי אני מחכה לפוסט שבו אדבר בפירוט על בניה של חבורות חדשות מתוך חבורות קיימות - למשל, כבר תיארתי סוג אחר של מכפלה, <span>$latex A\times B$</span>, ועכשיו אפשר לתהות מה הקשר בין <span>$latex A\times B$</span> ובין <span>$latex AB$</span>. עדיין, אני רוצה להציג פה את משפטי האיזומורפיזם אז צריך להכיר את הטרמינולוגיה. כעת, משפט האיזומורפיזם השני מתעסק בשאלה מהי <span>$latex AB/B$</span>. כרגיל, מה האינטואיציה? אם, במובן מסויים, <span>$latex A,B$</span> היו “נפרדות לגמרי” אז לחלק ב-<span>$latex B$</span> פשוט היה מעלים את הרכיב של <span>$latex B$</span> בתוך המכפלה <span>$latex AB$</span> והיינו נשארים עם <span>$latex A$</span>. אבל בקצה השני של הסיטואציה, מה אם <span>$latex A=B$</span>? במקרה הזה, <span>$latex AA=A$</span> (תבדקו!) ולכן <span>$latex AA/A=A/A\cong\left\{ e\right\} $</span>. כלומר, <span>$latex AB/B$</span> עשוי לצאת איזומורפי לכל דבר שבין <span>$latex A$</span> ובין תת-החבורה הטריוויאלית <span>$latex \left\{ e\right\} $</span>. מה קובע? ובכן, רמת הקשר בין <span>$latex A,B$</span>; ספציפית, מה האיברים המשותפים שלהם. ספציפית, המשפט אומר ש-<span>$latex AB/B\cong A/\left(A\cap B\right)$</span>. בואו נראה דיאגרמה גם עבור הדבר הזה:</p>
 
-<p><span>$latex \xymatrix{ &amp; G\ar[d]\\ &amp; AB\ar[dl]\ar[dr]\\ A\ar[dr] &amp; &amp; B\ar[dl]\\ &amp; A\cap B\ar[d]\\ &amp; \left\{ e\right\} } $</span></p>
+<p><img src="/assets/img/2017/03/group_isomorphism_theorems_diagram4.png" alt="\xymatrix{ &amp; G\ar[d]\\ &amp; AB\ar[dl]\ar[dr]\\ A\ar[dr] &amp; &amp; B\ar[dl]\\ &amp; A\cap B\ar[d]\\ &amp; \left\{ e\right\} }" /></p>
 
 <p>לפעמים קוראים למשפט הזה “משפט איזומורפיזם היהלום” בגלל הצורה דמויית היהלום של הדיאגרמה הזו. התוכן של המשפט מדבר על שני החצים האלכסוניים למטה-ימינה - ליתר דיוק, על חבורות המנה שנקבל אם נחלק את ראשית החצים הללו בקצה שלהם.</p>
 

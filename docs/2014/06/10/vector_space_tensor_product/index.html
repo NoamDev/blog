@@ -7,8 +7,8 @@
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="מכפלות טנזוריות (של מרחבים וקטוריים)" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="בלוג על מתמטיקה ומדעי המחשב" />
-<meta property="og:description" content="בלוג על מתמטיקה ומדעי המחשב" />
+<meta name="description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<meta property="og:description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
 <link rel="canonical" href="http://gadial.net/2014/06/10/vector_space_tensor_product/" />
 <meta property="og:url" content="http://gadial.net/2014/06/10/vector_space_tensor_product/" />
 <meta property="og:site_name" content="לא מדויק" />
@@ -20,7 +20,7 @@
 <meta property="twitter:title" content="מכפלות טנזוריות (של מרחבים וקטוריים)" />
 <meta name="twitter:site" content="@" />
 <script type="application/ld+json">
-{"dateModified":"2014-06-10T11:37:08+00:00","datePublished":"2014-06-10T11:37:08+00:00","@type":"BlogPosting","image":"http://gadial.net/assets/img/main/default-card.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2014/06/10/vector_space_tensor_product/"},"url":"http://gadial.net/2014/06/10/vector_space_tensor_product/","description":"בלוג על מתמטיקה ומדעי המחשב","headline":"מכפלות טנזוריות (של מרחבים וקטוריים)","@context":"https://schema.org"}</script>
+{"dateModified":"2014-06-10T11:37:08+00:00","datePublished":"2014-06-10T11:37:08+00:00","@type":"BlogPosting","image":"http://gadial.net/assets/img/main/default-card.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2014/06/10/vector_space_tensor_product/"},"url":"http://gadial.net/2014/06/10/vector_space_tensor_product/","description":"לא מדויק - בלוג על מתמטיקה ומדעי המחשב","headline":"מכפלות טנזוריות (של מרחבים וקטוריים)","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link href="/assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -245,7 +245,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>ניקח שני מרחבים וקטוריים <span>$latex V,W$</span>. יש כמובן המון פונקציות בילינאריות שניתן להגדיר עליהם, שהולכות למרחבים רבים ושונים. הרעיון במכפלה טנזורית הוא לתאר את המכפלה הבילינארית <strong>הכללית ביותר</strong> שאפשר להגדיר על <span>$latex V\times W$</span>. מה זה אומר? ובכן, בואו נניח שקיים מרחב וקטורי <span>$latex E$</span> ופונקציה בילינארית <span>$latex h:V\times W\to E$</span> שמקיימים את התכונה הבאה: אם <span>$latex U$</span> הוא מרחב וקטורי <strong>כלשהו</strong> ו-<span>$latex f:V\times W\to U$</span> היא פונקציה בילינארית <strong>כלשהי</strong>, אז אפשר לבנות את <span>$latex f$</span> על ידי הרכבה של פונקציה לינארית מתאימה על <span>$latex h$</span>, באופן שהוא <strong>יחיד</strong>. פורמלית, קיימת <span>$latex T:E\to U$</span> <strong>יחידה</strong> כך ש-<span>$latex f=Th$</span> (כלומר, <span>$latex f\left(v,w\right)=T\left(h\left(v,w\right)\right)$</span> לכל <span>$latex v\in V,w\in W$</span>). זה אומר ש-<span>$latex h$</span> היא אכן “כללית ביותר” כי היא לא מאבדת שום מידע; אחרי שמפעילים אותה אפשר לבצע “תיקון” ולקבל כל פונקציה בילינארית אחרת. ככה זה נראה בדיאגרמה קומוטטיבית:</p>
 
-<p><span>$latex \xymatrix{ &amp; E\ar[dd]^{T}\\V\times W\ar[ur]^{h}\ar[dr]^{f}\\ &amp; U}$</span></p>
+<p><img src="/assets/img/2014/06/tensor_product_diagram.png" alt="\xymatrix{ &amp; E\ar[dd]^{T}\\V\times W\ar[ur]^h}\ar[dr]^{f}\\ &amp; U}" /></p>
 
 <p>הכוונה ב”קומוטטיבית” כאן היא שלא משנה איך הולכים עם החצים - אם הולכים עם <span>$latex f$</span> או אם הולכים עם <span>$latex h$</span> ואז עם <span>$latex T$</span> - בסוף מגיעים לאותו דבר (אם התחלנו מאותו איבר קלט).</p>
 
@@ -253,7 +253,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>שימו לב מה קיבלנו:</p>
 
-<p><span>$latex \xymatrix{ &amp; E_{1}\ar[dd]^{T_{2}T_{1}}\\V\times W\ar[ur]^{h_{1}}\ar[dr]^{h_{1}}\\ &amp; E_{1}}$</span></p>
+<p><img src="/assets/img/2014/06/tensor_product_diagram2.png" alt="\xymatrix{ &amp; E_{1}\ar[dd]^{T_{2}T_{1}}\\V\times W\ar[ur]^{h_{1}}\ar[dr]^{h_{1}}\\ &amp; E_{1}}" /></p>
 
 <p>מה שקורה כאן הוא שראינו שאת ההעתקה <span>$latex h_{1}:V\times W\to E_{1}$</span> אפשר לבנות בתור ההרכבה <span>$latex T_{2}T_{1}h_{1}$</span>. אבל מצד שני, אפשר לבנות אותה גם בתור ההרכבה של פונקציית הזהות על <span>$latex h_{1}$</span>. כאן נכנסת לתמונה הדרישה שלי שאופן הבניה הזה יהיה <strong>יחיד</strong> - זה אומר ש-<span>$latex T_{2}T_{1}$</span> היא פונקציית הזהות על <span>$latex E_{1}$</span>, ולכן <span>$latex T_{1}$</span> בפרט הפיכה, ולכן היא איזומורפיזם. הצלחתם לעקוב אחרי הטיעון הזה? (כי אני לא ממש) באלגברה מופשטת זה מה שקורה כל הזמן.</p>
 

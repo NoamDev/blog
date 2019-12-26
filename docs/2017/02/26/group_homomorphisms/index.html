@@ -7,8 +7,8 @@
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="הומומורפיזמים של חבורות" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="בלוג על מתמטיקה ומדעי המחשב" />
-<meta property="og:description" content="בלוג על מתמטיקה ומדעי המחשב" />
+<meta name="description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<meta property="og:description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
 <link rel="canonical" href="http://gadial.net/2017/02/26/group_homomorphisms/" />
 <meta property="og:url" content="http://gadial.net/2017/02/26/group_homomorphisms/" />
 <meta property="og:site_name" content="לא מדויק" />
@@ -20,7 +20,7 @@
 <meta property="twitter:title" content="הומומורפיזמים של חבורות" />
 <meta name="twitter:site" content="@" />
 <script type="application/ld+json">
-{"dateModified":"2017-02-26T14:09:38+00:00","datePublished":"2017-02-26T14:09:38+00:00","@type":"BlogPosting","image":"http://gadial.net/assets/img/main/default-card.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2017/02/26/group_homomorphisms/"},"url":"http://gadial.net/2017/02/26/group_homomorphisms/","description":"בלוג על מתמטיקה ומדעי המחשב","headline":"הומומורפיזמים של חבורות","@context":"https://schema.org"}</script>
+{"dateModified":"2017-02-26T14:09:38+00:00","datePublished":"2017-02-26T14:09:38+00:00","@type":"BlogPosting","image":"http://gadial.net/assets/img/main/default-card.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2017/02/26/group_homomorphisms/"},"url":"http://gadial.net/2017/02/26/group_homomorphisms/","description":"לא מדויק - בלוג על מתמטיקה ומדעי המחשב","headline":"הומומורפיזמים של חבורות","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link href="/assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -148,10 +148,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>את רעיון ה”יש לי שתי דרכים שבהן אני מגיע לאותה תוצאה” אוהבים לתאר באלגברה גם באופן ציורי, בעזרת משהו שנקרא <strong>דיאגרמה קומוטטיבית</strong>. אין בה צורך של ממש כאן, אבל למה לא לנצל את ההזדמנות כדי להראות לכם את הדבר הזה. הנה הדיאגרמה הקומוטטיבית שמתאימה לסיטואציה שלנו:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\xymatrix{G\times G\ar[r]^{\cdot}\ar[d]^{f\times f} &amp; G\ar[d]^{f}\\
-H\times H\ar[r]^{*} &amp; H
-} %]]></script>
+<p><img src="/assets/img/2017/02/group_homomorphisms_diagram1.png" alt="\xymatrix{G\times G\ar[r]^{\cdot}\ar[d]^{f\times f} &amp;&amp; G\ar[d]^{f}\\H\times H\ar[r]^{*} &amp;&amp; H}" /></p>
 
 <p>מה יש לנו פה? הדיאגרמה מורכבת משני מרכיבים: <strong>אובייקטים וחצים</strong>. האובייקטים אצלנו הם <span>$latex G\times G$</span> (כל הזוגות של איברים מ-<span>$latex G$</span>), <span>$latex G$</span>, <span>$latex H\times H$</span> (כל הזוגות של איברים מ-<span>$latex H$</span>) ו-<span>$latex H$</span>. כלומר, האובייקטים הם קבוצות. על כל חץ יש סימון של פונקציה כלשהי שמוגדרת מקבוצה אחת אל הקבוצה השניה. למשל, החץ <span>$latex G\times G\overset{\cdot}{\to}G$</span> אומר שיש לנו פונקציה שמסומנת ב-<span>$latex \cdot$</span> ומעבירה זוג מ-<span>$latex G\times G$</span> אל איבר ב-<span>$latex G$</span> - זה הרי מה שכפל באמת עושה. אותו דבר גם עם <span>$latex H\times H\overset{*}{\to}H$</span> למטה. גם החץ <span>$latex G\overset{f}{\to}H$</span> ברור - הוא בא לתאר את ההומומורפיזם מ-<span>$latex G$</span> ל-<span>$latex H$</span> שלכבודו נתכנסנו. אבל מה זה <span>$latex G\times G\overset{f\times f}{\to}H\times H$</span>? שום דבר מחוכם - פשוט דרך להגיד “יש לך זוג איברים מ-<span>$latex G$</span>? תפעיל את <span>$latex f$</span> על כל אחד מהם”. כלומר, זה בא לתאר את האופן שבו <span>$latex \left(a,b\right)$</span> הופך ל-<span>$latex \left(f\left(a\right),f\left(b\right)\right)$</span>.</p>
 
@@ -203,10 +200,7 @@ H\times H\ar[r]^{*} &amp; H
 
 <p>אז תהא <span>$latex G$</span> חבורה עם תת-חבורה נורמלית <span>$latex N$</span> וההטלה <span>$latex \pi:G\to G/N$</span>. כעת, יהא <span>$latex f:G\to H$</span> הומומורפיזם כלשהו מ-<span>$latex G$</span> לחבורה כלשהי <span>$latex H$</span> שאנחנו דורשים ממנו רק דבר אחד: <span>$latex N\subseteq\ker f$</span>. זו דרך אחרת לומר “איברים שנמצאים באותו קוסט של <span>$latex N$</span> מועתקים על ידי <span>$latex f$</span> לאותו פלט” (כי אם <span>$latex x,y$</span> באותו קוסט אז <span>$latex xy^{-1}\in N$</span> ולכן <span>$latex xy^{-1}\in\ker f$</span> ולכן <span>$latex f\left(x\right)=f\left(y\right)$</span>). עכשיו מתקיים הקסם הבא: קיים הומומורפיזם <strong>יחיד</strong> <span>$latex h:G/N\to H$</span> כך שמתקיים <span>$latex f=h\circ\pi$</span>. כלומר, אפשר <strong>לפרק</strong> את <span>$latex f$</span> להרכבה של שני הומומורפיזמים: קודם הולכים אל המנה עם <span>$latex \pi$</span> ואחר כך הולכים מהמנה אל <span>$latex H$</span> עם ה-<span>$latex h$</span> החדש הזה. בניסוח אחר, <span>$latex G/N$</span> היא בעלת התכונה שלכל <span>$latex f:G\to H$</span> עם <span>$latex N\subseteq\ker f$</span> <strong>קיים ויחיד</strong> <span>$latex h:G/N\to H$</span> שגורם לדיאגרמה הבאה להיות קומוטטיבית:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\xymatrix{G\ar[d]_{\pi}\ar[dr]^{f}\\
-G/N\ar[r]_{h} &amp; H
-} %]]></script>
+<p><img src="/assets/img/2017/02/group_homomorphisms_diagram2.png" alt="\xymatrix{G\ar[d]_{\pi}\ar[dr]^{f}\\G/N\ar[r]_{h} &amp; H}" /></p>
 
 <p>זה אומר שעל כל ההומומורפיזמים מ-<span>$latex G$</span> שהגרעין שלהם מכיל את <span>$latex N$</span> אפשר לחשוב כאילו הם בנויים מאיזה “מקטע התחלתי” שהוא תמיד אותו דבר - <span>$latex \pi$</span> - ואחרי המקטע ההתחלתי הזה מגיע “התוכן האמיתי” של ההומומורפיזם, כשאותו “תוכן אמיתי” מוגדר כבר על אברי <span>$latex G/N$</span>. דהיינו, האובייקט שאנחנו באמת רוצים להבין כשאנחנו מדברים על הומומורפיזמים כאלו הוא <span>$latex G/N$</span>.</p>
 

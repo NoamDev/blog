@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>תורת הקבוצות - יחסי שקילות | לא מדויק</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="תורת הקבוצות - יחסי שקילות" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<meta property="og:description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<link rel="canonical" href="http://gadial.net/2020/01/06/equivalence_relations/" />
+<meta property="og:url" content="http://gadial.net/2020/01/06/equivalence_relations/" />
+<meta property="og:site_name" content="לא מדויק" />
+<meta property="og:image" content="http://gadial.net/assets/img/main/default-card.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-06T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://gadial.net/assets/img/main/default-card.png" />
+<meta property="twitter:title" content="תורת הקבוצות - יחסי שקילות" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"dateModified":"2020-01-06T00:00:00+00:00","datePublished":"2020-01-06T00:00:00+00:00","@type":"BlogPosting","image":"http://gadial.net/assets/img/main/default-card.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2020/01/06/equivalence_relations/"},"url":"http://gadial.net/2020/01/06/equivalence_relations/","description":"לא מדויק - בלוג על מתמטיקה ומדעי המחשב","headline":"תורת הקבוצות - יחסי שקילות","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://gadial.net/feed.xml" title="לא מדויק" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3924539-2', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$latex','$'] ],
+        processEscapes: true
+      },
+      TeX: {extensions: ["AMSmath.js","AMSsymbols.js"]},
+      "HTML-CSS": { 
+        linebreaks: { automatic: true }
+      },
+      SVG: { 
+        linebreaks: { automatic: true } 
+      }
+    });
+  </script>
+  <!-- "https://www.gadial.net/wp-includes/js/xypic.js" -->
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  
+</head>
+<body><header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/">לא מדויק</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/whats_going_on">מה הולך פה?</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/">דף הבית</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/categories">קטגוריות</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/random">דף אקראי</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/about/">אודות</a>
+            </li>
+            
+        
+      </ul>
+      <form class="form-inline mt-2 mt-md-0" action="/post_list/" method="get">
+        <input class="form-control mr-sm-2" type="text" placeholder="חיפוש" aria-label="חיפוש" name="s">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">חיפוש</button>
+      </form>
+    </div>
+  </nav>
+</header><main class="page-content" aria-label="Content" role="main">
+      <div class="wrapper text-right">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><div class="PageNavigation">
+    
+      <a class="prev" href="/2019/12/11/new_quadratic_formula_proof_not/">&laquo; האם התגלתה שיטה חדשה לפתרון משוואה ריבועית? (לא)</a>
+    
+    
+  </div><header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">תורת הקבוצות - יחסי שקילות</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-01-06T00:00:00+00:00" itemprop="datePublished">Jan 6, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="https://gadial.net/2019/10/21/intro_to_relations/">בפוסט הקודם</a> על תורת הקבוצות הצגתי את המושג של <strong>יחס</strong>. פורמלית, יחס מקבוצה <span>$latex A$</span> לקבוצה <span>$latex B$</span> היה תת-קבוצה של זוגות : <span>$latex R\subseteq A\times B$</span>. בפוסט הזה ובבא אחריו אני רוצה לדבר ספציפית על המקרה שבו <span>$latex A=B$</span> (ואז אומרים שהיחס <span>$latex R$</span> הוא “מעל <span>$latex A$</span>”) ולדבר על שני סוגים מועילים במיוחד של יחסים - <strong>יחסי שקילות</strong> ו<strong>יחסי סדר</strong>. האינטואיציה מאחוריהם היא פשוטה יחסית - יחס שקילות הוא הכללה של שוויון, שאפשר לתאר בתור “שוויון עד כדי פרטים שלא רלוונטיים לנו”, ואילו יחס סדר הוא הכללה של ה”גדול-שווה” שאנחנו מכירים ממספרים.</p>
+
+<p>הפעם נדבר על יחסי שקילות, ולשם כך בואו נתחיל מלהבין מה התכונות של שוויון. ראשית, יש את מה שנקרא בפילוסופיה “חוק הזהות”. בניסוח שלנו הוא בסך הכל אומר ש-<span>$latex a=a$</span> לכל איבר <span>$latex a$</span>. שנית, יש לנו את אחת מטענות הבסיס של אוקלידס - “דברים השווים לאותו דבר שווים זה לזה”, שאפשר לנסח כך: אם <span>$latex a=b$</span> וגם <span>$latex b=c$</span> אז <span>$latex a=c$</span>. פרט לכך, לשוויון לא אכפת מהסדר שבו כותבים דברים: אם <span>$latex a=b$</span> אז אפשר לכתוב גם <span>$latex b=a$</span>. באופן מעניין למדי, שלוש התכונות הללו הן הדברים המהותיים שנזדקק להם כדי לקבל דברים מעניינים נוספים <strong>שאינם</strong> שוויון.</p>
+
+<p>בואו נגדיר את זה פורמלית, עבור יחס <span>$latex R\subseteq A\times A$</span> כללי:</p>
+
+<ol> <li><span>$latex R$</span> הוא <strong>רפלקסיבי</strong> אם לכל <span>$latex a\in A$</span> מתקיים <span>$latex \left(a,a\right)\in R$</span>.</li>
+
+
+<li><span>$latex R$</span> הוא <strong>סימטרי</strong> אם <span>$latex \left(a,b\right)\in R$</span> גורר <span>$latex \left(b,a\right)\in R$</span>.</li>
+
+
+<li><span>$latex R$</span> הוא <strong>טרנזיטיבי</strong> אם <span>$latex \left(a,b\right)\in R$</span> וגם <span>$latex \left(b,c\right)\in R$</span> גורר <span>$latex \left(a,c\right)\in R$</span>.</li>
+
+</ol>
+
+<p>יחס שהוא בו זמנית רפלקסיבי, סימטרי וטרנזיטיבי נקרא <strong>יחס שקילות</strong> מעל <span>$latex A$</span>.</p>
+
+<p>מתבקשת כאן דוגמא. אני אתן אחת שאינה פשוטה במיוחד, אבל היא חשובה מאוד בפני עצמה - אחד מיחסי השקילות המועילים ביותר במתמטיקה. אגדיר אותו על <span>$latex \mathbb{N}$</span> למרות שאפשר גם על <span>$latex \mathbb{Z}$</span>. נתחיל עם מקרה פרטי פשוט: אנחנו יודעים שאפשר לחלק את <span>$latex \mathbb{N}$</span> ל<strong>זוגיים</strong> ו<strong>אי-זוגיים</strong>. מספר זוגי הוא מספר שמתחלק ב-2; מספר אי זוגי הוא מספר שאינו מתחלק ב-2. יחס השקילות שלי ניתן כעת לתיאור בתור “ל-<span>$latex a$</span> ו-<span>$latex b$</span> אותה זוגיות” (כלומר - או שהם שניהם זוגיים, או שהם שניהם אי זוגיים).</p>
+
+<p>הנה מקרה קצת יותר מתוחכם - חלוקה ב-3. כמקודם, אני יכול לפרק לשתי קבוצות של “מתחלקים ב-3” ו”לא מתחלקים ב-3”, אבל משתלם לי הרבה יותר לחלק ל-3 קבוצות, על פי <strong>השארית בחלוקה ב-</strong><strong>3</strong> של המספר. הנה דוגמאות: אם נחלק את 13 ב-3, התוצאה תהיה מנה 4 ושארית 1, כלומר <span>$latex 4\times3+1=13$</span>. אם נחלק את 15 ב-3 נקבל מנה 5 ושארית 0. אם נחלק את <span>$latex 11$</span> ב-3 נקבל שארית 2. שימו לב שהשאריות הן מספרים בין 0 ל-2; שארית גדולה או שווה ל-3 לא ייתכן, כי במקרה כזה אפשר “לגנוב” מהשארית כדי להגדיל עוד קצת את המנה (כלומר- במקום לומר ש-13 זה <span>$latex 3\times3+4$</span> אנחנו לוקחים עוד 3 מהשארית ומגדילים את המנה ל-4). את יחס השקילות הזה אני אכנה <strong>שקילות מודולו </strong><strong>3</strong>.</p>
+
+<p>אני יכול כעת לנסח את יחס השקילות שלי בתור <span>$latex \left(a,b\right)\in R$</span> אם ורק אם ל-<span>$latex a$</span> ו-<span>$latex b$</span> אותה שארית בחלוקה ל-3. אבל זה ניסוח קצת מילולי ומסורבל. הנה משהו פשוט יותר. בפוסט הקודם הגדרתי את יחס ה<strong>חלוקה</strong> שעוד נפגוש שוב גם בפוסט הזה. סימנתי אותו <span>$latex a|b$</span>. המשמעות שלו היא זו: קיים <span>$latex d\in\mathbb{Z}$</span> (שימו לב שכאן אני מרשה ל-<span>$latex d$</span> להיות שלילי) כך ש-<span>$latex ad=b$</span>. כעת, בעזרת יחס החלוקה אני יכול להגדיר את היחס החדש שלי: אסמן <span>$latex a\equiv_{3}b$</span> אם ורק אם <span>$latex 3|a-b$</span>. למשל, <span>$latex 5\equiv_{3}11$</span> כי <span>$latex 5-11=-6$</span> ולכן <span>$latex d=-2$</span> יעשה את העבודה.</p>
+
+<p>יחסית פשוט לראות ש-<span>$latex 3|a-b$</span> באמת רק אם השארית ש-<span>$latex a,b$</span> משאירים בחלוקה ב-3 היא זהה. כי אפשר לכתוב <span>$latex a=3q_{a}+r_{a}$</span> ו-<span>$latex b=3q_{b}+r_{b}$</span> ואז <span>$latex a-b=3\left(q_{a}-q_{b}\right)+\left(r_{a}-r_{b}\right)$</span>. מכיוון ש-3 מחלק את <span>$latex 3\left(q_{a}-q_{b}\right)$</span> הוא יצטרך לחלק גם את <span>$latex \left(r_{a}-r_{b}\right)$</span> וקל לבדוק את כל המקרים (כי כל שארית היא או 0 או 1 או 2) ולראות שרק אם <span>$latex r_{a}=r_{b}$</span> זה אפשרי.</p>
+
+<p>אני רוצה להוכיח ש-<span>$latex \equiv_{3}$</span> הוא יחס שקילות. רפלקסיביות היא מיידית: לכל <span>$latex a$</span> טבעי, <span>$latex a-a=0$</span> וכמובן שזה מתחלק ב-3. גם סימטריה היא ברורה: אם <span>$latex 3|a-b$</span>, כלומר קיים <span>$latex d$</span> שלם כך ש-<span>$latex 3d=a-b$</span>, אז <span>$latex b-a=3\left(-d\right)$</span>. שימו לב שכאן בא לידי ביטוי הצורך שלי ש-<span>$latex d$</span> יהיה שלם ולא סתם טבעי.</p>
+
+<p>טרנזיטיביות היא טיפה יותר מעניינת. אם <span>$latex a\equiv_{3}b$</span> אז <span>$latex a-b=3d_{1}$</span>. אם בנוסף <span>$latex b\equiv_{3}c$</span> אז <span>$latex a-c=3d_{2}$</span>. עכשיו נחבר את שתי המשוואות הללו ונקבל</p>
+
+<p><span>$latex a-c=\left(a-b\right)+\left(b-c\right)=3d_{1}+3d_{2}=3\left(d_{1}+d_{2}\right)$</span></p>
+
+<p>וזה מסיים את ההוכחה ואנחנו רואים ש-<span>$latex \equiv_{3}$</span> הוא יחס שקילות.</p>
+
+<p>תכף נחזור לדבר על <span>$latex \equiv_{3}$</span> ספציפית, אבל בואו ננצל את ההזדמנות לראות כמה אפשר להכליל את ההוכחה הזו. ראשית, אין שום קסם במספר 3: לכל <span>$latex n$</span> טבעי ההוכחה ש-<span>$latex \equiv_{n}$</span> הוא יחס שקילות תעבוד באותו אופן בדיוק. שנית, שימו לב באילו תכונות של מספרים שלמים השתמשנו כאן: עבור הרפלקסיביות השתמשנו בכך ש-0 הוא מספר שלם (“קיום איבר אדיש לחיבור”); עבור הסימטריה בכך שאם <span>$latex d$</span> שלם גם <span>$latex -d$</span> שלם (“סגירות לנגדי”); ועבור טרנזיטיביות השתמשנו בכך שאם <span>$latex d_{1},d_{2}$</span> שלמים כך גם <span>$latex d_{1}+d_{2}$</span> (“סגירות לחיבור”). התכונות הללו ניתנות להכללה באופן טבעי במסגרת של <strong>תורת החבורות</strong> וזה מוליד את המושג החשוב של <strong>חבורות מנה</strong> <a href="https://gadial.net/2017/02/08/cosets_and_quotient_groups/">שכבר דיברתי עליו בבלוג</a>; לא אכנס אליו כאן.</p>
+
+<p>עכשיו, בואו נעשה עבור <span>$latex \equiv_{3}$</span> את הדבר הבא: ניקח את 0 ונכתוב את כל מי ששקול ל-0 ביחס הזה. מכיוון ש-0 מתחלק ב-3 ללא שארית, מי ששקולים לו הם בדיוק המספרים שמתחלקים ב-3, כלומר נקבל</p>
+
+<p><span>$latex \left\{ 0,3,6,9,\dots\right\} $</span></p>
+
+<p>עכשיו עבור 1. מהדוגמא של 0 אולי כבר קיבלתם את התחושה לפיה כדי לקבל את מי ששקול ל-1 כדאי להוסיף 3 כל הזמן. נקבל:</p>
+
+<p><span>$latex \left\{ 1,4,7,10,\dots\right\} $</span></p>
+
+<p>ועבור 2 נקבל</p>
+
+<p><span>$latex \left\{ 2,5,8,11\dots\right\} $</span></p>
+
+<p>האם יש עוד קבוצות? ובכן, לא! כל מספר יהיה שקול לאחד משלושת אלו. מדוע? פשוט מאוד. אם <span>$latex a$</span> הוא מספר כלשהו, אז אפשר לחלק אותו ב-3 ולקבל שארית <span>$latex r$</span> - כלומר, <span>$latex a=3q+r$</span> כאשר <span>$latex r\in\left\{ 0,1,2\right\} $</span>. כעת, <span>$latex a-r=3q$</span> ולכן <span>$latex a\equiv_{3}r$</span> - בעצם חזרתי פה על הנימוק הפורמלי לגבי “מחזירים את אותה שארית בחלוקה ב-3”. אם כן, מה שקיבלנו הוא <strong>חלוקה</strong> של המספרים הטבעיים לאוסף של תת-קבוצות זרות (בלי איברים משותפים) ומשלימות (האיחוד שלהם הוא כל הטבעיים).</p>
+
+<p>זו סיטואציה כל כך נפוצה וחשובה כשיש לנו יחסי שקילות, שנותנים לה שם. לכל קבוצה כזו של “כל האיברים ששקולים למישהו” קוראים <strong>מחלקת שקילות</strong> של יחס השקילות. לאוסף של <strong>כל</strong> מחלקות השקילות קוראים <strong>קבוצת המנה</strong> של יחס השקילות. בואו נמצא דרך נוחה לסמן את זה. אם יש לי יחס שקילות <span>$latex R$</span> מעל <span>$latex A$</span> ו-<span>$latex a\in A$</span> הוא איבר של <span>$latex A$</span>, אני מסמן בתור <span>$latex \left[a\right]_{R}$</span> את מחלקת השקילות של <span>$latex a$</span>, כלומר את</p>
+
+<p><span>$latex \left[a\right]_{R}\triangleq\left\{ b\in A\ |\ \left(a,b\right)\in R\right\} $</span></p>
+
+<p>על פי רוב אני פשוט אכתוב <span>$latex \left[a\right]$</span> כשהיחס ברור מההקשר. בדוגמא של <span>$latex \equiv_{3}$</span>:</p>
+
+<p><span>$latex \left[0\right]=\left\{ 0,3,6,9,\dots\right\} $</span></p>
+
+<p><span>$latex \left[1\right]=\left\{ 1,4,7,10,\dots\right\} $</span></p>
+
+<p><span>$latex \left[2\right]=\left\{ 2,5,8,11\dots\right\} $</span></p>
+
+<p>שימו לב שבאותה מידה גם <span>$latex \left[8\right]=\left\{ 2,5,8,11\dots\right\} $</span>, למשל. <strong>כל</strong> איבר ששייך למחלקת השקילות יכול לתאר אותה ככה. אם אני כותב מחלקת שקילות בתור <span>$latex \left[a\right]$</span>, אני אומר ש-<span>$latex a$</span> הוא <strong>נציג</strong> של המחלקה.</p>
+
+<p>עכשיו קל לתאר את קבוצת המנה. אם <span>$latex A$</span> היא קבוצה ו-<span>$latex R$</span> יחס שקילות מעליה, אז קבוצת המנה היא</p>
+
+<p><span>$latex A/R\triangleq\left\{ \left[a\right]_{R}\ |\ a\in A\right\} $</span></p>
+
+<p>שימו לב שזו דוגמא לשימוש בכך שבכתיבת קבוצה אפשר לכתוב את אותו איבר כמה פעמים שונות וזה נספר רק פעם אחת. כי למשל, כשאני משתמש בכתיב הזה כדי לתאר את קבוצת המנה של שקילות מודולו 3 אני מקבל</p>
+
+<p><span>$latex \mathbb{N}/\equiv_{3}=\left\{ \left[0\right],\left[1\right],\left[2\right],\left[3\right],\left[4\right],\left[5\right],\dots\right\} =\left\{ \left[0\right],\left[1\right],\left[2\right]\right\} $</span></p>
+
+<p>כלומר, קבוצת המנה אולי נראית אינסופית במבט ראשון, אבל היא בעצם קבוצה סופית של שלושה איברים (זה לא תמיד ככה; קבוצות מנה בהחלט יכולות להיות גם אינסופיות).</p>
+
+<p>נקודה אחרונה לפני שנעבור לשימוש של זה: אני עדיין רוצה להשתכנע שהדבר הזה קיים בכלל. אחרי האסון של הפרדוקס של ראסל, כל בניה של קבוצה חדשה היא משהו שאני מנסה לראות איך הוא נובע ישירות מהאקסיומות של תורת הקבוצות. יחסי שקילות בוודאי קיימים במובן זה שראינו שיחסים באופן כללי קיימים: כלומר, אם <span>$latex A$</span> קיימת גם <span>$latex A\times A$</span> קיימת ולכן גם תת-קבוצות של <span>$latex A\times A$</span> שאני יכול לתאר עם קריטריון ברור קיימות. בנוסף, אם <span>$latex a\in A$</span> הוא איבר אז הקבוצה <span>$latex \left[a\right]_{R}$</span> היא תת-קבוצה של <span>$latex A$</span> שמוגדרת עם קריטריון ברור ולכן גם היא קיימת. אבל מה עם קבוצת המנה, <span>$latex A/R$</span>? ובכן, גם זה קל: <span>$latex A/R$</span> היא אוסף של תת-קבוצות של <span>$latex A$</span>, ולכן היא בעצמה תת-קבוצה של קבוצת החזקה <span>$latex \mathcal{P}\left(A\right)$</span>. כלומר, <strong>אקסיומת קבוצת החזקה</strong> עושה את העבודה במקרה הזה.</p>
+
+<p>בואו ניקח את כל זה ונשתמש בו כדי לבנות את המספרים הרציונליים, <span>$latex \mathbb{Q}$</span>. ואני מזהיר שהבניה הזו לוקה בחסר מסויים - אני לא אגדיר את פעולות החשבון על <span>$latex \mathbb{Q}$</span> אלא רק את האיברים עצמם. <a href="https://gadial.net/2018/01/30/rings_of_fractions/">יש לי כבר פוסט</a> שמטפל גם בהיבטים הללו של הבניה בתוך הקשר כללי יותר.</p>
+
+<p>ובכן, בפוסט הקודם אמרתי שאפשר “להגדיר” את הרציונליים כך בצורה שלא עובדת: <span>$latex \mathbb{Q}\triangleq\left\{ \frac{a}{b}\ |\ a,b\in\mathbb{Z},b\ne0\right\} $</span>. הצורה הזו לא עובדת כי הביטוי <span>$latex \frac{a}{b}$</span> לא באמת מוגדר - זה לא אובייקט שקיים בעולם המתמטי שאנחנו מכירים, ויש בו הנחות מובלעות כמו זו ש-<span>$latex \frac{1}{2}=\frac{2}{4}$</span>. אז הנה משהו פורמלי יותר. אני אגדיר את הקבוצה <span>$latex A=\left\{ \left(a,b\right)\ |\ a,b\in\mathbb{Z},b\ne0\right\} $</span> של זוגות סדורים (היא בוודאי קיימת; זו תת קבוצה של <span>$latex \mathbb{Z}\times\mathbb{Z}$</span>). על הקבוצה הזו אגדיר יחס שקילות שיזהה דברים כמו <span>$latex \frac{1}{2}=\frac{2}{4}$</span>.</p>
+
+<p>לשם כך, בואו נשאל את עצמנו שאלה - באופן כללי, מתי <span>$latex \frac{a}{b}=\frac{c}{d}$</span>? החשבון שלומדים בבית הספר היסודי אומר לנו שאפשר לכפול את שני האגפים ב-<span>$latex bd$</span> ולקבל <span>$latex ad=bc$</span>, אז זה יהיה יחס השקילות שלי: <span>$latex R=\left\{ \left(\left(a,b\right),\left(c,d\right)\right)\ |\ ad=bc\right\} $</span> (שימו לב - זה יחס שקילות על הקבוצה <span>$latex A$</span> שהיא <strong>מראש </strong>קבוצה של זוגות; כלומר, <span>$latex R$</span> הוא אוסף זוגות של זוגות). צריך כמובן להשתכנע בכך ש-<span>$latex R$</span> הוא יחס שקילות. הוא רפלקסיבי כי <span>$latex ab=ba$</span> ולכן <span>$latex \left(\left(a,b\right),\left(a,b\right)\right)\in R$</span>. הוא סימטרי כי אם <span>$latex ad=bc$</span> אז גם <span>$latex cb=da$</span>, והוא טרנזיטיבי כי… כי… טוב, אולי כדאי שאקח עוד פסקה בשביל זה ונעבוד במסודר.</p>
+
+<p>אם <span>$latex \left(a,b\right)$</span> שקול ל-<span>$latex \left(c,d\right)$</span> אז <span>$latex ad=bc$</span>.</p>
+
+<p>אם <span>$latex \left(c,d\right)$</span> שקול ל-<span>$latex \left(x,y\right)$</span> אז <span>$latex cy=dx$</span>.</p>
+
+<p>אנחנו רוצים לראות ש-<span>$latex ay=bx$</span>. אז בואו ננסה “לחשב” את זה. מכיוון ש-<span>$latex d\ne0$</span> אפשר לחלק בו ולקבל מ-<span>$latex ad=bc$</span> את <span>$latex a=\frac{bc}{d}$</span>. על כן <span>$latex ay=\frac{bcy}{d}$</span> ומכיוון ש-<span>$latex cy=dx$</span> נקבל <span>$latex \frac{bcy}{d}=\frac{bdx}{d}=bx$</span>, כפי שרצינו. זה מסיים גם את הטרנזיטיביות.</p>
+
+<p>עכשיו אפשר להגדיר <span>$latex \mathbb{Q}\triangleq A/R$</span> וסיימנו את בניית הרציונלים! חוץ מאשר הרמאות הבוטה שבה נקטתי פה ובטח חלקכם כבר זועמים עליה. כשהגדרתי את <span>$latex \mathbb{Z}$</span> הייתי כזה “כן כן אני אגדיר רק את הקבוצה עצמה ולא אגדיר עליה פעולות חשבון, את זה עושים באלגברה” אבל הנה, עכשיו בהגדרה של <span>$latex \mathbb{Q}$</span> <strong>השתמשתי</strong> בפעולת חשבון כזו על <span>$latex \mathbb{Z}$</span> - פעולת הכפל. זו, כמובן, הונאה; יש לי עכשיו חור בהגדרה שאצטרך להשלים בהמשך ולהיזהר ששום דבר לא יהיה מעגלי (ספוילר: אני אצליח).</p>
+
+<p>מה השלב הבא? לבנות את הממשיים, <span>$latex \mathbb{R}$</span>, מתוך <span>$latex \mathbb{Q}$</span>. יש שתי דרכים נפוצות לעשות את זה - הדרך של קנטור והדרך של דדקינד. הדרך של קנטור מקסימה ויפהפיה ובעלת הכללות מרחיקות לכת ומתבססת על יחסי שקילות, ואני… לא הולך להיכנס אליה כאן, כי היא גם מצריכה חדו”א, ומצריכה דיבור על <strong>סדרות</strong> שהן מושג שטרם הגדרתי. תחת זאת אדבר על ההגדרה של דדקינד, שמתבססת על קבוצות ועל <strong>יחסי סדר</strong> שהם הנושא שאדבר עליו בפוסט הבא.</p>
+
+  </div>
+
+  <hr />
+  <p>
+    נהניתם? התעניינתם? אם תרצו, אתם מוזמנים לתת טיפ:
+  </p>
+  <a href='https://ko-fi.com/H2H5XFBQ' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a><div class="PageNavigation">
+    
+      <a class="prev" href="/2019/12/11/new_quadratic_formula_proof_not/">&laquo; האם התגלתה שיטה חדשה לפתרון משוואה ריבועית? (לא)</a>
+    
+    
+  </div><div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://gadial.net/2020/01/06/equivalence_relations/';
+      this.page.identifier = 'http://gadial.net/2020/01/06/equivalence_relations/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://not-precise.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/2020/01/06/equivalence_relations/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">לא מדויק</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">לא מדויק</li><li><a class="u-email" href="mailto:gadial@gmail.com">gadial@gmail.com</a></li><li>&copy; כל הזכויות שמורות לגדי אלכסנדרוביץ'</li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://www.facebook.com/%D7%9C%D7%90-%D7%9E%D7%93%D7%95%D7%99%D7%A7-163347110378474"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#facebook"></use></svg> <span class="username">לא מדויק</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>RSS</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>בלוג על מתמטיקה ומדעי המחשב</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery-slim.min.js"><\/script>')</script><script src="/assets/js/bootstrap.bundle.js"></script><!-- Default Statcounter code for New blog
+http://www.gadial.net/ -->
+<script type="text/javascript">
+  var sc_project=5444342; 
+  var sc_invisible=1; 
+  var sc_security="4a89cbe4"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="https://c.statcounter.com/5444342/0/4a89cbe4/1/"
+  alt="Web Analytics"></a></div></noscript>
+  <!-- End of Statcounter Code --></body>
+
+</html>

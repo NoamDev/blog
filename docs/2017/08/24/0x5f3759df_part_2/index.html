@@ -172,7 +172,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <div class="code-block">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">i</span> <span class="o">=</span> <span class="o">*</span> <span class="p">(</span> <span class="kt">long</span> <span class="o">*</span> <span class="p">)</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">y</span><span class="p">;</span> <span class="c1">// evil floating point bit level hacking</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">i</span> <span class="o">=</span> <span class="o">*</span> <span class="p">(</span> <span class="kt">long</span> <span class="o">*</span> <span class="p">)</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">;</span> <span class="c1">// evil floating point bit level hacking</span></code></pre></figure>
 
 </div>
 
@@ -200,7 +200,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <div class="code-block">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">i</span> <span class="o">=</span> <span class="mh">0x5f3759df</span> <span class="o">-</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">1</span> <span class="p">);</span> <span class="c1">// what the fuck?</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">i</span> <span class="o">=</span> <span class="mh">0x5f3759df</span> <span class="o">-</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="p">);</span> <span class="c1">// what the fuck?</span></code></pre></figure>
 
 </div>
 
@@ -246,7 +246,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <div class="code-block">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">y</span> <span class="o">=</span> <span class="o">*</span> <span class="p">(</span> <span class="kt">float</span> <span class="o">*</span> <span class="p">)</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">i</span><span class="p">;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">y</span> <span class="o">=</span> <span class="o">*</span> <span class="p">(</span> <span class="kt">float</span> <span class="o">*</span> <span class="p">)</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span></code></pre></figure>
 
 </div>
 
@@ -254,7 +254,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <div class="code-block">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">i</span> <span class="o">=</span> <span class="mh">0x5f3759df</span> <span class="o">-</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">1</span> <span class="p">);</span> <span class="c1">// what the fuck?</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">i</span> <span class="o">=</span> <span class="mh">0x5f3759df</span> <span class="o">-</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="p">);</span> <span class="c1">// what the fuck?</span></code></pre></figure>
 
 </div>
 

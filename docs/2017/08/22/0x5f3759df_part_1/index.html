@@ -216,9 +216,9 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <div class="code-block">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">i</span> <span class="o">=</span> <span class="o">*</span> <span class="p">(</span> <span class="kt">long</span> <span class="o">*</span> <span class="p">)</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">y</span><span class="p">;</span> <span class="c1">// evil floating point bit level hacking</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mh">0x5f3759df</span> <span class="o">-</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">1</span> <span class="p">);</span> <span class="c1">// what the fuck?</span>
-<span class="n">y</span> <span class="o">=</span> <span class="o">*</span> <span class="p">(</span> <span class="kt">float</span> <span class="o">*</span> <span class="p">)</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">i</span><span class="p">;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">i</span> <span class="o">=</span> <span class="o">*</span> <span class="p">(</span> <span class="kt">long</span> <span class="o">*</span> <span class="p">)</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">;</span> <span class="c1">// evil floating point bit level hacking</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mh">0x5f3759df</span> <span class="o">-</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="p">);</span> <span class="c1">// what the fuck?</span>
+<span class="n">y</span> <span class="o">=</span> <span class="o">*</span> <span class="p">(</span> <span class="kt">float</span> <span class="o">*</span> <span class="p">)</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span></code></pre></figure>
 
 </div>
 
@@ -226,7 +226,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>ואז מגיעה השורה האמצעית. דווקא אותה די קל להבין, אבל צריך להכיר את הסימונים. ראשית, הקבוע המסתורי 0x5f3759df. הקבוע הזה הוא בסך הכל דרך ייצוג מקובלת למספר השלם 1597463007, כאשר כותבים אותו ב<strong>בסיס הקסדצימלי</strong>, כלומר <a href="http://www.gadial.net/2017/06/11/number_bases/">בסיס ספירה</a> שבו יש לנו 16 ספרות. ה-0x בהתחלה הוא האופן הסטנדרטי שבו מודיעים לשפת C “הנה עכשיו אני מביא לך מספר בבסיס 16 ולא בבסיס 10 כמו בדרך כלל” וה-d,f הללו שנמצאים שם הם פשוט הספרות עבור 13 ו-15.</p>
 
-<p>קצת יותר מסתורי ה-i &gt;&gt; 1 הזה. אני אסביר בהמשך למה בדיוק משתמשים בסימון הזה, אבל המשמעות שלו פשוטה - זו חלוקה ב-2. אם כן, כל מה שהשורה הקסומה הזו עושה הוא לקחת את הקבוע 0x5f3759df ולהפחית ממנו את “הקלט של הפונקציה שלנו כאשר הוא מתפרש איכשהו בתור מספר שלם ומחולק ב-2”.</p>
+<p>קצת יותר מסתורי ה-i » 1 הזה. אני אסביר בהמשך למה בדיוק משתמשים בסימון הזה, אבל המשמעות שלו פשוטה - זו חלוקה ב-2. אם כן, כל מה שהשורה הקסומה הזו עושה הוא לקחת את הקבוע 0x5f3759df ולהפחית ממנו את “הקלט של הפונקציה שלנו כאשר הוא מתפרש איכשהו בתור מספר שלם ומחולק ב-2”.</p>
 
 <p>למה? למה עושים דבר מוזר כזה? בשביל מה?</p>
 

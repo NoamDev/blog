@@ -78,7 +78,7 @@
 \begin_body
 
 \begin_layout Title
-תורת הקבוצות - יחסי שקילות וסדר
+תורת הקבוצות - יחסי סדר
 \end_layout
 
 \begin_layout Description
@@ -86,2483 +86,26 @@
 \end_layout
 
 \begin_layout Description
-תגים: תורת הקבוצות, יחסים, יחסי שקילות, יחסי סדר, חתכי דדקינד
+תגים: תורת הקבוצות, יחסים, יחסי סדר, חתכי דדקינד
 \end_layout
 
 \begin_layout Description
 מזהה: 
 \lang english
-equivalence_and_order_relations
+order_relations
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset href
 LatexCommand href
 name "בפוסט הקודם"
-target "https://gadial.net/2019/10/21/intro_to_relations/"
+target "https://gadial.net/2020/01/06/equivalence_relations/"
 literal "false"
 
 \end_inset
 
- על תורת הקבוצות הצגתי את המושג של 
-\series bold
-יחס
-\series default
-.
- פורמלית, יחס מקבוצה 
-\begin_inset Formula $A$
-\end_inset
-
- לקבוצה 
-\begin_inset Formula $B$
-\end_inset
-
- היה תת-קבוצה של זוגות : 
-\begin_inset Formula $R\subseteq A\times B$
-\end_inset
-
-.
- בפוסט הזה אני רוצה לדבר ספציפית על המקרה שבו 
-\begin_inset Formula $A=B$
-\end_inset
-
- )ואז אומרים שהיחס 
-\begin_inset Formula $R$
-\end_inset
-
- הוא 
-\begin_inset Quotes eld
-\end_inset
-
-מעל 
-\begin_inset Formula $A$
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
-( ולדבר על שני סוגים מועילים במיוחד של יחסים - 
-\series bold
-יחסי שקילות
-\series default
- ו
-\series bold
-יחסי סדר
-\series default
-.
- קודם כל נגדיר אותם בצורה יבשה ואז נבין את המשמעות שלהם, אבל האינטואיציה
- היא פשוטה יחסית - יחס שקילות הוא הכללה של שוויון, שאפשר לתאר בתור 
-\begin_inset Quotes eld
-\end_inset
-
-שוויון עד כדי פרטים שלא רלוונטיים לנו
-\begin_inset Quotes erd
-\end_inset
-
-, ואילו יחס סדר הוא הכללה של ה
-\begin_inset Quotes eld
-\end_inset
-
-גדול-שווה
-\begin_inset Quotes erd
-\end_inset
-
- שאנחנו מכירים ממספרים.
-\end_layout
-
-\begin_layout Section
-יחסי שקילות
-\end_layout
-
-\begin_layout Standard
-בואו נתחיל מלהבין מה התכונות של שוויון.
- ראשית, יש את מה שנקרא בפילוסופיה 
-\begin_inset Quotes eld
-\end_inset
-
-חוק הזהות
-\begin_inset Quotes erd
-\end_inset
-
-.
- בניסוח שלנו הוא בסך הכל אומר ש-
-\begin_inset Formula $a=a$
-\end_inset
-
- לכל איבר 
-\begin_inset Formula $a$
-\end_inset
-
-.
- שנית, יש לנו את אחת מטענות הבסיס של אוקלידס - 
-\begin_inset Quotes eld
-\end_inset
-
-דברים השווים לאותו דבר שווים זה לזה
-\begin_inset Quotes erd
-\end_inset
-
-, שאפשר לנסח כך: אם 
-\begin_inset Formula $a=b$
-\end_inset
-
- וגם 
-\begin_inset Formula $b=c$
-\end_inset
-
- אז 
-\begin_inset Formula $a=c$
-\end_inset
-
-.
- פרט לכך, לשוויון לא אכפת מהסדר שבו כותבים דברים: אם 
-\begin_inset Formula $a=b$
-\end_inset
-
- אז אפשר לכתוב גם 
-\begin_inset Formula $b=a$
-\end_inset
-
-.
- באופן מעניין למדי, שלוש התכונות הללו הן הדברים המהותיים שנזדקק להם כדי
- לקבל דברים מעניינים נוספים 
-\series bold
-שאינם
-\series default
- שוויון.
-\end_layout
-
-\begin_layout Standard
-בואו נגדיר את זה פורמלית, עבור יחס 
-\begin_inset Formula $R\subseteq A\times A$
-\end_inset
-
- כללי:
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset Formula $R$
-\end_inset
-
- הוא 
-\series bold
-רפלקסיבי
-\series default
- אם לכל 
-\begin_inset Formula $a\in A$
-\end_inset
-
- מתקיים 
-\begin_inset Formula $\left(a,a\right)\in R$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset Formula $R$
-\end_inset
-
- הוא 
-\series bold
-סימטרי
-\series default
- אם 
-\begin_inset Formula $\left(a,b\right)\in R$
-\end_inset
-
- גורר 
-\begin_inset Formula $\left(b,a\right)\in R$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset Formula $R$
-\end_inset
-
- הוא 
-\series bold
-טרנזיטיבי
-\series default
- אם 
-\begin_inset Formula $\left(a,b\right)\in R$
-\end_inset
-
- וגם 
-\begin_inset Formula $\left(b,c\right)\in R$
-\end_inset
-
- גורר 
-\begin_inset Formula $\left(a,c\right)\in R$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-יחס שהוא בו זמנית רפלקסיבי, סימטרי וטרנזיטיבי נקרא 
-\series bold
-יחס שקילות
-\series default
- מעל 
-\begin_inset Formula $A$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-מתבקשת כאן דוגמא.
- אני אתן אחת שאינה פשוטה במיוחד, אבל היא חשובה מאוד בפני עצמה - אחד מיחסי
- השקילות המועילים ביותר במתמטיקה.
- אגדיר אותו על 
-\begin_inset Formula $\mathbb{N}$
-\end_inset
-
- למרות שאפשר גם על 
-\begin_inset Formula $\mathbb{Z}$
-\end_inset
-
-.
- נתחיל עם מקרה פרטי פשוט: אנחנו יודעים שאפשר לחלק את 
-\begin_inset Formula $\mathbb{N}$
-\end_inset
-
- ל
-\series bold
-זוגיים
-\series default
- ו
-\series bold
-אי-זוגיים
-\series default
-.
- מספר זוגי הוא מספר שמתחלק ב-
-\numeric on
-2
-\numeric off
-; מספר אי זוגי הוא מספר שאינו מתחלק ב-
-\numeric on
-2
-\numeric off
-.
- יחס השקילות שלי ניתן כעת לתיאור בתור 
-\begin_inset Quotes eld
-\end_inset
-
-ל-
-\begin_inset Formula $a$
-\end_inset
-
- ו-
-\begin_inset Formula $b$
-\end_inset
-
- אותה זוגיות
-\begin_inset Quotes erd
-\end_inset
-
- )כלומר - או שהם שניהם זוגיים, או שהם שניהם אי זוגיים(.
-\end_layout
-
-\begin_layout Standard
-הנה מקרה קצת יותר מתוחכם - חלוקה ב-
-\numeric on
-3
-\numeric off
-.
- כמקודם, אני יכול לפרק לשתי קבוצות של 
-\begin_inset Quotes eld
-\end_inset
-
-מתחלקים ב-
-\numeric on
-3
-\numeric off
-
-\begin_inset Quotes erd
-\end_inset
-
- ו
-\begin_inset Quotes erd
-\end_inset
-
-לא מתחלקים ב-
-\numeric on
-3
-\numeric off
-
-\begin_inset Quotes erd
-\end_inset
-
-, אבל משתלם לי הרבה יותר לחלק ל-
-\numeric on
-3
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-קבוצות, על פי 
-\series bold
-השארית בחלוקה ב-
-\numeric on
-3
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-של המספר.
- הנה דוגמאות: אם נחלק את
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-13
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-ב-
-\numeric on
-3
-\numeric off
-, התוצאה תהיה מנה
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-4
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-ושארית
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-1
-\numeric off
-, כלומר 
-\begin_inset Formula $4\times3+1=13$
-\end_inset
-
-.
- אם נחלק את
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-15
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-ב-
-\numeric on
-3
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-נקבל מנה
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-5
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-ושארית
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-0
-\numeric off
-.
- אם נחלק את 
-\begin_inset Formula $11$
-\end_inset
-
- ב-
-\numeric on
-3
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-נקבל שארית
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-2
-\numeric off
-.
- שימו לב שהשאריות הן מספרים בין
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-0
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-ל-
-\numeric on
-2
-\numeric off
-; שארית גדולה או שווה ל-
-\numeric on
-3
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-לא ייתכן, כי במקרה כזה אפשר 
-\begin_inset Quotes eld
-\end_inset
-
-לגנוב
-\begin_inset Quotes erd
-\end_inset
-
- מהשארית כדי להגדיל עוד קצת את המנה )כלומר- במקום לומר ש-
-\numeric on
-13
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-זה 
-\begin_inset Formula $3\times3+4$
-\end_inset
-
- אנחנו לוקחים עוד
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-3
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-מהשארית ומגדילים את המנה ל-
-\numeric on
-4
-\numeric off
-(.
- את יחס השקילות הזה אני אכנה 
-\series bold
-שקילות מודולו
-\family roman
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-3
-\series default
-\numeric off
-.
-\end_layout
-
-\begin_layout Standard
-אני יכול כעת לנסח את יחס השקילות שלי בתור 
-\begin_inset Formula $\left(a,b\right)\in R$
-\end_inset
-
- אם ורק אם ל-
-\begin_inset Formula $a$
-\end_inset
-
- ו-
-\begin_inset Formula $b$
-\end_inset
-
- אותה שארית בחלוקה ל-
-\numeric on
-3
-\numeric off
-.
- אבל זה ניסוח קצת מילולי ומסורבל.
- הנה משהו פשוט יותר.
- בפוסט הקודם הגדרתי את יחס ה
-\series bold
-חלוקה
-\series default
- שעוד נפגוש שוב גם בפוסט הזה.
- סימנתי אותו 
-\begin_inset Formula $a|b$
-\end_inset
-
-.
- המשמעות שלו היא זו: קיים 
-\begin_inset Formula $d\in\mathbb{Z}$
-\end_inset
-
- )שימו לב שכאן אני מרשה ל-
-\begin_inset Formula $d$
-\end_inset
-
- להיות שלילי( כך ש-
-\begin_inset Formula $ad=b$
-\end_inset
-
-.
- כעת, בעזרת יחס החלוקה אני יכול להגדיר את היחס החדש שלי: אסמן 
-\begin_inset Formula $a\equiv_{3}b$
-\end_inset
-
- אם ורק אם 
-\begin_inset Formula $3|a-b$
-\end_inset
-
-.
- למשל, 
-\begin_inset Formula $5\equiv_{3}11$
-\end_inset
-
- כי 
-\begin_inset Formula $5-11=-6$
-\end_inset
-
- ולכן 
-\begin_inset Formula $d=-2$
-\end_inset
-
- יעשה את העבודה.
-\end_layout
-
-\begin_layout Standard
-יחסית פשוט לראות ש-
-\begin_inset Formula $3|a-b$
-\end_inset
-
- באמת רק אם השארית ש-
-\begin_inset Formula $a,b$
-\end_inset
-
- משאירים בחלוקה ב-
-\numeric on
-3
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-היא זהה.
- כי אפשר לכתוב 
-\begin_inset Formula $a=3q_{a}+r_{a}$
-\end_inset
-
- ו-
-\begin_inset Formula $b=3q_{b}+r_{b}$
-\end_inset
-
- ואז 
-\begin_inset Formula $a-b=3\left(q_{a}-q_{b}\right)+\left(r_{a}-r_{b}\right)$
-\end_inset
-
-.
- מכיוון ש-
-\numeric on
-3
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-מחלק את 
-\begin_inset Formula $3\left(q_{a}-q_{b}\right)$
-\end_inset
-
- הוא יצטרך לחלק גם את 
-\begin_inset Formula $\left(r_{a}-r_{b}\right)$
-\end_inset
-
- וקל לבדוק את כל המקרים )כי כל שארית היא או
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-0
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-או
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-1
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-או
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-2
-\numeric off
-( ולראות שרק אם 
-\begin_inset Formula $r_{a}=r_{b}$
-\end_inset
-
- זה אפשרי.
-\end_layout
-
-\begin_layout Standard
-אני רוצה להוכיח ש-
-\begin_inset Formula $\equiv_{3}$
-\end_inset
-
- הוא יחס שקילות.
- רפלקסיביות היא מיידית: לכל 
-\begin_inset Formula $a$
-\end_inset
-
- טבעי, 
-\begin_inset Formula $a-a=0$
-\end_inset
-
- וכמובן שזה מתחלק ב-
-\numeric on
-3
-\numeric off
-.
- גם סימטריה היא ברורה: אם 
-\begin_inset Formula $3|a-b$
-\end_inset
-
-, כלומר קיים 
-\begin_inset Formula $d$
-\end_inset
-
- שלם כך ש-
-\begin_inset Formula $3d=a-b$
-\end_inset
-
-, אז 
-\begin_inset Formula $b-a=3\left(-d\right)$
-\end_inset
-
-.
- שימו לב שכאן בא לידי ביטוי הצורך שלי ש-
-\begin_inset Formula $d$
-\end_inset
-
- יהיה שלם ולא סתם טבעי.
-\end_layout
-
-\begin_layout Standard
-טרנזיטיביות היא טיפה יותר מעניינת.
- אם 
-\begin_inset Formula $a\equiv_{3}b$
-\end_inset
-
- אז 
-\begin_inset Formula $a-b=3d_{1}$
-\end_inset
-
-.
- אם בנוסף 
-\begin_inset Formula $b\equiv_{3}c$
-\end_inset
-
- אז 
-\begin_inset Formula $a-c=3d_{2}$
-\end_inset
-
-.
- עכשיו נחבר את שתי המשוואות הללו ונקבל 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $a-c=\left(a-b\right)+\left(b-c\right)=3d_{1}+3d_{2}=3\left(d_{1}+d_{2}\right)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-וזה מסיים את ההוכחה ואנחנו רואים ש-
-\begin_inset Formula $\equiv_{3}$
-\end_inset
-
- הוא יחס שקילות.
-\end_layout
-
-\begin_layout Standard
-תכף נחזור לדבר על 
-\begin_inset Formula $\equiv_{3}$
-\end_inset
-
- ספציפית, אבל בואו ננצל את ההזדמנות לראות כמה אפשר להכליל את ההוכחה הזו.
- ראשית, אין שום קסם במספר
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-3
-\numeric off
-: לכל 
-\begin_inset Formula $n$
-\end_inset
-
- טבעי ההוכחה ש-
-\begin_inset Formula $\equiv_{n}$
-\end_inset
-
- הוא יחס שקילות תעבוד באותו אופן בדיוק.
- שנית, שימו לב באילו תכונות של מספרים שלמים השתמשנו כאן: עבור הרפלקסיביות
- השתמשנו בכך ש-
-\numeric on
-0
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-הוא מספר שלם )
-\begin_inset Quotes erd
-\end_inset
-
-קיום איבר אדיש לחיבור
-\begin_inset Quotes erd
-\end_inset
-
-(; עבור הסימטריה בכך שאם 
-\begin_inset Formula $d$
-\end_inset
-
- שלם גם 
-\begin_inset Formula $-d$
-\end_inset
-
- שלם )
-\begin_inset Quotes erd
-\end_inset
-
-סגירות לנגדי
-\begin_inset Quotes erd
-\end_inset
-
-(; ועבור טרנזיטיביות השתמשנו בכך שאם 
-\begin_inset Formula $d_{1},d_{2}$
-\end_inset
-
- שלמים כך גם 
-\begin_inset Formula $d_{1}+d_{2}$
-\end_inset
-
- )
-\begin_inset Quotes erd
-\end_inset
-
-סגירות לחיבור
-\begin_inset Quotes erd
-\end_inset
-
-(.
- התכונות הללו ניתנות להכללה באופן טבעי במסגרת של 
-\series bold
-תורת החבורות
-\series default
- וזה מוליד את המושג החשוב של 
-\series bold
-חבורות מנה
-\series default
- 
-\begin_inset CommandInset href
-LatexCommand href
-name "שכבר דיברתי עליו בבלוג"
-target "https://gadial.net/2017/02/08/cosets_and_quotient_groups/"
-literal "false"
-
-\end_inset
-
-; לא אכנס אליו כאן.
-\end_layout
-
-\begin_layout Standard
-עכשיו, בואו נעשה עבור 
-\begin_inset Formula $\equiv_{3}$
-\end_inset
-
- את הדבר הבא: ניקח את
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-0
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-ונכתוב את כל מי ששקול ל-
-\numeric on
-0
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-ביחס הזה.
- מכיוון ש-
-\numeric on
-0
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-מתחלק ב-
-\numeric on
-3
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-ללא שארית, מי ששקולים לו הם בדיוק המספרים שמתחלקים ב-
-\numeric on
-3
-\numeric off
-, כלומר נקבל
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\left\{ 0,3,6,9,\dots\right\} $
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-עכשיו עבור
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-1
-\numeric off
-.
- מהדוגמא של
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-0
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-אולי כבר קיבלתם את התחושה לפיה כדי לקבל את מי ששקול ל-
-\numeric on
-1
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-כדאי להוסיף 
-\numeric on
-3
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-כל הזמן.
- נקבל:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\left\{ 1,4,7,10,\dots\right\} $
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-ועבור
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-2
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-נקבל
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\left\{ 2,5,8,11\dots\right\} $
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-האם יש עוד קבוצות? ובכן, לא! כל מספר יהיה שקול לאחד משלושת אלו.
- מדוע? פשוט מאוד.
- אם 
-\begin_inset Formula $a$
-\end_inset
-
- הוא מספר כלשהו, אז אפשר לחלק אותו ב-
-\numeric on
-3
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-ולקבל שארית 
-\begin_inset Formula $r$
-\end_inset
-
- - כלומר, 
-\begin_inset Formula $a=3q+r$
-\end_inset
-
- כאשר 
-\begin_inset Formula $r\in\left\{ 0,1,2\right\} $
-\end_inset
-
-.
- כעת, 
-\begin_inset Formula $a-r=3q$
-\end_inset
-
- ולכן 
-\begin_inset Formula $a\equiv_{3}r$
-\end_inset
-
- - בעצם חזרתי פה על הנימוק הפורמלי לגבי 
-\begin_inset Quotes eld
-\end_inset
-
-מחזירים את אותה שארית בחלוקה ב-
-\numeric on
-3
-\numeric off
-
-\begin_inset Quotes erd
-\end_inset
-
-.
- אם כן, מה שקיבלנו הוא 
-\series bold
-חלוקה
-\series default
- של המספרים הטבעיים לאוסף של תת-קבוצות זרות )בלי איברים משותפים( ומשלימות
- )האיחוד שלהם הוא כל הטבעיים(.
-\end_layout
-
-\begin_layout Standard
-זו סיטואציה כל כך נפוצה וחשובה כשיש לנו יחסי שקילות, שנותנים לה שם.
- לכל קבוצה כזו של 
-\begin_inset Quotes eld
-\end_inset
-
-כל האיברים ששקולים למישהו
-\begin_inset Quotes erd
-\end_inset
-
- קוראים 
-\series bold
-מחלקת שקילות
-\series default
- של יחס השקילות.
- לאוסף של 
-\series bold
-כל
-\series default
- מחלקות השקילות קוראים 
-\series bold
-קבוצת המנה
-\series default
- של יחס השקילות.
- בואו נמצא דרך נוחה לסמן את זה.
- אם יש לי יחס שקילות 
-\begin_inset Formula $R$
-\end_inset
-
- מעל 
-\begin_inset Formula $A$
-\end_inset
-
- ו-
-\begin_inset Formula $a\in A$
-\end_inset
-
- הוא איבר של 
-\begin_inset Formula $A$
-\end_inset
-
-, אני מסמן בתור 
-\begin_inset Formula $\left[a\right]_{R}$
-\end_inset
-
- את מחלקת השקילות של 
-\begin_inset Formula $a$
-\end_inset
-
-, כלומר את
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\left[a\right]_{R}\triangleq\left\{ b\in A\ |\ \left(a,b\right)\in R\right\} $
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-על פי רוב אני פשוט אכתוב 
-\begin_inset Formula $\left[a\right]$
-\end_inset
-
- כשהיחס ברור מההקשר.
- בדוגמא של 
-\begin_inset Formula $\equiv_{3}$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\left[0\right]=\left\{ 0,3,6,9,\dots\right\} $
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\left[1\right]=\left\{ 1,4,7,10,\dots\right\} $
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\left[2\right]=\left\{ 2,5,8,11\dots\right\} $
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-שימו לב שבאותה מידה גם 
-\begin_inset Formula $\left[8\right]=\left\{ 2,5,8,11\dots\right\} $
-\end_inset
-
-, למשל.
- 
-\series bold
-כל
-\series default
- איבר ששייך למחלקת השקילות יכול לתאר אותה ככה.
- אם אני כותב מחלקת שקילות בתור 
-\begin_inset Formula $\left[a\right]$
-\end_inset
-
-, אני אומר ש-
-\begin_inset Formula $a$
-\end_inset
-
- הוא 
-\series bold
-נציג
-\series default
- של המחלקה.
-\end_layout
-
-\begin_layout Standard
-עכשיו קל לתאר את קבוצת המנה.
- אם 
-\begin_inset Formula $A$
-\end_inset
-
- היא קבוצה ו-
-\begin_inset Formula $R$
-\end_inset
-
- יחס שקילות מעליה, אז קבוצת המנה היא
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $A/R\triangleq\left\{ \left[a\right]_{R}\ |\ a\in A\right\} $
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-שימו לב שזו דוגמא לשימוש בכך שבכתיבת קבוצה אפשר לכתוב את אותו איבר כמה פעמים
- שונות וזה נספר רק פעם אחת.
- כי למשל, כשאני משתמש בכתיב הזה כדי לתאר את קבוצת המנה של שקילות מודולו
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-3
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-אני מקבל
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\mathbb{N}/\equiv_{3}=\left\{ \left[0\right],\left[1\right],\left[2\right],\left[3\right],\left[4\right],\left[5\right],\dots\right\} =\left\{ \left[0\right],\left[1\right],\left[2\right]\right\} $
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-כלומר, קבוצת המנה אולי נראית אינסופית במבט ראשון, אבל היא בעצם קבוצה סופית
- של שלושה איברים )זה לא תמיד ככה; קבוצות מנה בהחלט יכולות להיות גם אינסופיות(.
-\end_layout
-
-\begin_layout Standard
-נקודה אחרונה לפני שנעבור לשימוש של זה: אני עדיין רוצה להשתכנע שהדבר הזה
- קיים בכלל.
- אחרי האסון של הפרדוקס של ראסל, כל בניה של קבוצה חדשה היא משהו שאני מנסה
- לראות איך הוא נובע ישירות מהאקסיומות של תורת הקבוצות.
- יחסי שקילות בוודאי קיימים במובן זה שראינו שיחסים באופן כללי קיימים: כלומר,
- אם 
-\begin_inset Formula $A$
-\end_inset
-
- קיימת גם 
-\begin_inset Formula $A\times A$
-\end_inset
-
- קיימת ולכן גם תת-קבוצות של 
-\begin_inset Formula $A\times A$
-\end_inset
-
- שאני יכול לתאר עם קריטריון ברור קיימות.
- בנוסף, אם 
-\begin_inset Formula $a\in A$
-\end_inset
-
- הוא איבר אז הקבוצה 
-\begin_inset Formula $\left[a\right]_{R}$
-\end_inset
-
- היא תת-קבוצה של 
-\begin_inset Formula $A$
-\end_inset
-
- שמוגדרת עם קריטריון ברור ולכן גם היא קיימת.
- אבל מה עם קבוצת המנה, 
-\begin_inset Formula $A/R$
-\end_inset
-
-? ובכן, גם זה קל: 
-\begin_inset Formula $A/R$
-\end_inset
-
- היא אוסף של תת-קבוצות של 
-\begin_inset Formula $A$
-\end_inset
-
-, ולכן היא בעצמה תת-קבוצה של קבוצת החזקה 
-\begin_inset Formula $\mathcal{P}\left(A\right)$
-\end_inset
-
-.
- כלומר, 
-\series bold
-אקסיומת קבוצת החזקה
-\series default
- עושה את העבודה במקרה הזה.
-\end_layout
-
-\begin_layout Standard
-בואו ניקח את כל זה ונשתמש בו כדי לבנות את המספרים הרציונליים, 
-\begin_inset Formula $\mathbb{Q}$
-\end_inset
-
-.
- ואני מזהיר שהבניה הזו לוקה בחסר מסויים - אני לא אגדיר את פעולות החשבון
- על 
-\begin_inset Formula $\mathbb{Q}$
-\end_inset
-
- אלא רק את האיברים עצמם.
- 
-\begin_inset CommandInset href
-LatexCommand href
-name "יש לי כבר פוסט"
-target "https://gadial.net/2018/01/30/rings_of_fractions/"
-literal "false"
-
-\end_inset
-
- שמטפל גם בהיבטים הללו של הבניה בתוך הקשר כללי יותר.
-\end_layout
-
-\begin_layout Standard
-ובכן, בפוסט הקודם אמרתי שאפשר 
-\begin_inset Quotes eld
-\end_inset
-
-להגדיר
-\begin_inset Quotes erd
-\end_inset
-
- את הרציונליים כך בצורה שלא עובדת: 
-\begin_inset Formula $\mathbb{Q}\triangleq\left\{ \frac{a}{b}\ |\ a,b\in\mathbb{Z},b\ne0\right\} $
-\end_inset
-
-.
- הצורה הזו לא עובדת כי הביטוי 
-\begin_inset Formula $\frac{a}{b}$
-\end_inset
-
- לא באמת מוגדר - זה לא אובייקט שקיים בעולם המתמטי שאנחנו מכירים, ויש בו
- הנחות מובלעות כמו זו ש-
-\begin_inset Formula $\frac{1}{2}=\frac{2}{4}$
-\end_inset
-
-.
- אז הנה משהו פורמלי יותר.
- אני אגדיר את הקבוצה 
-\begin_inset Formula $A=\left\{ \left(a,b\right)\ |\ a,b\in\mathbb{Z},b\ne0\right\} $
-\end_inset
-
- של זוגות סדורים )היא בוודאי קיימת; זו תת קבוצה של 
-\begin_inset Formula $\mathbb{Z}\times\mathbb{Z}$
-\end_inset
-
-(.
- על הקבוצה הזו אגדיר יחס שקילות שיזהה דברים כמו 
-\begin_inset Formula $\frac{1}{2}=\frac{2}{4}$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-לשם כך, בואו נשאל את עצמנו שאלה - באופן כללי, מתי 
-\begin_inset Formula $\frac{a}{b}=\frac{c}{d}$
-\end_inset
-
-? החשבון שלומדים בבית הספר היסודי אומר לנו שאפשר לכפול את שני האגפים ב-
-\begin_inset Formula $bd$
-\end_inset
-
- ולקבל 
-\begin_inset Formula $ad=bc$
-\end_inset
-
-, אז זה יהיה יחס השקילות שלי: 
-\begin_inset Formula $R=\left\{ \left(\left(a,b\right),\left(c,d\right)\right)\ |\ ad=bc\right\} $
-\end_inset
-
- )שימו לב - זה יחס שקילות על הקבוצה 
-\begin_inset Formula $A$
-\end_inset
-
- שהיא 
-\series bold
-מראש 
-\series default
-קבוצה של זוגות; כלומר, 
-\begin_inset Formula $R$
-\end_inset
-
- הוא אוסף זוגות של זוגות(.
- צריך כמובן להשתכנע בכך ש-
-\begin_inset Formula $R$
-\end_inset
-
- הוא יחס שקילות.
- הוא רפלקסיבי כי 
-\begin_inset Formula $ab=ba$
-\end_inset
-
- ולכן 
-\begin_inset Formula $\left(\left(a,b\right),\left(a,b\right)\right)\in R$
-\end_inset
-
-.
- הוא סימטרי כי אם 
-\begin_inset Formula $ad=bc$
-\end_inset
-
- אז גם 
-\begin_inset Formula $cb=da$
-\end_inset
-
-, והוא טרנזיטיבי כי...
- כי...
- טוב, אולי כדאי שאקח עוד פסקה בשביל זה ונעבוד במסודר.
-\end_layout
-
-\begin_layout Standard
-אם 
-\begin_inset Formula $\left(a,b\right)$
-\end_inset
-
- שקול ל-
-\begin_inset Formula $\left(c,d\right)$
-\end_inset
-
- אז 
-\begin_inset Formula $ad=bc$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-אם 
-\begin_inset Formula $\left(c,d\right)$
-\end_inset
-
- שקול ל-
-\begin_inset Formula $\left(x,y\right)$
-\end_inset
-
- אז 
-\begin_inset Formula $cy=dx$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-אנחנו רוצים לראות ש-
-\begin_inset Formula $ay=bx$
-\end_inset
-
-.
- אז בואו ננסה 
-\begin_inset Quotes eld
-\end_inset
-
-לחשב
-\begin_inset Quotes erd
-\end_inset
-
- את זה.
- מכיוון ש-
-\begin_inset Formula $d\ne0$
-\end_inset
-
- אפשר לחלק בו ולקבל מ-
-\begin_inset Formula $ad=bc$
-\end_inset
-
- את 
-\begin_inset Formula $a=\frac{bc}{d}$
-\end_inset
-
-.
- על כן 
-\begin_inset Formula $ay=\frac{bcy}{d}$
-\end_inset
-
- ומכיוון ש-
-\begin_inset Formula $cy=dx$
-\end_inset
-
- נקבל 
-\begin_inset Formula $\frac{bcy}{d}=\frac{bdx}{d}=bx$
-\end_inset
-
-, כפי שרצינו.
- זה מסיים גם את הטרנזיטיביות.
-\end_layout
-
-\begin_layout Standard
-עכשיו אפשר להגדיר 
-\begin_inset Formula $\mathbb{Q}\triangleq A/R$
-\end_inset
-
- וסיימנו את בניית הרציונלים! חוץ מאשר הרמאות הבוטה שבה נקטתי פה ובטח חלקכם
- כבר זועמים עליה.
- כשהגדרתי את 
-\begin_inset Formula $\mathbb{Z}$
-\end_inset
-
- הייתי כזה 
-\begin_inset Quotes eld
-\end_inset
-
-כן כן אני אגדיר רק את הקבוצה עצמה ולא אגדיר עליה פעולות חשבון, את זה עושים
- באלגברה
-\begin_inset Quotes erd
-\end_inset
-
- אבל הנה, עכשיו בהגדרה של 
-\begin_inset Formula $\mathbb{Q}$
-\end_inset
-
- 
-\series bold
-השתמשתי
-\series default
- בפעולת חשבון כזו על 
-\begin_inset Formula $\mathbb{Z}$
-\end_inset
-
- - פעולת הכפל.
- זו, כמובן, הונאה; יש לי עכשיו חור בהגדרה שאצטרך להשלים בהמשך ולהיזהר ששום
- דבר לא יהיה מעגלי )ספוילר: אני אצליח(.
-\end_layout
-
-\begin_layout Standard
-מה השלב הבא? לבנות את הממשיים, 
-\begin_inset Formula $\mathbb{R}$
-\end_inset
-
-, מתוך 
-\begin_inset Formula $\mathbb{Q}$
-\end_inset
-
-.
- יש שתי דרכים נפוצות לעשות את זה - הדרך של קנטור והדרך של דדקינד.
- הדרך של קנטור מקסימה ויפהפיה ובעלת הכללות מרחיקות לכת ומתבססת על יחסי שקילות,
- ואני...
- לא הולך להיכנס אליה כאן, כי היא גם מצריכה חדו
-\begin_inset Quotes erd
-\end_inset
-
-א, ומצריכה דיבור על 
-\series bold
-סדרות
-\series default
- שהן מושג שטרם הגדרתי.
- תחת זאת אדבר על ההגדרה של דדקינד, שמתבססת על קבוצות ועל 
-\series bold
-יחסי סדר
-\series default
- שהם הנושא השני שרציתי לדבר עליו בפוסט.
-\end_layout
-
-\begin_layout Section
-יחסי סדר
+ דיברתי על יחסי שקילות והבטחתי שהדבר הבא יהיה לדבר על יחסי סדר.
+ אז בואו נדבר על יחסי סדר.
 \end_layout
 
 \begin_layout Standard
@@ -2901,6 +444,132 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+לפני הדוגמאות, עוד נקודה הגדרתית אחת.
+ חוץ מהיחס 
+\begin_inset Quotes eld
+\end_inset
+
+קטן-שווה
+\begin_inset Quotes erd
+\end_inset
+
+ שאנחנו מכירים מהמספרים ומסומן ב-
+\begin_inset Formula $\le$
+\end_inset
+
+ אנחנו מכירים גם את היחס 
+\series bold
+קטן ממש
+\series default
+ שמסומן ב-
+\begin_inset Formula $<$
+\end_inset
+
+.
+ מה הקשר ביניהם? 
+\begin_inset Formula $<$
+\end_inset
+
+ בסך הכל אומר 
+\begin_inset Quotes eld
+\end_inset
+
+קטן ולא שווה
+\begin_inset Quotes erd
+\end_inset
+
+ כלומר 
+\begin_inset Formula $a<b$
+\end_inset
+
+ פירושו 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $a\le b$
+\end_inset
+
+ 
+\series bold
+וגם
+\series default
+ 
+\begin_inset Formula $a\ne b$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+, ובהתאם 
+\begin_inset Formula $a\le b$
+\end_inset
+
+ אומר 
+\begin_inset Quotes eld
+\end_inset
+
+או 
+\begin_inset Formula $a<b$
+\end_inset
+
+ או 
+\begin_inset Formula $a=b$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ כלומר, אם יש לנו את אחד מהיחסים הללו, השני מתקבל ממנו בטבעיות.
+ את 
+\begin_inset Formula $<$
+\end_inset
+
+ אפשר לאפיין בתור יחס שהוא טרנזיטיבי וא-רפלקסיבי, כלומר 
+\begin_inset Formula $\left(a,a\right)$
+\end_inset
+
+ לא כלול בו 
+\series bold
+לאף
+\series default
+ איבר.
+ מזה גם נובע שהוא לחלוטין לא סימטרי כי אם 
+\begin_inset Formula $\left(a,b\right)$
+\end_inset
+
+ ביחס וגם 
+\begin_inset Formula $\left(b,a\right)$
+\end_inset
+
+ ביחס אז טרנזיטיביות גוררת ש-
+\begin_inset Formula $\left(a,a\right)$
+\end_inset
+
+ יהיה ביחס.
+\end_layout
+
+\begin_layout Standard
+אם כן, אפשר לנהל את כל הדיון על יחסי סדר גם עבור 
+\begin_inset Formula $<$
+\end_inset
+
+ ולא עבור 
+\begin_inset Formula $\le$
+\end_inset
+
+ ובהמשך הפוסט זה גם יהיה שימושי לנו, אבל בינתיים אני אדבר על 
+\begin_inset Formula $\le$
+\end_inset
+
+ שיותר טבעי לי.
+ בואו נראה דוגמאות!
+\end_layout
+
+\begin_layout Standard
 הדוגמא הראשונה היא היחס 
 \begin_inset Quotes eld
 \end_inset
@@ -3033,6 +702,235 @@ literal "false"
 
  הוא יחס שמתקיים בין כל שני מספרים ורק צריך להבין מי אמור להיות בצד ימין
  ומי אמור להיות בצד שמאל.
+ והנה עוד משהו שמנוגד לאינטואיציה: קחו את
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ומספר כלשהו 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ אנחנו יודעים ש-
+\begin_inset Formula $a\cdot0=0$
+\end_inset
+
+ תמיד, כלומר 
+\begin_inset Formula $a|0$
+\end_inset
+
+ לכל מספר 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ אם לרגע הייתי משתמש בסימון 
+\begin_inset Formula $\le$
+\end_inset
+
+ כדי לתאר את יחס החלוקה ולא בסימון 
+\begin_inset Formula $|$
+\end_inset
+
+, מה שהראיתי כרגע היה אומר ש-
+\begin_inset Formula $a\le0$
+\end_inset
+
+ לכל 
+\begin_inset Formula $a$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $0$
+\end_inset
+
+ הוא המספר 
+\begin_inset Quotes eld
+\end_inset
+
+הגדול ביותר
+\begin_inset Quotes erd
+\end_inset
+
+ על פי היחס הזה )הגדרה פורמלית של איבר מקסימלי שכזה תבוא עוד מעט(.
+ מוזר? בהחלט.
+ מה גם שמייד אחרי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שעבורו מתקיים דווקא ההפך: 
+\begin_inset Formula $1|a$
+\end_inset
+
+ לכל 
+\begin_inset Formula $a$
+\end_inset
+
+ ולכן הוא 
+\begin_inset Quotes eld
+\end_inset
+
+הקטן ביותר
+\begin_inset Quotes erd
+\end_inset
+
+.
+ המסקנה: אפשר להגדיר על אותה קבוצה הרבה יחסי סדר שונים והם יתנהגו בצורות
+ שונות לגמרי.
 \end_layout
 
 \begin_layout Standard
@@ -3156,6 +1054,42 @@ literal "false"
 \begin_inset Formula $b\le a$
 \end_inset
 
+.
+ אגב, אפשר להגדיר את אותו יחס סדר על הטבעיים בדרך שונה לגמרי אם זוכרים את
+ האופן שבו הגדרתי אותם: כזכור, הרעיון הוא ש-
+\begin_inset Formula $n\triangleq\left\{ 0,1,2,\dots,n-1\right\} $
+\end_inset
+
+.
+ בצורה הזו הטבעיים הם 
+\series bold
+קבוצות
+\series default
+ ואז אפשר להגדיר 
+\begin_inset Formula $a<b$
+\end_inset
+
+ אם ורק אם 
+\begin_inset Formula $a\in b$
+\end_inset
+
+, ואז להגדיר 
+\begin_inset Formula $a\le b$
+\end_inset
+
+ אם ורק אם 
+\begin_inset Formula $a<b$
+\end_inset
+
+ או 
+\begin_inset Formula $a=b$
+\end_inset
+
+.
+ נחזור לעניין הזה בהמשך כשנדבר על 
+\series bold
+סודרים
+\series default
 .
 \end_layout
 
@@ -3775,7 +1709,7 @@ literal "false"
 \begin_inset Formula $A$
 \end_inset
 
- חסמים מלמעלה בכלל? ואולי אין איבר מינימלי בקבותצת החסמים מלמעלה? אבל למה
+ חסמים מלמעלה בכלל? ואולי אין איבר מינימלי בקבוצת החסמים מלמעלה? אבל למה
  לדבר באוויר, הנה דוגמא קונקרטית.
 \end_layout
 
@@ -4237,17 +2171,107 @@ literal "false"
 \begin_inset Formula $<$
 \end_inset
 
+ עבור רציונליים.
+ אם כבר יש לי הגדרה כזו עבור 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ אפשר להשתמש בה: אינטואיטיבית, 
+\begin_inset Formula $\frac{a}{b}<\frac{x}{y}$
+\end_inset
+
+ כאשר המכנים 
+\begin_inset Formula $b,y$
+\end_inset
+
+ 
+\series bold
+חיוביים
+\series default
+ אם 
+\begin_inset Formula $ay<bx$
+\end_inset
+
+ כי פשוט כופלים את שני אגפים הביטוי ב-
+\begin_inset Formula $by$
+\end_inset
+
 .
- אין לי כרגע הגדרה פורמלית כזו.
- הגדרה פורמלית אפשרית היא זו: 
-\begin_inset Formula $<$
+ אז אפשר להגדיר את היחס בצורה הזו, אבל זה מעלה סכנה לא צפויה - מה שעשינו
+ בפועל הוא להגדיר יחס על קבוצה של מחלקות שקילות 
+\series bold
+על פי נציגים
+\series default
+ של מחלקות השקילות, וכדי שזו תהיה הגדרה תקינה צריך להראות שהיא איננה תלויה
+ בנציגים.
+\end_layout
+
+\begin_layout Standard
+למעשה, ההגדרה 
+\series bold
+כן
+\series default
+ תלויה בנציגים ואמרתי את זה בזריזות: אמרתי שאני אקח שני ייצוגים לשברים שבהם
+ המכנים הם 
+\series bold
+חיוביים
+\series default
+.
+ זה לא המקרה הכללי.
+ למשל, 
+\begin_inset Formula $\frac{1}{2}$
 \end_inset
 
- יהיה הקבוצה 
-\begin_inset Formula $\left\{ \left(a,b\right)\in\mathbb{Q}^{2}\ |\ \exists q\in\mathbb{Q}:a+q=b\right\} $
+ ניתן לייצוג גם בתור 
+\begin_inset Formula $\frac{-1}{-2}$
+\end_inset
+
+.
+ ועכשיו, 
+\begin_inset Formula $1\cdot\left(-2\right)<1\cdot\left(-1\cdot\right)$
+\end_inset
+
+ כך שההגדרה של 
+\begin_inset Quotes eld
 \end_inset
 
 
+\begin_inset Formula $ay<bx$
+\end_inset
+
+ אומר ש-
+\begin_inset Formula $\frac{a}{b}<\frac{x}{y}$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ הייתה נותנת לנו 
+\begin_inset Formula $\frac{1}{1}<\frac{-1}{-2}=\frac{1}{2}$
+\end_inset
+
+ אלמלא ההגבלה שנתתי.
+ ההגבלה שלי באה לומר שבואו פשוט נתעלם מחלק מהנציגים - נגדיר את היחס על פי
+ בחירה חצי-קנונית שכזו של נציגים )הייצוג 
+\series bold
+הכי
+\series default
+ קנוני למספר רציונלי הוא זה שבו המכנה חיובי והמונה והמכנה 
+\series bold
+זרים
+\series default
+, כלומר אין להם מחלק משותף גדול מ-
+\numeric on
+1
+\numeric off
+(.
+\end_layout
+
+\begin_layout Standard
+אם כן, זו הייתה עוד המחשה לשדה המוקשים שבו אנחנו הולכים בדרך שלנו להגדרה
+ פורמלית של המתמטיקה.
+ לא לדאוג, אנחנו נעבור אותו - אבל צריך לעשות את זה לאט לאט ובזהירות.
 \end_layout
 
 \end_body

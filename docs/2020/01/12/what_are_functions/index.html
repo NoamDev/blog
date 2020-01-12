@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>תורת הקבוצות - פונקציות | לא מדויק</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="תורת הקבוצות - פונקציות" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<meta property="og:description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<link rel="canonical" href="http://gadial.net/2020/01/12/what_are_functions/" />
+<meta property="og:url" content="http://gadial.net/2020/01/12/what_are_functions/" />
+<meta property="og:site_name" content="לא מדויק" />
+<meta property="og:image" content="http://gadial.net/assets/img/main/default-card.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-12T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://gadial.net/assets/img/main/default-card.png" />
+<meta property="twitter:title" content="תורת הקבוצות - פונקציות" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"headline":"תורת הקבוצות - פונקציות","dateModified":"2020-01-12T00:00:00+00:00","datePublished":"2020-01-12T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2020/01/12/what_are_functions/"},"url":"http://gadial.net/2020/01/12/what_are_functions/","image":"http://gadial.net/assets/img/main/default-card.png","description":"לא מדויק - בלוג על מתמטיקה ומדעי המחשב","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://gadial.net/feed.xml" title="לא מדויק" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3924539-2', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$latex','$'] ],
+        processEscapes: true
+      },
+      TeX: {extensions: ["AMSmath.js","AMSsymbols.js"]},
+      "HTML-CSS": { 
+        linebreaks: { automatic: true }
+      },
+      SVG: { 
+        linebreaks: { automatic: true } 
+      }
+    });
+  </script>
+  <!-- "https://www.gadial.net/wp-includes/js/xypic.js" -->
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  
+</head>
+<body><header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/">לא מדויק</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/whats_going_on">מה הולך פה?</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/">דף הבית</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/categories">קטגוריות</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/random">דף אקראי</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/about/">אודות</a>
+            </li>
+            
+        
+      </ul>
+      <form class="form-inline mt-2 mt-md-0" action="/post_list/" method="get">
+        <input class="form-control mr-sm-2" type="text" placeholder="חיפוש" aria-label="חיפוש" name="s">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">חיפוש</button>
+      </form>
+    </div>
+  </nav>
+</header><main class="page-content" aria-label="Content" role="main">
+      <div class="wrapper text-right">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><div class="PageNavigation">
+    
+      <a class="prev" href="/2020/01/10/order_relations/">&laquo; תורת הקבוצות - יחסי סדר</a>
+    
+    
+  </div><header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">תורת הקבוצות - פונקציות</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-01-12T00:00:00+00:00" itemprop="datePublished">Jan 12, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>סדרת הפוסטים שלי על תורת הקבוצות הגיעה עכשיו לשלב שבו אני רוצה להגדיר פורמלית <strong>פונקציות</strong>. וזה נחמד, כי פונקציה היא אחד מהמושגים המרכזיים במתמטיקה, אם לא המושג המרכזי ביותר, ולכן זו הזדמנות טובה לעצור ולשאול - מה זה בדיוק, הדבר הזה שמופיע בכל מקום?</p>
+
+<p>האינטואיציה שלי היא לחשוב על פונקציה בתור <strong>תהליך</strong> או בתור <strong>כלל</strong> שלוקח משהו אחד שאני קורא לו “הקלט” וממיר אותו למשהו אחר שאני קורא לו “הפלט”. למשל <span>$latex f\left(x\right)=x^{2}$</span> זו פונקציה שלוקחת מספר ומעלה אותו בריבוע (כופלת אותו בעצמו) או <span>$latex f\left(a\right)=\left\{ a\right\} $</span> זו פונקציה שלוקחת איבר ומחזירה את הסינגלטון שכולל רק אותו (סינגלטון הוא קבוצה בעלת איבר יחיד). זו אינטואיציה לא רעה. היא גם <strong>לא מספיק טובה</strong> בשביל ההגדרה שאני רוצה לתת כאן. למה? כי אני רוצה להיות כללי ככל הניתן, ולכן להיות מסוגל לדבר גם על פונקציות שבהן אני לא יכול לזהות “תהליך” ברור או “כלל” מובהק שמגדיר אותן.</p>
+
+<p>בואו נחדד את הנקודה הזו. הפונקציה <span>$latex f\left(x\right)=\frac{x^{3}+7}{2x-4}$</span> היא פונקציה שנתונה לי על ידי <strong>נוסחה</strong>. מה זו נוסחה? במקרה הזה, הנוסחה מגדירה לי תרגיל חשבוני שלם שצריך לבצע. היא אומרת לי “קח את איקס, תכפול אותו בעצמו פעמיים ותוסיף שבע לתוצאה, שים את התוצאה בצד לרגע, קח את איקס, כפול אותו ב-2 וחסר 4 מהתוצאה, ועכשיו קח את התוצאה המקורית וחלק במה שקיבלת לפני רגע”. שזו דרך ארוכה ומסורבלת להגיד בעברית את מה שהנוסחה אומרת במקוצר (ולכן אנחנו משתמשים בנוסחאות ולא בעברית!) אבל מה שחשוב פה הוא שהנוסחה אומרת <strong>במפורש</strong> מה לעשות בכל שלב (וכמובן, מתעלמת באלגנטיות מהסכנה של חלוקה באפס שיש כאן - אני אתייחס לנקודה הזו בהמשך).</p>
+
+<p>אבל הנה פונקציה מסוג שונה לגמרי: פונקציה שלוקחת פולינום <span>$latex p\left(x_{1},\dots,x_{n}\right)$</span> במספר כלשהו של משתנים - לאו דווקא משתנה יחיד - עם מקדמים <strong>שלמים</strong> ומחזירה את המספר 1 אם קיימים מספרים שלמים שאפשר להציב אותם בפולינום כך שיתקבל 0; והיא מחזירה 0 אם לא קיימים מספרים כאלו. פורמלית, <span>$latex f\left(p\right)=\begin{cases} 1 &amp; \exists a\in\mathbb{Z}^{n}:P\left(a\right)=0\\ 0 &amp; \text{else} \end{cases}$</span>. הפונקציה הזו עדיין מתארת, לכאורה, תהליך כלשהו: לוקחים את <span>$latex p$</span>, בודקים איכשהו אם אפשר לאפס אותו ככה או לא, ואז מחזירים 1 או 0 בהתאם. העניין הוא ש<strong>אין תהליך שעושה את זה</strong> במובן הסטנדרטי שאנחנו רגילים לחשוב עליו: אין <strong>אלגוריתם</strong> שפותר את הבעיה הזו, שנקראת <strong>הבעיה העשירית של הילברט</strong> והקדשתי לה בשעתו <a href="https://gadial.net/2012/08/27/hilbert_tenth_intro/">סדרת פוסטים בבלוג</a> בדיוק כדי שנראה שהיא לא פתירה.</p>
+
+<p>אפשר, כמובן, לטעון שפונקציות שאין לנו תיאור מפורש של תהליך שמחשב אותן הן לא מעניינות, אבל אותי הן כן מעניינות! בפרט, איך בדיוק אפשר לדעת מראש אם פונקציה כלשהי היא ניתנת לחישוב או לא? בשביל להיווכח בכך שהבעיה העשירית של הילברט בלתי פתירה נדרשו שבעים שנים בערך והמצאה של כל תורת החישוביות. אז לא, בואו נעזוב את האינטואיציה שפונקציה אמורה לתאר במפורש איך היא מחשבת את מה שהיא מחשבת.</p>
+
+<p>בסדר גמור, אתם אומרים. אז “תהליך” לא צריך, אבל “כלל” עדיין יש - עבור הבעיה העשירית של הילברט אתה נתת במפורש כלל שהיה פשוט למדי לניסוח וכולנו מבינים מה הוא אומר. מעולה! אז הנה לכם בעיה חדשה. ניקח את המספרים הממשיים, <span>$latex \mathbb{R}$</span>, ונסתכל על אוסף כל תת-הקבוצות שלהם, <span>$latex \mathcal{P}\left(\mathbb{R}\right)$</span>. מהאוסף הזה נוריד את הקבוצה הריקה, ועכשיו נדבר על פונקציה שהקלט שלה הוא קבוצה <span>$latex A$</span> מתוך האוסף - כלומר, קבוצה לא ריקה של ממשיים - והפלט שלה על הקלט הזה הוא איבר כלשהו מתוך הקבוצה.</p>
+
+<p>אוקיי, אבל <strong>איזו</strong> פונקציה? נאמר, מה הפונקציה מחזירה עבור הקבוצה <span>$latex \left\{ 1,2\right\} $</span>? היא יכולה להחזיר כל אחד משניהם, אנחנו חייבים להחליט מה מהם היא מחזירה אם אנחנו רוצים לדבר על פונקציה קונקרטית ולא על אוסף גדול של פונקציות אפשריות. אז נניח שהחלטנו שהיא מחזירה 1. אבל עכשיו נשאלת השאלה מה היא מחזירה עבור הקבוצה <span>$latex \left\{ \pi,17,523\right\} $</span> וכן הלאה. אם היה מדובר, נאמר, על קבוצות של מספרים טבעיים היה קל לתת כלל שיגיד מה לעשות בכל מקרה אפשרי - פשוט להחזיר את האיבר המינימלי בכל קבוצה. אבל בקבוצות של ממשיים לאו דווקא יש איבר מינימלי, וגם טריקים מתוחכמים יותר שיעבדו עבור הרציונליים לא יעבדו פה. אז מה עושים?</p>
+
+<p>התשובה היא שלא עושים. להוכיח שלא עושים זה מסובך מאוד ולא ניכנס לזה כאן, אבל פשוט <strong>אי אפשר</strong> לתת תיאור מפורש של פונקציה כזו. תחת זאת, אנחנו מניחים שקיימת כזו, כאקסיומה. ואם אנחנו מדברים על האינטואיציות, אז האינטואיציה פה היא שזה מאוד, מאוד מוזר. כלומר - כל מה שהפונקציה צריכה לעשות הוא להחזיר איברים מתוך קבוצות לא ריקות, לא? אז הנה, היא קיבלה קבוצה לא ריקה. <strong>יש שם איברים שאפשר להחזיר</strong>. אז למה שהיא לא פשוט… תחזיר? אחד מהם? לא חשוב איזה? אבל זה בדיוק מקרה שבו אין “כלל”. מקרה שבו אנחנו רוצים לדבר על פונקציה גם בלי שום דרך טובה להסביר מה בעצם היא עושה מעבר לכך שאנחנו יכולים לדבר על קשר כלשהו בין הקלט והפלט שלה.</p>
+
+<p>אז כשאני בא להגדיר את המושג של פונקציה, אני לוקח את האינטואיציה של “תהליך או כלל שהופך קלט לפלט” ופשוט מעיף ממנה את ה”תהליך”. אני משאיר את הקלט ואת הפלט. כלומר - פורמלית פונקציה מ-<span>$latex A$</span> אל <span>$latex B$</span> הולכת להיות אוסף של זוגות מהצורה <span>$latex \left(a,b\right)$</span> כך ש-<span>$latex a\in A$</span> ו-<span>$latex b\in B$</span>. לדבר הזה יש שם: זה <strong>יחס</strong> מ-<span>$latex A$</span> אל <span>$latex B$</span>; תת-קבוצה של <span>$latex A\times B$</span>. אבל לא כל יחס יכול להיחשב פונקציה - בואו נחשוב לרגע מה אנחנו כן רוצים שיתקיים מבחינת יחסי קלט/פלט.</p>
+
+<p>ובכן, כשאני מדמיין אינטואיטיבית פונקציה אני חושב על משהו שלוקח קלט, עושה לו קרחחצבופינצינקי ואז מוציא פלט. לא מעניין אותי ה-“קרחחצבופינצינקי” אבל אני במובלע מניח שהוא מקבל בברכה <strong>כל</strong> קלט ותמיד מוציא לו פלט מתאים, ושזה <strong>תמיד אותו פלט</strong>. במילים אחרות, אני לא מדמיין את אדון קרחחצבופינצינקי אומר פתאום “עזבו אותי מהשיעמום הזה אני הולך הביתה” ומסרב לתת לי פלט מתאים עבור קלט כלשהו; ואני גם לא מדמיין את אדון קרחחצבופינצינקי אומר “מה לבחור מה לבחור מה לבחור פשוט אטיל קוביה ונראה מה היא תגיד”.</p>
+
+<p>בשלב הזה אתם עשויים להזדעק - למה אני מייחס לאדון קרחחצבופינצינקי כאלו דברים? מה, אנחנו לא מכירים תוכניות מחשב שיש קלטים שהן פשוט נתקעות עליהם ולא מוציאות פלט? מה, אנחנו לא מכירים תוכניות מחשב שהפלט שלהן הוא אקראי? מה, הטבע אינו אקראי? אם אני מודד מצב קוונטי אני לא אקבל תוצאות שונות בהסתברויות שונות? מה זו הגישה הצרה והמוגבלת הזו לתיאור המציאות? שוב המתמטיקאים עם השטויות שלהם?</p>
+
+<p>ובכן, זוכרים איך כבר <a href="https://gadial.net/2019/10/19/what_is_set_theory/">בפוסט הראשון</a> על תורת הקבוצות דיברנו על חיסרון מהותי דומה של קבוצות - זה שאין בהן סדר? ודקה אחר כך ראינו שדווקא אפשר ליצור סדר מתוך החוסר-סדר הזה של קבוצות? אותו הדבר עם פונקציות - גם אם נדרוש שלכל קלט יהיה פלט יחיד, עדיין נוכל להגדיר בהמשך סוגים מתוחכמים יותר של פונקציות בעזרת הפורמליזם הבסיסי הזה. נגיע לכך עוד מעט, ובינתיים הנה ההגדרה הפורמלית הסופית לפונקציה.</p>
+
+<p>פונקציה <span>$latex f:A\to B$</span> מורכבת משלושה דברים: קבוצה <span>$latex A$</span> שנקראת <strong>התחום</strong> של הפונקציה, קבוצה <span>$latex B$</span> שנקראת <strong>הטווח</strong> של הפונקציה, ויחס <span>$latex f\subseteq A\times B$</span> שאותו לרוב אני פשוט מכנה “הפונקציה” וזהו. היחס הזה צריך לקיים שתי תכונות:</p>
+
+<ol> <li>"קיום": לכל <span>$latex a\in A$</span> <strong>קיים</strong> <span>$latex b\in B$</span> כך ש-<span>$latex \left(a,b\right)\in f$</span>.</li>
+
+
+<li>"יחידות": אם <span>$latex \left(a,b_{1}\right)\in f$</span> וגם <span>$latex \left(a,b_{2}\right)\in f$</span> עבור <span>$latex a\in A$</span> ו-<span>$latex b_{1},b_{2}\in B$</span> אז <span>$latex b_{1}=b_{2}$</span>.</li>
+
+</ol>
+
+<p>שתי התכונות הללו מאפשרות לי להשתמש בקיצור הנפוץ ביותר במתמטיקה. במקום לכתוב <span>$latex \left(a,b\right)\in f$</span> אני יכול לכתוב <span>$latex b=f\left(a\right)$</span> או פשוט לשכוח מ-<span>$latex b$</span> ופשוט לסמן <span>$latex f\left(a\right)$</span> כדי להגיד “האיבר היחיד ב-<span>$latex B$</span> שנמצא ביחס <span>$latex f$</span> עם <span>$latex a$</span>” (קיים כזה כי 1 והוא יחיד כי 2).</p>
+
+<p>הנקודה הראשונה והנודניקית שאני רוצה להדגיש הוא ש<strong>התחום והטווח חשובים</strong>. שתי פונקציות שמוגדרות על ידי אותו “כלל” אבל הן עם תחומים שונים או טווחים שונים נחשבות שונות. למשל לכתוב <span>$latex f\left(x\right)=x^{2}$</span> לא נותן לנו את כל האינפורמציה על הפונקציה. אם <span>$latex f:\mathbb{N}\to\mathbb{N}$</span>, כלומר התחום והטווח הם הטבעיים, אז ברור שזו פונקציה שונה מ-<span>$latex g:\mathbb{R}\to\mathbb{R}$</span> המוגדרת על ידי <span>$latex g\left(x\right)=x^{2}$</span> גם כן; הרי הזוג <span>$latex \left(\frac{1}{2},\frac{1}{4}\right)$</span> שייך ל-<span>$latex g$</span> ולא שייך ל-<span>$latex f$</span>. אלא שיש גם סיטואציות הרבה יותר עדינות. בואו נסתכל על <span>$latex f:\mathbb{R}\to\mathbb{R}$</span> המוגדרת על ידי <span>$latex f\left(x\right)=x^{2}$</span> אל מול <span>$latex g:\mathbb{R}\to[0,\infty($</span> המוגדרת על ידי <span>$latex g\left(x\right)=x^{2}$</span>. כאן <span>$latex [0,\infty($</span> הוא קבוצת כל הממשיים <strong>האי-שליליים</strong>. מה קורה פה? אם מעלים מספר ממשי בריבוע, התוצאה היא תמיד מספר אי שלילי. כלומר הטווח של <span>$latex f$</span> שהוא כל <span>$latex \mathbb{R}$</span> הוא בעצם “לא מנוצל כולו” כי אנחנו אף פעם לא מחזירים מספר שלילי. יותר מכך - היחסים <span>$latex f$</span> ו-<span>$latex g$</span> הם <strong>שווים</strong> כי הם מכילים בדיוק את אותם איברים. ועדיין, <span>$latex f$</span> היא לא אותה פונקציה כמו <span>$latex g$</span> כי הן נבדלות בטווח שלהן <strong>ולא משנה שלא משתמשים בחלק הנוסף של הטווח</strong>.</p>
+
+<p>אם לא תמיד משתמשים בכל הטווח, נראה שיש ערך גם לדבר על אותו חלק של הטווח שבו כן משתמשים - הוא נקרא <strong>התמונה</strong> של <span>$latex f$</span> והוא מסומן לעתים קרובות ב-<span>$latex f\left(A\right)=\left\{ f\left(a\right)\ |\ a\in A\right\} $</span> (או בסימון הפחות מעניין <span>$latex \text{Im}f$</span>). הסימון הזה יכול להיות קצת מבלבל כי נראה כאילו מזינים ל-<span>$latex f$</span> את הקבוצה <span>$latex A$</span> בתור קלט, כשבעצם מתכוונים ל”הקבוצה שמתקבלת כשמזינים ל-<span>$latex f$</span> בתור קלט את כל האיברים ב-<span>$latex A$</span>” אבל לפני שמתרעמים על חילול הקודש כדאי לזכור שגם הסימון <span>$latex f\left(a\right)$</span> בעצמו הוא רק סימון מקוצר למשהו, כך שאין בעיה עקרונית עם לכתוב <span>$latex f\left(A\right)$</span> ואפילו מרחיבים אותו לכל תת-קבוצה של <span>$latex A$</span> (כלומר, אם <span>$latex X\subseteq A$</span> אז כותבים <span>$latex f\left(X\right)$</span> כדי לתאר את <span>$latex \left\{ f\left(x\right)\ |\ x\in X\right\} $</span>). כן קיים מקרה אחד שבו הסימון הזה עשוי להיות מסוכן - אם איברים של <span>$latex A$</span> הם גם תת-קבוצות של <span>$latex A$</span>, וזה בהחלט מקרה שנראה בהמשך - ובמקרה הזה באמת לא נשתמש בשיטת הסימון הזו.</p>
+
+<p>עכשיו בואו נעבור לדבר על המגבלות לכאורה של ההגדרה הזו ולמה הן לא באמת מגבלות. נתחיל דווקא עם זו שאולי נראית פחות קריטית: על פניו, לפונקציה שלי יש משתנה <strong>בודד</strong>, וזהו. זה כמובן לא המצב באופן כללי. בחדו”א למשל אחרי שגומרים להבין את הבסיס של החדו”א של פונקציות במשתנה יחיד עוברים לדבר על פונקציות בשני משתנים שכותבים בתור <span>$latex f\left(x,y\right)$</span>. איך זה מסתדר עם ההגדרה שלנו? ובכן, בקלות: אם אני מגדיר <span>$latex f:\mathbb{R}^{2}\to\mathbb{R}$</span> (<span>$latex \mathbb{R}^{2}$</span> הוא סימון מקוצר למכפלה הקרטזית <span>$latex \mathbb{R}\times\mathbb{R}$</span>), הגדרתי פונקציה שהקלט שלה הוא <strong>זוג</strong> איברים: כלומר, אני צריך לכתוב <span>$latex f\left(\left(x,y\right)\right)$</span> כדי לתאר את הקלט. מכיוון ש-<span>$latex f$</span> הוא מלכתחילה סימון מטעמי נוחות, אני פשוט כותב <span>$latex f\left(x,y\right)$</span> במקום לכתוב <span>$latex f\left(\left(x,y\right)\right)$</span> וחסל. באופן דומה בחדו”א עוברים לדבר אחר כך על פונקציה שמקבלת <span>$latex n$</span> קלטים ומחזירה סדרה של <span>$latex m$</span> ערכים - זו פשוט פונקציה <span>$latex f:\mathbb{R}^{n}\to\mathbb{R}^{m}$</span>, אז אין בעיה עם זה. למעשה, באלגברה לינארית כבר משלב מוקדם מאוד עובדים עם פונקציות מרובות משתנים שכאלו, רק שבאלגברה לינארית על פי רוב כן ממשיכים להתייחס לאיבר <span>$latex \left(x_{1},\ldots,x_{n}\right)$</span> בתור איבר בודד שהוא סדרה של <span>$latex n$</span> ערכים ולא בתור <span>$latex n$</span> איברים.</p>
+
+<p>המגבלה הבאה היא שפונקציה לא יכולה להיות לא מוגדרת עבור ערך כלשהו מתוך התחום שלה. את זה קל לתקן מאוד בקלות על ידי הרחבה של הטווח. נוסיף לטווח איבר חדש שנסמן נניח ב-<span>$latex \perp$</span>, ואז נגדיר את <span>$latex f$</span> להחזיר את <span>$latex \perp$</span> על כל איבר של התחום שהיא לא מוגדרת עבורו. זו קונבנציה סטנדרטית שאפשר לראות, למשל, בספרים של תורת החישוביות, שעוסקים בדיוק בחישובים שעשויים לא להסתיים ולכן לא להחזיר פלט. לפונקציה שלא מוגדרת על כל התחום קוראים שם “פונקציה לא מלאה” וכפי שראינו עכשיו אין בעיה להגדיר אותה פורמלית בעזרת המושג הרגיל של פונקציה.</p>
+
+<p>תכונת היחידות מעלה בעיה אחרת. האם לפעמים אנחנו רוצים שהפונקציה תחזיר יותר מפלט אחד? ובכן, כמובן: נאמר שאנחנו רוצים פונקציה שלוקחת מספר טבעי ומחזירה את הפירוק שלו לגורמים ראשוניים, אז למשל <span>$latex f\left(6\right)=\left(2,3\right)$</span>. אבל לא באמת החזרנו כאן שני פלטים; החזרנו פלט שהוא סדרה של שני איברים, ובזה הפורמליזם הקיים שלנו של קבוצות כבר מטפל יפה.</p>
+
+<p>בואו נחדד את הסיטואציה הבעייתית עם דוגמא אחרת - פונקציית השורש, <span>$latex f:[0,\infty(\to\mathbb{R}$</span>, <span>$latex f\left(x\right)=\sqrt{x}$</span>. מהו “שורש” של מספר? קונספטואלית, השורש של <span>$latex a$</span> הוא מספר <span>$latex x$</span> כך ש-<span>$latex x^{2}=a$</span>. העניין הוא שבמספרים הממשיים למספר יכולים להיות שני שורשים: למשל, עבור 4, מתקיים גם <span>$latex 2^{2}=4$</span> וגם <span>$latex \left(-2\right)^{2}=4$</span>. יש גם את הבעיה שאין שורש ממשי למספרים שליליים אבל כאן פשוט בחרתי את התחום לא לכלול אותם.</p>
+
+<p>אם כן, לפונקציית השורש יש על פי רוב שני פלטים שונים שהיא יכולה להחזיר. הם לא אותו אובייקט; הם שתי אפשרויות אלטרנטיביות לתשובה שכל אחת מהן טובה באותה מידה. ואנחנו צריכים להחזיר אחת מהן. אז מה עושים? פשוט בוחרים באופן שרירותי משהו את מה לעשות - המוסכמה היא שהפונקציה <span>$latex f\left(x\right)=\sqrt{x}$</span> תמיד תחזיר את השורש <strong>החיובי</strong> ולא את השלילי (תמיד יש אחד כזה ואחד כזה אם יש שניים). אם היינו בוחרים תמיד להחזיר את השלילי היינו מקבלים פונקציה חוקית באותה מידה, וגם אם היינו בוחרים מדי פעם להחזיר את החיובי ומדי פעם את השלילי, כל עוד הכלל של מתי בוחרים מה להחזיר היה מוגדר היטב.</p>
+
+<p>העניין הוא שאם מבצעים תהליך כזה של “לבחור איזה מהערכים האפשריים של הפונקציה לקחת” אנחנו רוצים גם להיות מסוגלים לדבר על הפונקציה שממנה מתחילים את התהליך הזה. מקום שבו זה נפוץ במיוחד הוא בתורת הפונקציות המרוכבות, שם התופעה של פונקציה שמחזירה הרבה ערכים היא נפוצה מאוד. אז קוראים לפונקציה כזו “פונקציה רב-ערכית”. ואיך פורמלית מטפלים בזה? אם הפונקציה <span>$latex f:A\to B$</span> היא רב-ערכית, אפשר לחשוב עליה פורמלית בתור פונקציה <span>$latex f:A\to\mathcal{P}\left(B\right)$</span>. כלומר, במקום שהיא תחזיר איבר בודד של <span>$latex B$</span> היא מחזירה תת-קבוצה של <span>$latex B$</span>. פתרון די פשוט. עכשיו אפשר לקחת את הפונקציה הזו ולצמצם אותה כך שתחזיר רק פלט אחד בפעם - לפעולה הזו קוראים <strong>לקיחת ענף</strong> של הפונקציה. בתורת הפונקציות המרוכבות מתחיל עכשיו סיפור די מרתק של מה קורה אם מנסים לקחת ענף תוך שמירה על תכונות נחמדות של הפונקציה, אבל אנחנו לא מדברים על התחום הזה כרגע אז אני אימלט ממנו לפני שתשימו לב שאני לא באמת מבין על מה אני מדבר.</p>
+
+<p>והנה דוגמא מתחום שונה לגמרי - תורת האוטומטים. בשביל להבין את הדוגמא לא צריך להבין אוטומטים מעבר לכך שהם מורכבים מקבוצה של מצבים <span>$latex Q$</span> שאפשר להיות בהם, קבוצה של אותיות קלט <span>$latex \Sigma$</span> שאפשר לראות, ופונקציה <span>$latex \delta:Q\times\Sigma\to Q$</span> שבהינתן מצב ואות קלט קובעת לאיזה מצב חדש האוטומט צריך לעבור (הנה דוגמא לפונקציה בשני משתנים!)</p>
+
+<p>המושג הזה של אוטומט נקרא <strong>אוטומט דטרמיניסטי</strong> כי בהינתן הזוג של מצב + אות קלט, המצב שאליו עוברים נקבע באופן יחיד. אבל בפועל נוח להרחיב את סוג האוטומט הזה ל<strong>אוטומט לא דטרמיניסטי</strong> שמותר לו לבצע כמה מעברים שונים בתגובה לאותו זוג של מצב ואות קלט (הפרה של תכונת ה”יחידות”), או לא לבצע מעבר בכלל (הפרה של תכונת ה”קיום”). פורמלית קל לטפל בזה: פונקצית המעברים הופכת להיות <span>$latex \delta:Q\times\Sigma\to\mathcal{P}\left(Q\right)$</span> שלכל זוג קלטים מחזיר את קבוצת כל הפלטים האפשרית עבורם (כאן “אף מעבר” מתואר על ידי פלט שהוא הקבוצה הריקה). בגלל כל מני קשיים טכניים שההגדרה הזו מעוררת לפעמים פשוט בוחרים בשלב הזה לדבר על <strong>יחס מעברים</strong> במקום על פונקציית מעברים - כלומר, לחזור למקורות שבהם פונקציה היא סוג של יחס עם תכונות מסויימות ופשוט לוותר על התכונות הללו - אבל לא נתעסק בזה כאן.</p>
+
+<p>נקודה אחת אחרונה שאני רוצה לדבר עליה היא מה עשוי להשתבש כשמגדירים פונקציה בלי שנשים לב אפילו. כמו שהפרדוקס של ראסל לימד אותנו, זה שאנחנו כותבים אוסף אקראי של מילים בעברית לא אומר שיצרנו קבוצה, וכך גם בפונקציות - זה שכתבתי כלל כלשהו לא אומר שבאמת הגדרתי פונקציה. צריך לוודא את זה, ולו בינינו לבין עצמנו.</p>
+
+<p>הבעיה הפשוטה ביותר שצריך לחשוש ממנה היא פשוט שהכלל לא יעבוד לכל הקלטים, ולכן יהיה קלט נטול פלט ותכונת ה”קיום” שלנו תתקלקל. למשל, <span>$latex f:\mathbb{R}\to\mathbb{R}$</span> המוגדרת על ידי <span>$latex f\left(x\right)=\frac{1}{x}$</span> איננה פונקציה כי עבור <span>$latex x=0$</span> אין משמעות לביטוי <span>$latex \frac{1}{x}$</span> שכתבנו כך בקלילות. כמובן, קל לתקן את זה על ידי שינוי של התחום (כלומר, להוציא את 0 מהתחום: <span>$latex f:\mathbb{R}\backslash\left\{ 0\right\} \to\mathbb{R}$</span>) או על ידי שינוי של הטווח (כמו שאמרתי קודם, להגדיר <span>$latex f:\mathbb{R}\to\mathbb{R}\cup\left\{ \perp\right\} $</span> ו-<span>$latex f\left(0\right)=\perp$</span>) אבל בלי אחד מהשינויים הללו, אין לנו פה פונקציה גם אם אנחנו חושבים בטעות שיש.</p>
+
+<p>עוד בעיות קלאסיות עם הגדרות חסרות משמעות של פונקציות הן כשמציבים אפס או מספר שלילי בפונקציית הלוגריתם (<span>$latex \ln0$</span>), כשמנסים לתת לפונקציה טריגונומטרית הפוכה ערך שאינו בין <span>$latex -1$</span> ל-1 (<span>$latex \sin^{-1}\left(\pi\right)$</span>), כשמנסים להוציא שורש למספר שלילי מעל הממשיים (<span>$latex \sqrt{-1}$</span>; כאן אפשר להרחיב את הטווח באופן סביר והגיוני לקבוצת המרוכבים, <span>$latex \mathbb{C}$</span>, במקום סתם לומר שאנחנו לא מוגדרים, אבל לפעמים אנחנו לא <strong>רוצים</strong> לערב את המרוכבים בסיפור) וכדומה. על פי רוב אין <strong>יותר מדי</strong> סכנות מהסוג הזה - צריך לדעת על כמה דברים בסיסיים שיש להיזהר מהם, וזה מספיק.</p>
+
+<p>סכנה גדולה בהרבה אורבת לנו דווקא עם תכונת ה”יחידות”. הסיבה לכך היא שבמתמטיקה לעתים קרובות יש לאובייקט מתמטי <strong>יותר מייצוג אחד</strong> וכשמגדירים פונקציה על האובייקט צריך להיזהר שהפונקציה לא תוגדר באופן שהוא תלוי ייצוג - כלומר, שעבור <strong>ייצוגים שונים לאותו קלט</strong> לא יתקבלו פלטים שונים.</p>
+
+<p>הנה דוגמא פשוטה לאיך שזה יכול לצוץ כשמשתמשים ביחסי שקילות. <a href="https://gadial.net/2020/01/06/equivalence_relations/">בפוסט על יחסי שקילות</a> הצגתי יחס שקילות שסימנתי אותו ב-<span>$latex \equiv_{3}$</span>: אמרתי ש-<span>$latex a\equiv_{3}b$</span> אם השארית ש-<span>$latex a,b$</span> משאירים בחלוקה ב-3 היא זהה. למשל, <span>$latex 1\equiv_{3}4$</span>. לכן אפשר לכתוב <span>$latex \left[1\right]=\left[4\right]$</span> - מחלקת השקילות של 1 ומחלקת השקילות של 4 הן אותה מחלקת שקילות.</p>
+
+<p>עכשיו בואו נגדיר פונקציה מקבוצת המנה <span>$latex \mathbb{N}/\equiv_{3}$</span> אל <span>$latex \mathbb{N}$</span> באופן הבא: <span>$latex f\left(\left[a\right]\right)=a$</span>. כלומר: בהינתן מחלקת שקילות שמיוצגת על ידי המספר הטבעי <span>$latex a$</span>, הפונקציה מחזירה את <span>$latex a$</span>. למשל, <span>$latex f\left(\left[0\right]\right)=0$</span> ו-<span>$latex f\left(\left[1\right]\right)=1$</span> ו-<span>$latex f\left(\left[2\right]\right)=2$</span> ו-<span>$latex f\left(\left[4\right]\right)=4$</span> ו… אה-הא! הנה הבעיה. הרי <span>$latex \left[1\right]=\left[4\right]$</span> אבל כרגע ראינו שני פלטים שונים על אותו קלט: <span>$latex f\left(\left[1\right]\right)=1\ne4=f\left(\left[4\right]\right)$</span>. זו סתירה לתכונת ה”יחידות” של פונקציה, וזה קרה לנו בלי לשים לב, בזמן שניסינו להגדיר את הפונקציה באמצעות נוסחה “רגילה” שלא נראית רב-ערכית.</p>
+
+<p>אז מה הפתרון? אין פתרון קסם, צריך להיות זהירים. גם בהוכחות מתקדמות במתמטיקה לא כזה נדיר, כשמוגדרת פונקציה, לראות שלב בהוכחה שבו מראים שהפונקציה היא “מוגדרת היטב”. כלומר, אם יש ספק כלשהו לגבי תכונת ה”קיום” או ה”יחידות”, מסבירים במפורש למה אין בעיה.</p>
+
+<p>אז זהו זה לגבי מה שרציתי להגיד על מה זו פונקציה בכלל, ועכשיו הגיע הזמן להתחיל לעשות איתן דברים מעניינים.</p>
+
+  </div>
+
+  <hr />
+  <p>
+    נהניתם? התעניינתם? אם תרצו, אתם מוזמנים לתת טיפ:
+  </p>
+  <a href='https://ko-fi.com/H2H5XFBQ' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a><div class="PageNavigation">
+    
+      <a class="prev" href="/2020/01/10/order_relations/">&laquo; תורת הקבוצות - יחסי סדר</a>
+    
+    
+  </div><div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://gadial.net/2020/01/12/what_are_functions/';
+      this.page.identifier = 'http://gadial.net/2020/01/12/what_are_functions/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://not-precise.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/2020/01/12/what_are_functions/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">לא מדויק</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">לא מדויק</li><li><a class="u-email" href="mailto:gadial@gmail.com">gadial@gmail.com</a></li><li>&copy; כל הזכויות שמורות לגדי אלכסנדרוביץ'</li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://www.facebook.com/%D7%9C%D7%90-%D7%9E%D7%93%D7%95%D7%99%D7%A7-163347110378474"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#facebook"></use></svg> <span class="username">לא מדויק</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>RSS</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>בלוג על מתמטיקה ומדעי המחשב</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery-slim.min.js"><\/script>')</script><script src="/assets/js/bootstrap.bundle.js"></script><!-- Default Statcounter code for New blog
+http://www.gadial.net/ -->
+<script type="text/javascript">
+  var sc_project=5444342; 
+  var sc_invisible=1; 
+  var sc_security="4a89cbe4"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="https://c.statcounter.com/5444342/0/4a89cbe4/1/"
+  alt="Web Analytics"></a></div></noscript>
+  <!-- End of Statcounter Code --></body>
+
+</html>

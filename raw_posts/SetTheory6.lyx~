@@ -1,0 +1,2143 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index אינדקס
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+תורת הקבוצות - פונקציות
+\end_layout
+
+\begin_layout Description
+קטגוריות: תורת הקבוצות
+\end_layout
+
+\begin_layout Description
+תגים: תורת הקבוצות, פונקציות
+\end_layout
+
+\begin_layout Description
+מזהה:
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+what_are_functions
+\end_layout
+
+\begin_layout Standard
+סדרת הפוסטים שלי על תורת הקבוצות הגיעה עכשיו לשלב שבו אני רוצה להגדיר פורמלית
+ 
+\series bold
+פונקציות
+\series default
+.
+ וזה נחמד, כי פונקציה היא אחד מהמושגים המרכזיים במתמטיקה, אם לא המושג המרכזי
+ ביותר, ולכן זו הזדמנות טובה לעצור ולשאול - מה זה בדיוק, הדבר הזה שמופיע
+ בכל מקום?
+\end_layout
+
+\begin_layout Standard
+האינטואיציה שלי היא לחשוב על פונקציה בתור 
+\series bold
+תהליך
+\series default
+ או בתור 
+\series bold
+כלל
+\series default
+ שלוקח משהו אחד שאני קורא לו 
+\begin_inset Quotes eld
+\end_inset
+
+הקלט
+\begin_inset Quotes erd
+\end_inset
+
+ וממיר אותו למשהו אחר שאני קורא לו 
+\begin_inset Quotes eld
+\end_inset
+
+הפלט
+\begin_inset Quotes erd
+\end_inset
+
+.
+ למשל 
+\begin_inset Formula $f\left(x\right)=x^{2}$
+\end_inset
+
+ זו פונקציה שלוקחת מספר ומעלה אותו בריבוע )כופלת אותו בעצמו( או 
+\begin_inset Formula $f\left(a\right)=\left\{ a\right\} $
+\end_inset
+
+ זו פונקציה שלוקחת איבר ומחזירה את הסינגלטון שכולל רק אותו )סינגלטון הוא
+ קבוצה בעלת איבר יחיד(.
+ זו אינטואיציה לא רעה.
+ היא גם 
+\series bold
+לא מספיק טובה
+\series default
+ בשביל ההגדרה שאני רוצה לתת כאן.
+ למה? כי אני רוצה להיות כללי ככל הניתן, ולכן להיות מסוגל לדבר גם על פונקציות
+ שבהן אני לא יכול לזהות 
+\begin_inset Quotes eld
+\end_inset
+
+תהליך
+\begin_inset Quotes erd
+\end_inset
+
+ ברור או 
+\begin_inset Quotes eld
+\end_inset
+
+כלל
+\begin_inset Quotes erd
+\end_inset
+
+ מובהק שמגדיר אותן.
+\end_layout
+
+\begin_layout Standard
+בואו נחדד את הנקודה הזו.
+ הפונקציה 
+\begin_inset Formula $f\left(x\right)=\frac{x^{3}+7}{2x-4}$
+\end_inset
+
+ היא פונקציה שנתונה לי על ידי 
+\series bold
+נוסחה
+\series default
+.
+ מה זו נוסחה? במקרה הזה, הנוסחה מגדירה לי תרגיל חשבוני שלם שצריך לבצע.
+ היא אומרת לי 
+\begin_inset Quotes eld
+\end_inset
+
+קח את איקס, תכפול אותו בעצמו פעמיים ותוסיף שבע לתוצאה, שים את התוצאה בצד
+ לרגע, קח את איקס, כפול אותו ב-
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+וחסר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מהתוצאה, ועכשיו קח את התוצאה המקורית וחלק במה שקיבלת לפני רגע
+\begin_inset Quotes erd
+\end_inset
+
+.
+ שזו דרך ארוכה ומסורבלת להגיד בעברית את מה שהנוסחה אומרת במקוצר )ולכן אנחנו
+ משתמשים בנוסחאות ולא בעברית!( אבל מה שחשוב פה הוא שהנוסחה אומרת 
+\series bold
+במפורש
+\series default
+ מה לעשות בכל שלב )וכמובן, מתעלמת באלגנטיות מהסכנה של חלוקה באפס שיש כאן
+ - אני אתייחס לנקודה הזו בהמשך(.
+\end_layout
+
+\begin_layout Standard
+אבל הנה פונקציה מסוג שונה לגמרי: פונקציה שלוקחת פולינום 
+\begin_inset Formula $p\left(x_{1},\dots,x_{n}\right)$
+\end_inset
+
+ במספר כלשהו של משתנים - לאו דווקא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ משתנה יחיד - עם מקדמים 
+\family default
+\series bold
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שלמים
+\series default
+ ומחזירה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+את המספר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אם קיימים מספרים שלמים שאפשר להציב אותם בפולינום כך שיתקבל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\numeric off
+; והיא מחזירה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אם לא קיימים מספרים כאלו.
+ פורמלית, 
+\begin_inset Formula $f\left(p\right)=\begin{cases}
+1 & \exists a\in\mathbb{Z}^{n}:P\left(a\right)=0\\
+0 & \text{else}
+\end{cases}$
+\end_inset
+
+.
+ הפונקציה הזו עדיין מתארת, לכאורה, תהליך כלשהו: לוקחים את 
+\begin_inset Formula $p$
+\end_inset
+
+, בודקים איכשהו אם אפשר לאפס אותו ככה או לא, ואז מחזירים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+או
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בהתאם.
+ העניין הוא ש
+\series bold
+אין תהליך שעושה את זה
+\series default
+ במובן הסטנדרטי שאנחנו רגילים לחשוב עליו: אין 
+\series bold
+אלגוריתם
+\series default
+ שפותר את הבעיה הזו, שנקראת 
+\series bold
+הבעיה העשירית של הילברט
+\series default
+ והקדשתי לה בשעתו 
+\begin_inset CommandInset href
+LatexCommand href
+name "סדרת פוסטים בבלוג"
+target "https://gadial.net/2012/08/27/hilbert_tenth_intro/"
+literal "false"
+
+\end_inset
+
+ בדיוק כדי שנראה שהיא לא פתירה.
+\end_layout
+
+\begin_layout Standard
+אפשר, כמובן, לטעון שפונקציות שאין לנו תיאור מפורש של תהליך שמחשב אותן הן
+ לא מעניינות, אבל אותי הן כן מעניינות! בפרט, איך בדיוק אפשר לדעת מראש אם
+ פונקציה כלשהי היא ניתנת לחישוב או לא? בשביל להיווכח בכך שהבעיה העשירית
+ של הילברט בלתי פתירה נדרשו שבעים שנים בערך והמצאה של כל תורת החישוביות.
+ אז לא, בואו נעזוב את האינטואיציה שפונקציה אמורה לתאר במפורש איך היא מחשבת
+ את מה שהיא מחשבת.
+\end_layout
+
+\begin_layout Standard
+בסדר גמור, אתם אומרים.
+ אז 
+\begin_inset Quotes eld
+\end_inset
+
+תהליך
+\begin_inset Quotes erd
+\end_inset
+
+ לא צריך, אבל 
+\begin_inset Quotes eld
+\end_inset
+
+כלל
+\begin_inset Quotes erd
+\end_inset
+
+ עדיין יש - עבור הבעיה העשירית של הילברט אתה נתת במפורש כלל שהיה פשוט למדי
+ לניסוח וכולנו מבינים מה הוא אומר.
+ מעולה! אז הנה לכם בעיה חדשה.
+ ניקח את המספרים הממשיים, 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+, ונסתכל על אוסף כל תת-הקבוצות שלהם, 
+\begin_inset Formula $\mathcal{P}\left(\mathbb{R}\right)$
+\end_inset
+
+.
+ מהאוסף הזה נוריד את הקבוצה הריקה, ועכשיו נדבר על פונקציה שהקלט שלה הוא
+ קבוצה 
+\begin_inset Formula $A$
+\end_inset
+
+ מתוך האוסף - כלומר, קבוצה לא ריקה של ממשיים - והפלט שלה על הקלט הזה הוא
+ איבר כלשהו מתוך הקבוצה.
+\end_layout
+
+\begin_layout Standard
+אוקיי, אבל 
+\series bold
+איזו
+\series default
+ פונקציה? נאמר, מה הפונקציה מחזירה עבור הקבוצה 
+\begin_inset Formula $\left\{ 1,2\right\} $
+\end_inset
+
+? היא יכולה להחזיר כל אחד משניהם, אנחנו חייבים להחליט מה מהם היא מחזירה
+ אם אנחנו רוצים לדבר על פונקציה קונקרטית ולא על אוסף גדול של פונקציות אפשריות.
+ אז נניח שהחלטנו שהיא מחזירה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+.
+ אבל עכשיו נשאלת השאלה מה היא מחזירה עבור הקבוצה 
+\begin_inset Formula $\left\{ \pi,17,523\right\} $
+\end_inset
+
+ וכן הלאה.
+ אם היה מדובר, נאמר, על קבוצות של מספרים טבעיים היה קל לתת כלל שיגיד מה
+ לעשות בכל מקרה אפשרי - פשוט להחזיר את האיבר המינימלי בכל קבוצה.
+ אבל בקבוצות של ממשיים לאו דווקא יש איבר מינימלי, וגם טריקים מתוחכמים יותר
+ שיעבדו עבור הרציונליים לא יעבדו פה.
+ אז מה עושים?
+\end_layout
+
+\begin_layout Standard
+התשובה היא שלא עושים.
+ להוכיח שלא עושים זה מסובך מאוד ולא ניכנס לזה כאן, אבל פשוט 
+\series bold
+אי אפשר
+\series default
+ לתת תיאור מפורש של פונקציה כזו.
+ תחת זאת, אנחנו מניחים שקיימת כזו, כאקסיומה.
+ ואם אנחנו מדברים על האינטואיציות, אז האינטואיציה פה היא שזה מאוד, מאוד
+ מוזר.
+ כלומר - כל מה שהפונקציה צריכה לעשות הוא להחזיר איברים מתוך קבוצות לא ריקות,
+ לא? אז הנה, היא קיבלה קבוצה לא ריקה.
+ 
+\series bold
+יש שם איברים שאפשר להחזיר
+\series default
+.
+ אז למה שהיא לא פשוט...
+ תחזיר? אחד מהם? לא חשוב איזה? אבל זה בדיוק מקרה שבו אין 
+\begin_inset Quotes eld
+\end_inset
+
+כלל
+\begin_inset Quotes erd
+\end_inset
+
+.
+ מקרה שבו אנחנו רוצים לדבר על פונקציה גם בלי שום דרך טובה להסביר מה בעצם
+ היא עושה מעבר לכך שאנחנו יכולים לדבר על קשר כלשהו בין הקלט והפלט שלה.
+\end_layout
+
+\begin_layout Standard
+אז כשאני בא להגדיר את המושג של פונקציה, אני לוקח את האינטואיציה של 
+\begin_inset Quotes eld
+\end_inset
+
+תהליך או כלל שהופך קלט לפלט
+\begin_inset Quotes erd
+\end_inset
+
+ ופשוט מעיף ממנה את ה
+\begin_inset Quotes erd
+\end_inset
+
+תהליך
+\begin_inset Quotes erd
+\end_inset
+
+.
+ אני משאיר את הקלט ואת הפלט.
+ כלומר - פורמלית פונקציה מ-
+\begin_inset Formula $A$
+\end_inset
+
+ אל 
+\begin_inset Formula $B$
+\end_inset
+
+ הולכת להיות אוסף של זוגות מהצורה 
+\begin_inset Formula $\left(a,b\right)$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $a\in A$
+\end_inset
+
+ ו-
+\begin_inset Formula $b\in B$
+\end_inset
+
+.
+ לדבר הזה יש שם: זה 
+\series bold
+יחס
+\series default
+ מ-
+\begin_inset Formula $A$
+\end_inset
+
+ אל 
+\begin_inset Formula $B$
+\end_inset
+
+; תת-קבוצה של 
+\begin_inset Formula $A\times B$
+\end_inset
+
+.
+ אבל לא כל יחס יכול להיחשב פונקציה - בואו נחשוב לרגע מה אנחנו כן רוצים שיתקיים
+ מבחינת יחסי קלט/פלט.
+\end_layout
+
+\begin_layout Standard
+ובכן, כשאני מדמיין אינטואיטיבית פונקציה אני חושב על משהו שלוקח קלט, עושה
+ לו קרחחצבופינצינקי ואז מוציא פלט.
+ לא מעניין אותי ה-
+\begin_inset Quotes erd
+\end_inset
+
+קרחחצבופינצינקי
+\begin_inset Quotes erd
+\end_inset
+
+ אבל אני במובלע מניח שהוא מקבל בברכה 
+\series bold
+כל
+\series default
+ קלט ותמיד מוציא לו פלט מתאים, ושזה 
+\series bold
+תמיד אותו פלט
+\series default
+.
+ במילים אחרות, אני לא מדמיין את אדון קרחחצבופינצינקי אומר פתאום 
+\begin_inset Quotes eld
+\end_inset
+
+עזבו אותי מהשיעמום הזה אני הולך הביתה
+\begin_inset Quotes erd
+\end_inset
+
+ ומסרב לתת לי פלט מתאים עבור קלט כלשהו; ואני גם לא מדמיין את אדון קרחחצבופינצינק
+י אומר 
+\begin_inset Quotes eld
+\end_inset
+
+מה לבחור מה לבחור מה לבחור פשוט אטיל קוביה ונראה מה היא תגיד
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+בשלב הזה אתם עשויים להזדעק - למה אני מייחס לאדון קרחחצבופינצינקי כאלו דברים?
+ מה, אנחנו לא מכירים תוכניות מחשב שיש קלטים שהן פשוט נתקעות עליהם ולא מוציאות
+ פלט? מה, אנחנו לא מכירים תוכניות מחשב שהפלט שלהן הוא אקראי? מה, הטבע אינו
+ אקראי? אם אני מודד מצב קוונטי אני לא אקבל תוצאות שונות בהסתברויות שונות?
+ מה זו הגישה הצרה והמוגבלת הזו לתיאור המציאות? שוב המתמטיקאים עם השטויות
+ שלהם?
+\end_layout
+
+\begin_layout Standard
+ובכן, זוכרים איך כבר 
+\begin_inset CommandInset href
+LatexCommand href
+name "בפוסט הראשון"
+target "https://gadial.net/2019/10/19/what_is_set_theory/"
+literal "false"
+
+\end_inset
+
+ על תורת הקבוצות דיברנו על חיסרון מהותי דומה של קבוצות - זה שאין בהן סדר?
+ ודקה אחר כך ראינו שדווקא אפשר ליצור סדר מתוך החוסר-סדר הזה של קבוצות? אותו
+ הדבר עם פונקציות - גם אם נדרוש שלכל קלט יהיה פלט יחיד, עדיין נוכל להגדיר
+ בהמשך סוגים מתוחכמים יותר של פונקציות בעזרת הפורמליזם הבסיסי הזה.
+ נגיע לכך עוד מעט, ובינתיים הנה ההגדרה הפורמלית הסופית לפונקציה.
+\end_layout
+
+\begin_layout Standard
+פונקציה 
+\begin_inset Formula $f:A\to B$
+\end_inset
+
+ מורכבת משלושה דברים: קבוצה 
+\begin_inset Formula $A$
+\end_inset
+
+ שנקראת 
+\series bold
+התחום
+\series default
+ של הפונקציה, קבוצה 
+\begin_inset Formula $B$
+\end_inset
+
+ שנקראת 
+\series bold
+הטווח
+\series default
+ של הפונקציה, ויחס 
+\begin_inset Formula $f\subseteq A\times B$
+\end_inset
+
+ שאותו לרוב אני פשוט מכנה 
+\begin_inset Quotes eld
+\end_inset
+
+הפונקציה
+\begin_inset Quotes erd
+\end_inset
+
+ וזהו.
+ היחס הזה צריך לקיים שתי תכונות:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+קיום
+\begin_inset Quotes erd
+\end_inset
+
+: לכל 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ 
+\series bold
+קיים
+\series default
+ 
+\begin_inset Formula $b\in B$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $\left(a,b\right)\in f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+יחידות
+\begin_inset Quotes erd
+\end_inset
+
+: אם 
+\begin_inset Formula $\left(a,b_{1}\right)\in f$
+\end_inset
+
+ וגם 
+\begin_inset Formula $\left(a,b_{2}\right)\in f$
+\end_inset
+
+ עבור 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ ו-
+\begin_inset Formula $b_{1},b_{2}\in B$
+\end_inset
+
+ אז 
+\begin_inset Formula $b_{1}=b_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+שתי התכונות הללו מאפשרות לי להשתמש בקיצור הנפוץ ביותר במתמטיקה.
+ במקום לכתוב 
+\begin_inset Formula $\left(a,b\right)\in f$
+\end_inset
+
+ אני יכול לכתוב 
+\begin_inset Formula $b=f\left(a\right)$
+\end_inset
+
+ או פשוט לשכוח מ-
+\begin_inset Formula $b$
+\end_inset
+
+ ופשוט לסמן 
+\begin_inset Formula $f\left(a\right)$
+\end_inset
+
+ כדי להגיד 
+\begin_inset Quotes eld
+\end_inset
+
+האיבר היחיד ב-
+\begin_inset Formula $B$
+\end_inset
+
+ שנמצא ביחס 
+\begin_inset Formula $f$
+\end_inset
+
+ עם 
+\begin_inset Formula $a$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ )קיים כזה כי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+והוא יחיד כי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\numeric off
+(.
+\end_layout
+
+\begin_layout Standard
+הנקודה הראשונה והנודניקית שאני רוצה להדגיש הוא ש
+\series bold
+התחום והטווח חשובים
+\series default
+.
+ שתי פונקציות שמוגדרות על ידי אותו 
+\begin_inset Quotes eld
+\end_inset
+
+כלל
+\begin_inset Quotes erd
+\end_inset
+
+ אבל הן עם תחומים שונים או טווחים שונים נחשבות שונות.
+ למשל לכתוב 
+\begin_inset Formula $f\left(x\right)=x^{2}$
+\end_inset
+
+ לא נותן לנו את כל האינפורמציה על הפונקציה.
+ אם 
+\begin_inset Formula $f:\mathbb{N}\to\mathbb{N}$
+\end_inset
+
+, כלומר התחום והטווח הם הטבעיים, אז ברור שזו פונקציה שונה מ-
+\begin_inset Formula $g:\mathbb{R}\to\mathbb{R}$
+\end_inset
+
+ המוגדרת על ידי 
+\begin_inset Formula $g\left(x\right)=x^{2}$
+\end_inset
+
+ גם כן; הרי הזוג 
+\begin_inset Formula $\left(\frac{1}{2},\frac{1}{4}\right)$
+\end_inset
+
+ שייך ל-
+\begin_inset Formula $g$
+\end_inset
+
+ ולא שייך ל-
+\begin_inset Formula $f$
+\end_inset
+
+.
+ אלא שיש גם סיטואציות הרבה יותר עדינות.
+ בואו נסתכל על 
+\begin_inset Formula $f:\mathbb{R}\to\mathbb{R}$
+\end_inset
+
+ המוגדרת על ידי 
+\begin_inset Formula $f\left(x\right)=x^{2}$
+\end_inset
+
+ אל מול 
+\begin_inset Formula $g:\mathbb{R}\to[0,\infty)$
+\end_inset
+
+ המוגדרת על ידי 
+\begin_inset Formula $g\left(x\right)=x^{2}$
+\end_inset
+
+.
+ כאן 
+\begin_inset Formula $[0,\infty)$
+\end_inset
+
+ הוא קבוצת כל הממשיים 
+\series bold
+האי-שליליים
+\series default
+.
+ מה קורה פה? אם מעלים מספר ממשי בריבוע, התוצאה היא תמיד מספר אי שלילי.
+ כלומר הטווח של 
+\begin_inset Formula $f$
+\end_inset
+
+ שהוא כל 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ הוא בעצם 
+\begin_inset Quotes eld
+\end_inset
+
+לא מנוצל כולו
+\begin_inset Quotes erd
+\end_inset
+
+ כי אנחנו אף פעם לא מחזירים מספר שלילי.
+ יותר מכך - היחסים 
+\begin_inset Formula $f$
+\end_inset
+
+ ו-
+\begin_inset Formula $g$
+\end_inset
+
+ הם 
+\series bold
+שווים
+\series default
+ כי הם מכילים בדיוק את אותם איברים.
+ ועדיין, 
+\begin_inset Formula $f$
+\end_inset
+
+ היא לא אותה פונקציה כמו 
+\begin_inset Formula $g$
+\end_inset
+
+ כי הן נבדלות בטווח שלהן 
+\series bold
+ולא משנה שלא משתמשים בחלק הנוסף של הטווח
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+אם לא תמיד משתמשים בכל הטווח, נראה שיש ערך גם לדבר על אותו חלק של הטווח
+ שבו כן משתמשים - הוא נקרא 
+\series bold
+התמונה
+\series default
+ של 
+\begin_inset Formula $f$
+\end_inset
+
+ והוא מסומן לעתים קרובות ב-
+\begin_inset Formula $f\left(A\right)=\left\{ f\left(a\right)\ |\ a\in A\right\} $
+\end_inset
+
+ )או בסימון הפחות מעניין 
+\begin_inset Formula $\text{Im}f$
+\end_inset
+
+(.
+ הסימון הזה יכול להיות קצת מבלבל כי נראה כאילו מזינים ל-
+\begin_inset Formula $f$
+\end_inset
+
+ את הקבוצה 
+\begin_inset Formula $A$
+\end_inset
+
+ בתור קלט, כשבעצם מתכוונים ל
+\begin_inset Quotes erd
+\end_inset
+
+הקבוצה שמתקבלת כשמזינים ל-
+\begin_inset Formula $f$
+\end_inset
+
+ בתור קלט את כל האיברים ב-
+\begin_inset Formula $A$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ אבל לפני שמתרעמים על חילול הקודש כדאי לזכור שגם הסימון 
+\begin_inset Formula $f\left(a\right)$
+\end_inset
+
+ בעצמו הוא רק סימון מקוצר למשהו, כך שאין בעיה עקרונית עם לכתוב 
+\begin_inset Formula $f\left(A\right)$
+\end_inset
+
+ ואפילו מרחיבים אותו לכל תת-קבוצה של 
+\begin_inset Formula $A$
+\end_inset
+
+ )כלומר, אם 
+\begin_inset Formula $X\subseteq A$
+\end_inset
+
+ אז כותבים 
+\begin_inset Formula $f\left(X\right)$
+\end_inset
+
+ כדי לתאר את 
+\begin_inset Formula $\left\{ f\left(x\right)\ |\ x\in X\right\} $
+\end_inset
+
+(.
+ כן קיים מקרה אחד שבו הסימון הזה עשוי להיות מסוכן - אם איברים של 
+\begin_inset Formula $A$
+\end_inset
+
+ הם גם תת-קבוצות של 
+\begin_inset Formula $A$
+\end_inset
+
+, וזה בהחלט מקרה שנראה בהמשך - ובמקרה הזה באמת לא נשתמש בשיטת הסימון הזו.
+\end_layout
+
+\begin_layout Standard
+עכשיו בואו נעבור לדבר על המגבלות לכאורה של ההגדרה הזו ולמה הן לא באמת מגבלות.
+ נתחיל דווקא עם זו שאולי נראית פחות קריטית: על פניו, לפונקציה שלי יש משתנה
+ 
+\series bold
+בודד
+\series default
+, וזהו.
+ זה כמובן לא המצב באופן כללי.
+ בחדו
+\begin_inset Quotes erd
+\end_inset
+
+א למשל אחרי שגומרים להבין את הבסיס של החדו
+\begin_inset Quotes erd
+\end_inset
+
+א של פונקציות במשתנה יחיד עוברים לדבר על פונקציות בשני משתנים שכותבים בתור
+ 
+\begin_inset Formula $f\left(x,y\right)$
+\end_inset
+
+.
+ איך זה מסתדר עם ההגדרה שלנו? ובכן, בקלות: אם אני מגדיר 
+\begin_inset Formula $f:\mathbb{R}^{2}\to\mathbb{R}$
+\end_inset
+
+ )
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ הוא סימון מקוצר למכפלה הקרטזית 
+\begin_inset Formula $\mathbb{R}\times\mathbb{R}$
+\end_inset
+
+(, הגדרתי פונקציה שהקלט שלה הוא 
+\series bold
+זוג
+\series default
+ איברים: כלומר, אני צריך לכתוב 
+\begin_inset Formula $f\left(\left(x,y\right)\right)$
+\end_inset
+
+ כדי לתאר את הקלט.
+ מכיוון ש-
+\begin_inset Formula $f$
+\end_inset
+
+ הוא מלכתחילה סימון מטעמי נוחות, אני פשוט כותב 
+\begin_inset Formula $f\left(x,y\right)$
+\end_inset
+
+ במקום לכתוב 
+\begin_inset Formula $f\left(\left(x,y\right)\right)$
+\end_inset
+
+ וחסל.
+ באופן דומה בחדו
+\begin_inset Quotes erd
+\end_inset
+
+א עוברים לדבר אחר כך על פונקציה שמקבלת 
+\begin_inset Formula $n$
+\end_inset
+
+ קלטים ומחזירה סדרה של 
+\begin_inset Formula $m$
+\end_inset
+
+ ערכים - זו פשוט פונקציה 
+\begin_inset Formula $f:\mathbb{R}^{n}\to\mathbb{R}^{m}$
+\end_inset
+
+, אז אין בעיה עם זה.
+ למעשה, באלגברה לינארית כבר משלב מוקדם מאוד עובדים עם פונקציות מרובות משתנים
+ שכאלו, רק שבאלגברה לינארית על פי רוב כן ממשיכים להתייחס לאיבר 
+\begin_inset Formula $\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+ בתור איבר בודד שהוא סדרה של 
+\begin_inset Formula $n$
+\end_inset
+
+ ערכים ולא בתור 
+\begin_inset Formula $n$
+\end_inset
+
+ איברים.
+\end_layout
+
+\begin_layout Standard
+המגבלה הבאה היא שפונקציה לא יכולה להיות לא מוגדרת עבור ערך כלשהו מתוך התחום
+ שלה.
+ את זה קל לתקן מאוד בקלות על ידי הרחבה של הטווח.
+ נוסיף לטווח איבר חדש שנסמן נניח ב-
+\begin_inset Formula $\perp$
+\end_inset
+
+, ואז נגדיר את 
+\begin_inset Formula $f$
+\end_inset
+
+ להחזיר את 
+\begin_inset Formula $\perp$
+\end_inset
+
+ על כל איבר של התחום שהיא לא מוגדרת עבורו.
+ זו קונבנציה סטנדרטית שאפשר לראות, למשל, בספרים של תורת החישוביות, שעוסקים
+ בדיוק בחישובים שעשויים לא להסתיים ולכן לא להחזיר פלט.
+ לפונקציה שלא מוגדרת על כל התחום קוראים שם 
+\begin_inset Quotes eld
+\end_inset
+
+פונקציה לא מלאה
+\begin_inset Quotes erd
+\end_inset
+
+ וכפי שראינו עכשיו אין בעיה להגדיר אותה פורמלית בעזרת המושג הרגיל של פונקציה.
+\end_layout
+
+\begin_layout Standard
+תכונת היחידות מעלה בעיה אחרת.
+ האם לפעמים אנחנו רוצים שהפונקציה תחזיר יותר מפלט אחד? ובכן, כמובן: נאמר
+ שאנחנו רוצים פונקציה שלוקחת מספר טבעי ומחזירה את הפירוק שלו לגורמים ראשוניים,
+ אז למשל 
+\begin_inset Formula $f\left(6\right)=\left(2,3\right)$
+\end_inset
+
+.
+ אבל לא באמת החזרנו כאן שני פלטים; החזרנו פלט שהוא סדרה של שני איברים, ובזה
+ הפורמליזם הקיים שלנו של קבוצות כבר מטפל יפה.
+\end_layout
+
+\begin_layout Standard
+בואו נחדד את הסיטואציה הבעייתית עם דוגמא אחרת - פונקציית השורש, 
+\begin_inset Formula $f:[0,\infty)\to\mathbb{R}$
+\end_inset
+
+, 
+\begin_inset Formula $f\left(x\right)=\sqrt{x}$
+\end_inset
+
+.
+ מהו 
+\begin_inset Quotes eld
+\end_inset
+
+שורש
+\begin_inset Quotes erd
+\end_inset
+
+ של מספר? קונספטואלית, השורש של 
+\begin_inset Formula $a$
+\end_inset
+
+ הוא מספר 
+\begin_inset Formula $x$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $x^{2}=a$
+\end_inset
+
+.
+ העניין הוא שבמספרים הממשיים למספר יכולים להיות שני שורשים: למשל, עבור
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\numeric off
+, מתקיים גם 
+\begin_inset Formula $2^{2}=4$
+\end_inset
+
+ וגם 
+\begin_inset Formula $\left(-2\right)^{2}=4$
+\end_inset
+
+.
+ יש גם את הבעיה שאין שורש ממשי למספרים שליליים אבל כאן פשוט בחרתי את התחום
+ לא לכלול אותם.
+\end_layout
+
+\begin_layout Standard
+אם כן, לפונקציית השורש יש על פי רוב שני פלטים שונים שהיא יכולה להחזיר.
+ הם לא אותו אובייקט; הם שתי אפשרויות אלטרנטיביות לתשובה שכל אחת מהן טובה
+ באותה מידה.
+ ואנחנו צריכים להחזיר אחת מהן.
+ אז מה עושים? פשוט בוחרים באופן שרירותי משהו את מה לעשות - המוסכמה היא שהפונקציה
+ 
+\begin_inset Formula $f\left(x\right)=\sqrt{x}$
+\end_inset
+
+ תמיד תחזיר את השורש 
+\series bold
+החיובי
+\series default
+ ולא את השלילי )תמיד יש אחד כזה ואחד כזה אם יש שניים(.
+ אם היינו בוחרים תמיד להחזיר את השלילי היינו מקבלים פונקציה חוקית באותה
+ מידה, וגם אם היינו בוחרים מדי פעם להחזיר את החיובי ומדי פעם את השלילי,
+ כל עוד הכלל של מתי בוחרים מה להחזיר היה מוגדר היטב.
+\end_layout
+
+\begin_layout Standard
+העניין הוא שאם מבצעים תהליך כזה של 
+\begin_inset Quotes eld
+\end_inset
+
+לבחור איזה מהערכים האפשריים של הפונקציה לקחת
+\begin_inset Quotes erd
+\end_inset
+
+ אנחנו רוצים גם להיות מסוגלים לדבר על הפונקציה שממנה מתחילים את התהליך הזה.
+ מקום שבו זה נפוץ במיוחד הוא בתורת הפונקציות המרוכבות, שם התופעה של פונקציה
+ שמחזירה הרבה ערכים היא נפוצה מאוד.
+ אז קוראים לפונקציה כזו 
+\begin_inset Quotes eld
+\end_inset
+
+פונקציה רב-ערכית
+\begin_inset Quotes erd
+\end_inset
+
+.
+ ואיך פורמלית מטפלים בזה? אם הפונקציה 
+\begin_inset Formula $f:A\to B$
+\end_inset
+
+ היא רב-ערכית, אפשר לחשוב עליה פורמלית בתור פונקציה 
+\begin_inset Formula $f:A\to\mathcal{P}\left(B\right)$
+\end_inset
+
+.
+ כלומר, במקום שהיא תחזיר איבר בודד של 
+\begin_inset Formula $B$
+\end_inset
+
+ היא מחזירה תת-קבוצה של 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ פתרון די פשוט.
+ עכשיו אפשר לקחת את הפונקציה הזו ולצמצם אותה כך שתחזיר רק פלט אחד בפעם -
+ לפעולה הזו קוראים 
+\series bold
+לקיחת ענף
+\series default
+ של הפונקציה.
+ בתורת הפונקציות המרוכבות מתחיל עכשיו סיפור די מרתק של מה קורה אם מנסים
+ לקחת ענף תוך שמירה על תכונות נחמדות של הפונקציה, אבל אנחנו לא מדברים על
+ התחום הזה כרגע אז אני אימלט ממנו לפני שתשימו לב שאני לא באמת מבין על מה
+ אני מדבר.
+\end_layout
+
+\begin_layout Standard
+והנה דוגמא מתחום שונה לגמרי - תורת האוטומטים.
+ בשביל להבין את הדוגמא לא צריך להבין אוטומטים מעבר לכך שהם מורכבים מקבוצה
+ של מצבים 
+\begin_inset Formula $Q$
+\end_inset
+
+ שאפשר להיות בהם, קבוצה של אותיות קלט 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ שאפשר לראות, ופונקציה 
+\begin_inset Formula $\delta:Q\times\Sigma\to Q$
+\end_inset
+
+ שבהינתן מצב ואות קלט קובעת לאיזה מצב חדש האוטומט צריך לעבור )הנה דוגמא
+ לפונקציה בשני משתנים!(
+\end_layout
+
+\begin_layout Standard
+המושג הזה של אוטומט נקרא 
+\series bold
+אוטומט דטרמיניסטי
+\series default
+ כי בהינתן הזוג של מצב + אות קלט, המצב שאליו עוברים נקבע באופן יחיד.
+ אבל בפועל נוח להרחיב את סוג האוטומט הזה ל
+\series bold
+אוטומט לא דטרמיניסטי
+\series default
+ שמותר לו לבצע כמה מעברים שונים בתגובה לאותו זוג של מצב ואות קלט )הפרה של
+ תכונת ה
+\begin_inset Quotes erd
+\end_inset
+
+יחידות
+\begin_inset Quotes erd
+\end_inset
+
+(, או לא לבצע מעבר בכלל )הפרה של תכונת ה
+\begin_inset Quotes erd
+\end_inset
+
+קיום
+\begin_inset Quotes erd
+\end_inset
+
+(.
+ פורמלית קל לטפל בזה: פונקצית המעברים הופכת להיות 
+\begin_inset Formula $\delta:Q\times\Sigma\to\mathcal{P}\left(Q\right)$
+\end_inset
+
+ שלכל זוג קלטים מחזיר את קבוצת כל הפלטים האפשרית עבורם )כאן 
+\begin_inset Quotes eld
+\end_inset
+
+אף מעבר
+\begin_inset Quotes erd
+\end_inset
+
+ מתואר על ידי פלט שהוא הקבוצה הריקה(.
+ בגלל כל מני קשיים טכניים שההגדרה הזו מעוררת לפעמים פשוט בוחרים בשלב הזה
+ לדבר על 
+\series bold
+יחס מעברים
+\series default
+ במקום על פונקציית מעברים - כלומר, לחזור למקורות שבהם פונקציה היא סוג של
+ יחס עם תכונות מסויימות ופשוט לוותר על התכונות הללו - אבל לא נתעסק בזה כאן.
+\end_layout
+
+\begin_layout Standard
+נקודה אחת אחרונה שאני רוצה לדבר עליה היא מה עשוי להשתבש כשמגדירים פונקציה
+ בלי שנשים לב אפילו.
+ כמו שהפרדוקס של ראסל לימד אותנו, זה שאנחנו כותבים אוסף אקראי של מילים בעברית
+ לא אומר שיצרנו קבוצה, וכך גם בפונקציות - זה שכתבתי כלל כלשהו לא אומר שבאמת
+ הגדרתי פונקציה.
+ צריך לוודא את זה, ולו בינינו לבין עצמנו.
+ 
+\end_layout
+
+\begin_layout Standard
+הבעיה הפשוטה ביותר שצריך לחשוש ממנה היא פשוט שהכלל לא יעבוד לכל הקלטים,
+ ולכן יהיה קלט נטול פלט ותכונת ה
+\begin_inset Quotes erd
+\end_inset
+
+קיום
+\begin_inset Quotes erd
+\end_inset
+
+ שלנו תתקלקל.
+ למשל, 
+\begin_inset Formula $f:\mathbb{R}\to\mathbb{R}$
+\end_inset
+
+ המוגדרת על ידי 
+\begin_inset Formula $f\left(x\right)=\frac{1}{x}$
+\end_inset
+
+ איננה פונקציה כי עבור 
+\begin_inset Formula $x=0$
+\end_inset
+
+ אין משמעות לביטוי 
+\begin_inset Formula $\frac{1}{x}$
+\end_inset
+
+ שכתבנו כך בקלילות.
+ כמובן, קל לתקן את זה על ידי שינוי של התחום )כלומר, להוציא את
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מהתחום: 
+\begin_inset Formula $f:\mathbb{R}\backslash\left\{ 0\right\} \to\mathbb{R}$
+\end_inset
+
+( או על ידי שינוי של הטווח )כמו שאמרתי קודם, להגדיר 
+\begin_inset Formula $f:\mathbb{R}\to\mathbb{R}\cup\left\{ \perp\right\} $
+\end_inset
+
+ ו-
+\begin_inset Formula $f\left(0\right)=\perp$
+\end_inset
+
+( אבל בלי אחד מהשינויים הללו, אין לנו פה פונקציה גם אם אנחנו חושבים בטעות
+ שיש.
+\end_layout
+
+\begin_layout Standard
+עוד בעיות קלאסיות עם הגדרות חסרות משמעות של פונקציות הן כשמציבים אפס או
+ מספר שלילי בפונקציית הלוגריתם )
+\begin_inset Formula $\ln0$
+\end_inset
+
+(, כשמנסים לתת לפונקציה טריגונומטרית הפוכה ערך שאינו בין 
+\begin_inset Formula $-1$
+\end_inset
+
+ ל-
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)
+\begin_inset Formula $\sin^{-1}\left(\pi\right)$
+\end_inset
+
+(, כשמנסים להוציא שורש למספר שלילי מעל הממשיים )
+\begin_inset Formula $\sqrt{-1}$
+\end_inset
+
+; כאן אפשר להרחיב את הטווח באופן סביר והגיוני לקבוצת המרוכבים, 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+, במקום סתם לומר שאנחנו לא מוגדרים, אבל לפעמים אנחנו לא 
+\series bold
+רוצים
+\series default
+ לערב את המרוכבים בסיפור( וכדומה.
+ על פי רוב אין 
+\series bold
+יותר מדי
+\series default
+ סכנות מהסוג הזה - צריך לדעת על כמה דברים בסיסיים שיש להיזהר מהם, וזה מספיק.
+\end_layout
+
+\begin_layout Standard
+סכנה גדולה בהרבה אורבת לנו דווקא עם תכונת ה
+\begin_inset Quotes erd
+\end_inset
+
+יחידות
+\begin_inset Quotes erd
+\end_inset
+
+.
+ הסיבה לכך היא שבמתמטיקה לעתים קרובות יש לאובייקט מתמטי 
+\series bold
+יותר מייצוג אחד
+\series default
+ וכשמגדירים פונקציה על האובייקט צריך להיזהר שהפונקציה לא תוגדר באופן שהוא
+ תלוי ייצוג - כלומר, שעבור 
+\series bold
+ייצוגים שונים לאותו קלט
+\series default
+ לא יתקבלו פלטים שונים.
+\end_layout
+
+\begin_layout Standard
+הנה דוגמא פשוטה לאיך שזה יכול לצוץ כשמשתמשים ביחסי שקילות.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "בפוסט על יחסי שקילות"
+target "https://gadial.net/2020/01/06/equivalence_relations/"
+literal "false"
+
+\end_inset
+
+ הצגתי יחס שקילות שסימנתי אותו ב-
+\begin_inset Formula $\equiv_{3}$
+\end_inset
+
+: אמרתי ש-
+\begin_inset Formula $a\equiv_{3}b$
+\end_inset
+
+ אם השארית ש-
+\begin_inset Formula $a,b$
+\end_inset
+
+ משאירים בחלוקה ב-
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+היא זהה.
+ למשל, 
+\begin_inset Formula $1\equiv_{3}4$
+\end_inset
+
+.
+ לכן אפשר לכתוב 
+\begin_inset Formula $\left[1\right]=\left[4\right]$
+\end_inset
+
+ - מחלקת השקילות של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ומחלקת השקילות של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הן אותה מחלקת שקילות.
+\end_layout
+
+\begin_layout Standard
+עכשיו בואו נגדיר פונקציה מקבוצת המנה 
+\begin_inset Formula $\mathbb{N}/\equiv_{3}$
+\end_inset
+
+ אל 
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+ באופן הבא: 
+\begin_inset Formula $f\left(\left[a\right]\right)=a$
+\end_inset
+
+.
+ כלומר: בהינתן מחלקת שקילות שמיוצגת על ידי המספר הטבעי 
+\begin_inset Formula $a$
+\end_inset
+
+, הפונקציה מחזירה את 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ למשל, 
+\begin_inset Formula $f\left(\left[0\right]\right)=0$
+\end_inset
+
+ ו-
+\begin_inset Formula $f\left(\left[1\right]\right)=1$
+\end_inset
+
+ ו-
+\begin_inset Formula $f\left(\left[2\right]\right)=2$
+\end_inset
+
+ ו-
+\begin_inset Formula $f\left(\left[4\right]\right)=4$
+\end_inset
+
+ ו...
+ אה-הא! הנה הבעיה.
+ הרי 
+\begin_inset Formula $\left[1\right]=\left[4\right]$
+\end_inset
+
+ אבל כרגע ראינו שני פלטים שונים על אותו קלט: 
+\begin_inset Formula $f\left(\left[1\right]\right)=1\ne4=f\left(\left[4\right]\right)$
+\end_inset
+
+.
+ זו סתירה לתכונת ה
+\begin_inset Quotes erd
+\end_inset
+
+יחידות
+\begin_inset Quotes erd
+\end_inset
+
+ של פונקציה, וזה קרה לנו בלי לשים לב, בזמן שניסינו להגדיר את הפונקציה באמצעות
+ נוסחה 
+\begin_inset Quotes eld
+\end_inset
+
+רגילה
+\begin_inset Quotes erd
+\end_inset
+
+ שלא נראית רב-ערכית.
+\end_layout
+
+\begin_layout Standard
+אז מה הפתרון? אין פתרון קסם, צריך להיות זהירים.
+ גם בהוכחות מתקדמות במתמטיקה לא כזה נדיר, כשמוגדרת פונקציה, לראות שלב בהוכחה
+ שבו מראים שהפונקציה היא 
+\begin_inset Quotes eld
+\end_inset
+
+מוגדרת היטב
+\begin_inset Quotes erd
+\end_inset
+
+.
+ כלומר, אם יש ספק כלשהו לגבי תכונת ה
+\begin_inset Quotes erd
+\end_inset
+
+קיום
+\begin_inset Quotes erd
+\end_inset
+
+ או ה
+\begin_inset Quotes erd
+\end_inset
+
+יחידות
+\begin_inset Quotes erd
+\end_inset
+
+, מסבירים במפורש למה אין בעיה.
+\end_layout
+
+\end_body
+\end_document

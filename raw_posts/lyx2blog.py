@@ -71,7 +71,7 @@ def math_tag_replacements(text):  # relies on the fact that LyX converts math to
     return re.sub(r'\\L\{\$([^\$]*)\$\}', r'{% equation %}\1{% endequation %}', text)
 
 def remove_comments(text):
-    return re.sub(r'%.*', "", text)
+    return re.sub(r'%%.*', "", text)
 
 def replace_tags(text):
     # print(text)

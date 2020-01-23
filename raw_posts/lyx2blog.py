@@ -124,7 +124,7 @@ def get_front_matter_data(text):
 def front_matter(front_matter_data):
     front_matter_elements = []
     front_matter_elements.append('---')
-    front_matter_elements.append('title: {}'.format(front_matter_data['title']))
+    front_matter_elements.append('title: "{}"'.format(front_matter_data['title']))
     #front_matter_elements.append('date: {}'.format(front_matter_data['datetime']))
     front_matter_elements.append('layout: post')
     front_matter_elements.append('categories:')
@@ -158,11 +158,17 @@ if __name__ == '__main__':
         print("Usage: {} FILENAME".format(sys.argv[0]))
         exit(0)
     filename = os.path.splitext(os.path.basename(sys.argv[1]))[0]
+    if (len(sys.argv) >= 3):
+        result_dir = sys.argv[2]
+    else:
+        result_dir = None
 #    convert_lyx_to_tex(filename)
     with open(filename + ".tex", encoding='utf-8') as texfile:
         text = texfile.read()
     front_matter_data = get_front_matter_data(text)
     text = front_matter(front_matter_data) + perform_all_changes(text)
     filename = front_matter_data['date'] + '-' + front_matter_data['identifier'] + ".md"
+    if result_dir is not None:
+        filename = os.path.join(result_dir, filename)
     with open(filename, "w", encoding='utf-8') as output_file:
         output_file.write(text)

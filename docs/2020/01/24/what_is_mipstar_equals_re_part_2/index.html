@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>מה זה אומר ש-MIP=RE? (חלק ב’: מה זה אומר MIP?) | לא מדויק</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="מה זה אומר ש-MIP=RE? (חלק ב’: מה זה אומר MIP?)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<meta property="og:description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<link rel="canonical" href="http://gadial.net/2020/01/24/what_is_mipstar_equals_re_part_2/" />
+<meta property="og:url" content="http://gadial.net/2020/01/24/what_is_mipstar_equals_re_part_2/" />
+<meta property="og:site_name" content="לא מדויק" />
+<meta property="og:image" content="http://gadial.net/assets/img/main/default-card.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-24T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://gadial.net/assets/img/main/default-card.png" />
+<meta property="twitter:title" content="מה זה אומר ש-MIP=RE? (חלק ב’: מה זה אומר MIP?)" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"headline":"מה זה אומר ש-MIP=RE? (חלק ב’: מה זה אומר MIP?)","dateModified":"2020-01-24T00:00:00+00:00","datePublished":"2020-01-24T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2020/01/24/what_is_mipstar_equals_re_part_2/"},"url":"http://gadial.net/2020/01/24/what_is_mipstar_equals_re_part_2/","image":"http://gadial.net/assets/img/main/default-card.png","description":"לא מדויק - בלוג על מתמטיקה ומדעי המחשב","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://gadial.net/feed.xml" title="לא מדויק" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3924539-2', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$latex','$'] ],
+        processEscapes: true
+      },
+      TeX: {extensions: ["AMSmath.js","AMSsymbols.js"]},
+      "HTML-CSS": { 
+        linebreaks: { automatic: true }
+      },
+      SVG: { 
+        linebreaks: { automatic: true } 
+      }
+    });
+  </script>
+  <!-- "https://www.gadial.net/wp-includes/js/xypic.js" -->
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  
+</head>
+<body><header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/">לא מדויק</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/whats_going_on">מה הולך פה?</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/">דף הבית</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/categories">קטגוריות</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/random">דף אקראי</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/about/">אודות</a>
+            </li>
+            
+        
+      </ul>
+      <form class="form-inline mt-2 mt-md-0" action="/post_list/" method="get">
+        <input class="form-control mr-sm-2" type="text" placeholder="חיפוש" aria-label="חיפוש" name="s">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">חיפוש</button>
+      </form>
+    </div>
+  </nav>
+</header><main class="page-content" aria-label="Content" role="main">
+      <div class="wrapper text-right">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><div class="PageNavigation">
+    
+      <a class="prev" href="/2020/01/23/what_is_mipstar_equals_re_part_1/">&laquo; מה זה אומר ש-MIP*=RE? (חלק א': מה זה אומר RE?)</a>
+    
+    
+  </div><header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">מה זה אומר ש-MIP*=RE? (חלק ב&#39;: מה זה אומר MIP*?)</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-01-24T00:00:00+00:00" itemprop="datePublished">Jan 24, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="https://gadial.net/2020/01/23/what_is_mipstar_equals_re_part_1/">בפוסט הקודם</a>התחלתי לדבר על ההוכחה ש-<span>$latex \text{MIP}^{*}=\text{RE}$</span> והסברתי מה זו <span>$latex \text{RE}$</span>. הפעם אני ארצה לנסות להבין מה זו <span>$latex \text{MIP}^{*}$</span>, ולשם כך נבין קודם כל מה זו <span>$latex \text{MIP}$</span> ולשם כך נבין קודם כל מה זו <span>$latex \text{IP}$</span> ולשם כך קודם כל ניזכר במה שקרה בפוסט הקודם.</p>
+
+<p>“נקודת המוצא” שלי בפוסט הקודם הייתה המחלקה <span>$latex \text{NP}$</span> שכוללת את כל בעיות ההכרעה <span>$latex L$</span> שיש להן “מוודא” יעיל. כלומר, שקיים <span>$latex V$</span> שפועל בזמן ריצה יעיל (פולינומי בגודל הקלט שלו) כך ש:</p>
+
+<ol> <li>(שלמות) אם <span>$latex x\in L$</span> אז <strong>קיים</strong> <span>$latex \pi$</span> כך ש-<span>$latex V\left(x,\pi\right)=\text{T}$</span></li>
+
+
+<li>(נאותות) אם <span>$latex x\notin L$</span> אז <strong>לכל</strong> <span>$latex \pi$</span> מתקיים ש-<span>$latex V\left(x,\pi\right)=\text{F}$</span></li>
+
+</ol>
+
+<p>כאשר <span>$latex \pi$</span> - ה”הוכחה” לשייכות <span>$latex x$</span> ל-<span>$latex L$</span> - פולינומי בגודל של <span>$latex x$</span>.</p>
+
+<p>אחרי הגדרת <span>$latex \text{NP}$</span> הגדרתי את <span>$latex \text{RE}$</span> בצורה דומה מאוד, רק בלי דרישות הסיבוכיות - לא הגבלתי את האורך של <span>$latex \pi$</span> ולא דרשתי ש-<span>$latex V$</span> ירוץ בזמן יעיל. בצורה הזו נראה ש-<span>$latex \text{RE}$</span> היא מעין הכללה של <span>$latex \text{NP}$</span> שמתקבלת מהקלה ב”כללי המשחק” של <span>$latex \text{NP}$</span>. בפועל קרה ההפך - המחלקה <span>$latex \text{RE}$</span> הייתה מוכרת הרבה לפני שהתחילו לדבר על <span>$latex \text{NP}$</span>, מהטעם הפשוט ש-<span>$latex \text{RE}$</span> הייתה <strong>גדולה מדי</strong>. אבל אחרי ש-<span>$latex \text{NP}$</span> הפכה לבת בית רגילה בתורת הסיבוכיות, אכן התחילו לשאול איך עוד אפשר להקל ב”כללי המשחק” של <span>$latex \text{NP}$</span> ומה מקבלים אז.</p>
+
+<p>דרך אחת שבה אפשר להקל בכללי המשחק של <span>$latex \text{NP}$</span> היא על ידי הוספת <strong>אינטראקטיביות</strong> לתהליך הוידוא. מה קורה ב-<span>$latex \text{NP}$</span>? אני הוא המוודא <span>$latex V$</span>. אני מקבל לידיים “הוכחה” <span>$latex \pi$</span>. מה זו ההוכחה הזו? מהיכן היא הגיעה? מהשמיים? ממולטיוואק? מהראש של זאוס? זה לא חלק מהסיפור. יש הוכחה. כל האתגר שלי הוא לבדוק בסיועה האם <span>$latex x\in L$</span> או לא. במילים אחרות, אין <strong>מוכיח</strong> שהוא חלק מהסיפור. קיבלתי ספר ואני קורא אותו וזהו.</p>
+
+<p>אבל נניח שיש מוכיח. כאן זה כבר פחות לימוד עצמי ויותר כמו לשבת בהרצאה של מתמטיקה ולהציק כל הזמן למרצה בשאלות. אם אני לא מעצבן אותה, היא אפילו תענה לי. יש כאן <strong>תהליך אינטראקטיבי</strong> של למידה, ולחלקנו זה עוזר ללמוד. האם זה עוזר גם להוכיח דברים יותר טוב?</p>
+
+<p>קודם כל נשאל את עצמנו - איך מפרמלים את זה? עד עכשיו היה לי בתמונה אלגוריתם אחד, <span>$latex V$</span>- “המוודא”. עכשיו אני מכניס לתמונה אלגוריתם חדש, <span>$latex P$</span> - “המוכיח”. על <span>$latex V$</span> יש דרישות סיבוכיות; הוא צריך לרוץ בזמן יעיל. על <span>$latex P$</span> לעומת זאת אני לא אדרוש שום דבר כזה, כי אם <span>$latex P$</span> לא יותר חזק מ-<span>$latex V$</span> מה היתרון שבהכנסת <span>$latex P$</span> למשחק מלכתחילה? אז אני מניח ש-<span>$latex P$</span> יכול לפעול באיזו סיבוכיות זמן שבא לו, אבל <strong>העיקר שיעצור בסוף עם תשובה</strong>.</p>
+
+<p>עכשיו מה ש-<span>$latex V$</span> עושה על קלט <span>$latex x$</span> הוא לבצע חישובים משל עצמו, ובנוסף לכך לשלוח “שאלות” ל-<span>$latex P$</span> (בפועל - פשוט מחרוזות; זה לא חייב להיות משהו שמנוסח כשאלה) ולקבל “תשובות” מ-<span>$latex P$</span> שהוא יכול להמשיך את החישוב עליהן. אנחנו חושבים על הצעד של “לשלוח שאלה ולקבל תשובה” מ-<span>$latex P$</span> בתור משהו שדורש צעד חישוב אחד של <span>$latex V$</span> ולא משנה כמה זמן לוקח ל-<span>$latex P$</span> לחשוב על תשובה; כך המגבלה שלנו על זמן הריצה של <span>$latex V$</span> נשארת הגיונית.</p>
+
+<p>המודל הזה חביב ונחמד <strong>ולא תורם לנו שום דבר חדש</strong> כי כל מה שאפשר לעשות בו, אפשר לעשות גם ב-<span>$latex \text{NP}$</span>. פשוט תחשבו על ההוכחה <span>$latex \pi$</span> כאילו היא כוללת את התשובות של המוכיח לשאלות של המוודא - בשביל מה צריך אינטראקטיביות כאן אם המוודא צפוי ואפשר לדעת מראש מה ישאל? תחשבו על ספר ש”מדבר עם הקורא” כי הוא ניחש מצויין מה הקורא הולך להגיד.</p>
+
+<p>אם כן, כדי שהעניינים יהיו יותר מעניינים, אנחנו הופכים את המוודא ל<strong>הסתברותי</strong> - מעכשיו מותר לו להטיל מטבעות ולשאול שאלות בהתאם לתוצאות ההטלה. על פניו לא שיניתי הרבה כי הוכחה <span>$latex \pi$</span> עדיין יכולה לכלול את התשובות לכל השאלות האפשריות של המוודא - אבל אם המוודא הוא הסתברותי יכולות להיות <strong>המון</strong> שאלות שונות, ולכן ההוכחה <span>$latex \pi$</span> הזו תהיה <strong>ארוכה מדי</strong> ממה שמותר לה להיות במסגרת <span>$latex \text{NP}$</span>. חשבו על זה כך: אם אני מטיל מטבע <span>$latex n$</span> פעמים יש לי <span>$latex 2^{n}$</span> תוצאות אפשריות של ההטלה, ולכן <span>$latex 2^{n}$</span> שאלות אפשריות - זה מספר לא פולינומי ב-<span>$latex n$</span>. אם <span>$latex \pi$</span> כוללת תשובה לכל שאלה כזו אז הגודל שלה יהיה מסדר גודל <span>$latex 2^{n}$</span> ואם <span>$latex n$</span> הוא בערך מסדר הגודל של <span>$latex x$</span>, אז קיבלנו הוכחה ארוכה מדי.</p>
+
+<p>העניין הוא שאם כל מה ששינינו הוא רק את היכולת של המוודא להטיל מטבעות, זה <strong>עדיין לא תרם שום דבר חדש</strong> כי כדי לוודא ש-<span>$latex x\in L$</span> <strong>לא צריך</strong> את כל התשובות לשאלות. בואו נראה במדויק למה. נניח שיש לנו מערכת הוכחה אינטראקטיבית עם מוודא הסתברותי <span>$latex V$</span> ומוכיח כל יודע <span>$latex P$</span>. עכשיו אני בונה מוכיח <strong>חדש</strong> שאקרא לו <span>$latex V^{\prime}$</span>, שמקבל ליד הוכחה <span>$latex \pi$</span> לשייכות <span>$latex x$</span> ל-<span>$latex L$</span> ובודק אותה באופן הבא:</p>
+
+<p>ההוכחה <span>$latex \pi$</span> של <span>$latex V^{\prime}$</span> תהיה בעצם תעתיק של שיחה בין <span>$latex V$</span> המקורי ובין <span>$latex P$</span>. כלומר - אני אראה את השאלות ש-<span>$latex V$</span> שאל את <span>$latex P$</span> ואת מה ש-<span>$latex P$</span> ענה לו, ובנוסף לכך אראה גם את תוצאות הטלת המטבע של <span>$latex V$</span>. עכשיו אני יכול לבדוק שהתעתיק הזה באמת אמין, במובן זה שאני יכול לבצע סימולציה של <span>$latex V$</span> המקורי ולראות אם הוא באמת שואל את אותן שאלות כמו בתעתיק, ובסוף אני אענה כמו שהוא ענה.</p>
+
+<p>עכשיו, אם <span>$latex x\in L$</span> אז קיימת סדרת שאלות ותשובות שבה <span>$latex P$</span> הצליח לשכנע את <span>$latex V$</span> לומר <span>$latex \text{T}$</span> - ולכן גם אני אומר <span>$latex \text{T}$</span> על התעתיק שמתאר את הסדרה הזו. זה מטפל בדרישת ה”שלמות”. כמו כן, אם <span>$latex x\notin L$</span> אז לא משנה מה <span>$latex P$</span> אומר ל-<span>$latex V$</span>; אסור ל-<span>$latex V$</span> לטעות, בכלל, אז הוא בודאות יאמר <span>$latex \text{F}$</span> בסוף וכך גם אני אגיד. בקיצור, גם כל הסיפור הזה נופל בתוך המסגרת של <span>$latex \text{NP}$</span>. אם רוצים להתרחב מעבר אליה חייבים לוותר על עוד משהו. ומה שמוותרים עליו הוא ה<strong>אמינות</strong> של התשובה של <span>$latex V$</span>. כלומר, מרשים ל-<span>$latex V$</span> <strong>לטעות</strong> בהסתברות מסויימת.</p>
+
+<p>באופן כללי, אם אלגוריתם הסתברותי שעונה “כן/לא” טועה בהסתברות שהיא טובה יותר מ-<span>$latex \frac{1}{2}$</span> בפער כלשהו - למשל, <span>$latex \frac{1}{3}$</span> זה המספר שאוהבים לתת בדרך כלל - אז על ידי מספיק חזרות על האלגוריתם ולקיחת התוצאה שהוא החזיר יותר פעמים אפשר <strong>לנפח</strong> את ההסתברות שנענה תשובה נכונה, ומספיק שנחזור על האלגוריתם מספר <strong>פולינומי</strong> של פעמים כדי להשיג שיפור <strong>אקספוננציאלי</strong> בהסתברות להצליח (זה דורש טיעון הסתברותי כלשהו שמערב משהו שנקרא <strong>חסם צ'רנוף</strong> ולא אכנס אליו כאן). בגלל זה מסתפקים בלדרוש הסתברות טעות של לכל היותר <span>$latex \frac{1}{3}$</span> ולא משהו נמוך יותר (כמו לכל היותר <span>$latex 0.000000000001$</span>) - כי מבחינה תיאורטית זה כמעט אותו הדבר.</p>
+
+<p>אחרי שהנקודה הזו הובהרה אפשר לעבור להגדרה הפורמלית. אנחנו אומרים שבעיה <span>$latex L$</span> שייכת למחלקה IP (ראשי תיבות של Interactive Proof) אם קיים מוודא הסתברותי יעיל <span>$latex V$</span> כך שלכל <span>$latex x$</span>:</p>
+
+<ol> <li>(שלמות) אם <span>$latex x\in L$</span> אז <strong>קיים</strong> מוכיח <span>$latex P$</span> כך שההסתברות ש-<span>$latex V$</span> יגיד "כן" על <span>$latex x$</span> בסוף הפרוטוקול עם <span>$latex P$</span> היא לפחות <span>$latex \frac{2}{3}$</span>.</li>
+
+
+<li>(נאותות) אם <span>$latex x\notin L$</span> אז <strong>לכל</strong> מוכיח <span>$latex P$</span> ההסתברות ש-<span>$latex V$</span> יגיד "כן" על <span>$latex x$</span> בסוף הפרוטוקול עם <span>$latex P$</span> היא לכל היותר <span>$latex \frac{1}{3}$</span>.</li>
+
+</ol>
+
+<p>שימו לב להבדל בין שלמות ונאתות - בשלמות, מספיק שיהיה <span>$latex P$</span> <strong>מסויים</strong> שעבורו האפקט החיובי מושג (כמו שב-<span>$latex \text{NP}$</span> הספיקה הוכחה אחת נכונה) ולעומת זאת בנאותות צריך להבטיח ש<strong>כל</strong> מוכיח כל יודע, לא משנה כמה הוא תחמן ורמאי, לא יצליח לעבוד על <span>$latex V$</span> יותר מדי. זו גם החשיבה שצריך לאמץ על מערכות הוכחה כאלו באופן כללי: <span>$latex P$</span> <strong>הוא לא חבר שלנו</strong>. הוא האויב. הוא הרוע. הוא מי שמנסה להטעות אותנו בכל צעד ושעל. פרוטוקולי הוכחה אינטראקטיביים בנויים הרבה יותר על להבטיח ש-<span>$latex P$</span> רמאי לא יצליח לרמות אותנו, והרבה פחות על “הו ידידי הטוב בוא תעזור לי להרחיב את הידע שלנו יחד”.</p>
+
+<p>האם כל הזוועה הזו מהווה שיפור ביחס ל-<span>$latex \text{NP}$</span>? ובכן, <strong>כנראה שכן</strong>. אחת מהתוצאות היפות והמפתיעות בתורת הסיבוכיות (<a href="https://gadial.net/2011/03/17/ip_equals_pspace_overview/">ויש לי עליה פוסט</a>) הייתה ש-<span>$latex \text{IP=PSPACE}$</span>. בפשטות, הטענה הזו אומרת ש-<span>$latex \text{IP}$</span> היא <strong>הרבה יותר חזקה ממה שחשבו במבט ראשון</strong>. כמובן, קודם כל צריך להסביר מה זו בכלל <span>$latex \text{PSPACE}$</span>, וזה קל - זו מחלקת כל בעיות הההכרעה שאפשר לפתור עם אלגוריתם שפועל <strong>בסיבוכיות זיכרון פולינומית</strong> (כלומר, המקום שהוא צריך בשביל לאחסן מידע הוא פולינומי בגודל הקלט). העניין הוא שההגדרה היבשה הזו לא מעבירה טוב עד כמה המחלקה הזו גדולה יחסית - רוב האקשן של תורת הסיבוכיות מתרחש בתוכה. <a href="https://gadial.net/2011/04/04/what_is_pspace/">הנה פוסט שלי על המחלקה הזו</a> שאולי יעזור להבהיר את זה יותר.</p>
+
+<p>אם כן, זו <span>$latex \text{IP}$</span>, אבל מהי <span>$latex \text{MIP}$</span>? זו הכללה די מתבקשת של <span>$latex \text{IP}$</span> ששואלת את השאלה - מה קורה אם יש לנו שני מוכיחים במקום מוכיח אחד? על פניו, לא אמור לקרות שום דבר חדש. הרי כבר מוכיח אחד הוא כל-יכול מבחינה חישובית, הוא לא צריך שעוד אחד יעזור לו. אבל כזכור, נקודת המבט שלנו על הוכחות אינטראקטיביות היא ש<strong>המוכיח הוא האויב</strong> ולכן המטרה של שני מוכיחים במקום אחד היא דווקא לעזור לנו להפיל בפח “מוכיחים” רמאים שמנסים לעבוד עלינו.</p>
+
+<p>לרעיון הזה יש אנלוגיה פשוטה מחיי היום יום, שהיא כל כך מתבקשת עד שהופיעה כבר במאמר המקורי שבו <span>$latex \text{MIP}$</span> הוגדרה: פושעים. חשבו על שני פושעים שביצעו ביחד פשע ולאחר מכן תיאמו ביניהם את האליבי. ואז המשטרה תופסת אותם וחוקרת אותם <strong>בנפרד</strong>. החקירה הזו נותנת <strong>יתרון</strong> לחוקרי המשטרה על פני חקירה של אחד מהפושעים ותו לא, כי כך ניתן לגלות <strong>סתירות</strong> בין הגרסאות שלהם, אם תיאום האליבי לא היה טוב מספיק.</p>
+
+<p>את ההגדרה היבשה קל לתת, היא כמעט זהה להגדרה של <span>$latex \text{IP}$</span>: אנחנו אומרים שבעיה <span>$latex L$</span> שייכת למחלקה MIP (ראשי תיבות של Multiprover Interactive Proof) אם קיים מוודא הסתברותי יעיל <span>$latex V$</span> כך שלכל <span>$latex x$</span>:</p>
+
+<ol> <li>(שלמות) אם <span>$latex x\in L$</span> אז <strong>קיימים</strong> זוג מוכיחים <span>$latex P_{1},P_{2}$</span> כך שההסתברות ש-<span>$latex V$</span> יגיד "כן" על <span>$latex x$</span> בסוף הפרוטוקול עם המוכיחים היא לפחות <span>$latex \frac{2}{3}$</span>.</li>
+
+
+<li>(נאותות) אם <span>$latex x\notin L$</span> אז <strong>לכל</strong> זוג מוכיחים <span>$latex P_{1},P_{2}$</span> ההסתברות ש-<span>$latex V$</span> יגיד "כן" על <span>$latex x$</span> בסוף הפרוטוקול עם המוכיחים היא לכל היותר <span>$latex \frac{1}{3}$</span>.</li>
+
+</ol>
+
+<p>אפשר כמובן לשאול למה רק שני מוכיחים ולא יותר מכך - הסיבה היא פשוט שלא צריך יותר מכך; כבר במאמר שהציג את <span>$latex \text{MIP}$</span> ניתנה ההוכחה לכך שהוספת מוכיחים נוספים לא מגדילה את המחלקה <span>$latex \text{MIP}$</span>.</p>
+
+<p>כמה שנים אחרי שהוגדרה, התברר שגם <span>$latex \text{MIP}$</span> גדולה בצורה מרשימה: היא שווה למחלקה שנקראת <span>$latex \text{NEXP}$</span>, שהיא כמו <span>$latex \text{NP}$</span> רק שהמוודא יכול לרוץ בזמן <strong>אקספוננציאלי</strong>. כדי להבין עד כמה זה גדול, חשבו על זה כך: נכון שאמרתי ש-<span>$latex \text{PSPACE}$</span> גדולה ועצומה? למרות כל זה, אין לנו שום הוכחה כרגע ש-<span>$latex \text{P}\ne\text{PSPACE}$</span>, כלומר ייתכן שכל מה שקורה בתוך <span>$latex \text{PSPACE}$</span> “יקרוס” לכך שהכל פשוט קל לחישוב וזהו (זה מאוד, מאוד לא סביר שזה מה שיקרה; התעלומה היא פחות האם המחלקות באמת שונות ויותר איך לכל הרוחות אפשר להוכיח דבר כזה). לעומת זאת עבור <span>$latex \text{NEXP}$</span> יש הוכחה פשוטה יחסית לכך שהיא שונה מ-<span>$latex \text{NP}$</span>, כך ש-<span>$latex \text{MIP}$</span> היא <strong>באמת יותר חזקה</strong> מ-<span>$latex \text{NP}$</span> (לעומת <span>$latex \text{IP}$</span> שאנחנו פשוט לא יודעים לגביה).</p>
+
+<p>עכשיו אנחנו מגיעים סוף כל סוף אל <span>$latex \text{MIP}^{*}$</span>. המחלקה הזו נולדת משאלה פשוטה יחסית - כשאנחנו מתארים אינטואיטיבית את <span>$latex \text{MIP}$</span> אנחנו אומרים שהמוכיחים יכולים להסכים על דרך פעולה משותפת <strong>לפני</strong> שהחקירה מתחילה אבל לא יכולים לתקשר זה עם זה אחריה. כלומר, יש שלב של “שיתוף מידע” לפני שהפרוטוקול מתחיל. מה בדיוק המידע המשותף הזה? בניסוח המקורי של <span>$latex \text{MIP}$</span> מרשים למוכיחים לשתף ביניהם אינסוף ביטים הסתברותיים - כאילו מטבע הוטל אינסוף פעמים ויש לכל המוכיחים גישה לסדרת התוצאות של ההטלה (זה אומר שהמוכיחים יכולים לבצע חישובים הסתברותיים “מתואמים”). אלא שהיכולת הנוספת הזו לא באמת רלוונטית לרוב הדברים שעושים עם המחלקה הזו ולא מוסיפה לה כוח ולכן לפעמים פשוט משמיטים אותה.</p>
+
+<p><span>$latex \text{MIP}$</span> הופכת ל-<span>$latex \text{MIP}^{*}$</span> כשהמידע שמשותף לפני תחילת הפרוטוקול הוא <strong>מצב קוונטי שזור</strong>. הופס, ביצענו את החטא הקדמון - הוספנו באזוורדס לעולם היפה והנקי של תורת הסיבוכיות! ואכן, “מצב קוונטי” נראה במבט ראשון כמו איזה מושג זר לכל מה שדיברנו עליו עד כה - קוונטים זה משהו בפיזיקה ומה בכלל הקשר לאבסטרקציות של חישוב.</p>
+
+<p>בפועל, “מצב קוונטי” זה לא משהו שונה במיוחד ברמה העקרונית מהוספת יכולת הסתברותית ולקרוא לה “מחשב שיכול להטיל מטבעות”. בשני המקרים יש כאן ניצול של תופעת טבע “חיצונית” לאלגוריתם כדי לאפשר לו לשפר ביצועים. בשני המקרים זה מגיע עם תורה מתמטית רלוונטית - תורת ההסתברות במקרה של מכונות שמטילות מטבעות, ותורת האינפורמציה הקוונטית במקרה של מצב קוונטי. הבעיה היא שמצב קוונטי קצת יותר קשה להסביר. י<a href="https://gadial.net/2014/07/17/quantum_computing_intro/">ש לי סדרת פוסטים על חישוב קוונטי</a> ואולי גם אכתוב עוד אחת בעתיד הקרוב אז פה אנסה לתת רק טיפה אינטואיציה.</p>
+
+<p>תורת הקוונטים היא נסיון לעשות סדר בבלאגן שהוא האופן המוזר שבו דברים מתנהגים בסקלות גודל נמוכות - נסיון שהצליח בצורה מרשימה ביותר. הכלי המתמטי הבסיסי שבו משתמשים לצורך עשיית הסדר הזה הוא <strong>סופרפוזיציה</strong>: אם יש לנו מערכת שכשאנחנו מודדים אותה אנחנו מגלים שהיא נמצאת באחד מכמה “מצבי בסיס” אפשריים - למשל <span>$latex \left|0\right\rangle $</span> ו-<span>$latex \left|1\right\rangle $</span> - אז התיאור הכללי של מצב המערכת הוא בתור <strong>צירוף לינארי</strong> של המצבים הללו, כשהמרחב שלנו חי מעל המספרים הממשיים <span>$latex \mathbb{C}$</span>. כלומר, מצב קוונטי “כללי” עבור שני מצבי הבסיס הללו הוא <span>$latex \alpha\left|0\right\rangle +\beta\left|1\right\rangle $</span> כעוד דרישה היא שהמצב יהיה <strong>מנורמה </strong><strong>1</strong>, כלומר <span>$latex \left|\alpha\right|^{2}+\left|\beta\right|^{2}=1$</span>.</p>
+
+<p>בסיטואציה כזו אפשר לעשות שני דברים עם המצב: לשנות אותו בצורה שלא “שוברת” את הסופרפוזיציה - זה ניתן לתיאור על ידי הפעלת טרנספורמציה לינארית אוניטרית על המצב - או “למדוד” אותו, מה שמכריח את הסופרפוזיציה “לקרוס”: אחד משני מצבי היסוד נבחר באופן אקראי והמצב משתנה אליו. ה”מידע” על <span>$latex \alpha,\beta$</span> פשוט נמחק. הדרך היחידה שבה הוא מתבטא היא בכך שהמצב <span>$latex \left|0\right\rangle $</span> נבחר לתוצאת המדידה בהסתברות <span>$latex \left|\alpha\right|^{2}$</span> והמצב <span>$latex \left|1\right\rangle $</span> נבחר בהסתברות <span>$latex \left|\beta\right|^{2}$</span>.</p>
+
+<p>במבט ראשון לא ברור בשביל מה כל זה טוב, אז הנה סיבוך של הסיפור. מה שתיארתי כרגע נקרא “קיוביט” - מערכת עם שני מצבי בסיס שקצת מזכירה ביט קלאסי שהוא או 0 או 1. אבל אפשר גם לבנות מערכות של שני קיוביטים או יותר, והסיפור בהן מסתבך. ל-3 קיוביטים, למשל, כבר יש שמונה מצבי יסוד אפשריים: <span>$latex \left|000\right\rangle ,\left|001\right\rangle ,\ldots,\left|111\right\rangle $</span> ולכן סופרפוזיציה של שלושה קיוביטים היא כבר משהו שחי במרחב וקטורי ממימד 8, ואם תקחו <span>$latex n$</span> קיוביטים תקבלו מרחב ממימד <span>$latex 2^{n}$</span> - יש כאן <strong>גידול אקספוננציאלי</strong> של מה שאנחנו יודעים לייצג. זה לא מתורגם בקלות ליתרון חישובי כלשהו כי יש לנו מגבלות גדולות לגבי מה שאפשר לעשות עם המצב הזה - אבל יש דרכים להפיק ממנו תועלת, כשהמפורסמת שבהם היא <strong>האלגוריתם של שור</strong> לפירוק לגורמים של מספרים בזמן פולינומי. לא נדבר על זה הפעם.</p>
+
+<p>על מה אני כן רוצה לדבר? שזירות. נדבר שניה על מערכת בת שני קיוביטים. נניח שסתם לקחנו שני קיוביטים ושמנו אותם אחד באיזור של השני ואנחנו מנסים לחשוב עליהם בתור מערכת אחת - מה יקרה? אם הראשון הוא <span>$latex \alpha_{1}\left|0\right\rangle +\beta_{1}\left|1\right\rangle $</span> והשני הוא <span>$latex \alpha_{2}\left|0\right\rangle +\beta_{2}\left|1\right\rangle $</span> אז אפשר לחשוב על המערכת המשולבת שלהם בתור מין מכפלה של שני אלו:</p>
+
+<p><span>$latex \left(\alpha_{1}\left|0\right\rangle +\beta_{1}\left|1\right\rangle \right)\left(\alpha_{2}\left|0\right\rangle +\beta_{2}\left|1\right\rangle \right)=\alpha_{1}\alpha_{2}\left|00\right\rangle +\alpha_{1}\beta_{2}\left|01\right\rangle +\beta_{1}\alpha_{2}\left|10\right\rangle +\beta_{1}\beta_{2}\left|11\right\rangle $</span></p>
+
+<p>אלא שזה <strong>לא כל מה שאפשר לעשות עם קיוביטים</strong>. בעזרת מניפולציה קצת יותר מתוחכמת אפשר לייצר את המצב הקוונטי הבא:</p>
+
+<p><span>$latex \frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$</span></p>
+
+<p>וזה מצב שאם תבדקו קצת תראו שפשוט <strong>אי אפשר לקבל</strong> בעזרת הנוסחה שכתבתי למעלה עם ה-<span>$latex \alpha$</span>-ות וה-<span>$latex \beta$</span>-ות: אפשר לייצר מצבים קוונטים שהם מהותית יותר מאשר “שני קיוביטים יושבים אחד ליד השני”. שני הקיוביטים איכשהו “מעורבבים” זה עם זה בצורה בלתי פריקה: קוראים לזה <strong>מצב שזור</strong>. אם אני לוקח את המצב השזור בדוגמא שלי ומודד את הקיוביט הראשון ומקבל <span>$latex \left|0\right\rangle $</span> זה מעביר <strong>את כל המערכת</strong> למצב <span>$latex \left|00\right\rangle $</span>, כלומר משפיע גם על מצב הקיוביט השני. והדבר הזה קורה <strong>לא משנה איפה ביקום הקיוביט השני הזה נמצא</strong>. גם אם לקחתי שני עצירים לתאי חקירה נפרדים, אבל לכל אחד מהם יש קיוביט משלו מתוך מערכת שזירה, ואחד מהם מודד את הקיוביט הזה, <strong>הקיוביט של העציר השני יושפע מזה</strong>.</p>
+
+<p>זה מחזיר אותנו אל <span>$latex \text{MIP}^{*}$</span>. אנחנו עדיין לא מבינים את הפורמליזם המתמטי (ולא אכנס אליו בפוסט הזה), אבל תוספת המצב הקוונטי השזור פותחת פתח לתקשורת בין המוכיחים שלא הייתה אפשרית קודם. וכאן מגיע החלק המוזר ביותר בכל הסיפור. על פניו, הוספת היכולת הזו <strong>מחזקת</strong> את המוכיחים. אבל כזכור, <strong>המוכיח הוא האויב</strong>. בכך שאנחנו מחזקים אותם ונותנים להם פתח <strong>כלשהו</strong> לתקשורת, אנחנו עוזרים להם לעבוד עלינו ורק <strong>מחלישים</strong> את מה שאנחנו יודעים לעשות עם הוכחות אינטראקטיביות. במאמר שבו <span>$latex \text{MIP}^{*}$</span> נולדה, זה מה שעשו - הראו איך פרוטוקולים מסויימים של הוכחות אינטראקטיביות לא יכולות לעבוד יותר. עם זאת, הצביעו גם על כך שזה לא מוכיח ש-<span>$latex \text{MIP}^{*}$</span> חלשה יותר מ-<span>$latex \text{MIP}$</span>; זה שנפסלו פרוטוקולים מסויימים לא אומר שלא יכולים להיות אחרים שמשתמשים איכשהו בשזירות <strong>לטובת המוודא</strong>.</p>
+
+<p>בשנים מאז הגדרת <span>$latex \text{MIP}^{*}$</span> הגיעו שלל תוצאות מרהיבות שהראו ש<strong>זה בדיוק המצב</strong>. ראשית, הוכחה ש-<span>$latex \text{NEXP}\subseteq\text{MIP}^{*}$</span>, כלומר שמערכות הוכחה קוונטיות שכאלו חזקות <strong>לפחות כמו</strong> מערכות הוכחה קלאסיות. אחר כך, הוכחה ש-<span>$latex \text{NEEXP}\subseteq\text{MIP}^{*}$</span> כאשר NEEXP (שימו לב ל-E הנוסף!) היא ההכללה של <span>$latex \text{NP}$</span> למוודא עם זמן ריצה אקספוננציאלי-כפול (אקספוננציאלי זה סדר גודל של <span>$latex 2^{n}$</span>; אקספוננציאלי כפול זה סדר גודל של <span>$latex 2^{2^{n}}$</span>). כאן כבר היה שמשהו מאוד מוזר קורה פה וש-<span>$latex \text{MIP}^{*}$</span> היא מחלקה חזקה עד להפתיע - אבל עד כמה? מה הגבול העליון? גבול עליון “טריוויאלי” היה <span>$latex \text{RE}$</span>, כי עם הכוח החישובי הבלתי מוגבל של מוודא <span>$latex \text{RE}$</span> אפשר לקבל מה שנראה כמו תעתיק של פרוטוקול <span>$latex \text{MIP}^{*}$</span> ולבדוק שהכל עובד בו כמו שצריך - אבל <span>$latex \text{RE}$</span> הוא חסם עליון מפחיד בגובהו. ואז <span>$latex \text{MIP}^{*}$</span> הגיעה בבום אל החסם העליון הזה. זו התוצאה <span>$latex \text{MIP}^{*}=\text{RE}$</span>. הרעיון, כפי שרמזתי בפוסט הקודם, היה להציג פרוטוקול <span>$latex \text{MIP}^{*}$</span> עבור <strong>בעיית העצירה</strong>.</p>
+
+<p>אני עדיין לא מבין איך זה עובד. קראתי כבר סקירות כלליות של הרעיונות הכלליים בלי להיכנס לעומק הפרטים, וזה עדיין מאוד, מאוד מוזר לי. הראש שלי עדיין אומר לי שאם הוספנו למוכיחים שזירות אז רק עזרנו להם לעבוד עלינו, וזהו. המאמרים מנסים לתת אינטואיציה לכך שזה לא המצב: שעכשיו המוודא יכול לערוך למוכיחים מבחנים שלא היה אפשר לבצע קודם, כאלו שיאלצו אותם להוכיח שהמצב הקוונטי המשותף להם קרוב למצב קוונטי <strong>ספציפי</strong>. אבל הפרטים עדיין לא מתחברים לי עד הסוף. אם אצליח לחבר אותם קצת יותר טוב, זה יופיע בתור פוסט המשך לשני הפוסטים הנוכחיים.</p>
+
+<p>בכל זאת, לסיום, אני רוצה להבהיר כמה נקודות מבלבלות שכבר ראיתי שצצו בהקשר הזה.</p>
+
+<p>ראשית, מה שקוונטי בסיפור הזה הוא <strong>המוכיחים</strong>, לא המוודא. המוודא ממשיך להיות אלגוריתם הסתברותי רגיל. זה שונה מדברים כמו האלגוריתם של שור, שבהם האלגוריתם שפותר את הבעיה הוא בעצמו קוונטי. אם ניקח מערכת הוכחה אינטראקטיבית ונוסיף יכולת קוונטית למוודא אבל לא למוכיחים, <strong>זה לא יוסיף כוח למערכת</strong>. כלומר, המחלקה <span>$latex \text{QIP}$</span> שהוגדרה בתור ההכללה של <span>$latex \text{IP}$</span> למוודא קוונטי מקיימת <span>$latex \text{QIP}=\text{IP}=\text{PSPACE}$</span>. בדומה, <span>$latex \text{QMIP}_{\text{NE}}=\text{NEXP}$</span> כאשר <span>$latex \text{QMIP}_{\text{NE}}$</span> היא המחלקה של חישוב מרובה מוכיחים שבו המוודא קוונטי אבל למוכיחים אין מצב שזור קוונטית (זה ה-<span>$latex \text{NE}$</span> שלמטה).</p>
+
+<p>שנית, אני לא רוצה שיהיה בלבול כלשהו בנקודה הזו - התוצאה הזו <strong>לא מראה</strong> שאפשר להשתמש איכשהו בתורת הקוונטים בשביל לפתור את בעיית העצירה! לא, לא, לא! בעיית העצירה הייתה ונותרה בלתי פתירה. כל ההקשר של הדיון הוא <strong>מערכת הוכחה</strong> עבור בעיית העצירה, וכבר ראינו שמערכת הוכחה “קלאסית”, שבה המוודא מקבל ליד הוכחה כתובה ותו לא - היא עצמה מספיקה בשביל <strong>לוודא</strong> את בעיית העצירה (לא לפתור - לוודא). מה שקורה ב-<span>$latex \text{MIP}^{*}=\text{RE}$</span> הוא שאנחנו רואים שאפשר <strong>להחליש מאוד את המוודא</strong> ועדיין להצליח לוודא את בעיית העצירה, אם המוכיחים הם חזקים מספיק. אז בבקשה, אני לא רוצה לראות עוד כותרות כמו “‘Remarkable’ Mathematical Proof Describes How to Solve Seemingly Impossible Computing Problem”. המציאות מספיק יפה, לא צריך לגלוש לפנטזיות.</p>
+
+  </div>
+
+  <hr />
+  <p>
+    נהניתם? התעניינתם? אם תרצו, אתם מוזמנים לתת טיפ:
+  </p>
+  <a href='https://ko-fi.com/H2H5XFBQ' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a><div class="PageNavigation">
+    
+      <a class="prev" href="/2020/01/23/what_is_mipstar_equals_re_part_1/">&laquo; מה זה אומר ש-MIP*=RE? (חלק א': מה זה אומר RE?)</a>
+    
+    
+  </div><div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://gadial.net/2020/01/24/what_is_mipstar_equals_re_part_2/';
+      this.page.identifier = 'http://gadial.net/2020/01/24/what_is_mipstar_equals_re_part_2/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://not-precise.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/2020/01/24/what_is_mipstar_equals_re_part_2/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">לא מדויק</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">לא מדויק</li><li><a class="u-email" href="mailto:gadial@gmail.com">gadial@gmail.com</a></li><li>&copy; כל הזכויות שמורות לגדי אלכסנדרוביץ'</li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://www.facebook.com/%D7%9C%D7%90-%D7%9E%D7%93%D7%95%D7%99%D7%A7-163347110378474"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#facebook"></use></svg> <span class="username">לא מדויק</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>RSS</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>בלוג על מתמטיקה ומדעי המחשב</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery-slim.min.js"><\/script>')</script><script src="/assets/js/bootstrap.bundle.js"></script><!-- Default Statcounter code for New blog
+http://www.gadial.net/ -->
+<script type="text/javascript">
+  var sc_project=5444342; 
+  var sc_invisible=1; 
+  var sc_security="4a89cbe4"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="https://c.statcounter.com/5444342/0/4a89cbe4/1/"
+  alt="Web Analytics"></a></div></noscript>
+  <!-- End of Statcounter Code --></body>
+
+</html>

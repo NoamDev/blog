@@ -112,6 +112,8 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
       <a class="prev" href="/2020/01/23/what_is_mipstar_equals_re_part_1/">&laquo; מה זה אומר ש-MIP*=RE? (חלק א': מה זה אומר RE?)</a>
     
     
+      <a class="next" href="/2020/01/31/mermin_peres_magic_square/">ריבוע הקסם של פרס-מרמין (או: איך תורת הקוונטים עוזרת לטלפתיה) &raquo;</a>
+    
   </div><header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">מה זה אומר ש-MIP*=RE? (חלק ב&#39;: מה זה אומר MIP*?)</h1>
     <p class="post-meta">
@@ -191,7 +193,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>בפועל, “מצב קוונטי” זה לא משהו שונה במיוחד ברמה העקרונית מהוספת יכולת הסתברותית ולקרוא לה “מחשב שיכול להטיל מטבעות”. בשני המקרים יש כאן ניצול של תופעת טבע “חיצונית” לאלגוריתם כדי לאפשר לו לשפר ביצועים. בשני המקרים זה מגיע עם תורה מתמטית רלוונטית - תורת ההסתברות במקרה של מכונות שמטילות מטבעות, ותורת האינפורמציה הקוונטית במקרה של מצב קוונטי. הבעיה היא שמצב קוונטי קצת יותר קשה להסביר. י<a href="https://gadial.net/2014/07/17/quantum_computing_intro/">ש לי סדרת פוסטים על חישוב קוונטי</a> ואולי גם אכתוב עוד אחת בעתיד הקרוב אז פה אנסה לתת רק טיפה אינטואיציה.</p>
 
-<p>תורת הקוונטים היא נסיון לעשות סדר בבלאגן שהוא האופן המוזר שבו דברים מתנהגים בסקלות גודל נמוכות - נסיון שהצליח בצורה מרשימה ביותר. הכלי המתמטי הבסיסי שבו משתמשים לצורך עשיית הסדר הזה הוא <strong>סופרפוזיציה</strong>: אם יש לנו מערכת שכשאנחנו מודדים אותה אנחנו מגלים שהיא נמצאת באחד מכמה “מצבי בסיס” אפשריים - למשל <span>$latex \left|0\right\rangle $</span> ו-<span>$latex \left|1\right\rangle $</span> - אז התיאור הכללי של מצב המערכת הוא בתור <strong>צירוף לינארי</strong> של המצבים הללו, כשהמרחב שלנו חי מעל המספרים הממשיים <span>$latex \mathbb{C}$</span>. כלומר, מצב קוונטי “כללי” עבור שני מצבי הבסיס הללו הוא <span>$latex \alpha\left|0\right\rangle +\beta\left|1\right\rangle $</span> כעוד דרישה היא שהמצב יהיה <strong>מנורמה </strong><strong>1</strong>, כלומר <span>$latex \left|\alpha\right|^{2}+\left|\beta\right|^{2}=1$</span>.</p>
+<p>תורת הקוונטים היא נסיון לעשות סדר בבלאגן שהוא האופן המוזר שבו דברים מתנהגים בסקלות גודל נמוכות - נסיון שהצליח בצורה מרשימה ביותר. הכלי המתמטי הבסיסי שבו משתמשים לצורך עשיית הסדר הזה הוא <strong>סופרפוזיציה</strong>: אם יש לנו מערכת שכשאנחנו מודדים אותה אנחנו מגלים שהיא נמצאת באחד מכמה “מצבי בסיס” אפשריים - למשל <span>$latex \left|0\right\rangle $</span> ו-<span>$latex \left|1\right\rangle $</span> - אז התיאור הכללי של מצב המערכת הוא בתור <strong>צירוף לינארי</strong> של המצבים הללו, כשהמרחב שלנו חי מעל המספרים המרוכבים <span>$latex \mathbb{C}$</span>. כלומר, מצב קוונטי “כללי” עבור שני מצבי הבסיס הללו הוא <span>$latex \alpha\left|0\right\rangle +\beta\left|1\right\rangle $</span> כעוד דרישה היא שהמצב יהיה <strong>מנורמה </strong><strong>1</strong>, כלומר <span>$latex \left|\alpha\right|^{2}+\left|\beta\right|^{2}=1$</span>.</p>
 
 <p>בסיטואציה כזו אפשר לעשות שני דברים עם המצב: לשנות אותו בצורה שלא “שוברת” את הסופרפוזיציה - זה ניתן לתיאור על ידי הפעלת טרנספורמציה לינארית אוניטרית על המצב - או “למדוד” אותו, מה שמכריח את הסופרפוזיציה “לקרוס”: אחד משני מצבי היסוד נבחר באופן אקראי והמצב משתנה אליו. ה”מידע” על <span>$latex \alpha,\beta$</span> פשוט נמחק. הדרך היחידה שבה הוא מתבטא היא בכך שהמצב <span>$latex \left|0\right\rangle $</span> נבחר לתוצאת המדידה בהסתברות <span>$latex \left|\alpha\right|^{2}$</span> והמצב <span>$latex \left|1\right\rangle $</span> נבחר בהסתברות <span>$latex \left|\beta\right|^{2}$</span>.</p>
 
@@ -229,6 +231,8 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
     
       <a class="prev" href="/2020/01/23/what_is_mipstar_equals_re_part_1/">&laquo; מה זה אומר ש-MIP*=RE? (חלק א': מה זה אומר RE?)</a>
     
+    
+      <a class="next" href="/2020/01/31/mermin_peres_magic_square/">ריבוע הקסם של פרס-מרמין (או: איך תורת הקוונטים עוזרת לטלפתיה) &raquo;</a>
     
   </div><div id="disqus_thread"></div>
   <script>

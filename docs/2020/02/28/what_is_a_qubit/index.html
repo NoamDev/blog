@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>חישוב קוונטי - מה זה קיוביט ומה עושים איתו? | לא מדויק</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="חישוב קוונטי - מה זה קיוביט ומה עושים איתו?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<meta property="og:description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<link rel="canonical" href="http://gadial.net/2020/02/28/what_is_a_qubit/" />
+<meta property="og:url" content="http://gadial.net/2020/02/28/what_is_a_qubit/" />
+<meta property="og:site_name" content="לא מדויק" />
+<meta property="og:image" content="http://gadial.net/assets/img/main/default-card.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-28T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://gadial.net/assets/img/main/default-card.png" />
+<meta property="twitter:title" content="חישוב קוונטי - מה זה קיוביט ומה עושים איתו?" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"headline":"חישוב קוונטי - מה זה קיוביט ומה עושים איתו?","dateModified":"2020-02-28T00:00:00+00:00","datePublished":"2020-02-28T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2020/02/28/what_is_a_qubit/"},"url":"http://gadial.net/2020/02/28/what_is_a_qubit/","image":"http://gadial.net/assets/img/main/default-card.png","description":"לא מדויק - בלוג על מתמטיקה ומדעי המחשב","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://gadial.net/feed.xml" title="לא מדויק" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3924539-2', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$latex','$'] ],
+        processEscapes: true
+      },
+      TeX: {extensions: ["AMSmath.js","AMSsymbols.js"]},
+      "HTML-CSS": { 
+        linebreaks: { automatic: true }
+      },
+      SVG: { 
+        linebreaks: { automatic: true } 
+      }
+    });
+  </script>
+  <!-- "https://www.gadial.net/wp-includes/js/xypic.js" -->
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  
+</head>
+<body><header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/">לא מדויק</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/whats_going_on">מה הולך פה?</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/">דף הבית</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/categories">קטגוריות</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/random">דף אקראי</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/about/">אודות</a>
+            </li>
+            
+        
+      </ul>
+      <form class="form-inline mt-2 mt-md-0" action="/post_list/" method="get">
+        <input class="form-control mr-sm-2" type="text" placeholder="חיפוש" aria-label="חיפוש" name="s">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">חיפוש</button>
+      </form>
+    </div>
+  </nav>
+</header><main class="page-content" aria-label="Content" role="main">
+      <div class="wrapper text-right">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><div class="PageNavigation">
+    
+      <a class="prev" href="/2020/01/31/mermin_peres_magic_square/">&laquo; ריבוע הקסם של פרס-מרמין (או: איך תורת הקוונטים עוזרת לטלפתיה)</a>
+    
+    
+  </div><header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">חישוב קוונטי - מה זה קיוביט ומה עושים איתו?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-02-28T00:00:00+00:00" itemprop="datePublished">Feb 28, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2>מבוא</h2>
+
+<p>בפוסטים הקודמים בבלוג דיברתי על <a href="https://gadial.net/2020/01/31/mermin_peres_magic_square/">ריבוע הקסם של פרס-מרמין</a> ו<a href="https://gadial.net/2020/01/24/what_is_mipstar_equals_re_part_2/">על המשפט</a> שאומר ש-<span>$latex \text{MIP}^{*}=\text{RE}$</span>. אלו שתי תוצאות מרהיבות (אחת פשוטה ואחת מאוד מסובכת) שמתבססות על <strong>קיוביטים</strong>, שהם מושג מתמטי שיש כל מני דרכים לממש במציאות. בפוסט הזה אני רוצה לדבר על המושג המתמטי. זה ייתן לנו בסיס שעליו נוכל להסביר ענייני חישוב קוונטי ואינפורמציה קוונטית בצורה רחבה יותר מאשר <a href="https://gadial.net/2014/07/17/quantum_computing_intro/">עשיתי בבלוג בשעתו בסדרת הפוסטים שלי</a> על חישוב קוונטי. בפעם ההיא המטרה שלי הייתה להגיע כמה שיותר מהר לדברים מגניבים כמו האלגוריתמים של גרובר ושור, והפעם אני בכלל לא הולך להתעניין בתוצאות המחץ הללו אלא אנסה ליהנות מהדרך - מכמה שהמתמטיקה שמעורבת בסיפור היא ממש יפה בזכות עצמה.</p>
+
+<p>המתמטיקה שמעורבת בסיפור היא אלגברה לינארית, ובפרט דברים שבאופן קלאסי נלמדים בקורס שני באלגברה לינארית ולא הגעתי אל כולם בבלוג - מכפלות פנימיות, משפט הלכסון הספקטרלי, דברים כאלה. אני אניח היכרות כלשהי עם הנושאים הללו או לכל הפחות יכולת לעצור ולחפש הסברים עליהם במקומות אחרים, אבל אנסה לא להיות קריפטי לחלוטין רוב הזמן. אני לא רוצה להפחיד - בניגוד לתורת הקוונטים “באופן כללי” שיכולה להיות מאתגרת למדי מתמטית, אפשר לחשוב על קיוביטים בתור מין “צמצום” של תורת הקוונטים לסיטואציה מאוד פשוטה ונשלטת יחסית, והמתמטיקה שלה היא דווקא <strong>פשוטה</strong> בהתאם. זה חלק מהיופי - איך ממתמטיקה פשוטה יוצאים ניסים ונפלאות שכאלו.</p>
+
+<p>עוד הערה אחת לפני שנתחיל: הפוסט הזה מדבר על “קיוביט”, ביחיד. הפוסט הבא ידבר על “קיוביטים”, ברבים, כי האופן שבו משלבים כמה קיוביטים יחד מערב עוד מתמטיקה, ורק שם יתגלה הכוח האמיתי של כל העסק הזה. אז אם מה שאני מדבר עליו פה ייראה חסר פואנטה, זכרו - יש פואנטה, היא תגיע בהמשך, יקרו ניסים ונפלאות, אבל בואו ניהנה כרגע מהדרך. הרבה יותר קל להבין את המתמטיקה שבהמשך אם מבינים אותה עבור קיוביט בודד.</p>
+
+<h2>מה זה קיוביט?</h2>
+
+<p>ובכן, מה זה קיוביט? מה שעוזר כאן הוא האנלוגיה למושג של <strong>ביט</strong> שאנחנו רגילים מחישוב “רגיל”. ביט <span>$latex x$</span> הוא משהו שיכול להיות בעל ערך שנמצא בתוך הקבוצה <span>$latex \mathbb{Z}_{2}=\left\{ 0,1\right\} $</span>. אנחנו עושים עם ביט יחיד שני דברים עיקריים:</p>
+
+<ol> <li>מבצעים עליו <strong>פעולות</strong> כלשהן שמשנות את ערכו, למשל <span>$latex \text{NOT}\left(x\right)=1-x$</span> (כשיש לנו שני ביטים ויותר יש פעולות מעניינות יותר...)</li>
+
+
+<li><strong>משווים</strong> את הערך שלו לדברים, כלומר בודקים האם <span>$latex x=0$</span> או <span>$latex x=1$</span> ופועלים בהתאם לכך. אם תרצו, אפשר לומר שאנחנו <strong>מודדים</strong> את הערך של הביט.</li>
+
+</ol>
+
+<p>קיוביט זה אותו דבר, פרט לכך שהערכים שקיוביט יכולים לקבל שייכים לקבוצה גדולה ומסובכת יותר, ובהתאם לכך הפעולות שאפשר לבצע על קיוביט הן מסובכות יותר, והמדידות שניתן לבצע הן מסובכות יותר.</p>
+
+<p>היקום שבו קיוביט בודד חי הוא המרחב הוקטורי <span>$latex \mathbb{C}^{2}$</span> עם <strong>המכפלה הפנימית הסטנדרטית</strong> עליו. בואו נזכיר את המרחב הזה. אני מסמן איברים של המרחב בתור <strong>וקטורי עמודה</strong>, כלומר איבר כללי הוא משהו מהצורה <span>$latex v=\left(\begin{array}{c} \alpha\\ \beta \end{array}\right)$</span> כך ש-<span>$latex \alpha,\beta\in\mathbb{C}$</span>. על המרחב הזה אני מגדיר <strong>מכפלה פנימית</strong> שהיא פונקציה שלוקחת זוג איברים במרחב ומחזירה סקלר: אם <span>$latex v=\left(\begin{array}{c} \alpha\\ \beta \end{array}\right)$</span> ו-<span>$latex u=\left(\begin{array}{c} \gamma\\ \delta \end{array}\right)$</span> אז אני מגדיר <span>$latex \left\langle u|v\right\rangle =\alpha\overline{\gamma}+\beta\overline{\delta}$</span> כך שקו מעל מספר מסמן את <strong>הצמוד המרוכב</strong> שלו: <span>$latex \overline{a+bi}=a-bi$</span>.</p>
+
+<p>אם תסתכלו על <a href="https://gadial.net/2012/02/06/inner_products_intro/">הפוסט שלי</a> על מכפלות פנימיות אתם תראו שהשתמשתי בסימונים אחרים: <span>$latex x\cdot y$</span> או <span>$latex \left\langle x,y\right\rangle $</span>, כאשר דווקא <span>$latex y$</span> הוא זה שמצמידים את הכניסות שלו, ואילו אצלי הפעם, בסימון <span>$latex \left\langle u|v\right\rangle $</span> זה דווקא <span>$latex u$</span> השמאלי שמצמידים את הכניסות שלו. מה שקורה פה הוא שאני מאמץ את שיטות הסימון בפיזיקה לעניינים הללו כי יהיה להן יתרון בהמשך וכי זו השפה של התחום בכל מקרה - אני מקווה שזה לא יבלבל אותנו יותר מדי או לפחות שנתרגל מהר.</p>
+
+<p>הנה עוד סימון מועיל ביותר: אם <span>$latex A\in M_{n,m}\left(\mathbb{C}\right)$</span> היא מטריצה כלשהי (לאו דווקא ריבועית) עם כניסות שהן מספרים מרוכבים, אז אני מגדיר את המטריצה הצמודה שלה <span>$latex A^{\dagger}$</span> באופן הבא: <span>$latex \left[A^{\dagger}\right]_{ij}=\overline{\left[A\right]_{ji}}$</span>. במילים אחרות, אנחנו משחלפים את <span>$latex A$</span> ומצמידים את הכניסות שלה. גם פה הסימון שלי קצת שונה מבדרך כלל: במתמטיקה כותבים <span>$latex A^{*}$</span> ואילו בפיזיקה משתמשים בכוכבית למטרה אחרת ולכן כותבים <span>$latex A^{\dagger}$</span> (הסימן הזה נקרא “דגר”, פגיון).</p>
+
+<p>בסימון הזה קל להבין את המכפלה הפנימית שלנו גם בעזרת כפל מטריצות “רגיל”: <span>$latex \left\langle u|v\right\rangle =u^{\dagger}v$</span> (אם חושבים על <span>$latex u,v$</span> בתור וקטורי עמודה). בואו נזכור את הגישה הזו בהמשך, כי פתאום נדבר גם על יצור כמו <span>$latex \left|v\right\rangle \left\langle u\right|=vu^{\dagger}$</span> שהולך בכלל להיות מטריצה <span>$latex 2\times2$</span>.</p>
+
+<p><strong>הנורמה</strong> של איבר <span>$latex v$</span> במרחב מכפלה פנימית מוגדרת בתור <span>$latex \sqrt{\left\langle v|v\right\rangle }=\sqrt{\left|\alpha\right|^{2}+\left|\beta\right|^{2}}$</span> - אפשר לחשוב אותה בתור משהו שמייצג הכללה של מושג <strong>האורך</strong> של וקטור, ומכפלה פנימית היא סוג של משהו שמערב את מכפלת האורכים של שני וקטורים ואת קוסינוס הזווית ביניהם.</p>
+
+<p>מכפלות פנימיות ונורמות מאפשרות לנו לדבר על בסיסים “נחמדים במיוחד” למרחב: בסיסים <strong>אורתונורמליים</strong>. בסיס <span>$latex B=\left\{ b_{1},\ldots,b_{n}\right\} $</span> למרחב מכפלה פנימית כלשהו הוא <strong>אורתונורמלי</strong> אם <span>$latex \left\langle b_{i},b_{j}\right\rangle =\delta_{ij}$</span>, כלומר המכפלה הפנימית של כל שני איברים שונים זה מזה בו היא 0, וכל איבר בו הוא מנורמה 1. הקסם בבסיס כזה הוא שבהינתן איבר <span>$latex v$</span> כלשהו במרחב, קל מאוד לגלות מה המקדמים שלו בצירוף הלינארי <span>$latex v=\sum\alpha_{i}b_{i}$</span>: אם תחשבו את <span>$latex \left\langle b_{i}|v\right\rangle $</span> ותשתמשו בתכונות המכפלה הפנימית ובכך שהבסיס אורתונורמלי תגלו ש-<span>$latex \left\langle b_{i}|v\right\rangle =\alpha_{i}$</span>, כלומר <span>$latex v=\sum\left\langle b_{i}|v\right\rangle b_{i}$</span>. אני קורא לרוב למקדמים <span>$latex \left\langle b_{i}|v\right\rangle $</span> הללו בשם <strong>מקדמי פורייה</strong> של <span>$latex v$</span> על פי הבסיס <span>$latex B$</span>.</p>
+
+<p>עכשיו אפשר להגיד מה זה בעצם קיוביט: זה משהו שהערכים שהוא יכול לקבל הם כל האיברים ב-<span>$latex \mathbb{C}^{2}$</span> <strong>שהם מנורמה </strong><strong>1</strong>. אני מסמן ערך כזה לרוב ב-<span>$latex \left|\psi\right\rangle $</span> - הסימון הזה נקרא ket וכמובן שיש הגיון מאחורי והדמיון שלו לסימונים של מכפלה פנימית לא מקרי, אבל מבחינה יבשה הוא בסך הכל דרך סימון של וקטור ב-<span>$latex \mathbb{C}^{2}$</span>.</p>
+
+<p>עוד הערה אחת על הערכים של קיוביט: אם שני ערכים נבדלים זה מזה רק בכפל בסקלר, אני מתייחס אליהם בתור אותו הערך (בפיזיקאית אני אגיד שהם “רק נבדלים בפאזה”).</p>
+
+<p>בואו נעבור לייצוג טיפה יותר קונקרטי של קיוביטים. אני יכול לסמן את הבסיס הסטנדרטי של <span>$latex \mathbb{C}^{2}$</span> עם הסימונים <span>$latex \left|0\right\rangle =\left(\begin{array}{c} 1\\ 0 \end{array}\right),\left|1\right\rangle =\left(\begin{array}{c} 0\\ 1 \end{array}\right)$</span> ואז אפשר לכתוב קיוביט כללי בתור <span>$latex \left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $</span> כאשר <span>$latex \alpha,\beta\in\mathbb{C}$</span> נקראים <strong>האמפליטודות</strong> של הקיוביט והדרישה של “נורמה 1” מתורגמת לדרישה <span>$latex \left|\alpha\right|^{2}+\left|\beta\right|^{2}=1$</span>. האינטואיציה הפיזיקלית מאחורי ההגדרות הללו היא ש-<span>$latex \left|\psi\right\rangle $</span> נמצא במשהו שנקרא <strong>סופרפוזיציה </strong>של מצבי היסוד <span>$latex \left|0\right\rangle ,\left|1\right\rangle $</span> אבל אני לא אכנס יותר מדי לפיזיקה בפוסט הזה.</p>
+
+<p>עכשיו, אמרתי קודם שעם ביט רגיל אפשר לעשות שני דברים: <strong>פעולות</strong> ו<strong>מדידה</strong>. ואמרתי שעם קיוביט זה אותו דבר, רק מסובך יותר. נתחיל עם פעולות. ההסבר הפיזיקלי לאיך המערכת הקוונטית שקיוביט מתאר מתפתחת עם הזמן דורש כניסה למושגים כמו המילטוניאן וכאלו ואני נמנע מההסבר הזה לחלוטין כי אין בו צורך - השורה התחתונה שאפשר לקפוץ אליה באובייקט פשוט כמו קיוביט היא שהפעולות שאפשר להפעיל על קיוביטים הן <strong>טרנספורמציות לינאריות</strong>. כלומר, לוקחים מטריצה <span>$latex U\in M_{2\times2}\left(\mathbb{C}\right)$</span> וכופלים אותה ב-<span>$latex \left|\psi\right\rangle $</span>. רק מה, אמרתי קודם שהערכים שקיוביט מקבל הם <strong>מנורמה </strong><strong>1</strong>. כלומר, גם הפלט צריך להיות מנורמה 1, כלומר אני מצפה מ-<span>$latex U$</span> <strong>לשמר נורמה</strong>. יוצא ש-<span>$latex U$</span> צריכה להיות <strong>טרנספורמציה אוניטרית</strong>, כלומר טרנספורמציה לינארית שמקיימת <span>$latex U^{\dagger}=U^{-1}$</span>. בפרט <span>$latex U$</span> הפיכה - זה קצת מנוגד לאינטואיציה שלנו, כי למשל פעולת ה-AND על שני ביטים קלאסיים היא לא הפיכה (אם הפלט היה 0, מה היה הקלט?).</p>
+
+<p>בואו נראה כמה דוגמאות לטרנספורמציות אוניטריות שכאלו, שיהיו חשובות מאוד בהמשך הדרך: ראשית, המקבילה של פעולת NOT רק בקיוביטים. זו טרנספורמציה שמעבירה את <span>$latex \left|0\right\rangle $</span> ל-<span>$latex \left|1\right\rangle $</span> ואת <span>$latex \left|1\right\rangle $</span> ל-<span>$latex \left|0\right\rangle $</span> ומסומנת ב-<span>$latex X$</span>:</p>
+
+<p><span>$latex X\left|0\right\rangle =\left|1\right\rangle $</span></p>
+
+<p><span>$latex X\left|1\right\rangle =\left|0\right\rangle $</span></p>
+
+<p>אפשר לתאר את זה במטריצה הבאה, שאני מסמן גם ב-<span>$latex \sigma_{x}$</span> כשיותר נוח לי, מסיבות של “זה הסימון המקובל בפיזיקה”):</p>
+
+<p><span>$latex X=\left(\begin{array}{cc} 0 &amp; 1\\ 1 &amp; 0 \end{array}\right)$</span></p>
+
+<p>פעולה אחרת, שאין לה מקבילה קלאסית, היא <strong>היפוך פאזה</strong> שמתוארת באות <span>$latex Z$</span> ונראית כך:</p>
+
+<p><span>$latex Z\left|0\right\rangle =\left|0\right\rangle $</span></p>
+
+<p><span>$latex Z\left|1\right\rangle =-\left|1\right\rangle $</span></p>
+
+<p><span>$latex Z=\left(\begin{array}{cc} 1 &amp; 0\\ 0 &amp; -1 \end{array}\right)$</span></p>
+
+<p>כלומר, <span>$latex Z$</span> לא עושה כלום למצב <span>$latex \left|0\right\rangle $</span> אבל כופלת את <span>$latex \left|1\right\rangle $</span> במינוס 1. למה זה מעניין בכלל? הרי אמרתי שאני מחשיב שני קיוביטים כזהים אם הם נבדלים בפאזה. ובכן, כן, אבל זכרו שקיוביט “כללי” הוא תערובת של שני מצבי הבסיס הללו. כלומר אם <span>$latex \left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $</span> אז <span>$latex Z\left|\psi\right\rangle =\alpha\left|0\right\rangle -\beta\left|1\right\rangle $</span> וזה כבר שינוי של ממש - הפאזה <strong>בין</strong> שני הרכיבים של <span>$latex \left|\psi\right\rangle $</span> השתנתה.</p>
+
+<p>עוד פעולה רלוונטית היא <span>$latex Y$</span>, שהיא סוג של שילוב בין <span>$latex X,Z$</span> ומספרים מרוכבים:</p>
+
+<p><span>$latex Y=\left(\begin{array}{cc} 0 &amp; -i\\ i &amp; 0 \end{array}\right)$</span></p>
+
+<p>אם תבדקו תגלו ש-<span>$latex ZX=iY$</span>, ובכלל שמתקיים הקשר הנחמד הבא:</p>
+
+<p><span>$latex XY=iZ$</span></p>
+
+<p><span>$latex YZ=iX$</span></p>
+
+<p><span>$latex ZX=iY$</span></p>
+
+<p>שבטח מזכיר את הקווטרניונים לאלו מכם שמכירים אותם.</p>
+
+<p>שלוש המטריצות הללו נקראות <strong>מטריצות פאולי</strong>, ויחד עם מטריצת היחידה הן הבסיס למשהו שנקרא <strong>חבורת פאולי</strong> והוא מאוד שימושי בכל ענייני הקוונטים אבל נגיע לכך בהמשך. לבינתיים הנה הדוגמא האחרונה שלי לטרנספורמציה אוניטרית. עד עכשיות מה שהצגתי היה קצת מוזר כי הטרנספורמציות לא יצרו שום קשר בין <span>$latex \left|0\right\rangle $</span> ובין <span>$latex \left|1\right\rangle $</span> אז לא היה ברור מה ההבדל בין קיוביטים ובין סתם ביטים. אבל הנה משהו שונה, שנקרא <strong>מטריצת הדאמר</strong> (Hadamard):</p>
+
+<p><span>$latex H\left|0\right\rangle =\frac{\left|0\right\rangle +\left|1\right\rangle }{\sqrt{2}}$</span></p>
+
+<p><span>$latex H\left|1\right\rangle =\frac{\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$</span></p>
+
+<p><span>$latex H=\frac{1}{\sqrt{2}}\left(\begin{array}{cc} 1 &amp; 1\\ 1 &amp; -1 \end{array}\right)$</span></p>
+
+<p>הטרנספורמציה הזו יוצרת <strong>סופרפוזיציה</strong> של <span>$latex \left|0\right\rangle ,\left|1\right\rangle $</span> מתוך כל אחד ממצבי הבסיס הללו. החלוקה ב-<span>$latex \sqrt{2}$</span> היא כדי להבטיח שהתוצאה עדיין תהיה מנורמה 1. עכשיו, מכיוון שהמצבים של הסופרפוזיציה הזו הם כל כך חשובים, יש להם סימון משל עצמם ועוד נפגוש אותם בהמשך:</p>
+
+<p><span>$latex \left|+\right\rangle =\frac{\left|0\right\rangle +\left|1\right\rangle }{\sqrt{2}}$</span></p>
+
+<p><span>$latex \left|-\right\rangle =\frac{\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$</span></p>
+
+<p>עכשיו, גם <span>$latex \left|0\right\rangle ,\left|1\right\rangle $</span> וגם <span>$latex \left|+\right\rangle ,\left|-\right\rangle $</span> מהווים <strong>בסיס אורתונורמלי </strong>למרחב <span>$latex \mathbb{C}^{2}$</span>, כלומר הם קבוצות פורשות, בלתי תלויות, של וקטורים מנורמה 1 שאורתוגונליים זה לזה (המכפלה הפנימית של איברים שונים היא 0). צריך להבין שאין בסיס “נכון” למרחב הזה - שני הבסיסיים לגיטימיים באותה מידה. אם גם בפועל אנחנו משתמשים רוב הזמן ב-<span>$latex \left|0\right\rangle ,\left|1\right\rangle $</span>, זו לרוב החלטת סימון שרירותית (כלומר: יש לנו מערכת פיזיקלית “אמיתית” עם שני מצבים מובחנים, ואנחנו בוחרים <strong>לקרוא להם</strong> בשמות <span>$latex \left|0\right\rangle ,\left|1\right\rangle $</span>). על <span>$latex H$</span> אפשר לחשוב בתור מטריצה שמעבירה אותנו מבסיס אחד לבסיס השני, וגם בחזרה; כי <span>$latex HH=I$</span>, כלומר <span>$latex H=H^{-1}$</span>.</p>
+
+<h2>מדידות, גרסה א'</h2>
+
+<p>עד עכשיו כל מה שעשינו היה קצת משחק נחמד באלגברה לינארית אבל עדיין לא ברור מה מוזר פה, בעצם. כדי שהעסק ייעשה מוזר צריך להכניס לתמונה את האופן שבו מתבצעת <strong>מדידה</strong> קוונטית. גם פה אני לא אכנס לשאלה מהי מדידה, מבחינה פיזיקלית; זו <strong>אינטראקציה</strong> כלשהי עם המערכת הפיזיקלית שהיא ברוטלית מספיק כדי לאלץ את המערכת לספר לנו משהו, וזו האינטואיציה שאדבוק בה. מן הסתם במערכות פיזיקליות שונות טיב ההתערבות הוא שונה (במחשבים קוונטיים של זמננו ההתערבות הזו היא פולס אלקטרומגנטי שמפגיז את האובייקט הפיזיקלי שמייצג את הקיוביט), אבל האבסטרקציה המתמטית היא זהה.</p>
+
+<p>אם קיובטים היו מתנהגים כמו בחישוב קלאסי, מה <strong>היינו מצפים</strong> שיקרה כשאנחנו מודדים אותם? לכאורה, הרעיון הוא כזה: יש לי קיוביט עם הערך <span>$latex \left(\begin{array}{c} \alpha\\ \beta \end{array}\right)$</span>. אני מביא וקטור משל עצמי של מספרים מרוכבים <span>$latex \left(\begin{array}{c} x\\ y \end{array}\right)$</span> ושואל - האם <span>$latex \left(\begin{array}{c} \alpha\\ \beta \end{array}\right)=\left(\begin{array}{c} x\\ y \end{array}\right)$</span>? התשובה היא “כן” אם <span>$latex \alpha=x$</span> ו-<span>$latex \beta=y$</span> ו”לא” אחרת. מכיוון שהמספרים המעורבים הם מרוכבים, ייתכן ש”כן” יהיה תלוי ברמת הדיוק שלנו (כלומר נחשיב כלגיטימי את השוויון הלא נכון מתמטית <span>$latex 0.999999=1$</span> - שימו לב שכאן אין שלוש נקודות!). אחר כך נמשיך לעבוד עם <span>$latex \left(\begin{array}{c} \alpha\\ \beta \end{array}\right)$</span> כמקודם. כך עובד חישוב קלאסי.</p>
+
+<p>חישוב קוונטי <strong>לא עובד כך בכלל</strong>.</p>
+
+<p>בחישוב קוונטי, אין לי “גישה ישירה” לערכים <span>$latex \alpha,\beta$</span>. יותר גרוע מכך - בחישוב קוונטי, אחרי שמדדתי את <span>$latex \left(\begin{array}{c} \alpha\\ \beta \end{array}\right)$</span>, המצב הזה <strong>נהרס</strong> ומוחלף במצב אחר, <strong>באופן לא הפיך</strong>. עוד יותר גרוע: התוצאה של המדידה היא <strong>הסתברותית</strong>. ברוכים הבאים לעולם חדש.</p>
+
+<p>אז איך מדידה מוגדרת, פורמלית, מתמטית? יש לזה כמה תשובות, כל אחת מכלילה את הקודמת. בואו נתחיל מהסוג הכי פשוט של מדידה, שהוא גם זה שהכי נפוץ להיתקל בו בתיאורים פופולריים של הנושא. בגישה הזו, “מדידה” היא משהו שלוקח את המצב <span>$latex \left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $</span> ומחזיר את המצב <span>$latex \left|0\right\rangle $</span> בהסתברות <span>$latex \left|\alpha\right|^{2}$</span> ואת המצב <span>$latex \left|1\right\rangle $</span> בהסתברות <span>$latex \left|\beta\right|^{2}$</span>. מכאן הדרישה <span>$latex \left|\alpha\right|^{2}+\left|\beta\right|^{2}=1$</span> מגיעה - שהאמפליטודות ייצגו הסתברויות בצורה כלשהי. מדידה כזו היא <strong>הרסנית</strong>: אחרי שמדדנו את המצב, האמפליטודות <span>$latex \alpha,\beta$</span> מתפוגגות ונעלמות - כל מה שנשאר לנו ביד הוא <span>$latex \left|0\right\rangle $</span> או <span>$latex \left|1\right\rangle $</span>.</p>
+
+<p>אני לא אוהב את התיאור הזה גם כי הוא מתאר מקרה פרטי מדי, וגם כי הוא קצת מנפנף בידיים. מה זה אומר “מחזיר את המצב <span>$latex \left|0\right\rangle $</span>”? נאמר, בתיאור הפופולרי של <strong>החתול של שרדינגר</strong>, <span>$latex \left|0\right\rangle $</span> הוא המצב “החתול חי”. ה”מדידה” שלנו היא פתיחת הקופסה שבה החתול נמצא. אז מה זה אומר שקיבלנו <span>$latex \left|0\right\rangle $</span>? המדידה שלנו מתבטאת בחתול שמזנק עלינו בזעם ושורט אותנו - השריטות הללו הן לא מצב קוונטי <span>$latex \left|0\right\rangle $</span> אלא איזו שהיא תוצאה של המדידה. בגישה יותר פיזקאית, נגיד שאנחנו מצפים שתוצאה של מדידה תהיה <strong>מספר ממשי</strong> כלשהו. במקרה הנוכחי התוצאות האפשריות של המדידה יהיו המספרים <span>$latex +1$</span> ו-<span>$latex -1$</span>, ואם זה נראה מוזר שזה הם ולא נניח <span>$latex 0$</span> ו-<span>$latex 1$</span>, תכף אכליל את הסיפור והם ייראו טבעיים יותר.</p>
+
+<p>אם כן, מדידה גרסה א’ היא הדבר הבא: בהינתן מצב קוונטי <span>$latex \left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $</span> קורה בדיוק אחד משני הדברים הבאים:</p>
+
+<ul> <li>בהסתברות <span>$latex \left|\alpha\right|^{2}$</span>: המדידה מחזירה את הערך <span>$latex +1$</span> והופכת את <span>$latex \left|\psi\right\rangle $</span> למצב <span>$latex \left|0\right\rangle $</span>.</li>
+
+
+<li>בהסתברות <span>$latex \left|\beta\right|^{2}$</span>: המדידה מחזירה את הערך <span>$latex -1$</span> והופכת את <span>$latex \left|\psi\right\rangle $</span> למצב <span>$latex \left|1\right\rangle $</span>.</li>
+
+</ul>
+
+<h2>מדידות, גרסה ב'</h2>
+
+<p>בואו נעבור עכשיו לדרך כללית הרבה יותר לתאר מדידות בצורה פורמלית. הרעיון הוא שבאופן כללי, מדידה תיוצג על ידי <strong>קבוצה של אופרטורים</strong> <span>$latex \left\{ M_{m}\right\} $</span> כאשר <span>$latex m$</span> הוא אינדקס שרץ על כל התוצאות האפשריות של המדידה (מה שהיה <span>$latex \pm1$</span> בדוגמא הקודמת שלי). כאשר מודדים את <span>$latex \left|\psi\right\rangle $</span> על פי קבוצת האופרטורים הזו, אחת מהתוצאות <span>$latex m$</span> הולכת לעלות בגורל בצורה אקראית והיא תהיה תוצאת המדידה, ואחריה המערכת תעבור למצב <span>$latex M_{m}\left|\psi\right\rangle $</span> כשהוא מנורמל. ומה ההסתברות שהתוצאה <span>$latex m$</span> תעלה בגורל? היא בדיוק הנורמה בריבוע של <span>$latex M_{m}\left|\psi\right\rangle $</span> הזה.</p>
+
+<p>אפשר לחשוב על זה כך: <span>$latex M_{m}$</span> <strong>מטיל</strong> את <span>$latex \left|\psi\right\rangle $</span> לתוך תת-מרחב, וככל שההיטל הזה גדול יותר כך גדול יותר הסיכוי שהוא יעלה בגורל של המדידה; אחר כך אנחנו מעבירים את המערכת לתת-המרחב הזה באמצעות ההטלה אבל חייבים “לנפח” קצת את התוצאה אחרת הנורמה שלה לא תהיה 1.</p>
+
+<p>אם אני אנסה לכתוב מתמטית את התיאור הזה, אני אראה די מהר שהסימונים שלי יוצרים משהו “לא יפה”. כי מה זו הנורמה בריבוע של <span>$latex M_{m}\left|\psi\right\rangle $</span>? באופן כללי, אם <span>$latex v$</span> הוא וקטור אז הנורמה בריבוע שלו היא פשוט המכפלה הפנימית שלו בעצמו: <span>$latex \|v\|^{2}=\left\langle v|v\right\rangle $</span>. אבל אם אני אכתוב משהו כמו <span>$latex \left\langle M_{m}\left|\psi\right\rangle |M_{m}\left|\psi\right\rangle \right\rangle $</span> יכה בי עצב גדול. למרבה המזל, שיטת הסימון שאני נוקט בה מיועדת בדיוק כדי להפוך סימונים לפשוטים יותר.</p>
+
+<p>הפיזיקאי אומר כך: ראשית, אם <span>$latex \left|\psi\right\rangle $</span> מסמן וקטור, אז אני אסמן את <span>$latex \left|\psi\right\rangle ^{\dagger}$</span> (שחלוף + הצמדה) שלו בתור <span>$latex \left\langle \psi\right|$</span> (הסימון הזה נקרא bra). זה יוצר לי את האלגנטיות הבאה: אם יש לי שני וקטורים <span>$latex \left|\psi_{1}\right\rangle ,\left|\psi_{2}\right\rangle $</span> ואני רוצה לחשב את המכפלה הפנימית שלהם, על פי הגדרה היא שווה ל-<span>$latex \left|\psi_{2}\right\rangle ^{\dagger}\cdot\left|\psi_{1}\right\rangle $</span> (תעיפו מבט מוקדם יותר בפוסט: כתבתי שם <span>$latex \left\langle u|v\right\rangle =u^{\dagger}v$</span>). על פי הסימון שכרגע הצגתי <span>$latex \left|\psi_{2}\right\rangle ^{\dagger}\cdot\left|\psi_{1}\right\rangle =\left\langle \psi_{2}\right|\cdot\left|\psi_{1}\right\rangle $</span>. כלומר, <span>$latex \left\langle \psi_{2}\right|\cdot\left|\psi_{1}\right\rangle =\left\langle \psi_{2}|\psi_{1}\right\rangle $</span>. מה שקרה פה הוא שהסימון של וקטורים עם הסוגריים המשולשים בא לדמות את האופן שבו אנחנו כותבים מכפלה פנימית, כך שכפל מטריצות רגיל של שני וקטורים שאחד מהם הוא bra והשני הוא ket יוצר מכפלה פנימית (שמסומנת על ידי סוגריים משולשים - מה שנקרא braket באנגלית, ומכאן השמות bra ו-ket).</p>
+
+<p>עכשיו, אם יש לי את הוקטור <span>$latex M_{m}\left|\psi\right\rangle $</span> ואני רוצה לקחת את הצמוד שלו, אני אקבל <span>$latex \left(M_{m}\left|\psi\right\rangle \right)^{\dagger}=\left\langle \psi\right|M_{m}^{\dagger}$</span>, ולכן המכפלה הפנימית של <span>$latex M_{m}\left|\psi\right\rangle $</span> בעצמו היא <span>$latex \left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle $</span>, מה שויזואלית נראה די… נחמד?</p>
+
+<p>עכשיו אני יכול לנסח במפורש איך מדידה על פי קבוצת האופרטורים <span>$latex \left\langle M_{m}\right\rangle $</span> עובדת:</p>
+
+<ul> <li>בהסתברות <span>$latex p\left(m\right)=\left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle $</span> מוחזרת התוצאה <span>$latex m$</span></li>
+
+
+<li>אם התוצאה <span>$latex m$</span> נבחרה, המצב הקוונטי החדש של המערכת עובר להיות <span>$latex \frac{M_{m}\left|\psi\right\rangle }{\sqrt{\left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle }}$</span></li>
+
+</ul>
+
+<p>עכשיו, אי אפשר סתם לתת קבוצה <span>$latex \left\langle M_{m}\right\rangle $</span> אקראית של אופרטורים ולהגיד שהיא מגדירה מדידה. הכיוון הלוגי הוא הפוך: אם יש לנו מערכת פיזקלית, אז כל מדידה שלה תהיה ניתנת לתיאור בצורה המתמטית הנ”ל, אבל זה לא אומר שכל קבוצת אופרטורים תייצג מדידה של המערכת. בפרט, יש קריטריון פשוט שחייב להתקיים עבור <span>$latex \left\langle M_{m}\right\rangle $</span> אם אנחנו רוצים שיהיה בכלל שמץ של סיכוי שהיא תתאר מדידה חוקית: ההסתברויות צריכות להסתכם ל-1.</p>
+
+<p>בואו ניזכר לרגע איך הסתברות קלאסית עובדת: יש לנו ניסוי אקראי כלשהו שמתבצע ויש לו כמה תוצאות שונות <span>$latex m$</span> שלכל אחת מהן הסתברות <span>$latex p\left(m\right)$</span>. אנחנו דורשים ראשית כל שיתקיים <span>$latex 0\le p\left(m\right)$</span> לכל תוצאה <span>$latex m$</span>, ושנית ש-<span>$latex \sum_{m}p\left(m\right)=1$</span>. כך זה באופן כללי בהסתברות, לא רק בחישוב קוונטי.</p>
+
+<p>עכשיו, במקרה שלנו ההסתברות <span>$latex p\left(m\right)$</span> הוגדרה באמצעות מכפלה פנימית, ולכן תכונת ה-<span>$latex 0\le p\left(m\right)$</span> מתקיימת אוטומטית - זו אחת מהאקסיומות של מכפלה פנימית. מה שעדיין חייבים שיתקיים הוא <span>$latex \sum p\left(m\right)=1$</span>, שמוביל לנוסחה הבאה:</p>
+
+<p><span>$latex 1=\sum_{m}\left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle =\left\langle \psi\right|\left(\sum_{m}M_{m}^{\dagger}M_{m}\right)\left|\psi\right\rangle $</span></p>
+
+<p>ה”הכנסה של הסכום פנימה” הזו אולי נראית חשודה, אבל תזכרו שכל מה שיש בביטוי <span>$latex \left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle $</span> הוא בסך הכל סדרה של מכפלות של מטריצות. כפל מטריצות הוא דיסטריביוטיבי: בפרט <span>$latex AB+AC=A\left(B+C\right)$</span>. זה מוביל אל השוויון שביצעתי למעלה בקלילות ואמשיך לבצע. נקודה שצריך לקחת איתנו הלאה: <strong>אלגברה לינארית זה נחמד ולכן המתמטיקה של חישוב קוונטי יוצאת נחמדה</strong>.</p>
+
+<p>עכשיו, כדי שיתקיים <span>$latex \left\langle \psi\right|\left(\sum_{m}M_{m}^{\dagger}M_{m}\right)\left|\psi\right\rangle =1$</span> אפשר לדרוש ש-<span>$latex \sum_{m}M_{m}^{\dagger}M_{m}=I$</span>. במקרה הזה הסכום יהפוך להיות <span>$latex \left\langle \psi|\psi\right\rangle $</span> ששווה 1 כי <span>$latex \left|\psi\right\rangle $</span> מלכתחילה היה איבר מנורמה 1. אז <span>$latex \sum_{m}M_{m}^{\dagger}M_{m}=I$</span> היא הדרישה שתהיה לי מאופרטורי מדידה.</p>
+
+<h2>הטלות</h2>
+
+<p>אחרי שהגדרתי מדידה בצורה סופר-אבסטרקטית, הדבר ההגיוני לעשות הוא לתת דוגמא - בפרט, להראות איך המדידה ה”פשוטה” שהצגתי בהתחלה היא מקרה פרטי של המושג הכללי. אני רוצה לעשות בדיוק את זה, אבל כדי שאוכל לעשות את זה בצורה נחמדה אני רוצה להכניס עוד סימון אחד, שמאפשר לנו לתאר <strong>אופרטורים</strong> בצורה שמתאימה לשיטת הסימון של ה-bra ket.</p>
+
+<p>נתחיל עם מה שאנחנו מכירים מאלגברה לינארית “רגילה”. נניח שיש לי שני וקטורים, <span>$latex v=\left(\begin{array}{c} a_{1}\\ b_{1} \end{array}\right)$</span> ו-<span>$latex u=\left(\begin{array}{c} a_{2}\\ b_{2} \end{array}\right)$</span>. אם אני אסתכל על המכפלה <span>$latex u^{\dagger}v$</span> אני אקבל <strong>מכפלה פנימית</strong>. אבל אני יכול לכפול אותם בסדר ההפוך ולקבל את מה שנקרא <strong>מכפלה חיצונית</strong>:</p>
+
+<p><span>$latex vu^{\dagger}=\left(\begin{array}{c} a_{1}\\ b_{1} \end{array}\right)\cdot\left(\overline{a_{2}}\ \overline{b_{2}}\right)=\left(\begin{array}{cc} a_{1}\overline{a_{2}} &amp; a_{1}\overline{b_{2}}\\ b_{1}\overline{a_{2}} &amp; b_{1}\overline{b_{2}} \end{array}\right)$</span></p>
+
+<p>זה נובע מחוקי כפל המטריצות הבסיסיים. אם אני כבר בשוונג, שימו לב לכך שה<strong>עקבה</strong> של המכפלה החיצונית שווה למכפלה הפנימית: <span>$latex \text{tr}\left(vu^{\dagger}\right)=u^{\dagger}v$</span>, אבל לא אשתמש בזה הפעם.</p>
+
+<p>עכשיו, איך זה נראה בסימונים של bra ו-ket? התשובה היא ש<strong>יותר נחמד</strong>: אם <span>$latex \left|\psi_{1}\right\rangle ,\left|\psi_{2}\right\rangle $</span> הם שני הוקטורים שלי, אז המכפלה החיצונית שלהם היא <span>$latex \left|\psi_{1}\right\rangle \left\langle \psi_{2}\right|$</span>. למה זה נחמד? כי זה מרמז לי מה קורה כשאני לוקח את האופרטור הזה ו<strong>מפעיל</strong> אותו. בואו ניקח <span>$latex \left|\varphi\right\rangle $</span> תמים כלשהו. אם ניקח את המכפלה החיצונית ונפעיל עליו, נקבל <span>$latex \left|\psi_{1}\right\rangle \left\langle \psi_{2}\right|\cdot\left|\varphi\right\rangle $</span> על פי חוקי כפל המטריצות הרגילים. אבל מה זה <span>$latex \left\langle \psi_{2}\right|\cdot\left|\varphi\right\rangle $</span>? זו בסך הכל המכפלה הפנימית <span>$latex \left\langle \psi_{2}|\varphi\right\rangle $</span> שיוצאת סקלר. אם כן, מה שנקבל בסופו של דבר הוא את הסקלר <span>$latex \left\langle \psi_{2}|\varphi\right\rangle $</span> שמוכפל בוקטור <span>$latex \left|\psi_{1}\right\rangle $</span>.</p>
+
+<p>זה מלמד אותנו מה בעצם האופרטור <span>$latex \left|\psi_{1}\right\rangle \left\langle \psi_{2}\right|$</span> עושה: הוא מחליף את הקלט שלו במשהו שנפרש על ידי <span>$latex \left|\psi_{1}\right\rangle $</span> לבדו, כשהמקדם של <span>$latex \left|\psi_{1}\right\rangle $</span> נקבע על פי המכפלה הפנימית של הקלט עם <span>$latex \left\langle \psi_{2}\right|$</span>. מקרה פשוט במיוחד של זה מתרחש כאשר <span>$latex \left|\psi_{1}\right\rangle =\left|\psi_{2}\right\rangle $</span>; במקרה הזה האופרטור <span>$latex \left|\psi_{1}\right\rangle \left\langle \psi_{1}\right|$</span> הוא פשוט <strong>הטלה</strong> על המרחב שנפרש בידי <span>$latex \left|\psi_{1}\right\rangle $</span>.</p>
+
+<p>עכשיו אפשר לחזור למדידה המקורית שהצגתי. מה שקורה שם הוא שהאופרטורים הם <span>$latex M_{1}=\left|0\right\rangle \left\langle 0\right|$</span> ו-<span>$latex M_{-1}=\left|1\right\rangle \left\langle 1\right|$</span>. קל לראות את זה: בואו ניקח <span>$latex \left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $</span> ועכשיו נפעיל עליו את <span>$latex \left|0\right\rangle \left\langle 0\right|$</span>: נקבל</p>
+
+<p><span>$latex \left|0\right\rangle \left\langle 0\right|\left|\psi\right\rangle =\left[\alpha\left\langle 0|0\right\rangle +\beta\left\langle 0|1\right\rangle \right]\left|0\right\rangle =\alpha\left|0\right\rangle $</span></p>
+
+<p>כי <span>$latex \left\langle 0|0\right\rangle =1$</span> ו-<span>$latex \left\langle 0|1\right\rangle =0$</span> (זו המשמעות של כך ש-<span>$latex \left|0\right\rangle ,\left|1\right\rangle $</span> הוא בסיס אורתונורמלי).</p>
+
+<p>באופן דומה, <span>$latex \left|1\right\rangle \left\langle 1\right|\left|\psi\right\rangle =\beta\left|1\right\rangle $</span>.</p>
+
+<p>עכשיו אפשר להסיק ש-<span>$latex p\left(1\right)=\left\langle 0\right|\alpha^{\dagger}\alpha\left|0\right\rangle =\left|\alpha\right|^{2}$</span> ובדומה <span>$latex p\left(-1\right)=\left|\beta\right|^{2}$</span>, ואלו אכן ההסתברויות שהיו קיימות בהגדרה המקורית שנתתי. לבסוף, אם התוצאה 1 עלתה בגורל, אז מעבירים את המערכת למצב <span>$latex \frac{\alpha\left|0\right\rangle }{\sqrt{\left|\alpha\right|^{2}}}=\frac{\alpha}{\left|\alpha\right|}\left|0\right\rangle $</span> ובדומה אם 1 עלה בגורל המערכת תעבור למצב <span>$latex \frac{\beta}{\left|\beta\right|}\left|1\right\rangle $</span>. שימו לב שזה <strong>שונה</strong> ממה שאמרתי קודם - קודם אמרתי שהמערכת תעבור <strong>בדיוק</strong> למצבים <span>$latex \left|0\right\rangle $</span> ו-<span>$latex \left|1\right\rangle $</span> וכאן זה מתרחש רק אם <span>$latex \alpha,\beta$</span> הם ממשיים חיוביים; אבל כאמור, שני מצבים קוונטיים שנבדלים זה מזה בכפל בקבוע נחשבים זהים, כך שההבדל הזה לא באמת משנה משהו.</p>
+
+<h2>מדידות פרוייקטיביות</h2>
+
+<p>אחרי שהצגנו את האופן הכללי שבו אני מגדיר מדידה, אני רוצה להצטמצם טיפה ולדבר על תת-קבוצה של מדידות שמוגדרות בצורה שהיא נחמדה במיוחד: מספיק לי לתת מעט מידע כדי לקבל את קבוצת האופרטורים תוך כדי שמובטח לי שהתנאי <span>$latex \sum_{m}M_{m}^{\dagger}M_{m}=I$</span> מתקיים אוטומטית וכל האופרטורים הם הטלות פשוטות.</p>
+
+<p>כדי להבין איך זה הולך, צריך להכניס לתמונה עוד חתיכה של אלגברה לינארית: מטריצות הרמיטיות ומשפט הפירוק הספקטרלי.</p>
+
+<p>ראשית, מטריצה (או טרנספורמציה, או אופרטור; אני לא אבדיל בין המושגים) <span>$latex A$</span> היא <strong>הרמיטית</strong> אם <span>$latex A^{\dagger}=A$</span>. מטריצות הרמיטיות הן דבר נחמד באופן כללי, ובפרט בשני אספקטים שרלוונטיים לי כאן:</p>
+
+<p>הראשון, <strong>הערכים העצמיים</strong> של מטריצה הרמיטית <span>$latex A$</span> הם מספרים ממשיים (לעומת מטריצה כללית מעל <span>$latex \mathbb{C}$</span> שהערכים העצמיים שלה יכולים להיות מספרים מרוכבים כלליים).</p>
+
+<p>השני, למטריצה הרמיטית יש <strong>פירוק ספקטרלי</strong>. זה אומר שהיא לא סתם לכסינה - היא לכסינה בצורה מאוד נחמדה. יש למרחב שעליו היא פועלת <strong>בסיס אורתונורמלי</strong> של וקטורים עצמיים שלה, ונובע מכך שאפשר לכתוב <span>$latex A=\sum_{\lambda}\lambda P_{\lambda}$</span> כאשר האינדקס <span>$latex \lambda$</span> רץ על הערכים העצמיים של <span>$latex A$</span> ו-<span>$latex P_{\lambda}$</span> היא הטלה אורתוגונלית למרחב העצמי של <span>$latex A$</span> שמתאים לערך העצמי <span>$latex \lambda$</span>.</p>
+
+<p>עכשיו אפשר להסביר מה זו מדידה פרוייקטיבית: בהינתן אופרטור הרמיטי <span>$latex M$</span>, האופרטור <span>$latex M$</span> הזה מגדיר, כפי שכבר ראינו, קבוצה של אופרטורי הטלה <span>$latex \left\{ P_{\lambda}\right\} $</span>. הרעיון הוא שהקבוצה הזו מגדירה לנו מדידה במובן שראינו קודם, כאשר התוצאות האפשריות של המדידה הן הערכים העצמיים <span>$latex \lambda$</span> הללו. כדי להבין למה התנאי <span>$latex \sum_{\lambda}P_{\lambda}^{\dagger}P_{\lambda}=I$</span> מתקיים במקרה הזה צריך להיזכר בתכונות של הטלות אורתוגונליות שלא אוכיח כאן: הן הרמיטיות, ולכן <span>$latex P_{\lambda}^{\dagger}=P_{\lambda}$</span>; הן הטלות, כלומר <span>$latex P_{\lambda}^{2}=P_{\lambda}$</span>; ומתקיים <span>$latex \sum_{\lambda}P_{\lambda}=I$</span>. אם כן, האופרטור <span>$latex M$</span> לבדו נתן לנו קבוצת אופרטורים שמגדירה מדידה - מדידה שהתוצאות שלה הן בדיוק הספקטרום של <span>$latex M$</span>.</p>
+
+<p>מכיוון שזה מבלבל נורא בואו נראה איך זה עובד עבור המטריצה <span>$latex Z$</span> שהצגתי קודם שבמפתיע (!) היא הרמיטית:</p>
+
+<p>כזכור, <span>$latex Z=\left(\begin{array}{cc} 1 &amp; 0\\ 0 &amp; -1 \end{array}\right)$</span>. קל לראות ש-<span>$latex \left|0\right\rangle $</span> הוא וקטור עצמי שלה עם הערך העצמי 1 ואילו <span>$latex \left|1\right\rangle $</span> הוא וקטור עצמי שלה עם הערך העצמי <span>$latex -1$</span>. מעניין איך אפשר לגלות כזה דבר! אולי בגלל ש-<span>$latex Z$</span> היא בעצמה כבר בצורה אלכסונית? לא… בטח הייתה תחבולה כלשהי מעורבת בכך! מכל מקום, גם אם רואים את זה עדיין אולי לא ברור איך כותבים את ההטלות <span>$latex P_{1}$</span> ו-<span>$latex P_{-1}$</span> הרלוונטיות. כאן אפשר לנצל את העובדה ש-<span>$latex \left|0\right\rangle ,\left|1\right\rangle $</span> הם <strong>בסיס אורתונורמלי</strong> למרחב כולו, ולכן אם <span>$latex \left|\psi\right\rangle $</span> הוא וקטור כלשהו אז אנחנו יודעים איך נראים המקדמים שלו בצירוף הלינארי של <span>$latex \left|0\right\rangle ,\left|1\right\rangle $</span> שנותן אותו - זה מה שקראתי לו קודם <strong>מקדמי פורייה</strong>: <span>$latex \left|\psi\right\rangle =\left\langle 0|\psi\right\rangle \left|0\right\rangle +\left\langle 1|\psi\right\rangle \left|1\right\rangle $</span>.</p>
+
+<p>ההטלה של <span>$latex \left|\psi\right\rangle $</span> על תת-המרחב שפורש <span>$latex \left|0\right\rangle $</span> פשוט מוחקת את הרכיב של <span>$latex \left|1\right\rangle $</span> בצירוף הלינארי הזה, כלומר זו הפונקציה <span>$latex \left|\psi\right\rangle \mapsto\left\langle 0|\psi\right\rangle \left|0\right\rangle $</span> שהיא בסך הכל האופרטור <span>$latex \left|0\right\rangle \left\langle 0\right|$</span>. שהוא גם המטריצה <span>$latex \left(\begin{array}{cc} 1 &amp; 0\\ 0 &amp; 0 \end{array}\right)$</span> באופן דומה, ההטלה על המרחב העצמי של <span>$latex -1$</span> היא פשוט <span>$latex \left|1\right\rangle \left\langle 1\right|$</span> ולכן הלכסון הספקטרלי של <span>$latex Z$</span> הוא פשוט <span>$latex Z=\left(+1\right)\left|0\right\rangle \left\langle 0\right|+\left(-1\right)\left|1\right\rangle \left\langle 1\right|$</span>.</p>
+
+<p>קיבלנו, אם כן, את אותה קבוצה של אופרטורי מדידה שהצגתי קודם בתור הפורמליזם של מדידה “רגילה”: <span>$latex M_{1}=\left|0\right\rangle \left\langle 0\right|\text{ו}-M_{-1}=\left|1\right\rangle \left\langle 1\right|$</span>. למדידה הזו קוראים לפעמים “מדידה בבסיס <span>$latex Z$</span>” בגלל השימוש באופרטור <span>$latex Z$</span> בתור מה ש”מייצר” לנו את אופרטורי המדידה.</p>
+
+<p>בשלב הזה קופצת לראש שאלה שנראית מתבקשת: אנחנו מבינים מה המשמעות של הפעלת ההטלות שהסקנו מ-<span>$latex Z$</span> על הקיוביט <span>$latex \left|\psi\right\rangle $</span>. אבל מה המשמעות של הפעלת <span>$latex Z$</span> עצמה על <span>$latex \left|\psi\right\rangle $</span>? ובאופן כללי, אם אופרטור <span>$latex M$</span> מגדיר לנו מדידה פרוייקטיבית, מה המשמעות של הפעלת <span>$latex M$</span> עצמו על הקיוביט? ובכן, מכיוון שבאופן כללי <span>$latex M=\sum_{\lambda}\lambda P_{\lambda}$</span> אז אפשר לעשות את התעלול הבא:</p>
+
+<p><span>$latex \left\langle \psi\right|M\left|\psi\right\rangle =\sum_{\lambda}\lambda\left\langle \psi\right|P_{\lambda}\left|\psi\right\rangle =\sum_{\lambda}\lambda p\left(\lambda\right)$</span></p>
+
+<p>מה יש לנו כאן? <strong>סכום משוקלל</strong> שבו כל ערך עצמי <span>$latex \lambda$</span> מוכפל בהסתברות שבה אותו <span>$latex \lambda$</span> יכול להתקבל כתוצאה מהמדידה של <span>$latex \left|\psi\right\rangle $</span>. לסכום משוקלל הסתברותי כזה יש שם: <strong>תוחלת</strong>. בהתאם לכך, לערך המספרי <span>$latex \left\langle \psi\right|M\left|\psi\right\rangle $</span> הזה יש שם - <strong>ערך התצפית</strong> של האופרטור <span>$latex M$</span> על <span>$latex \left|\psi\right\rangle $</span>. לא ארחיב על זה יותר כרגע.</p>
+
+<h2>דוגמאות אחרונות ופרידה</h2>
+
+<p>לסיום בואו נראה עוד שתי דוגמאות - וכפי שאני מניח שברור, אלו לא דוגמאות אקראיות אלא אבני הבניין העיקריות שאני עוד צריך כדי להשלים את סיפור ריבוע הקסם שממנו הגיעה המוטיבציה הראשונית שלי.</p>
+
+<p>הדוגמא הראשונה היא <span>$latex X=\left(\begin{array}{cc} 0 &amp; 1\\ 1 &amp; 0 \end{array}\right)$</span>. כאן כבר יותר טריקי לגלות את הערכים והוקטורים העצמיים, אבל זה תרגיל סטנדרטי באלגברה לינארית אז אני פשוט אגלה את הפתרון. הערכים העצמיים הם <strong>שוב</strong> <span>$latex +1$</span> ו-<span>$latex -1$</span> והוקטורים העצמיים הם מצבים שכבר נתתי להם סימון מיוחד קודם: <span>$latex \left|+\right\rangle =\frac{\left|0\right\rangle +\left|1\right\rangle }{\sqrt{2}}$</span> ו-<span>$latex \left|-\right\rangle =\frac{\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$</span> . בדיקה זריזה תראה לכם ש-<span>$latex \sigma_{x}\left|0\right\rangle =\left|1\right\rangle $</span> ו-<span>$latex \sigma_{x}\left|1\right\rangle =\left|0\right\rangle $</span> ולכן <span>$latex \left|+\right\rangle $</span> הוא הוקטור העצמי שמתאים ל-<span>$latex +1$</span> ואילו <span>$latex \left|-\right\rangle $</span> הוא הוקטור העצמי המתאים ל-<span>$latex -1$</span> ולכן הפירוק הספקטרלי הוא <span>$latex X=\left(+1\right)\left|+\right\rangle \left\langle +\right|+\left(-1\right)\left|-\right\rangle \left\langle -\right|$</span>.</p>
+
+<p>הנה נקודה נחמדה שכדאי להתייחס אליה כאן. נניח שאנחנו רוצים לבצע מדידה בבסיס <span>$latex X$</span>, אבל התקן הניסוי שלנו תומך רק בביצוע מדידות בבסיס <span>$latex Z$</span>. מה עושים? בואו נזכור את האופרטור <span>$latex H$</span> שראינו קודם; הוא מקיים <span>$latex H\left|+\right\rangle =\left|0\right\rangle $</span> ו-<span>$latex H\left|-\right\rangle =\left|1\right\rangle $</span> ולכן אם <span>$latex \left|\psi\right\rangle =\alpha\left|+\right\rangle +\beta\left|-\right\rangle $</span> אז <span>$latex H\left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $</span> ולכן מדידת <span>$latex H\left|\psi\right\rangle $</span> בבסיס <span>$latex Z$</span> תיתן את אותה התפלגות תוצאות כמו מדידת <span>$latex \left|\psi\right\rangle $</span> בבסיס <span>$latex X$</span>.</p>
+
+<p>לבסוף, הדוגמא האחרונה היא <span>$latex Y=\left(\begin{array}{cc} 0 &amp; -i\\ i &amp; 0 \end{array}\right)$</span>. גם פה אני לא חושב שזו תהיה הפתעה לגלות שהערכים העצמיים הם <span>$latex +1$</span> ו-<span>$latex -1$</span> ואפשר לבדוק בקלות שהוקטורים העצמיים הם <span>$latex \frac{i\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$</span> ו-<span>$latex \frac{\left|0\right\rangle -i\left|1\right\rangle }{\sqrt{2}}$</span>. כמקודם, אפשר לשאול איך אפשר למדוד בבסיס <span>$latex Y$</span> אם כל מה שיש לנו הוא מדידה בבסיס <span>$latex Z$</span>, והתשובה דומה - קודם כל נפעיל אופרטורים על <span>$latex \left|\psi\right\rangle $</span> ואז נמדוד בבסיס <span>$latex Z$</span> ונקבל אותה התפלגות הסתברויות כמו שמדידה בבסיס <span>$latex Y$</span> הייתה מניבה.</p>
+
+<p>זה אומר שאני רוצה איכשהו להעביר את <span>$latex \frac{i\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$</span> אל <span>$latex \left|0\right\rangle $</span>. איך? אם אני אעביר את <span>$latex \frac{i\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$</span> אל <span>$latex i\frac{\left|0\right\rangle +\left|1\right\rangle }{\sqrt{2}}$</span> כל מה שיישאר אחר כך הוא להפעיל <span>$latex H$</span>. בשביל זה אני צריך טרנספורמציה <span>$latex A$</span> שמבצעת את הפעולה הבאה:</p>
+
+<p><span>$latex A\left|0\right\rangle =\left|0\right\rangle $</span></p>
+
+<p><span>$latex A\left|1\right\rangle =-i\left|1\right\rangle $</span></p>
+
+<p>שימו לב לכך ש-<span>$latex A$</span> תעביר את <span>$latex \frac{\left|0\right\rangle -i\left|1\right\rangle }{\sqrt{2}}$</span> אל <span>$latex \frac{\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$</span> ואחרי <span>$latex H$</span> נגיע אל <span>$latex \left|1\right\rangle $</span> כך שזה מסתדר לנו יפה. רק נשאר לתת שם ל-<span>$latex A$</span> הזו. השם הסטנדרטי הוא דווקא לטרנספורמציה טיפה שונה:</p>
+
+<p><span>$latex S=\left(\begin{array}{cc} 1 &amp; 0\\ 0 &amp; i \end{array}\right)$</span></p>
+
+<p>שדי מזכירה את <span>$latex Z$</span>, פרט לכך שהיא כופלת ב-<span>$latex i$</span> ולא ב-<span>$latex -1$</span>. למעשה, <span>$latex S$</span> היא פשוט ה”שורש” של <span>$latex Z$</span> במובן זה ש-<span>$latex S^{2}=Z$</span>. כעת, <span>$latex S^{\dagger}=\left(\begin{array}{cc} 1 &amp; 0\\ 0 &amp; -i \end{array}\right)$</span> היא הטרנספורמציה שנזקקתי לה.</p>
+
+<p>אם כן, סיימנו להבין איך “עובד” קיוביט יחיד מבחינה מתמטית. כדי להשלים את התמונה נצטרך להבין איך “עובדים” שני קיוביטים ביחד, מה שידרוש הכנסת מתמטיקה חדשה לתמונה - ומשם נמשיך באינדוקציה.</p>
+
+  </div>
+
+  <hr />
+  <p>
+    נהניתם? התעניינתם? אם תרצו, אתם מוזמנים לתת טיפ:
+  </p>
+  <a href='https://ko-fi.com/H2H5XFBQ' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a><div class="PageNavigation">
+    
+      <a class="prev" href="/2020/01/31/mermin_peres_magic_square/">&laquo; ריבוע הקסם של פרס-מרמין (או: איך תורת הקוונטים עוזרת לטלפתיה)</a>
+    
+    
+  </div><div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://gadial.net/2020/02/28/what_is_a_qubit/';
+      this.page.identifier = 'http://gadial.net/2020/02/28/what_is_a_qubit/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://not-precise.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/2020/02/28/what_is_a_qubit/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">לא מדויק</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">לא מדויק</li><li><a class="u-email" href="mailto:gadial@gmail.com">gadial@gmail.com</a></li><li>&copy; כל הזכויות שמורות לגדי אלכסנדרוביץ'</li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://www.facebook.com/%D7%9C%D7%90-%D7%9E%D7%93%D7%95%D7%99%D7%A7-163347110378474"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#facebook"></use></svg> <span class="username">לא מדויק</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>RSS</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>בלוג על מתמטיקה ומדעי המחשב</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery-slim.min.js"><\/script>')</script><script src="/assets/js/bootstrap.bundle.js"></script><!-- Default Statcounter code for New blog
+http://www.gadial.net/ -->
+<script type="text/javascript">
+  var sc_project=5444342; 
+  var sc_invisible=1; 
+  var sc_security="4a89cbe4"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="https://c.statcounter.com/5444342/0/4a89cbe4/1/"
+  alt="Web Analytics"></a></div></noscript>
+  <!-- End of Statcounter Code --></body>
+
+</html>

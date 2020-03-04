@@ -1,0 +1,2174 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index אינדקס
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+מה זה אומר ש-
+\lang english
+MIP*=RE
+\lang hebrew
+? )חלק א': מה זה אומר
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+RE
+\lang hebrew
+?(
+\end_layout
+
+\begin_layout Description
+קטגוריות: תורת הסיבוכיות
+\end_layout
+
+\begin_layout Description
+תגים: מערכת הוכחה אינטראקטיבית, חישוב קוונטי
+\end_layout
+
+\begin_layout Description
+מזהה:
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+what_is_mipstar_equals_re_part_1
+\end_layout
+
+\begin_layout Standard
+ממש לא מזמן התבשרנו על תוצאה בתורת הסיבוכיות שמנוסחת בפשטות בתור 
+\begin_inset Formula $\text{MIP}^{*}=\text{RE}$
+\end_inset
+
+.
+ התגובה הראשונה שלי לתוצאה הייתה 
+\begin_inset Quotes eld
+\end_inset
+
+מה?
+\begin_inset Quotes erd
+\end_inset
+
+ והתגובה השניה שלי לתוצאה הייתה 
+\begin_inset Quotes eld
+\end_inset
+
+מה?!?!
+\begin_inset Quotes erd
+\end_inset
+
+.
+ בפוסט הזה אנסה להסביר מה.
+\end_layout
+
+\begin_layout Standard
+ראשית המאמר עצמו זמין 
+\begin_inset CommandInset href
+LatexCommand href
+name "כאן"
+target "https://arxiv.org/abs/2001.04383"
+literal "false"
+
+\end_inset
+
+ ואפשר לקרוא אותו.
+ אני לא קראתי אותו מלבד את הפתיחה שלו - הוא כולל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+165
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עמודים ואין לי סיכוי להבין את הפרטים הטכניים שלו לעומק - אבל אני מקווה שאני
+ מבין מספיק טוב את הרקע כדי להסביר בערך מה המשפט אומר ולמה הוא מעניין.
+ בפשטות, הוא אומר ש
+\series bold
+מערכת הוכחה
+\series default
+ מסויימת שמתבססת בצורה כלשהי על אפקטים קוונטיים, היא חזקה 
+\series bold
+בצורה מטורפת ממש
+\series default
+ ביחס למערכת הוכחה הדומה לה מאוד שאינה מתבססת על אפקטים קוונטיים.
+ זה משהו שהפתיע קצת את אלו שהכירו את התחום וידעו שהמערכת הזו חזקה בצורה
+ מטורפת; אותי, שבכלל לא ידע על כל זה, זה פשוט הדהים.
+\end_layout
+
+\begin_layout Standard
+אז בואו ננסה להבין מה הולך כאן.
+ לאט.
+\end_layout
+
+\begin_layout Standard
+הפעם אני אסביר מה זו 
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "יש לי פוסט על זה"
+target "https://gadial.net/2007/09/18/r_and_re/"
+literal "false"
+
+\end_inset
+
+ מראשית ימי הבלוג, אבל אני אנסה הפעם להציג את המושג מכיוון קצת שונה, שיעזור
+ לנו גם בהמשך כשנדבר על 
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+, כך שאני חושב ששווה לנסות לקרוא גם אם כבר מכירים את 
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+בואו נתחיל עם משחק הסודוקו שאני מקווה שמוכר ואהוב על כולנו.
+ או לפחות מוכר.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/GADIALEKSANDROWICZ/Dropbox/Websites/blog/assets/img/2020/01/Sudoku.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הרעיון בסודוקו פשוט יחסית: נתון לוח של 
+\begin_inset Formula $9\times9$
+\end_inset
+
+ משבצות שמחולק גם ל-
+\numeric on
+9
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+תת-לוחות, כל אחד של 
+\begin_inset Formula $3\times3$
+\end_inset
+
+.
+ בלוח מופיעים כל מני מספרים בין
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ ל-
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+9
+\numeric off
+, והמטרה היא להשלים את הלוח כך שבכל משבצת יהיה מספר בין
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ל-
+\numeric on
+9
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ובנוסף לכך בכל שורה, עמודה ותת-לוח כל המספרים שמופיעים יהיו שונים זה מזה.
+ זה משחק פאזלים חביב בפני עצמו, אבל אני אוהב אותו מאוד בעיקר בגלל שהוא נותן
+ לנו דוגמא יפה לבעיה מהסוג שאנחנו אוהבים לדבר עליהן במדעי המחשב התיאורטיים:
+ בעיה ש
+\series bold
+קשה לפתור
+\series default
+ אבל 
+\series bold
+קל לוודא
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+בסודוקו המטרה היא למצוא את הפתרון של הלוח, אבל גם אפשר להצטמצם לבעיה פשוטה
+ יותר: נותנים לכם לוח סודוקו - כלומר, לוח 
+\begin_inset Formula $9\times9$
+\end_inset
+
+ שהוא כבר מלא חלקית במספרים - ושואלים אתכם אם הוא פתיר או לא.
+ 
+\series bold
+לא כל לוח ממולא חלקית הוא פתיר
+\series default
+! שאלת 
+\begin_inset Quotes eld
+\end_inset
+
+כן/לא
+\begin_inset Quotes erd
+\end_inset
+
+ כזו נקראת במדעי המחשב 
+\series bold
+בעיית הכרעה
+\series default
+ וזה מה שאנחנו בדרך כלל מעדיפים לדבר עליו, ולא על 
+\series bold
+בעיית החיפוש
+\series default
+ של למצוא את הפתרון, כי על פי רוב אם יש לנו פתרון נחמד לבעיית ההכרעה אפשר
+ גם לבנות בעזרתו פתרון לבעיית החיפוש.
+ במקרה של סודוקו, למשל: בהינתן לוח תבדקו אם הוא פתיר - אם לא פתיר, אפשר
+ לוותר על הכל.
+ אם כן פתיר, אז פשוט תנסו למלא מספרים במשבצות ובכל פעם כזו תשאלו אם הלוח
+ נשאר פתיר גם אחרי המילוי - אם לא, אתם יודעים שהמהלך האחרון שביצעתם היה
+ שגוי וצריך לנסות אחר.
+ זה יוביל אתכם די מהר לפתרון.
+\end_layout
+
+\begin_layout Standard
+עכשיו, להכריע האם לוח סודוקו הוא פתיר יכול להיות עניין קשה לפעמים.
+ יש היוריסטיקות טובות כדי למצוא פתרון, אבל בלוחות 
+\begin_inset Quotes eld
+\end_inset
+
+קשים
+\begin_inset Quotes erd
+\end_inset
+
+ יהיה צורך להתחיל לנחש איזה ערכים כדאי לשים במשבצות, ואם הניחוש היה לא מוצלח
+ ייתכן שנצטרך לחזור הרבה אחורה בבדיקה שלנו כדי לתקן את זה, וכן הלאה.
+ אז זו בעיית הכרעה ש
+\series bold
+קשה לפתור
+\series default
+ לעומת זאת, אם מישהי באה אליכם וטוענת שהיא פתרה את הלוח כבר, קל לה מאוד
+ 
+\series bold
+להוכיח
+\series default
+ לכם את זה: היא פשוט תיתן לכם את הלוח הפתור.
+ אתם תסתכלו על הלוח ותבצעו תהליך של 
+\series bold
+וידוא
+\series default
+ שהלוח באמת חוקי )בכל שורה/עמודה/תת-לוח יש את כל המספרים מ-
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עד
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+9
+\numeric off
+( ושהוא באמת מרחיב את הלוח שיש לכם )כל מספר שהופיע בלוח שלכם מופיע גם בלוח
+ של הפתרון(.
+ זה לוקח מעט זמן יחסית.
+ אם כן, 
+\series bold
+לודא
+\series default
+ שמשהו הוא פתרון של הלוח - זה קל.
+\end_layout
+
+\begin_layout Standard
+כשאני אומר 
+\begin_inset Quotes eld
+\end_inset
+
+קשה
+\begin_inset Quotes erd
+\end_inset
+
+ ו
+\begin_inset Quotes erd
+\end_inset
+
+קל
+\begin_inset Quotes erd
+\end_inset
+
+, למה אני מתכוון? עבורי לפתור סודוקו זה כאב ראש במוח - מרוב דברים לזכור
+ או לרשום בצד, המוח שלי מתפוצץ.
+ אבל עבור מחשב אין הרבה מה לרשום בצד ואין בעיה לזכור דברים - ה
+\begin_inset Quotes erd
+\end_inset
+
+משאב
+\begin_inset Quotes erd
+\end_inset
+
+ שהמחשב משקיע הוא 
+\series bold
+זמן
+\series default
+.
+ זה המשאב המרכזי שעליו מדברים בתורת הסיבוכיות - כמה צעדי חישוב בערך נדרשים
+ בשביל לפתור בעיה.
+\end_layout
+
+\begin_layout Standard
+יש עוד נקודה מהותית בהגדרה של 
+\begin_inset Quotes eld
+\end_inset
+
+קל/קשה
+\begin_inset Quotes erd
+\end_inset
+
+.
+ אם נסתכל על סודוקו של 
+\begin_inset Formula $9\times9$
+\end_inset
+
+, זו כנראה בעיה פתורה וסגורה כבר בימינו.
+ אפילו במקרים הקשים ביותר, מחשב עם אלגוריתם סביר כנראה יוכל לפתור הכל )אני
+ אומר 
+\begin_inset Quotes eld
+\end_inset
+
+כנראה
+\begin_inset Quotes erd
+\end_inset
+
+ כי אני מנחש, לא בטוח(.
+ מה שמעניין אותנו במדעי המחשב התיאורטיים הוא מה קורה 
+\series bold
+ככל שמגדילים את הבעיה
+\series default
+.
+ קל להגדיל סודוקו - במקום לשחק אותו על לוח של 
+\begin_inset Formula $9\times9$
+\end_inset
+
+, לשחק אותו על לוח 
+\begin_inset Formula $n^{2}\times n^{2}$
+\end_inset
+
+ כללי )סודוקו רגיל הוא המקרה 
+\begin_inset Formula $n=3$
+\end_inset
+
+(.
+ אותם אלגוריתם שעובדים בלוח 
+\begin_inset Formula $9\times9$
+\end_inset
+
+ יעבדו גם בלוחות גדולים יותר, אבל ייקח להם יותר זמן.
+ השאלה 
+\series bold
+כמה
+\series default
+ יותר זמן.
+ אם נכפיל את גודל הלוח פי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+10
+\numeric off
+, האם הזמן יגדל פי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+10
+\numeric off
+? פי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+100
+\numeric off
+? פי 
+\begin_inset Formula $2^{10}$
+\end_inset
+
+? אפשר לתת פונקציה 
+\begin_inset Formula $f\left(n\right)$
+\end_inset
+
+ שאומרת בערך מה זמן הריצה כפונקציה של גודל הקלט.
+ אם זמן הריצה הוא בערך פולינום, אז אומרים שהאלגוריתם 
+\series bold
+יעיל
+\series default
+, ואם הוא גדול יותר מפולינום, נניח 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+, אומרים שהוא 
+\series bold
+לא יעיל
+\series default
+.
+ אפשר להעלות הרבה השגות לגבי הגישה הזו אבל לא ניכנס לזה כאן - גם לא חייבים
+ להבין עד הסוף את מה שאמרתי פה כדי להבין את ההמשך.
+\end_layout
+
+\begin_layout Standard
+אני רוצה להכניס קצת פורמליזם לתמונה.
+ בעיית הכרעה אני מסמן לרוב באות 
+\begin_inset Formula $L$
+\end_inset
+
+, ואת האלגוריתם שמנסה לפתור אותה אני מסמן ב-
+\begin_inset Formula $M$
+\end_inset
+
+.
+ ל-
+\begin_inset Formula $M$
+\end_inset
+
+ נותנים קלט 
+\begin_inset Formula $x$
+\end_inset
+
+ כלשהו והוא עונה עליו 
+\begin_inset Quotes eld
+\end_inset
+
+כן/לא
+\begin_inset Quotes erd
+\end_inset
+
+, מה שאסמן ב-
+\begin_inset Formula $M\left(x\right)=\text{T}$
+\end_inset
+
+ ו-
+\begin_inset Formula $M\left(x\right)=\text{F}$
+\end_inset
+
+.
+ כדי לומר ש-
+\begin_inset Formula $M$
+\end_inset
+
+ 
+\series bold
+פותר
+\series default
+ את בעיית ההכרעה 
+\begin_inset Formula $L$
+\end_inset
+
+ אני רוצה שיתקיימו שני דברים שאני קורא להם 
+\begin_inset Quotes eld
+\end_inset
+
+שלמות
+\begin_inset Quotes erd
+\end_inset
+
+ ו
+\begin_inset Quotes erd
+\end_inset
+
+נאותות
+\begin_inset Quotes erd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+)שלמות( אם 
+\begin_inset Formula $x\in L$
+\end_inset
+
+ אז 
+\begin_inset Formula $M\left(x\right)=\text{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+)נאותות( אם 
+\begin_inset Formula $x\notin L$
+\end_inset
+
+ אז 
+\begin_inset Formula $M\left(x\right)=\text{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אם יש לנו 
+\begin_inset Formula $M$
+\end_inset
+
+ יעיל כזה, אומרים שהבעיה שייך ל-
+\lang english
+P
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)האות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+P
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+היא מהמילה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Polynomial
+\lang hebrew
+(
+\end_layout
+
+\begin_layout Standard
+לעומת זאת, 
+\series bold
+מוודא
+\series default
+ 
+\begin_inset Formula $V$
+\end_inset
+
+ הוא משהו שקצת יותר קל לו בחיים: הוא מקבל קלט שהוא 
+\series bold
+זוג
+\series default
+ 
+\begin_inset Formula $\left(x,\pi\right)$
+\end_inset
+
+.
+ ה-
+\begin_inset Formula $x$
+\end_inset
+
+ הוא כמו קודם, משהו שצריך לבדוק אם 
+\begin_inset Formula $x\in L$
+\end_inset
+
+ או לא.
+ אבל 
+\begin_inset Formula $\pi$
+\end_inset
+
+ זו ה
+\begin_inset Quotes erd
+\end_inset
+
+הוכחה
+\begin_inset Quotes erd
+\end_inset
+
+ לכך ש-
+\begin_inset Formula $x\in L$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\pi$
+\end_inset
+
+ לא חייב להיות כתוב כמו הוכחה; אין שום דרישה על המבנה של 
+\begin_inset Formula $\pi$
+\end_inset
+
+, אבל כן יש דרישה שהוא לא יהיה ארוך מדי - האורך שלו צריך להיות פולינומי
+ באורך של 
+\begin_inset Formula $x$
+\end_inset
+
+ אחרת מוודא שרץ בזמן פולינומי לא יוכל לקרוא את כולו ממילא.
+\end_layout
+
+\begin_layout Standard
+כדי להגיד ש-
+\begin_inset Formula $V$
+\end_inset
+
+ הוא מוודא תקין צריך שיתקיימו שני דברים:
+\end_layout
+
+\begin_layout Enumerate
+)שלמות( אם 
+\begin_inset Formula $x\in L$
+\end_inset
+
+ אז 
+\series bold
+קיים
+\series default
+ 
+\begin_inset Formula $\pi$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $V\left(x,\pi\right)=\text{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+)נאותות( אם 
+\begin_inset Formula $x\notin L$
+\end_inset
+
+ אז 
+\series bold
+לכל 
+\begin_inset Formula $\pi$
+\end_inset
+
+ 
+\series default
+מתקיים 
+\begin_inset Formula $V\left(x,\pi\right)=\text{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+במילים אחרות, מוודא טוב הוא זה שמשתכנע 
+\series bold
+מכל הוכחה נכונה
+\series default
+ אבל אם הטענה שגויה, 
+\series bold
+שום הוכחה שקרית לא תשכנע אותו
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+אם יש מוודא יעיל עבור 
+\begin_inset Formula $L$
+\end_inset
+
+ אומרים ש-
+\begin_inset Formula $L$
+\end_inset
+
+ שייכת ל-
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+ )האותיות הללו הן מלשון
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Nondeterministic Polynomial
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שמגיעות מניסוח שקול ופחות מעניין של הגדרת המחלקה(.
+\end_layout
+
+\begin_layout Standard
+אחת השאלות הפתוחות המעניינות במדעי המחשב היא האם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+P=NP
+\lang hebrew
+.
+ האמונה של רובנו היא שזה לא נכון, אבל לא ארחיב על זה כאן.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "יש לי פוסט בנושא"
+target "https://gadial.net/2010/08/15/p_vs_np_overview/"
+literal "false"
+
+\end_inset
+
+, למעוניינים.
+\end_layout
+
+\begin_layout Standard
+עכשיו, אחרי שסיימנו להבין מה זה קל/קשה ומה זה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+P
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ו-
+\lang english
+NP
+\lang hebrew
+.
+ אני רוצה 
+\series bold
+לזרוק את זה לפח לרגע
+\series default
+.
+ מה אם אנחנו לא מגבילים את משאבי החישוב שלנו בכלל? יש לנו רק דרישה אחת ויחידה
+ מהאלגוריתם שלנו, אבל אחת שהיא עדיין משמעותית למדי - 
+\series bold
+שיעצור מתישהו עם תשובה
+\series default
+.
+ כי אלגוריתמים שלא עוצרים בכלל זה עסק קצת בעייתי מבחינתנו.
+ עכשיו, כזכור, מטרת האלגוריתם היא 
+\series bold
+לוודא
+\series default
+ בעיית הכרעה כלשהי.
+\end_layout
+
+\begin_layout Standard
+ההגדרות נשארות זהות למה שאמרתי קודם.
+ אחזור עליהן כדי לחדד.
+ 
+\begin_inset Formula $L$
+\end_inset
+
+ היא בעיית הכרעה כלשהי, 
+\begin_inset Formula $x$
+\end_inset
+
+ הוא קלט אליה, 
+\begin_inset Formula $\pi$
+\end_inset
+
+ הוא 
+\begin_inset Quotes eld
+\end_inset
+
+הוכחה
+\begin_inset Quotes erd
+\end_inset
+
+ ו-
+\begin_inset Formula $V$
+\end_inset
+
+ הוא מוודא.
+ אני 
+\series bold
+משמיט
+\series default
+ את הדרישות שהזכרתי קודם על הסיבוכיות: 
+\begin_inset Formula $V$
+\end_inset
+
+ לא חייב לרוץ בזמן פולינומי, ו-
+\begin_inset Formula $\pi$
+\end_inset
+
+ לא צריך להיות מוגבל באורכו בשום צורה.
+\end_layout
+
+\begin_layout Standard
+עם ההגדרות הללו, כדי להגיד ש-
+\begin_inset Formula $V$
+\end_inset
+
+ הוא מוודא תקין צריך שיתקיימו שני דברים:
+\end_layout
+
+\begin_layout Enumerate
+)שלמות( אם 
+\begin_inset Formula $x\in L$
+\end_inset
+
+ אז 
+\series bold
+קיים
+\series default
+ 
+\begin_inset Formula $\pi$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $V\left(x,\pi\right)=\text{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+)נאותות( אם 
+\begin_inset Formula $x\notin L$
+\end_inset
+
+ אז 
+\series bold
+לכל 
+\begin_inset Formula $\pi$
+\end_inset
+
+ 
+\series default
+מתקיים 
+\begin_inset Formula $V\left(x,\pi\right)=\text{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אם יש מוודא כזה עבור 
+\begin_inset Formula $L$
+\end_inset
+
+ אומרים ש-
+\begin_inset Formula $L$
+\end_inset
+
+ שייכת למחלקה 
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+.
+ כן, זו ה-
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+ שבשוויון 
+\begin_inset Formula $\text{MIP}^{*}=\text{RE}$
+\end_inset
+
+.
+ לא הגדרה כל כך קשה, נכון? הנה הגדרה אלטרנטיבית, שהיא אולי הנפוצה יותר:
+ 
+\begin_inset Formula $L$
+\end_inset
+
+ שייכת ל-
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+ אם קיים אלגוריתם 
+\begin_inset Formula $M$
+\end_inset
+
+ כך ש:
+\end_layout
+
+\begin_layout Enumerate
+)שלמות( אם 
+\begin_inset Formula $x\in L$
+\end_inset
+
+ אז 
+\begin_inset Formula $M\left(x\right)=\text{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+)נאותות חלקית( אם 
+\begin_inset Formula $x\notin L$
+\end_inset
+
+ אז או ש-
+\begin_inset Formula $M\left(x\right)=\text{F}$
+\end_inset
+
+ או ש-
+\begin_inset Formula $M$
+\end_inset
+
+ לא עוצרת על 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+שימו לב מה השתנה פה: 
+\begin_inset Formula $M$
+\end_inset
+
+ היוא לא מוודא אלא משהו שמנסה לפתור את הבעיה בלי לבדוק 
+\begin_inset Quotes eld
+\end_inset
+
+הוכחה
+\begin_inset Quotes erd
+\end_inset
+
+ כלשהי; אבל אנחנו מקלים מאוד את החיים של 
+\begin_inset Formula $M$
+\end_inset
+
+ בכך שאנחנו 
+\series bold
+כן
+\series default
+ מרשים לו לא לעצור על קלטים מסויימים - כאלו שהתשובה להם היא 
+\begin_inset Quotes eld
+\end_inset
+
+לא
+\begin_inset Quotes erd
+\end_inset
+
+.
+ אם הייתי דורש נאותות מלאה - כלומר ש-
+\begin_inset Formula $M$
+\end_inset
+
+ תעצור תמיד על קלט 
+\begin_inset Formula $x\notin L$
+\end_inset
+
+ ויתקבל 
+\begin_inset Formula $\left(x\right)=\text{F}$
+\end_inset
+
+
+\begin_inset Formula $M$
+\end_inset
+
+, אז זה היה מגדיר מחלקה אחרת, 
+\begin_inset Formula $\text{R}$
+\end_inset
+
+, שהיא האנלוג של 
+\begin_inset Formula $\text{P}$
+\end_inset
+
+ רק ללא דרישות סיבוכיות.
+ 
+\end_layout
+
+\begin_layout Standard
+בניגוד לשאלת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+P=NP
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הפתוחה, שאלת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+R=RE
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אינה פתוחה כלל - אנחנו 
+\series bold
+יודעים
+\series default
+ שהתשובה שלילית כי למשל טיורינג הוכיח את זה פשוט על ידי הדגמה מפורשת של
+ בעיה ששייכת ל-
+\lang english
+RE
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אבל לא שייכת ל-
+\lang english
+R
+\lang hebrew
+: 
+\begin_inset Quotes eld
+\end_inset
+
+בעיית העצירה
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+בבעיית העצירה אנחנו מקבלים בתור קלט אלגוריתם 
+\begin_inset Formula $M$
+\end_inset
+
+ כלשהו )תניחו שהוא כתוב בשפת התכנות החביבה שלכם, או מתואר בתור מכונת טיורינג
+ - זה לא משנה( וצריכים לקבוע האם כשמריצים אותו הוא עוצר או לא.
+ רגע אחד, אפשר לשאול - מריצים את 
+\begin_inset Formula $M$
+\end_inset
+
+ על מה? בדרך כלל נותנים למשהו כמו 
+\begin_inset Formula $M$
+\end_inset
+
+ קלט.
+ ובכן, מספיק לי לדבר על הוריאנט של בעיית העצירה שבו אין קלט )או שהקלט 
+\begin_inset Quotes eld
+\end_inset
+
+ריק
+\begin_inset Quotes erd
+\end_inset
+
+(.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "יש לי פוסט"
+target "https://gadial.net/2007/09/26/halting_problem/"
+literal "false"
+
+\end_inset
+
+ שמסביר מדוע בעיית העצירה לא שייכת ל-
+\lang english
+R
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ולא אחזור על זה כאן, אבל להראות שהיא שייכת ל-
+\lang english
+RE
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עם ההגדרה-מבוססת-מוודא שנתתי כאן, זה קל: 
+\begin_inset Formula $V$
+\end_inset
+
+ יקבל קלט 
+\begin_inset Formula $\left(M,\pi\right)$
+\end_inset
+
+.
+ אם 
+\begin_inset Formula $\pi$
+\end_inset
+
+ הוא מספר טבעי 
+\begin_inset Formula $n$
+\end_inset
+
+, אז 
+\begin_inset Formula $V$
+\end_inset
+
+ יריץ את 
+\begin_inset Formula $M$
+\end_inset
+
+ במשך 
+\begin_inset Formula $n$
+\end_inset
+
+ צעדי חישוב.
+ אם בפרק הזמן הזה 
+\begin_inset Formula $M$
+\end_inset
+
+ עצרה, נפלא! 
+\begin_inset Formula $V$
+\end_inset
+
+ יעצור ויגיד 
+\begin_inset Formula $\text{T}$
+\end_inset
+
+.
+ אם לעומת זאת 
+\begin_inset Formula $M$
+\end_inset
+
+ לא עצרה, 
+\begin_inset Formula $V$
+\end_inset
+
+ יעצור ויגיד 
+\begin_inset Formula $\text{F}$
+\end_inset
+
+.
+ עכשיו, מה קורה כאן?
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula $M$
+\end_inset
+
+ עוצרת, כלומר 
+\begin_inset Formula $M\in L$
+\end_inset
+
+, אז 
+\series bold
+קיים
+\series default
+ 
+\begin_inset Formula $n$
+\end_inset
+
+ טבעי שהוא מספר הצעדים שנדרשים ל-
+\begin_inset Formula $M$
+\end_inset
+
+ כדי לעצור.
+ אז 
+\series bold
+קיים 
+\begin_inset Formula $\pi$
+\end_inset
+
+ 
+\series default
+כך ש-
+\begin_inset Formula $V\left(x,\pi\right)=\text{T}$
+\end_inset
+
+ - פשוט 
+\begin_inset Formula $\pi$
+\end_inset
+
+ שהוא מספר הצעדים 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ לעומת זאת, אם 
+\begin_inset Formula $M\notin L$
+\end_inset
+
+ אז 
+\series bold
+לכל
+\series default
+ מספר צעדים שהוא, הרצת 
+\begin_inset Formula $V$
+\end_inset
+
+ על 
+\begin_inset Formula $M$
+\end_inset
+
+ לא תסתיים ולכן 
+\begin_inset Formula $V$
+\end_inset
+
+ תמיד תעצור ותחזיר 
+\begin_inset Formula $\text{F}$
+\end_inset
+
+ 
+\series bold
+לכל
+\series default
+ 
+\begin_inset Formula $\pi$
+\end_inset
+
+, כולל 
+\begin_inset Formula $\pi$
+\end_inset
+
+-ים שהם ג'יבריש ולא מספרים.
+\end_layout
+
+\begin_layout Standard
+בואו נקבל שניה אינטואיציה למה בעיית העצירה היא 
+\series bold
+עד כדי כך
+\series default
+ חזקה עד שהגיוני שלא יהיה אפשר לפתור אותה אלגוריתמית.
+ ניקח לדוגמא את השערת גולדבך: לכל מספר זוגי 
+\begin_inset Formula $n\ge4$
+\end_inset
+
+ קיימים שני ראשוניים 
+\begin_inset Formula $p,q$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $n=p+q$
+\end_inset
+
+.
+ ההשערה הזו קיימת כבר מאות שנים וטרם נמצאה לה הוכחה או הפרכה.
+ אם היינו יכולים לפתור את בעיית העצירה היינו מסוגלים להשתמש בפתרון הזה כדי
+ לדעת האם השערת גולדבך נכונה או לא: היינו כותבים אלגוריתם 
+\begin_inset Formula $M$
+\end_inset
+
+ שפשוט רץ סדרתית על כל ה-
+\begin_inset Formula $n\ge4$
+\end_inset
+
+ הזוגיים, ולכל אחד מהם רץ על כל הראשוניים 
+\begin_inset Formula $p<n$
+\end_inset
+
+ ובודק האם 
+\begin_inset Formula $n-p$
+\end_inset
+
+ גם ראשוני.
+ אם 
+\begin_inset Formula $M$
+\end_inset
+
+ מגלה 
+\begin_inset Formula $n$
+\end_inset
+
+ שעבורו 
+\series bold
+לא קיים
+\series default
+ הפירוק 
+\begin_inset Formula $n=p+q$
+\end_inset
+
+ הזה, 
+\begin_inset Formula $M$
+\end_inset
+
+ עוצר.
+ אחרת הוא עובר ל-
+\begin_inset Formula $n$
+\end_inset
+
+ הבא בתור.
+ כעת, אפשר לתת את 
+\begin_inset Formula $M$
+\end_inset
+
+ בתור קלט לבעיית העצירה.
+ אם 
+\begin_inset Formula $M\in L$
+\end_inset
+
+ זה אומר ש-
+\begin_inset Formula $M$
+\end_inset
+
+ 
+\series bold
+עוצר
+\series default
+ ולכן השערת גולדבך 
+\series bold
+לא נכונה
+\series default
+ )כי 
+\begin_inset Formula $M$
+\end_inset
+
+ מצא לה דוגמא נגדית(.
+ אחרת, אם 
+\begin_inset Formula $M\notin L$
+\end_inset
+
+, זה אומר ש-
+\begin_inset Formula $M$
+\end_inset
+
+ 
+\series bold
+לא עוצר
+\series default
+ ולכן השערת גולדבך 
+\series bold
+נכונה
+\series default
+.
+ באופן דומה אפשר לנצל את בעיית העצירה כדי לפתור עוד בעיות; למעשה, אפשר להראות
+ שכל בעיה ב-
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+ ניתנת לתרגום לא מסובך לבעיית העצירה, כך שאם נוכל לפתור את בעיית העצירה,
+ נוכל לפתור כל בעיה אחרת ב-
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+ )בלשון שאולי אתם מכירים מתורת הסיבוכיות, בעיית העצירה היא 
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+-שלמה, בדומה לבעיות שהן 
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+-שלמות(.
+\end_layout
+
+\begin_layout Standard
+למה אני מדבר כל כך הרבה על בעיית העצירה? כי עיקר מה שעושים במאמר של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+
+\begin_inset Formula $\text{MIP}^{*}=\text{RE}$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הוא להוכיח את השייכות של בעיית העצירה ל-
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+, מה שגורר כמעט מיידית את השוויון 
+\begin_inset Formula $\text{MIP}^{*}=\text{RE}$
+\end_inset
+
+.
+ אם כן, הגיע הזמן שנדבר על מהי 
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+.
+ זה מה שנעשה בפוסט הבא.
+\end_layout
+
+\end_body
+\end_document

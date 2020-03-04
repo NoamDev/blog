@@ -1,0 +1,3954 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index אינדקס
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+חישוב קוונטי - מה זה קיוביטים ומה עושים איתם?
+\end_layout
+
+\begin_layout Description
+קטגוריות: פיזיקה, תורת הסיבוכיות
+\end_layout
+
+\begin_layout Description
+תגים: חישוב קוונטי
+\end_layout
+
+\begin_layout Description
+מזהה:
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+what_are_qubits
+\end_layout
+
+\begin_layout Section
+מבוא
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "בפוסט הקודם דיברתי על מה זה קיוביט"
+target "https://gadial.net/2020/02/28/what_is_a_qubit/"
+literal "false"
+
+\end_inset
+
+.
+ הפעם אני רוצה לדבר על מה זה קיוביטים.
+ ברבים.
+ כי ברגע שיש לנו יותר מקיוביט אחד במערכת, האקשן האמיתי מתחיל.
+\end_layout
+
+\begin_layout Standard
+כמו במקרה של קיוביט בודד, כדאי להתחיל את הסיפור מסקירת מה שקורה בחישוב קלאסי,
+ שם יחידת המידה הבסיסית היא ביטים.
+ כשיש לנו יותר מביט בודד, נהוג לאגד אותם לקבוצה; הקבוצה הנפוצה והשימושית
+ ביותר היא מה שנקרא 
+\series bold
+בייט
+\series default
+ )
+\lang english
+byte
+\lang hebrew
+(, שהוא קבוצה של שמונה ביטים יחד.
+ איכשהו יצא שבייט, ולא ביט, הוא יחידת המידה הבסיסית שלנו לאינפורמציה - אנחנו
+ מדברים על דיסקים קשיחים של טרה-בייטים ועל זכרון פנימי של ג'יגה-בייטים של
+ מחשב במקום לדבר ברמת הביט.
+ הדבר נובע בעיקר מסיבות היסטוריות; היום יש קבוצות אחרות שרלוונטיות לא פחות
+ )למשל, המעבדים בימינו הם של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+64
+\numeric off
+-ביט; לא חשוב מה המשמעות המדויקת של זה, אלא שקיבוץ של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+64
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ביטים יחד הפך להיות רלוונטי(.
+\end_layout
+
+\begin_layout Standard
+את התוכן של בייט אפשר לתאר בתור סדרה של שמונה אפסים ואחדים, למשל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+01001101
+\numeric off
+.
+ אפשר לחשוב על כל סדרה כזו כאילו היא מייצגת מספר בתחום שבין 
+\begin_inset Formula $0$
+\end_inset
+
+ ל-
+\begin_inset Formula $255$
+\end_inset
+
+ )הבייט שכתבתי הוא המספר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+77
+\numeric off
+(.
+ למה דווקא התחום הזה? כי בתחום הזה כלולים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+256
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ערכים, ו-
+\begin_inset Formula $256=2^{8}$
+\end_inset
+
+ - מספר הערכים השונים האפשריים בבייט הוא מכפלה של מספר הערכים השונים האפשריים
+ )
+\numeric on
+2
+\numeric off
+( בביט זה בזה, כשמספר הפעמים שמבצעים את הכפל הוא כמספר הביטים שמשתתפים בבייט
+ )
+\numeric on
+8
+\numeric off
+(.
+\end_layout
+
+\begin_layout Standard
+קיוביט בודד, כזכור, היה ב
+\series bold
+סופרפוזיציה
+\series default
+ של שני ערכי הבסיס של ביטים.
+ סימנתי אותו בצורה הבאה: 
+\begin_inset Formula $\left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $
+\end_inset
+
+, כאשר הדרישה על המספרים המרוכבים 
+\begin_inset Formula $\alpha,\beta$
+\end_inset
+
+ היא שמתקיים 
+\begin_inset Formula $\left|\alpha\right|^{2}+\left|\beta\right|^{2}=1$
+\end_inset
+
+.
+ אותו הדבר בדיוק קורה עבור קבוצה של קיוביטים: המערכת הקוונטית שכוללת אותם
+ נמצאת במצב שהוא סופרפוזיציה של כל מצבי הבסיס האפשריים; כלומר, אם היו לנו
+ שמונה קיוביטים היו לנו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+256
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מצבי בסיס אפשריים והמצב הקוונטי של המערכת היה צירוף לינארי של כולם.
+ כדי לשמור את העניינים פשוטים בואו נדבר רק על מערכת של שני קיוביטים: אז
+ מצבי הבסיס שלה הם דברים כמו 
+\begin_inset Formula $\left|0\right\rangle \left|1\right\rangle $
+\end_inset
+
+, וכדי לשמור על הסימון נחמד, במקום לכתוב 
+\begin_inset Formula $\left|0\right\rangle \left|1\right\rangle $
+\end_inset
+
+ אני אכתוב 
+\begin_inset Formula $\left|01\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אם כן, מערכת של שני קיוביטים נמצאת בסופרפוזיציה מהצורה 
+\begin_inset Formula $\left|\psi\right\rangle =\alpha_{00}\left|00\right\rangle +\alpha_{01}\left|01\right\rangle +\alpha_{10}\left|10\right\rangle +\alpha_{11}\left|11\right\rangle $
+\end_inset
+
+ כאשר המקדמים מקיימים את אותה משוואה כמו קודם: 
+\begin_inset Formula $\sum_{x\in\left\{ 0,1\right\} ^{2}}\left|\alpha_{x}\right|^{2}=1$
+\end_inset
+
+.
+ שימו לב לאופן שבו אני מקצר עניינים על ידי סימן הסכימה ואינדקס סכימה שרץ
+ על כל הערכים האפשריים של סדרות מאורך
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ו-
+\numeric on
+1
+\numeric off
+; אני אמשיך להשתמש בקיצורים הללו בהמשך.
+\end_layout
+
+\begin_layout Standard
+מה שאנחנו רואים פה הוא שכמות האינפורמציה שאנחנו זקוקים לה כדי לייצג מצב
+ קוונטי 
+\series bold
+גדלה אקספוננציאלית
+\series default
+ כתלות במספר הקיוביטים.
+ כדי לייצג את הערך של בייט, אנחנו צריכים שמונה ביטים; כדי לייצר את הערך
+ של 
+\begin_inset Quotes eld
+\end_inset
+
+קיובייט
+\begin_inset Quotes erd
+\end_inset
+
+, כלומר של מערכת בת שמונה קיוביטים, אנחנו צריכים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+256
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מספרים מרוכבים )לכאורה כבר מספר מרוכב בודד מכיל אינסוף מידע, אבל בפועל אפשר
+ לדבר על מספר מרוכב כפי שהוא מיוצג במחשב, עם דיוק סופי בהחלט(.
+ זו הסיבה הבסיסית שבגללה חישוב קוונטי הוא משהו שקשה למחשב רגיל לעשות: אם
+ נרצה לבצע סימולציה של חישוב קוונטי, יהיה לנו 
+\series bold
+קל מאוד
+\series default
+ לכתוב קוד שעושה את זה; חישוב קוונטי הוא בסך הכל כפל של מטריצות בוקטור ומדי
+ פעם איזו הגרלה של אחת מבין כמה אפשרויות, כשמבצעים מדידה.
+ הקושי פה טמון בכך שהוקטור )והמטריצות שכופלים בו( עשוי להיות 
+\series bold
+מאוד גדול
+\series default
+; כבר ב-
+\numeric on
+50
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+קיוביטים זו הופכת למשימה שרק מחשבי-על יכולים להתמודד איתה, ועל דברים כמו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ סימולציה של מחשב קוונטי עם 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+70
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+קיוביטים לא מדברים בכלל.
+ זה כנראה לעולם לא יהיה אפשרי.
+ לא על ידי שמירה מפורשת של הוקטור.
+\end_layout
+
+\begin_layout Standard
+האם קיימות דרכים 
+\series bold
+אחרות
+\series default
+, יעילות יותר, לבצע סימולציה של חישוב קוונטי גם עבור מספר קיוביטים גבוה?
+ התשובה היא שבאופן כללי לא, אבל ב
+\series bold
+מקרים פרטיים
+\series default
+ מסויימים אפשר לעשות דברים ממש מגניבים.
+ אני אזכיר את אחד מהמקרים הללו בחטף בהמשך, אם לא אשכח להוסיף אותו לפוסט
+ הזה.
+\end_layout
+
+\begin_layout Section
+מכפלות טנזוריות של קיוביטים
+\end_layout
+
+\begin_layout Standard
+בואו נעבור לפורמליזם המתמטי.
+ הכלי החדש שאנחנו משתמשים בו פה נקרא 
+\series bold
+מכפלה טנזורית
+\series default
+ של מרחבים וקטוריים.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "יש לי פוסט על זה"
+target "https://gadial.net/2014/06/10/vector_space_tensor_product/"
+literal "false"
+
+\end_inset
+
+, אבל הנה תזכורת רלוונטית: אם 
+\begin_inset Formula $V,W$
+\end_inset
+
+ הם שני מרחבים וקטוריים עם בסיסים 
+\begin_inset Formula $\left\{ e_{1},\ldots,e_{n}\right\} $
+\end_inset
+
+ ו-
+\begin_inset Formula $\left\{ f_{1},\ldots,f_{m}\right\} $
+\end_inset
+
+ בהתאמה, אז המכפלה הטנזורית 
+\begin_inset Formula $V\otimes W$
+\end_inset
+
+ היא מרחב וקטורי שנפרש על ידי קבוצת האיברים 
+\begin_inset Formula $\left\{ e_{i}\otimes f_{j}\ |\ 1\le i\le n,1\le j\le m\right\} $
+\end_inset
+
+.
+ אנחנו חושבים על 
+\begin_inset Formula $e_{i}\otimes f_{j}$
+\end_inset
+
+ כעל 
+\begin_inset Quotes eld
+\end_inset
+
+אטומים
+\begin_inset Quotes erd
+\end_inset
+
+ שיוצרים את המרחב ולא ניתנים לחלוקה בעצמם, וכל איבר אחר במרחב הוא צירוף
+ לינארי שלהם.
+ זו הגדרה שהיא מאוד תלויית-בסיס, אבל אפשר גם לוותר על הגדרות תלויות בסיס
+ לגמרי; זה מה שקורה בפוסט ההוא שלי, אבל הפעם אני לא צריך להיכנס לזה.
+\end_layout
+
+\begin_layout Standard
+במקרה של קיוביטים, המרחבים שאני כופל הם כולם בעלי הבסיס 
+\begin_inset Formula $\left\{ \left|0\right\rangle ,\left|1\right\rangle \right\} $
+\end_inset
+
+ ולכן מכפלה של שני מרחבים נפרשת על ידי איברים כמו 
+\begin_inset Formula $\left|0\right\rangle \otimes\left|1\right\rangle $
+\end_inset
+
+, ואת הסימון הזה כבר קיצרתי ל-
+\begin_inset Formula $\left|01\right\rangle $
+\end_inset
+
+ אבל מבחינה פורמלית הכתיב הנכון הוא 
+\begin_inset Formula $\left|0\right\rangle \otimes\left|1\right\rangle $
+\end_inset
+
+.
+ נקודה רלוונטית שבלבלה אותי כשהתחלתי ללמוד על מכפלות טנזוריות היא שאמנם
+ בהחלט אפשר לקחת איבר 
+\begin_inset Formula $v\in V$
+\end_inset
+
+ ו-
+\begin_inset Formula $w\in W$
+\end_inset
+
+ ואז לדבר על האיבר 
+\begin_inset Formula $v\otimes w\in V\otimes W$
+\end_inset
+
+, אבל 
+\series bold
+לא כל האיברים
+\series default
+ של 
+\begin_inset Formula $V\otimes W$
+\end_inset
+
+ ניתנים לייצוג כזה.
+ הדבר הזה חשוב שבעתיים כשמדברים על קיוביטים, אבל גם יש לנו דרך לקבל אינטואיציה
+ 
+\begin_inset Quotes eld
+\end_inset
+
+פיזיקלית
+\begin_inset Quotes erd
+\end_inset
+
+ להגיון שמאחורי זה, אז בואו ניכנס לעובי הקורה.
+\end_layout
+
+\begin_layout Standard
+ראשית, בואו ניקח את המצב הקוונטי של קיוביט יחיד בסופרפוזיציה אחידה: 
+\begin_inset Formula $\left|+\right\rangle =\frac{\left|0\right\rangle +\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+.
+ אם אני רוצה להבין מה המשמעות של 
+\begin_inset Formula $\left|+\right\rangle \otimes\left|+\right\rangle $
+\end_inset
+
+ אני משתמש בתכונת 
+\series bold
+הבילינאריות
+\series default
+ של האופרטור 
+\begin_inset Formula $\otimes$
+\end_inset
+
+ - תכונה שאפשר לתאר כך:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left(a+b\right)\otimes c=a\otimes c+b\otimes c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $a\otimes\left(b+c\right)=a\otimes b+a\otimes c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\lambda a\otimes b=\lambda\left(a\otimes b\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $a\otimes\lambda b=\lambda\left(a\otimes b\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+עם התכונות הללו, קל לראות ש-
+\begin_inset Formula $\left|+\right\rangle \otimes\left|+\right\rangle $
+\end_inset
+
+ יוצא פשוט 
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|01\right\rangle +\left|10\right\rangle +\left|11\right\rangle }{2}$
+\end_inset
+
+ - המצב שהוא הסופרפוזיציה האחידה על ארבעת ערכי הבסיס האפשריים.
+ וזה, אני מניח, לא מפתיע.
+ האינטואיציה פה הוא שכל אחד מהקיוביטים 
+\begin_inset Formula $\left|+\right\rangle $
+\end_inset
+
+ חי לו בעצמו בסבבה בסופרפוזיציה שלו, ואז פתאום קירבנו את המערכות של שני
+ הקיוביטים זו לזו והתחלנו לחשוב עליהן בתור מערכת אחת, ואז המערכת האחת הזו
+ מורכבת משתי הסופרפוזיציות הללו ביחד.
+ כמו להטיל שתי קוביות - אפשר להסתכל על כל אחת בנפרד, ולראות התפלגות אחידה
+ בין
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ל-
+\numeric on
+6
+\numeric off
+; ואפשר להסתכל על שתיהן ביחד ולראות התפלגות מעניינת יותר בין
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ל-
+\numeric on
+12
+\numeric off
+, אבל כזו שבנויה פשוט מהתפלגות אחידה על כל הזוגות 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $1\le x,y\le6$
+\end_inset
+
+ )ואגלה לכם סוד? לא באמת צריך לקרב את המערכות של שני הקיוביטים זו לזו; הן
+ יכולות להיות בקצוות הרחוקים של היקום והמתמטיקה תהיה זהה(.
+\end_layout
+
+\begin_layout Standard
+ועכשיו למשהו שונה לגמרי - המצב 
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$
+\end_inset
+
+.
+ בדיקה זריזה תראה שזה מצב קוונטי חוקי על שני קיוביטים - הנורמה שלו היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+והוא צירוף לינארי של אברי בסיס של המכפלה הטנזורית.
+ יש לו גם שם: מצב 
+\series bold
+בל 
+\series default
+)וגם אפשר לקרוא לו 
+\begin_inset Quotes eld
+\end_inset
+
+זוג
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+EPR
+\lang hebrew
+
+\begin_inset Quotes erd
+\end_inset
+
+ אבל נעזוב את זה(.
+ האם אפשר לכתוב את מצב בל הזה בתור 
+\begin_inset Formula $\left|\psi_{1}\right\rangle \otimes\left|\psi_{2}\right\rangle $
+\end_inset
+
+ עבור שני מצבים קוונטיים 
+\begin_inset Formula $\left|\psi_{1}\right\rangle ,\left|\psi_{2}\right\rangle $
+\end_inset
+
+ של קיוביט יחיד כל אחד? התשובה היא ש
+\series bold
+אי אפשר
+\series default
+ בשום פנים ואופן לעשות את זה.
+ המשמעות הפיזיקלית היא ש-
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ מתאר לנו מערכת פיזיקלית של שני קיוביטים שפשוט לא ניתן לחשוב עליה בתור שתי
+ מערכות נפרדות של קיוביטים, שכל אחת מהן חיה לה בסבבה בלי קשר לשניה; הן קשורות
+ אחרת לשניה בצורה בלתי פריקה.
+ כפי שאומרים הפיזיקאים, הן 
+\series bold
+שזורות
+\series default
+.
+ השזירה הזו של קיוביטים - היכולת לבנות מהם מצבים קוונטיים שלא פריקים למכפלה
+ של קיוביטים בודדים - היא 
+\series bold
+חלק מהותי
+\series default
+ מהכוח של חישוב קוונטי.
+\end_layout
+
+\begin_layout Standard
+למה אי אפשר לקבל את 
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ כמכפלה טנזורית בודדת של שני איברים? ובכן, אין כאן משהו מעניין מעבר לאלגברה
+ לינארית פשוטה.
+ ניקח שני קיוביטים כלליים, 
+\begin_inset Formula $\left|\psi_{1}\right\rangle =\alpha_{1}\left|0\right\rangle +\beta_{1}\left|1\right\rangle $
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|\psi_{2}\right\rangle =\alpha_{2}\left|0\right\rangle +\beta_{2}\left|1\right\rangle $
+\end_inset
+
+, נכפול אותם טנזורית ונקבל את המצב
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha_{1}\alpha_{2}\left|00\right\rangle +\beta_{1}\alpha_{2}\left|10\right\rangle +\alpha_{1}\beta_{2}\left|01\right\rangle +\beta_{1}\beta_{2}\left|11\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+את המקדמים של 
+\begin_inset Formula $\left|10\right\rangle $
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|01\right\rangle $
+\end_inset
+
+ צריך להשוות לאפס, כך שאנחנו מקבלים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta_{1}\alpha_{2}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha_{1}\beta_{2}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+עכשיו, אנחנו חיים מעל המספרים המרוכבים.
+ במספרים המרוכבים, 
+\begin_inset Formula $\beta_{1}\alpha_{2}=0$
+\end_inset
+
+ גורר שבהכרח או 
+\begin_inset Formula $\beta_{1}=0$
+\end_inset
+
+ או 
+\begin_inset Formula $\alpha_{2}=0$
+\end_inset
+
+.
+ אם 
+\begin_inset Formula $\beta_{1}=0$
+\end_inset
+
+ אז גם המקדם 
+\begin_inset Formula $\beta_{1}\beta_{2}$
+\end_inset
+
+ של 
+\begin_inset Formula $\left|11\right\rangle $
+\end_inset
+
+ יהיה אפס.
+ אם 
+\begin_inset Formula $\alpha_{2}=0$
+\end_inset
+
+ אז המקדם של 
+\begin_inset Formula $\left|00\right\rangle $
+\end_inset
+
+ יהיה אפס.
+ שום דבר מסובך.
+\end_layout
+
+\begin_layout Standard
+אוקיי, אז ראינו ש-
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ הוא מצב קוונטי 
+\begin_inset Quotes eld
+\end_inset
+
+מעניין
+\begin_inset Quotes erd
+\end_inset
+
+.
+ הנה לכם שאלה - איך בכלל אפשר להגיע למצב הקוונטי המעניין הזה אם, נאמר, המערכת
+ שלנו מתחילה במצב 
+\begin_inset Formula $\left|00\right\rangle $
+\end_inset
+
+? או, טוב ששאלתם.
+ בואו נדבר עכשיו על הפעולות שאפשר לבצע על מערכות של קיוביטים.
+\end_layout
+
+\begin_layout Section
+מכפלות טנזוריות של מטריצות ושערים קוונטיים
+\end_layout
+
+\begin_layout Standard
+תיארתי מכפלה טנזורית בתור משהו אבסטרקטי למדי, שלוקח שני וקטורי בסיס 
+\begin_inset Formula $e_{i},f_{j}$
+\end_inset
+
+ ויוצר מהם איזה איבר חדש 
+\begin_inset Formula $e_{i}\otimes f_{j}$
+\end_inset
+
+ שהוא משהו מסוג שלא נראה קודם ואין לנו איך להבין את הבפנוכו שלו.
+ אבל למעשה, אפשר גם לתת תיאור 
+\begin_inset Quotes eld
+\end_inset
+
+חישובי
+\begin_inset Quotes erd
+\end_inset
+
+ מאוד קונקרטי למכפלות טנזוריות אם במקום לדבר על מרחבים וקטוריים ואופרטורים
+ עליהם אפשר לעבור לדבר על הייצוג החביב עלינו באלגברה לינארית לוקטורים ואופרטורים
+: מטריצות.
+\end_layout
+
+\begin_layout Standard
+כזכור, אם יש לי מרחב וקטור 
+\begin_inset Formula $V$
+\end_inset
+
+ ובסיס 
+\begin_inset Formula $B=\left\{ b_{1},\ldots,b_{n}\right\} $
+\end_inset
+
+ עבורו, אז לכל וקטור 
+\begin_inset Formula $v\in V$
+\end_inset
+
+ מתאימה מטריצה מסדר 
+\begin_inset Formula $n\times1$
+\end_inset
+
+, מה שנקרא 
+\series bold
+וקטור עמודה
+\series default
+, של 
+\series bold
+הקואורדינטות
+\series default
+ של 
+\begin_inset Formula $v$
+\end_inset
+
+ לפי הבסיס 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ למה הכוונה? מהתכונות של בסיס, ידוע שקיים ל-
+\begin_inset Formula $v$
+\end_inset
+
+ ייצוג 
+\series bold
+יחיד 
+\series default
+מהצורה 
+\begin_inset Formula $v=\sum\lambda_{i}b_{i}$
+\end_inset
+
+ והוקטור שמותאם ל-
+\begin_inset Formula $v$
+\end_inset
+
+ בצורה הזו הוא פשוט 
+\begin_inset Formula $\left[v\right]_{B}\triangleq\left(\begin{array}{c}
+\lambda_{1}\\
+\vdots\\
+\lambda_{n}
+\end{array}\right)$
+\end_inset
+
+.
+ באופן דומה, אם יש לנו אופרטור לינארי 
+\begin_inset Formula $T:V\to V$
+\end_inset
+
+ אז יש לו 
+\series bold
+מטריצה מייצגת
+\series default
+ 
+\begin_inset Formula $\left[T\right]_{B}$
+\end_inset
+
+ שהעמודות שלה הן בדיוק וקטורי הקואורדינטות של 
+\begin_inset Formula $T\left(b_{1}\right),\ldots,T\left(b_{n}\right)$
+\end_inset
+
+.
+ היופי בוקטורי קואורדינטות ומטריצות מייצגות הוא שמתקיים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left[T\left(v\right)\right]_{B}=\left[T\right]_{B}\cdot\left[v\right]_{B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר, ביצענו מעין רדוקציה של הפעלת הטרנספורמציה הכללית 
+\begin_inset Formula $T$
+\end_inset
+
+ על האיבר 
+\begin_inset Formula $v$
+\end_inset
+
+ לפעולה הקונקרטית של חישוב כפל מטריצה בוקטור.
+\end_layout
+
+\begin_layout Standard
+בפוסט הקודם על קיוביטים נקטתי בגישה הזו בלי למצמץ; את 
+\begin_inset Formula $\left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $
+\end_inset
+
+ תיארתי בחופשיות גם בתור 
+\begin_inset Formula $\left(\begin{array}{c}
+\alpha\\
+\beta
+\end{array}\right)$
+\end_inset
+
+ ואופרטורים כמו 
+\begin_inset Formula $H$
+\end_inset
+
+ תיארתי בחופשיות עם מטריצות, למשל 
+\begin_inset Formula $H=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+1 & 1\\
+1 & -1
+\end{array}\right)$
+\end_inset
+
+.
+ אבל איך התיאור הזה מוכלל כשמדברים על מכפלות טנזוריות? כשיש לנו שני קיוביטים
+ אז הבסיס החדש הוא 
+\begin_inset Formula $\left|00\right\rangle ,\left|01\right\rangle ,\left|10\right\rangle ,\left|11\right\rangle $
+\end_inset
+
+ אבל האם זה באמת הסדר 
+\begin_inset Quotes eld
+\end_inset
+
+הנכון
+\begin_inset Quotes erd
+\end_inset
+
+ בין אברי הבסיס? מה הגישה המסודרת לעניין?
+\end_layout
+
+\begin_layout Standard
+ובכן, ביטוי המפתח הטכני לסיפור הזה הוא מה שנקרא 
+\series bold
+מכפלת קרונקר
+\series default
+, או סתם 
+\begin_inset Quotes eld
+\end_inset
+
+מכפלה טנזורית
+\begin_inset Quotes erd
+\end_inset
+
+ של מטריצות.
+ אם 
+\begin_inset Formula $A,B$
+\end_inset
+
+ הן מטריצות )לאו דווקא מאותו סדר או ריבועיות!( כך ש-
+\begin_inset Formula $A$
+\end_inset
+
+ היא מסדר 
+\begin_inset Formula $n\times m$
+\end_inset
+
+, אז מכפלת קרונקר שלהן מוגדרת בתור
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A\otimes B=\left(\begin{array}{ccc}
+a_{11}B & \ldots & a_{1m}B\\
+\vdots &  & \vdots\\
+a_{n1}B & \ldots & a_{nm}B
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר, 
+\begin_inset Formula $A\times B$
+\end_inset
+
+ היא 
+\series bold
+מטריצת בלוקים
+\series default
+ שבנויה מהרבה בלוקים של המטריצה 
+\begin_inset Formula $B$
+\end_inset
+
+, כשבכל פעם המטריצה 
+\begin_inset Formula $B$
+\end_inset
+
+ הזו מוכפלת בכניסה אחרת של 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ ואני אתן דוגמאות קונקרטיות פשוטות: 
+\begin_inset Formula $X\otimes H$
+\end_inset
+
+ ו-
+\begin_inset Formula $Z\otimes H$
+\end_inset
+
+, כאשר 
+\begin_inset Formula $X=\left(\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $Z=\left(\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right)$
+\end_inset
+
+ הן עוד מטריצות שראינו בפוסט הקודם.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X\otimes H=\frac{1}{\sqrt{2}}\left(\begin{array}{cccc}
+0 & 0 & 1 & 1\\
+0 & 0 & 1 & -1\\
+1 & 1 & 0 & 0\\
+1 & -1 & 0 & 0
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z\otimes H=\frac{1}{\sqrt{2}}\left(\begin{array}{cccc}
+1 & 1 & 0 & 0\\
+1 & -1 & 0 & 0\\
+0 & 0 & -1 & -1\\
+0 & 0 & -1 & 1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+עוד נקודה שכדאי לתת עליה את הדעת היא שהמכפלה הטנזורית הזו היא בוודאי לא
+ קומוטטיבית:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X\otimes Z=\left(\begin{array}{cccc}
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & -1\\
+1 & 0 & 0 & 0\\
+0 & -1 & 0 & 0
+\end{array}\right)\ne\left(\begin{array}{cccc}
+0 & 1 & 0 & 0\\
+1 & 0 & 0 & 0\\
+0 & 0 & 0 & -1\\
+0 & 0 & -1 & 0
+\end{array}\right)=Z\otimes X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בואו נעשה את זה עכשיו עבור קיוביטים.
+ ניקח את הקיוביט 
+\begin_inset Formula $\left|\psi_{1}\right\rangle =\alpha_{1}\left|0\right\rangle +\beta_{1}\left|1\right\rangle $
+\end_inset
+
+ והקיוביט 
+\begin_inset Formula $\left|\psi_{2}\right\rangle =\alpha_{2}\left|0\right\rangle +\beta_{2}\left|1\right\rangle $
+\end_inset
+
+.
+ הם מיוצגים על ידי הוקטור 
+\begin_inset Formula $\left(\begin{array}{c}
+\alpha_{1}\\
+\beta_{1}
+\end{array}\right),\left(\begin{array}{c}
+\alpha_{2}\\
+\beta_{2}
+\end{array}\right)$
+\end_inset
+
+, וכעת
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\begin{array}{c}
+\alpha_{1}\\
+\beta_{1}
+\end{array}\right)\otimes\left(\begin{array}{c}
+\alpha_{2}\\
+\beta_{2}
+\end{array}\right)=\left(\begin{array}{c}
+\alpha_{1}\alpha_{2}\\
+\alpha_{1}\beta_{2}\\
+\beta_{1}\alpha_{2}\\
+\beta_{1}\beta_{2}
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בפרט, אנחנו רואים ש-
+\begin_inset Formula $\left|00\right\rangle $
+\end_inset
+
+ מתאים לוקטור 
+\begin_inset Formula $\left(\begin{array}{c}
+1\\
+0\\
+0\\
+0
+\end{array}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\left|01\right\rangle $
+\end_inset
+
+ מתאים לוקטור 
+\begin_inset Formula $\left(\begin{array}{c}
+0\\
+1\\
+0\\
+0
+\end{array}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\left|10\right\rangle $
+\end_inset
+
+ מתאים לוקטור 
+\begin_inset Formula $\left(\begin{array}{c}
+0\\
+0\\
+1\\
+0
+\end{array}\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|11\right\rangle $
+\end_inset
+
+ מתאים לוקטור 
+\begin_inset Formula $\left(\begin{array}{c}
+0\\
+0\\
+0\\
+1
+\end{array}\right)$
+\end_inset
+
+.
+ זה בעצם מלמד אותנו מה הסדר ה
+\begin_inset Quotes erd
+\end_inset
+
+נכון
+\begin_inset Quotes erd
+\end_inset
+
+ של הבסיס: הוא צריך להיות 
+\begin_inset Formula $\left\{ \left|00\right\rangle ,\left|01\right\rangle ,\left|10\right\rangle ,\left|11\right\rangle \right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+בואו נכליל את זה עכשיו: אם 
+\begin_inset Formula $V,W$
+\end_inset
+
+ הם שני מרחבים וקטוריים עם בסיסים 
+\begin_inset Formula $E=\left\{ e_{1},\ldots,e_{n}\right\} $
+\end_inset
+
+ ו-
+\begin_inset Formula $F=\left\{ f_{1},\ldots,f_{m}\right\} $
+\end_inset
+
+, אז אני אסמן את הבסיס למכפלה הטנזורית שלהם בתור 
+\begin_inset Formula $E\otimes F\triangleq\left\{ e_{1}\otimes f_{1},e_{1}\otimes f_{2},\ldots,e_{1}\otimes f_{m},\ldots,e_{n}\otimes f_{m}\right\} $
+\end_inset
+
+ ועכשיו אני יכול לכתוב נוסחה שאומרת, מילולית, שמכפלת קרונקר משחקת יפה עם
+ מכפלה טנזורית בכל הנוגע לטרנספורמציות שפועלות על מרחבים שהם מכפלות טנזוריות.
+\end_layout
+
+\begin_layout Standard
+פורמלית, אם 
+\begin_inset Formula $T:V\to V$
+\end_inset
+
+ ו-
+\begin_inset Formula $S:W\to W$
+\end_inset
+
+ הם שני אופרטורים ו-
+\begin_inset Formula $v\in V,w\in W$
+\end_inset
+
+ הם וקטורים, אז הנוסחה שלי אומרת ש-
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left[T\left(v\right)\otimes S\left(w\right)\right]_{E\otimes F}=\left(\left[T\right]_{E}\otimes\left[S\right]_{F}\right)\cdot\left(\left[v\right]_{E}\otimes\left[w\right]_{F}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+השורה התחתונה של הסיפור היא שאם אנחנו רוצים לבנות אופרטור שפועל על שני קיוביטים
+ מתוך אופרטורים שפועלים על קיוביט יחיד, אנחנו צריכים לבצע מכפלת קרונקר של
+ המטריצות שלהן.
+ בואו נראה דוגמא אחת של זה כדי שהעניין יישב לנו בנוחות.
+\end_layout
+
+\begin_layout Standard
+נניח שאני מסתכל על הקיוביט 
+\begin_inset Formula $\left|\psi_{1}\right\rangle =\left|0\right\rangle $
+\end_inset
+
+ והקיוביט הנוסף 
+\begin_inset Formula $\left|\psi_{2}\right\rangle =\left|1\right\rangle $
+\end_inset
+
+.
+ עכשיו אני מתעלל בשניהם, אבל בדרכים אחרות: על 
+\begin_inset Formula $\left|\psi_{1}\right\rangle $
+\end_inset
+
+ אני מפעיל את האופרטור 
+\begin_inset Formula $X$
+\end_inset
+
+ ומקבל 
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+; על 
+\begin_inset Formula $\left|\psi_{2}\right\rangle $
+\end_inset
+
+ אני מפעיל את האופרטור 
+\begin_inset Formula $Z$
+\end_inset
+
+ ומקבל 
+\begin_inset Formula $-\left|1\right\rangle $
+\end_inset
+
+ )ששקול ל-
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+ אבל תזרמו עם הדוגמא, אני מנסה לשמור את הדברים פשוטים(.
+ עכשיו, אם אני אסתכל על שני הקיוביטים בתור מערכת משולבת, מה קרה פה? התחלתי
+ מהמצב 
+\begin_inset Formula $\left|01\right\rangle $
+\end_inset
+
+ וסיימתי במצב 
+\begin_inset Formula $-\left|11\right\rangle $
+\end_inset
+
+.
+ האם הייתי יכול גם לקבל את זה בתור כפל מטריצות?
+\end_layout
+
+\begin_layout Standard
+המכפלה 
+\begin_inset Formula $\left|0\right\rangle \otimes\left|1\right\rangle $
+\end_inset
+
+ מיוצגת על ידי הוקטור 
+\begin_inset Formula $\left(\begin{array}{c}
+0\\
+1\\
+0\\
+0
+\end{array}\right)$
+\end_inset
+
+ כפי שכבר ראינו, וגם את המטריצה ל-
+\begin_inset Formula $X\otimes Z$
+\end_inset
+
+ כבר ראינו.
+ נכפול אותן:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\begin{array}{cccc}
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & -1\\
+1 & 0 & 0 & 0\\
+0 & -1 & 0 & 0
+\end{array}\right)\cdot\left(\begin{array}{c}
+0\\
+1\\
+0\\
+0
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0\\
+0\\
+-1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+קיבלנו בדיוק את הוקטור עבור 
+\begin_inset Formula $-\left|11\right\rangle $
+\end_inset
+
+.
+ איזה יופי! דברים עובדים!
+\end_layout
+
+\begin_layout Standard
+עכשיו אנחנו מסוגלים להבין איך עובד מה שנקרא 
+\begin_inset Quotes eld
+\end_inset
+
+שער קוונטי
+\begin_inset Quotes erd
+\end_inset
+
+ ברמת הפורמליזם.
+ שער קוונטי הוא אופרטור שמופעל על כמות ספציפית של קיוביטים - למשל, שער שפועל
+ על קיוביט יחיד, או על שני קיוביטים, וכדומה.
+ כשיש לנו מערכת עם מספר קיוביטים גדול יותר מאלו שהשער פועל עליהם, הרעיון
+ הוא שלוקחים את השער ומבצעים מכפלת קרונקר שלו עם אופרטורי הזהות, 
+\begin_inset Formula $I$
+\end_inset
+
+, על שאר הקיוביטים.
+ למשל, אם יש לנו מערכת בת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+קיוביטים ואנחנו רוצים להפעיל שער 
+\begin_inset Formula $H$
+\end_inset
+
+ על הקיוביט השלישי, אנחנו מפעילים את האופרטור 
+\begin_inset Formula $I\otimes I\otimes H\otimes I$
+\end_inset
+
+ על המערכת כולה.
+\end_layout
+
+\begin_layout Standard
+זה מסביר לנו שערים של קיוביט בודד.
+ אבל מה עם שני קיוביטים? או! זו שאלה טובה!
+\end_layout
+
+\begin_layout Section
+שערים קוונטיים של שני קיוביטים
+\end_layout
+
+\begin_layout Standard
+לפני רגע ראינו שער קוונטי שפועל על שני קיוביטים: 
+\begin_inset Formula $X\otimes Z$
+\end_inset
+
+.
+ גם שער שפועל על קיוביט אחד ולא עושה כלום לקיוביט השני, כמו למשל 
+\begin_inset Formula $H\otimes I$
+\end_inset
+
+, הוא משהו שאפשר לחשוב עליו בתור 
+\begin_inset Quotes eld
+\end_inset
+
+שער של שני קיוביטים
+\begin_inset Quotes erd
+\end_inset
+
+.
+ השאלה המעניינת היא האם יש יותר מכך - והתשובה היא 
+\begin_inset Quotes eld
+\end_inset
+
+בוודאי
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+שאלתי קודם את השאלה איך אפשר להגיע למצב השזור 
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ אם מתחילים מהמצב 
+\begin_inset Formula $\left|00\right\rangle $
+\end_inset
+
+.
+ התשובה היא שאי אפשר להגיע אליו עם השערים שכבר ראינו: חייבים שער של שני
+ קיוביטים שלא ניתן לתיאור בתור הפעלה של שני שערי קיוביט בודד.
+ הסיבה לכך היא שכפי שראינו, אי אפשר לכתוב את 
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ בתור מכפלה טנזורית של שני קיוביטים.
+ אם היינו מתחילים מהמכפלה הטנזורית 
+\begin_inset Formula $\left|00\right\rangle $
+\end_inset
+
+ ומפעילים על כל קיוביט פעולה שאפשר לחשוב עליה במנותק מהקיוביט השני, היינו
+ מקבלים כתוצאה מכפלה טנזורית של שני קיוביטי התוצאה.
+\end_layout
+
+\begin_layout Standard
+אם כן, צריך סוג חדש של שער על שני קיוביטים - כזה שהוא לא מכפלה טנזורית של
+ שני שערים על קיוביט בודד.
+ יש הרבה שערים כאלו, אבל הנה האחד שהוא הנפוץ ביותר: שער 
+\begin_inset Formula $\text{CX}$
+\end_inset
+
+, או
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Controlled-X
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+או
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Controlled-Not
+\lang hebrew
+, איך שלא תרצו לקרוא לו.
+ הרעיון שלו הוא פשוט כשחושבים איך הוא פועל על מצבי בסיס: בהינתן מצב הבסיס
+ 
+\begin_inset Formula $\left|0b\right\rangle $
+\end_inset
+
+, כאשר 
+\begin_inset Formula $b\in\left\{ 0,1\right\} $
+\end_inset
+
+, הוא לא עושה כלום, כלומר מחזיר את 
+\begin_inset Formula $\left|0b\right\rangle $
+\end_inset
+
+; ובהינתן מצב הבסיס 
+\begin_inset Formula $\left|1b\right\rangle $
+\end_inset
+
+ הוא מחזיר את 
+\begin_inset Formula $\left|1b^{\prime}\right\rangle $
+\end_inset
+
+ כאשר 
+\begin_inset Formula $b^{\prime}=1-b$
+\end_inset
+
+, כלומר הוא הופך את הקיוביט הזה )
+\lang english
+Not
+\lang hebrew
+( או אם תרצו - מפעיל עליו שער
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+X
+\lang hebrew
+.
+ המילה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Controlled
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מגיעה מכך שהביט הראשון 
+\begin_inset Quotes eld
+\end_inset
+
+שולט
+\begin_inset Quotes erd
+\end_inset
+
+ על השאלה אם להפעיל את
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+X
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+או לא.
+\end_layout
+
+\begin_layout Standard
+ככה זה נראה כשכותבים זאת במפורש:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{CX}\left|00\right\rangle =\left|00\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{CX}\left|01\right\rangle =\left|01\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{CX}\left|10\right\rangle =\left|11\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{CX}\left|11\right\rangle =\left|10\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+וככה זה נראה בתור מטריצה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{CX}=\left(\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 1 & 0
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+קחו רגע כדי לשכנע את עצמכם שאי אפשר לכתוב את המטריצה הזו בתור מכפלת קרונקר
+ של שתי מטריצות 
+\begin_inset Formula $2\times2$
+\end_inset
+
+.
+ זה לא קשה; בסך הכל צריך לשים לב לכך שיש ב-
+\begin_inset Formula $\text{CX}$
+\end_inset
+
+ הזו שני בלוקים שבוודאי לא יכולים להתקבל מתוך כפל בסקלרים שונים של אותה
+ מטריצה.
+\end_layout
+
+\begin_layout Standard
+כעת, איך משתמשים ב-
+\begin_inset Formula $\text{CX}$
+\end_inset
+
+ כדי לקבל את מצב בל, 
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$
+\end_inset
+
+, מתוך 
+\begin_inset Formula $\left|00\right\rangle $
+\end_inset
+
+? זה פשוט למדי.
+ קודם כל מפעילים 
+\begin_inset Formula $H$
+\end_inset
+
+ על הקיוביט הראשון, ומקבלים את המצב 
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|10\right\rangle }{\sqrt{2}}$
+\end_inset
+
+; אחר כך מפעילים את 
+\begin_inset Formula $\text{CX}$
+\end_inset
+
+ על המצב הזה.
+ מקבלים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{CX}\left(\frac{\left|00\right\rangle +\left|10\right\rangle }{\sqrt{2}}\right)=\frac{\text{CX}\left(\left|00\right\rangle \right)+\text{CX}\left(\left|10\right\rangle \right)}{\sqrt{2}}=\frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+וזה סוגר את הפינה הזו - עכשיו אנחנו מבינים איך כותבים שערים קוונטיים באופן
+ כללי על שני קיוביטים ואפשר להתקדם לשלב הבא...
+ חוץ מבעיה פרקטית קטנה.
+ אמרתי קודם שאני יכול להציג כל שער קוונטי בתור מטריצה גדולה שמוכפלת בוקטור
+ הגדול שמייצג את כל המערכת הקוונטית.
+ אבל זה היה כשכל האופרטורים שלי פעלו על קיוביט בודד ולכן היה אפשר לקבל את
+ המטריצה הגדולה על ידי מכפלות קרונקר של כולן.
+ עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+CX
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אי אפשר לעשות את זה.
+ איך אפשר, למשל, לקבל את
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+CX
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שמופעלת על מערכת בת 
+\series bold
+שלושה
+\series default
+ קיוביטים כאשר, נניח, קיוביט הבקרה הוא דווקא קיוביט מס'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ואילו הקיוביט שהופכים הוא קיוביט מס'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+?
+\end_layout
+
+\begin_layout Standard
+ובכן, הנה דרך מועילה להסתכל על זה מבחינה חישובית.
+ שער
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+CX
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)ושערים דומים לו שגם הם מהצורה של קיוביט בקרה + קיוביט שעליו פועל שער של
+ קיוביט בודד( הוא אמנם לא מכפלת קרונקר אבל הוא 
+\series bold
+סכום
+\series default
+ של שתי מכפלות קרונקר פשוטות.
+ בואו ניזכר שאני משתמש בסימון 
+\begin_inset Formula $\left|0\right\rangle \left\langle 0\right|$
+\end_inset
+
+ כדי לתאר את האופרטור 
+\begin_inset Formula $\left(\begin{array}{cc}
+1 & 0\\
+0 & 0
+\end{array}\right)$
+\end_inset
+
+ ובסימון 
+\begin_inset Formula $\left|1\right\rangle \left\langle 1\right|$
+\end_inset
+
+ כדי לתאר את האופרטור 
+\begin_inset Formula $\left(\begin{array}{cc}
+0 & 0\\
+0 & 1
+\end{array}\right)$
+\end_inset
+
+.
+ עכשיו קל לראות שמתקיים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{CX}=\left|0\right\rangle \left\langle 0\right|\otimes I+\left|1\right\rangle \left\langle 1\right|\otimes X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+עם הביטוי 
+\series bold
+הזה
+\series default
+ אפשר לשחק איך שרוצים כשבאים לשלב אותו במערכת קוונטית גדולה יותר.
+ למשל, בדוגמא שלי, של מערכת של שלושה קיוביטים שבה אני משתמש בקיוביט
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בתור בקרה ובקיוביט
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בתור היעד, אופרטור ה-
+\lang english
+CX
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ה
+\begin_inset Quotes erd
+\end_inset
+
+מורחב
+\begin_inset Quotes erd
+\end_inset
+
+ שלי יהיה
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\underset{q_{1}}{\underbrace{I}}\otimes\underset{q_{2}}{\underbrace{I}}\otimes\underset{q_{3}}{\underbrace{\left|0\right\rangle \left\langle 0\right|}}+\underset{q_{1}}{\underbrace{X}}\otimes\underset{q_{2}}{\underbrace{I}}\otimes\underset{q_{3}}{\underbrace{\left|1\right\rangle \left\langle 1\right|}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אפשר, כמובן, להתלונן שאני משתמש כאן בתעלול שעובד יפה לשער מהצורה 
+\begin_inset Quotes eld
+\end_inset
+
+בקרה/פעולה
+\begin_inset Quotes erd
+\end_inset
+
+ כמו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+CX
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אבל לא יעבוד לשערים קוונטיים 
+\series bold
+כלליים
+\series default
+ של שני קיוביטים, וזה גם נכון; המתמטיקה של המקרה הכי כללי היא נטולת פתרונות
+ אלגנטיים, אבל מצד שני אנחנו גם לא זקוקים לה על פי רוב ולכן לא אכנס אליה
+ כאן.
+\end_layout
+
+\begin_layout Section
+מדידות במערכת של שני קיוביטים
+\end_layout
+
+\begin_layout Standard
+מה שנשאר לנו לעשות כדי להבין איך מערכות של כמה קיוביטים עובדות הוא להבין
+ איך מתבצעת 
+\series bold
+מדידה
+\series default
+ בהן.
+ למרבה המזל, בעצם כבר ראינו את ההגדרה עבורן בפעם הקודמת - דיברתי אז על מערכת
+ של קיוביט בודד, אבל ההגדרה תקפה לכל מערכת.
+ מדידה, כזכור, הוגדרה באמצעות סדרה של אופרטורים 
+\begin_inset Formula $\left\{ M_{m}\right\} $
+\end_inset
+
+ כך ש-
+\begin_inset Formula $\sum M_{m}^{\dagger}M_{m}=I$
+\end_inset
+
+.
+ ה-
+\begin_inset Formula $m$
+\end_inset
+
+-ים הקטנים היו התוצאות המספריות האפשריות של המדידה, וביצוע של מדידה על המצב
+ 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ כלל שני חלקים:
+\end_layout
+
+\begin_layout Enumerate
+בחירת התוצאה המספרית 
+\begin_inset Formula $m$
+\end_inset
+
+ בהסתברות 
+\begin_inset Formula $p\left(m\right)=\left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+בהינתן שהתוצאה 
+\begin_inset Formula $m$
+\end_inset
+
+ נבחרה, העברה של המערכת הקוונטית למצב 
+\begin_inset Formula $\frac{M_{m}\left|\psi\right\rangle }{\sqrt{\left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle }}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ההגדרה הזו עובדת כמו שהיא גם כשהמערכת הקוונטית שלנו מורכבת מיותר מקיוביט
+ אחד, כל עוד האופרטורים 
+\begin_inset Formula $M_{m}$
+\end_inset
+
+ מקיימים את התנאי שנדרש מהם.
+\end_layout
+
+\begin_layout Standard
+עוד דבר שראינו בפעם הקודמת היה 
+\series bold
+מדידה פרוייקטיבית
+\series default
+: זו הייתה דרך 
+\begin_inset Quotes eld
+\end_inset
+
+לייצר
+\begin_inset Quotes erd
+\end_inset
+
+ סדרת אופרטורים ותוצאות מדידה אפשריות מתוך אופרטור הרמיטי בודד; ערכי המדידה
+ היו 
+\series bold
+הערכים העצמיים
+\series default
+ של האופרטור הבודד הזה, וה-
+\begin_inset Formula $M_{m}$
+\end_inset
+
+-ים היו 
+\series bold
+ההטלות
+\series default
+ על המרחבים העצמיים שלו )וסימנתי אותן ב-
+\begin_inset Formula $P_{\lambda}$
+\end_inset
+
+ במקום ב-
+\begin_inset Formula $M_{m}$
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Standard
+גם הרעיון הזה תקף גם כאן, אבל בואו נראה אותו בפעולה בכמה דוגמאות כדי שנרגיש
+ שאנחנו מבינים אותו.
+\end_layout
+
+\begin_layout Standard
+ראשית, אם בקיוביט בודד מדידה 
+\begin_inset Quotes eld
+\end_inset
+
+רגילה
+\begin_inset Quotes erd
+\end_inset
+
+ הייתה מה שקראתי לו 
+\begin_inset Quotes eld
+\end_inset
+
+מדידה בבסיס 
+\begin_inset Formula $Z$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ כי לקחנו את האופרטור ההרמיטי 
+\begin_inset Formula $Z=\left(\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right)$
+\end_inset
+
+ והסקנו ממנו את אופרטורי המדידה 
+\begin_inset Formula $\left|0\right\rangle \left\langle 0\right|$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|1\right\rangle \left\langle 1\right|$
+\end_inset
+
+, מה קורה אם מנסים להסתכל על 
+\begin_inset Formula $Z\otimes Z$
+\end_inset
+
+ בתור אופרטור מדידה עבור שני קיוביטים? זה עובד, אבל אולי לא לגמרי בצורה
+ שאנחנו מצפים לה.
+ לכל 
+\begin_inset Formula $b_{1},b_{2}\in\left\{ 0,1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כל 
+\begin_inset Formula $\left|b_{1}b_{2}\right\rangle $
+\end_inset
+
+ הוא וקטור עצמי של 
+\begin_inset Formula $Z\otimes Z$
+\end_inset
+
+, עם הערך העצמי שהוא 
+\series bold
+המכפלה
+\series default
+ של הערכים העצמיים שמתאימים ל-
+\begin_inset Formula $\left|b_{1}\right\rangle $
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|b_{2}\right\rangle $
+\end_inset
+
+.
+ אני אדגים: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z\otimes Z\left(\left|0\right\rangle \otimes\left|1\right\rangle \right)=Z\left|0\right\rangle \otimes Z\left|1\right\rangle =\left(+1\cdot\left|0\right\rangle \right)\otimes\left(-1\cdot\left|1\right\rangle \right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left(+1\right)\cdot\left(-1\right)\left|0\right\rangle \otimes\left|1\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+זה נובע מכך שבאופן כללי במכפלה טנזורית יש לנו לינאריות: 
+\begin_inset Formula $\left(\lambda_{1}v_{1}\right)\otimes\left(\lambda_{2}v_{2}\right)=\left(\lambda_{1}\lambda_{2}\right)\left(v_{1}\otimes v_{2}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+כלומר, למרות שיש לנו שני קיוביטים, לאופרטור המדידה 
+\begin_inset Formula $Z\otimes Z$
+\end_inset
+
+ עדיין יש רק שני ערכי תצפית אפשריים שונים: 
+\begin_inset Formula $+1$
+\end_inset
+
+ ו-
+\begin_inset Formula $-1$
+\end_inset
+
+.
+ אינטואיטיבית היינו רוצים 
+\series bold
+ארבעה
+\series default
+ ערכי תצפית שונים, כדי לתפוס את ערכי הבסיס 
+\begin_inset Formula $\left|00\right\rangle ,\left|01\right\rangle ,\left|10\right\rangle ,\left|11\right\rangle $
+\end_inset
+
+ שמתאימים לחשיבה שלנו 
+\begin_inset Quotes eld
+\end_inset
+
+בגישה הנאיבית
+\begin_inset Quotes erd
+\end_inset
+
+ על מה זו מדידה.
+\end_layout
+
+\begin_layout Standard
+אחדד: מדידה 
+\begin_inset Quotes eld
+\end_inset
+
+בגישה הנאיבית
+\begin_inset Quotes erd
+\end_inset
+
+ היא הדבר הבא: בהינתן המצב הקוונטי 
+\begin_inset Formula $\left|\psi\right\rangle =\alpha_{00}\left|00\right\rangle +\alpha_{01}\left|01\right\rangle +\alpha_{10}\left|10\right\rangle +\alpha_{11}\left|11\right\rangle $
+\end_inset
+
+, ומצב בסיס 
+\begin_inset Formula $\left|b_{1}b_{2}\right\rangle $
+\end_inset
+
+ עם 
+\begin_inset Formula $b_{1},b_{2}\in\left\{ 0,1\right\} $
+\end_inset
+
+ המדידה מחזירה את התוצאה המספרית שמתאימה ל-
+\begin_inset Formula $\left|b_{1}b_{2}\right\rangle $
+\end_inset
+
+ בהסתברות 
+\begin_inset Formula $\left|\alpha_{b_{1}b_{2}}\right|^{2}$
+\end_inset
+
+ ומעבירה את המערכת למצב 
+\begin_inset Formula $\left|b_{1}b_{2}\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+השאלה, אם כן, היא מה 
+\begin_inset Quotes eld
+\end_inset
+
+התוצאה המספרית שמתאימה ל-
+\begin_inset Formula $\left|b_{1}b_{2}\right\rangle $
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ אם אנחנו רוצים תוצאה מספרית שונה לכל אחד מארבעת הערכים, אפשר לנקוט בתעלול:
+ להשתמש, למשל, באופרטור מדידה כמו 
+\begin_inset Formula $2Z\otimes I+I\otimes Z$
+\end_inset
+
+.
+ כאן 
+\begin_inset Formula $\left|00\right\rangle $
+\end_inset
+
+ הוא וקטור עצמי של הערך העצמי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\numeric off
+, 
+\begin_inset Formula $\left|01\right\rangle $
+\end_inset
+
+ של הערך העצמי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+, 
+\begin_inset Formula $\left|10\right\rangle $
+\end_inset
+
+ של הערך העצמי 
+\begin_inset Formula $-1$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|11\right\rangle $
+\end_inset
+
+ של הערך העצמי 
+\begin_inset Formula $-3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+כל זה קצת מסורבל, אבל בחישוב קוונטי ממילא אנחנו בדרך כלל לא מודדים את כל
+ הקיוביטים בבת אחת, אלא קיוביט אחד בכל פעם.
+ כשיש לנו מערכת של שני קיוביטים, אז מדידה 
+\begin_inset Quotes eld
+\end_inset
+
+רגילה
+\begin_inset Quotes erd
+\end_inset
+
+ של הקיוביט הראשון מתבצעת באמצעות האופרטור 
+\begin_inset Formula $Z\otimes I$
+\end_inset
+
+ ומדידה של הקיוביט השני מתבצעת באמצעות 
+\begin_inset Formula $I\otimes Z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+כדי לקבל תחושה של מה בעצם קורה במדידה 
+\begin_inset Quotes eld
+\end_inset
+
+חלקית
+\begin_inset Quotes erd
+\end_inset
+
+ שכזו, בואו נסתכל שוב על מצב קוונטי כללי: 
+\begin_inset Formula $\left|\psi\right\rangle =\alpha_{00}\left|00\right\rangle +\alpha_{01}\left|01\right\rangle +\alpha_{10}\left|10\right\rangle +\alpha_{11}\left|11\right\rangle $
+\end_inset
+
+.
+ הוקטורים העצמיים של 
+\begin_inset Formula $Z\otimes I$
+\end_inset
+
+ הם 
+\begin_inset Formula $\left|00\right\rangle $
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|01\right\rangle $
+\end_inset
+
+ עבור הערך העצמי 
+\begin_inset Formula $+1$
+\end_inset
+
+, ו-
+\begin_inset Formula $\left|10\right\rangle ,\left|11\right\rangle $
+\end_inset
+
+ עבור הערך העצמי 
+\begin_inset Formula $-1$
+\end_inset
+
+.
+ אופרטורי ההטלה הם 
+\begin_inset Formula $\left|00\right\rangle \left\langle 00\right|+\left|01\right\rangle \left\langle 01\right|$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|10\right\rangle \left\langle 10\right|+\left|11\right\rangle \left\langle 11\right|$
+\end_inset
+
+.
+ לכן נקבל את הדבר הבא:
+\end_layout
+
+\begin_layout Itemize
+בהסתברות 
+\begin_inset Formula $\left|\alpha_{00}\right|^{2}+\left|\alpha_{01}\right|^{2}$
+\end_inset
+
+ תוצאת המדידה היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+
+\begin_inset Formula $+$
+\end_inset
+
+ והמערכת עוברת למצב 
+\begin_inset Formula $\frac{\alpha_{00}\left|00\right\rangle +\alpha_{01}\left|01\right\rangle }{\sqrt{\left|\alpha_{00}\right|^{2}+\left|\alpha_{01}\right|^{2}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+בהסתברות 
+\begin_inset Formula $\left|\alpha_{10}\right|^{2}+\left|\alpha_{11}\right|^{2}$
+\end_inset
+
+ תוצאת המדידה היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+
+\begin_inset Formula $-$
+\end_inset
+
+ והמערכת עוברת למצב 
+\begin_inset Formula $\frac{\alpha_{00}\left|10\right\rangle +\alpha_{01}\left|11\right\rangle }{\sqrt{\left|\alpha_{10}\right|^{2}+\left|\alpha_{11}\right|^{2}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+זה כבר יותר מסובך ממדידה של קיוביט יחיד - אבל לא באמת כל כך נורא, החשבון
+ הוא יחסית פשוט.
+\end_layout
+
+\begin_layout Standard
+לסיום, אני רוצה שנראה מה קורה אם מודדים שני מצבים קוונטיים שונים על פי הקיוביט
+ הראשון.
+ המצב הראשון יהיה המצב של הסופרפוזיציה 
+\begin_inset Quotes eld
+\end_inset
+
+האחידה
+\begin_inset Quotes erd
+\end_inset
+
+: 
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|01\right\rangle +\left|10\right\rangle +\left|11\right\rangle }{2}$
+\end_inset
+
+.
+ המקדם של כל מצב בסופרפוזיציה הוא 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ ולכן אם נבצע את החישוב שהצגתי לפני רגע, נראה שבהסתברות 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ תוצאת המדידה תהיה 
+\begin_inset Formula $+1$
+\end_inset
+
+ והמצב הקוונטי יעבור לסופרפוזיציה 
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|01\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ ובהסתברות 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ התוצאה תהיה 
+\begin_inset Formula $-1$
+\end_inset
+
+ והמצב הקוונטי יעבור לסופרפוזיציה 
+\begin_inset Formula $\frac{\left|10\right\rangle +\left|11\right\rangle }{\sqrt{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+שימו לב שהמצב 
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|01\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ הוא לא מצב שזור; הוא בעצם שווה ל-
+\begin_inset Formula $\left|0\right\rangle \otimes\frac{\left|0\right\rangle +\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+.
+ כלומר, אפשר לחשוב על מה שהגענו אליו בתור שתי מערכות נפרדות של קיוביטים,
+ שבהן הקיוביט הראשון נמדד וערכו התקבע על 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+, והקיוביט השני נותר בסופרפוזיציה שבה היה קודם וכלום לא השתנה מבחינתו.
+ זה אכן מה שהגיוני לצפות לו פיזיקלית.
+\end_layout
+
+\begin_layout Standard
+עכשיו בואו נעבור למצב השזור 
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ שבו המצב שונה בתכלית.
+ כאן עדיין נקבל 
+\begin_inset Formula $+1$
+\end_inset
+
+ בהסתברות 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+, אבל אז המערכת תעבור למצב הקוונטי 
+\begin_inset Formula $\left|00\right\rangle $
+\end_inset
+
+; ובהסתברות 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ נקבל 
+\begin_inset Formula $-1$
+\end_inset
+
+ והמערכת תעבור למצב הקוונטי 
+\begin_inset Formula $\left|11\right\rangle $
+\end_inset
+
+.
+ גם אלו לא מצבים שזורים, כלומר המדידה 
+\begin_inset Quotes eld
+\end_inset
+
+השמידה
+\begin_inset Quotes erd
+\end_inset
+
+ את השזירות, אבל תראו מה קרה פה - הקיוביט 
+\series bold
+השני
+\series default
+, זה שלא נמדד, גם כן הוקרס! הסופרפוזיציה שבה הוא היה קודם )ולא הייתה בלתי
+ תלויה בסופרפוזיציה של הקיוביט הראשון( נעלמה! התופעה הספציפית הזו היא-היא
+ הסיבה לכוח ששזירה מוסיפה לחישובים קוונטיים.
+ נסו לזכור את האינטואיציה הזו.
+\end_layout
+
+\begin_layout Section
+דברי סיכום ופרידה
+\end_layout
+
+\begin_layout Standard
+הגענו לשלב שבו אנחנו מבינים פחות או יותר את כל המודל המתמטי שמאחורי חישוב
+ קוונטי.
+ מרחבים וקטוריים, מטריצות, מכפלות טנזוריות, מכפלות פנימיות, לכסון ספקטרלי
+ של אופרטורים הרמיטיים - זה בערך כל מה שיש פה.
+ כל היתר הם דברים נחמדים שנבנים מעל זה.
+ בפרט, עכשיו אנחנו מסוגלים להבין את האופן שבו נפתר 
+\begin_inset Quotes eld
+\end_inset
+
+ריבוע הקסם
+\begin_inset Quotes erd
+\end_inset
+
+ של פרס ומרמין, אז זה יהיה הדבר הבא שאני אדבר עליו.
+\end_layout
+
+\begin_layout Standard
+אבל אולי כדאי בכל זאת לומר לרגע בצורה מפורשת - מה זה בעצם חישוב קוונטי?
+ הרעיון הוא שלוקחים 
+\begin_inset Formula $n$
+\end_inset
+
+-קיוביטים, ואז מאתחלים איזה שהוא מצב קוונטי - בדרך כלל 
+\begin_inset Formula $\left|0^{n}\right\rangle $
+\end_inset
+
+, ואז מתחילים להפעיל עליו אופרטורים אוניטריים, מה שבדרך כלל אומר שמפעילים
+ אופרטור של 
+\begin_inset Quotes eld
+\end_inset
+
+שער קוונטי
+\begin_inset Quotes erd
+\end_inset
+
+ שפועל רק על קיוביט או שניים ומורחב לפעול כמו הזהות על שאר הקיוביטים.
+ בסיום של החישוב מבצעים מדידה של כל הקיוביטים ומקבלים מחרוזת של 
+\begin_inset Formula $n$
+\end_inset
+
+ ביטים 
+\begin_inset Quotes eld
+\end_inset
+
+קלאסיים
+\begin_inset Quotes erd
+\end_inset
+
+ שמגיעה מתוך התפלגות כלשהי.
+ על הניסוי הזה אפשר לחזור מספר רב של פעמים כדי לקבל הערכה טובה להתפלגות
+ הזו )למשל, שקיבלנו 
+\begin_inset Formula $00$
+\end_inset
+
+ ב-
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ מהפעמים, ב-
+\begin_inset Formula $\frac{1}{3}$
+\end_inset
+
+ מהן קיבלנו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+01
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+וב-
+\begin_inset Formula $\frac{1}{6}$
+\end_inset
+
+ מהן קיבלנו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+11
+\numeric off
+(.
+\end_layout
+
+\begin_layout Standard
+בפועל אפשר לבצע מדידות גם 
+\series bold
+באמצע
+\series default
+ החישוב הקוונטי, ואפילו לשנות את המשך החישוב בהתאם לתוצאת המדידה; ולא חייבים
+ למדוד את 
+\series bold
+כל
+\series default
+ הקיוביטים בסוף.
+ אבל זהו בערך.
+\end_layout
+
+\begin_layout Standard
+האם זה גם מה שקורה במציאות? כן ולא.
+ במציאות קשה מאוד כיום לבצע חישובים שכאלו.
+ לאתחל מצב כמו 
+\begin_inset Formula $\left|0^{n}\right\rangle $
+\end_inset
+
+? זה קשה.
+ מה שמקבלים בפועל הוא סופרפוזיציה של מצבים שאנחנו מקווים ש-
+\begin_inset Formula $\left|0^{n}\right\rangle $
+\end_inset
+
+ דומיננטי בהם מספיק.
+ ולהפעיל אופרטור כמו 
+\begin_inset Formula $X$
+\end_inset
+
+? זה קשה, אנחנו מנסים לכייל את המחשבים ללא הרף כדי שהפעולה שהם מבצעים )במחשבים
+ בני זמננו - על פי רוב באמצעות שליחת פולס אלקטרומנגטי בתדירות מתאימה( תהיה
+ 
+\series bold
+מספיק קרובה
+\series default
+ ל-
+\begin_inset Formula $X$
+\end_inset
+
+.
+ ולמדוד קיוביטים? זה 
+\series bold
+ממש
+\series default
+ קשה מבחינת זה שיש רעשים במדידה.
+ ובנוסף לקשיים הללו יש גם רעשים שמגיעים מבחוץ ויקלקלו את החישוב אפילו אם
+ ננסה פשוט לשמור את המצב 
+\begin_inset Formula $\left|0^{n}\right\rangle $
+\end_inset
+
+ ולא נעשה לו כלום.
+ בקיצור, כל התורה היפה הזו של חישוב קוונטי, כשבאים ליישם אותה בעולם האמיתי,
+ חייבת הרחבה מהותית - חייבים לדבר על 
+\series bold
+רעש
+\series default
+ וההשפעות שלו.
+ זה כבר שייך לתחום שנקרא 
+\series bold
+אינפורמציה קוונטית
+\series default
+ והוא יפה ומעניין בפני עצמו אבל אני לא אדחוף אותו לפוסט הזה.
+ אנחנו מקווים שיום אחד נגיע למצב שבו יש לנו 
+\series bold
+קודים לתיקון שגיאות
+\series default
+ בחישוב קוונטי שעובדים בצורה מספיק טובה כדי שאפשר יהיה לדמיין את המחשבים
+ הקוונטיים כאילו הם עובדים במודל היפה והנקי שהצגתי פה שהוא חסין לרעשים;
+ זה מה שקורה בחישוב קלאסי, שבו יש מנגנונים לטיפול ברעשים שמתכנת ממוצע לא
+ צריך לחשוב עליהם ביומיום שלו.
+\end_layout
+
+\begin_layout Standard
+אבל אני לא יכול לסיים ממש בלי להכניס טיזר למשהו מגניב במיוחד שרמזתי עליו
+ עוד בתחילת הפוסט.
+ בואו נסקור לרגע את השערים שראינו עד כה בחישוב קוונטי: שערי 
+\begin_inset Formula $X,Y,Z$
+\end_inset
+
+; שער 
+\begin_inset Formula $H$
+\end_inset
+
+; שער 
+\begin_inset Formula $S$
+\end_inset
+
+ ושער 
+\begin_inset Formula $S^{\dagger}$
+\end_inset
+
+; והפעם ראינו גם את השער 
+\begin_inset Formula $\text{CX}$
+\end_inset
+
+ וגם על מדידה אפשר לחשוב בתור שער.
+\end_layout
+
+\begin_layout Standard
+ובכן, אם אני עושה חישוב קוונטי שמתבסס רק על השערים הללו, 
+\series bold
+אפשר לבצע סימולציה שלו במחשב קלאסי בסיבוכיות לינארית
+\series default
+.
+ מה זה אומר בפועל? זה אומר שכל מה שאפשר לעשות במחשב קוונטי עם השערים הללו
+ אפשר לעשות 
+\series bold
+בקלי קלות
+\series default
+ גם במחשב רגיל; רק צריך להשתמש בשיטת סימולציה שהיא שונה לגמרי מגישת ה
+\begin_inset Quotes erd
+\end_inset
+
+נכפול מטריצה בוקטור
+\begin_inset Quotes erd
+\end_inset
+
+.
+ התוצאה הזו נקראת 
+\begin_inset Quotes eld
+\end_inset
+
+משפט 
+\lang english
+Gottesman–Knill
+\lang hebrew
+
+\begin_inset Quotes erd
+\end_inset
+
+; הרעיון מאחוריה היא שאפשר לייצג מצבים קוונטיים מסויימים בעזרת 
+\series bold
+יוצרים של חבורת המייצבים
+\series default
+ שלהם )לא חשוב כרגע מה זה אומר...( והרעיון הזה הוא הבסיס לכמה וכמה עניינים
+ לא טריוויאליים בחישוב קוונטי.
+\end_layout
+
+\begin_layout Standard
+זה אומר שכדי להשלים את התמונה אני צריך להוסיף עוד שער כלשהו למשחק - כזה
+ שמאפשר לייצר חישובים מסובכים יותר שהמשפט לא תופס.
+ השער הזה נקרא 
+\begin_inset Formula $T$
+\end_inset
+
+, והוא בסך הכל שער תמים מאוד שמקיים 
+\begin_inset Formula $T^{2}=S$
+\end_inset
+
+ )בדומה לאיך ש-
+\begin_inset Formula $S^{2}=Z$
+\end_inset
+
+(.
+ הוא מוגדר בתור 
+\begin_inset Formula $T=\left(\begin{array}{cc}
+1 & 0\\
+0 & e^{\frac{i\pi}{4}}
+\end{array}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+עכשיו הידע הבסיסי שלנו שלם, פחות או יותר, ואפשר לגשת לדבר על הדברים המגניבים
+ באמת.
+\end_layout
+
+\end_body
+\end_document

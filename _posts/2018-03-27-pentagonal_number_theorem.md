@@ -14,7 +14,7 @@ tags:
 
 ראשית, מה זה מספר מחומש? זה מספר מהצורה {% equation %}\frac{k\left(3k-1\right)}{2}{% endequation %} כאשר {% equation %}k{% endequation %} הוא מספר טבעי חיובי. השם "מספר מחומש" מגיע מכך שצורה מוזרה שבה אפשר לקבל את המספרים היא לצייר סדרה של {% equation %}k{% endequation %} מחומשים אחד בתוך השני, כשבמחומש ה-{% equation %}k{% endequation %} יש בדיוק {% equation %}k{% endequation %} נקודות על כל צלע, ואז לספור כמה נקודות יש בסך הכל. המחומש הראשון, זה עם נקודה אחת על כל צלע, הוא "מנוון" ונראה כמו נקודה בודדת:
 
-<img class="alignnone size-medium wp-image-3572" src="http://gadial.net/wp-content/uploads/2018/03/pengaton_numbers.jpg" alt="" width="300" height="138" />
+<img class="alignnone size-medium wp-image-3572" src="{{site.baseurl}}{{site.post_images}}/2018/03/pengaton_numbers.jpg" alt="" width="300" height="138" />
 
 זו דרך די מוזרה להגדיר סדרת מספרים, ואני אכן לא אחזור אליה בכלל. יותר מכך - אני אדבר גם על המספרים שמתקבלים כשמציבים בתוך {% equation %}k{% endequation %} ערכים <strong>שליליים</strong>; גם במקרה הזה מקבלים מספרים חיוביים. השיטה היא להציב מספר טבעי ואז את המינוס שלו, ואז את המספר הטבעי הבא וכן הלאה. הצבות של {% equation %}k=1,-1,2,-2,\dots{% endequation %} מניבות את סדרת המספרים {% equation %}1,2,5,7,12,15,22,26,\dots{% endequation %}.
 
@@ -26,11 +26,11 @@ tags:
 
 אפשר לתאר חלוקות בדרך ציורית בעזרת <strong>טבלת יאנג</strong>. טבלת יאנג כוללת בסך הכל כמה שורות של ריבועים, כשכל שורה לא ארוכה יותר מאלו שבאות מתחתיה. סכום הריבועים הכולל בטבלה הוא {% equation %}n{% endequation %}, והאורך של כל שורה מייצג את אחד מהאיברים בפירוק. הנה דוגמא עבור הפירוקים של 4:
 
-<strong><img class="alignnone size-medium wp-image-3573" src="http://gadial.net/wp-content/uploads/2018/03/young1.png" alt="" width="300" height="81" /></strong>
+<strong><img class="alignnone size-medium wp-image-3573" src="{{site.baseurl}}{{site.post_images}}/2018/03/young1.png" alt="" width="300" height="81" /></strong>
 
 הכלל הנוסף של "אותו מספר לא מופיע פעמיים בפירוק" מתורגם אצלנו ל"בטבלת יאנג, כל שורה קצרה יותר מזו שמתחתיה". לכן הטבלה הזו לא חוקית מבחינתנו:
 
-<img class="alignnone wp-image-3574 size-thumbnail" src="http://gadial.net/wp-content/uploads/2018/03/young2.png" alt="" width="150" height="150" />
+<img class="alignnone wp-image-3574 size-thumbnail" src="{{site.baseurl}}{{site.post_images}}/2018/03/young2.png" alt="" width="150" height="150" />
 
 מספר החלוקות של {% equation %}n{% endequation %} הוא מספר טבלאות היאנג החוקיות שקיימות עבורו. עכשיו בואו נבדיל בין שני סוגי טבלאות: כאלו עם מספר <strong>זוגי</strong> של שורות, מה שאקרא לו "חלוקה זוגית", וכאלו עם מספר <strong>אי-זוגי</strong> של שורות - "חלוקה אי-זוגית". אסמן ב-{% equation %}p_{\text{odd}}\left(n\right){% endequation %} את מספר החלוקות האי-זוגיות של {% equation %}n{% endequation %} וב-{% equation %}p_{\text{even}}\left(n\right){% endequation %} את מספר החלוקות הזוגיות. אנחנו יודעים ש-{% equation %}p_{\text{odd}}\left(n\right)+p_{\text{even}}\left(n\right){% endequation %} שווה למספר החלוקות של {% equation %}n{% endequation %} בסך הכל; אבל למה שווה ההפרש, {% equation %}p_{\text{odd}}\left(n\right)-p_{\text{even}}\left(n\right){% endequation %}? ובכן, זה בדיוק התוכן של משפט המספרים המחומשים: הוא אומר שכמעט תמיד מספר החלוקות הזוגיות יהיה שווה למספר החלוקות האי-זוגיות, כלומר ההפרש ביניהם יהיה 0; המקרים היחידים שבהם זה לא יהיה כך יהיו עבור {% equation %}n{% endequation %} שהוא מספר מחומש, ובמקרה הזה ההפרש יהיה פלוס-מינוס 1, כשהפלוס-או-מינוס נקבע על פי זוגיות ה-{% equation %}k{% endequation %} שמגדיר את המספר. בכתיבה פורמלית:
 
@@ -56,35 +56,35 @@ tags:
 
 האינטואיציה של הבניה קלה להדהים כשמסתכלים עליה ציורית עם טבלאות יאנג. בואו נביט על טבלת היאנג של הפירוק {% equation %}4+6+8+9+10{% endequation %} של {% equation %}37{% endequation %}:
 
-<strong><img class="alignnone wp-image-3576 size-medium" src="http://gadial.net/wp-content/uploads/2018/03/young3.png" alt="" width="300" height="150" /></strong>
+<strong><img class="alignnone wp-image-3576 size-medium" src="{{site.baseurl}}{{site.post_images}}/2018/03/young3.png" alt="" width="300" height="150" /></strong>
 
 אנחנו רוצים לבנות מהטבלה הזו טבלה שמייצגת מספר שונה ב-1 של מחוברים. כל מחובר מתאים ל<strong>שורה</strong> בטבלת היאנג, כך ששתי דרכי הפעולה הטבעיות ביותר הן: או <strong>להוסיף שורה</strong> מעל השורה העליונה, שתיבנה מקוביות שניקח מהשורות האחרות; או <strong>להסיר</strong> את השורה העליונה ולחלק אותה לשורות האחרות. ואנחנו רוצים שהכלל שמכתיב לנו באיזו משתי הדרכים כדאי לנקוט יהיה כזה ש"הופך את עצמו" אחרי שימוש אחד. אז הנה הטריק: בואו נמספר ב-{% equation %}r{% endequation %} את מספר הקוביות בשורה העליונה ("המחובר הקטן ביותר בסכום") וב-{% equation %}s{% endequation %} נמספר את האורך של <strong>האלכסון</strong> בצד ימין למטה של הטבלה. באיור אצבע את השורה העליונה בירוק ואת האלכסון באדום:
 
-<strong> <img class="alignnone size-medium wp-image-3577" src="http://gadial.net/wp-content/uploads/2018/03/young4.png" alt="" width="300" height="150" /></strong>
+<strong> <img class="alignnone size-medium wp-image-3577" src="{{site.baseurl}}{{site.post_images}}/2018/03/young4.png" alt="" width="300" height="150" /></strong>
 
 הגדרה פורמלית יותר של {% equation %}s{% endequation %} היא זו: אורך הסדרה של המחוברים בסכום שמתחילה במחובר הגדול ביותר, עוברת עליהם מהגדול לקטן, ומסתיימת לפני האיבר הראשון ששונה מקודמו לפחות ב-2. והנה ניסוח עוד יותר פורמלי: אם נסמן חלוקה {% equation %}\lambda{% endequation %} בתור {% equation %}\lambda=\left(\lambda_{1},\lambda_{2},\dots,\lambda_{k}\right){% endequation %} כך ש-{% equation %}\lambda_{1}&gt;\lambda_{2}&gt;\dots&gt;\lambda_{k}{% endequation %} אז {% equation %}r=\lambda_{k}{% endequation %} ו-{% equation %}s{% endequation %} הוא המספר הגדול ביותר עבורו מתקיים {% equation %}\left(\lambda_{1},\dots,\lambda_{s}\right)=\left(\lambda_{1},\lambda_{1}-1,\dots,\lambda_{1}-\left(s-1\right)\right){% endequation %}.
 
 ומה האינבולוציה עושה? אם {% equation %}r&gt;s{% endequation %} אז אנחנו מפרקים את האלכסון ובונים ממנו שורה חדשה מעל השורה העליונה; בגלל ש-{% equation %}r&gt;s{% endequation %} מובטח לנו שהשורה הזו תהיה קצרה מזו שמתחתיה, כדרוש. אם לעומת זאת {% equation %}r&lt;s{% endequation %} אנחנו מפרקים את השורה העליונה ובונים ממנה אלכסון חדש, כלומר מוסיפים קוביה אחת לכל {% equation %}r{% endequation %} השורות הראשונות; מכיוון ש-{% equation %}r&lt;s{% endequation %} אנחנו יודעים שיש מספיק שורות כאלו.
 
-<strong><img class="alignnone size-medium wp-image-3578" src="http://gadial.net/wp-content/uploads/2018/03/young5.png" alt="" width="300" height="200" /></strong>
+<strong><img class="alignnone size-medium wp-image-3578" src="{{site.baseurl}}{{site.post_images}}/2018/03/young5.png" alt="" width="300" height="200" /></strong>
 
 מתי <strong>עשויה</strong> להיות בעיה? במקרה שבו {% equation %}r=s{% endequation %}. כאן העסק עלול להתקלקל אבל לא <strong>חייב</strong> להתקלקל. בואו נראה דוגמא, שמתאימה ל-{% equation %}3+6+8+9+10{% endequation %} של {% equation %}36{% endequation %}:
 
-<strong><img class="alignnone size-medium wp-image-3579" src="http://gadial.net/wp-content/uploads/2018/03/young6.png" alt="" width="300" height="150" /></strong>
+<strong><img class="alignnone size-medium wp-image-3579" src="{{site.baseurl}}{{site.post_images}}/2018/03/young6.png" alt="" width="300" height="150" /></strong>
 
 ברור שבמקרה הזה אי אפשר לייצר שורה חדשה, כי היא תהיה באותה אורך כמו זו שמתחתיה; חייבים לפרק את השורה הקיימת, ואז מקבלים את הפירוק {% equation %}6+9+10+11{% endequation %}:
 
-<strong><img class="alignnone size-medium wp-image-3580" src="http://gadial.net/wp-content/uploads/2018/03/young7.png" alt="" width="300" height="110" /></strong>
+<strong><img class="alignnone size-medium wp-image-3580" src="{{site.baseurl}}{{site.post_images}}/2018/03/young7.png" alt="" width="300" height="110" /></strong>
 
 הפירוק הזה תקין לגמרי, וכשנפעיל עליו את האינבולוציה נחזור לסיטואציה המקורית והכל טוב. מתי כן הייתה עלולה לצוץ בעיה? רק אם לא היו לנו {% equation %}r{% endequation %} שורות לחלק את הקוביות של השורה העליונה אליהן. מתי זה עלול לקרות? אנחנו הרי יודעים שיש לפחות {% equation %}s{% endequation %} שורות, ואת המספר הכולל של השורות סימנתי ב-{% equation %}k{% endequation %}. כלומר {% equation %}r=s\le k{% endequation %}; לכן כדי שתוכל להיווצר בעיה, הכרחי שיתקיים {% equation %}s=k{% endequation %}: במצב הזה מכיוון שאנחנו <strong>מפרקים</strong> את השורה העליונה, אנחנו נשארים בסוף עם קוביה בודדת שאין לנו שורה להכניס אותה אליה.
 
 איך נראית טבלה שבה {% equation %}s=k{% endequation %}? היא תואמת כל חלוקה שבה הפער בין <strong>כל</strong> המחוברים הסמוכים הוא 1. למשל {% equation %}1+2+3+4{% endequation %}:
 
-<strong><img class="alignnone wp-image-3582 size-medium" src="http://gadial.net/wp-content/uploads/2018/03/young8.png" alt="" width="300" height="300" /></strong>
+<strong><img class="alignnone wp-image-3582 size-medium" src="{{site.baseurl}}{{site.post_images}}/2018/03/young8.png" alt="" width="300" height="300" /></strong>
 
 אבל כאן, כמובן, אין בעיה, כי {% equation %}r&lt;s{% endequation %} ולכן אפשר לפרק את השורה העליונה. לכן המקרה <strong>היחיד</strong> שבו יכולה להיות בעיה הוא זה שבו {% equation %}s=r=k{% endequation %}. למשל, הטבלה הזו:
 
-<strong><img class="alignnone size-medium wp-image-3584" src="http://gadial.net/wp-content/uploads/2018/03/young9-1.png" alt="" width="300" height="180" /></strong>
+<strong><img class="alignnone size-medium wp-image-3584" src="{{site.baseurl}}{{site.post_images}}/2018/03/young9-1.png" alt="" width="300" height="180" /></strong>
 
 וכאן אנחנו אכן מקבלים מספר מחומש, {% equation %}12{% endequation %}. ובאופן כללי?
 
@@ -92,7 +92,7 @@ tags:
 
 אז רגע, מה פספסנו? איך ערכים שליליים של {% equation %}k{% endequation %} נכנסים לתמונה? ובכן, רימיתי אתכם קודם והשמטתי עוד מקרה קצה אחד. האם עליתם על הרמאות שלי? הבעיה היא במקרה שבו {% equation %}r&gt;s{% endequation %}. במקרה הזה, כזכור, הרעיון הוא לפרק את האלכסון ולדחוף את האיברים שלו בשורה מעל העליונה; אבל כאן עלולה להיווצר בעיה אם <strong>גם השורה העליונה השתתפה באלכסון</strong>, כי אז כשאני מפרק את האלכסון אני מסיר ממנה איבר אחד. הנה מקרה שבו זה קורה:
 
-<strong><img class="alignnone wp-image-3587 size-medium" src="http://gadial.net/wp-content/uploads/2018/03/young10.png" alt="" width="300" height="151" /></strong>
+<strong><img class="alignnone wp-image-3587 size-medium" src="{{site.baseurl}}{{site.post_images}}/2018/03/young10.png" alt="" width="300" height="151" /></strong>
 
 כאן האלכסון הוא מגודל 3 ולכאורה אין עם זה בעיה כי השורה העליונה היא מגודל 4, אבל כמובן - אחרי שנסיר את אברי האלכסון ניוותר עם שורה מגודל 3. לכן יכולה להיווצר בעיה בדיוק במקרה שבו {% equation %}r=s+1{% endequation %} ו-{% equation %}s=k{% endequation %} (כי {% equation %}s=k{% endequation %} פירושו "גם השורה העליונה משתתפת באלכסון). במקרה הזה, החלוקה היא מהצורה {% equation %}\left(k+1,k+2,\dots,k+k\right){% endequation %} והסכום יוצא {% equation %}\frac{k\left(3k+1\right)}{2}{% endequation %}. זה כמובן לא מתאים לנוסחה שלנו של מספר מחומש, אז אם רוצים לקבל את האחידות היפה בנוסחה שיש לנו, בואו נשים לב לכך ש-{% equation %}t\left(3t-1\right)=3t^{2}-t{% endequation %} ולכן אם נגדיר {% equation %}t=-k{% endequation %} נקבל
 

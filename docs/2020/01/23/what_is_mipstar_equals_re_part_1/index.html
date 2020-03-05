@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>מה זה אומר ש-MIP*=RE? (חלק א’: מה זה אומר RE?) | לא מדויק</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="מה זה אומר ש-MIP*=RE? (חלק א’: מה זה אומר RE?)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<meta property="og:description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<link rel="canonical" href="http://gadial.net/2020/01/23/what_is_mipstar_equals_re_part_1/" />
+<meta property="og:url" content="http://gadial.net/2020/01/23/what_is_mipstar_equals_re_part_1/" />
+<meta property="og:site_name" content="לא מדויק" />
+<meta property="og:image" content="http://gadial.net/assets/img/main/default-card.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-23T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://gadial.net/assets/img/main/default-card.png" />
+<meta property="twitter:title" content="מה זה אומר ש-MIP*=RE? (חלק א’: מה זה אומר RE?)" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"headline":"מה זה אומר ש-MIP*=RE? (חלק א’: מה זה אומר RE?)","dateModified":"2020-01-23T00:00:00+00:00","datePublished":"2020-01-23T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2020/01/23/what_is_mipstar_equals_re_part_1/"},"url":"http://gadial.net/2020/01/23/what_is_mipstar_equals_re_part_1/","image":"http://gadial.net/assets/img/main/default-card.png","description":"לא מדויק - בלוג על מתמטיקה ומדעי המחשב","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://gadial.net/feed.xml" title="לא מדויק" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3924539-2', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$latex','$'] ],
+        processEscapes: true
+      },
+      TeX: {extensions: ["AMSmath.js","AMSsymbols.js"]},
+      "HTML-CSS": { 
+        linebreaks: { automatic: true }
+      },
+      SVG: { 
+        linebreaks: { automatic: true } 
+      }
+    });
+  </script>
+  <!-- "https://www.gadial.net/wp-includes/js/xypic.js" -->
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  
+</head>
+<body><header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/">לא מדויק</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/whats_going_on">מה הולך פה?</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/">דף הבית</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/categories">קטגוריות</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/random">דף אקראי</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/about/">אודות</a>
+            </li>
+            
+        
+      </ul>
+      <form class="form-inline mt-2 mt-md-0" action="/post_list/" method="get">
+        <input class="form-control mr-sm-2" type="text" placeholder="חיפוש" aria-label="חיפוש" name="s">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">חיפוש</button>
+      </form>
+    </div>
+  </nav>
+</header><main class="page-content" aria-label="Content" role="main">
+      <div class="wrapper text-right">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><div class="PageNavigation">
+    
+      <a class="prev" href="/2020/01/20/what_are_percents/">&laquo; אז מה הקטע עם אחוזים?</a>
+    
+    
+      <a class="next" href="/2020/01/24/what_is_mipstar_equals_re_part_2/">מה זה אומר ש-MIP*=RE? (חלק ב': מה זה אומר MIP*?) &raquo;</a>
+    
+  </div><header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">מה זה אומר ש-MIP*=RE? (חלק א&#39;: מה זה אומר RE?)</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-01-23T00:00:00+00:00" itemprop="datePublished">Jan 23, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>ממש לא מזמן התבשרנו על תוצאה בתורת הסיבוכיות שמנוסחת בפשטות בתור <span>$latex \text{MIP}^{*}=\text{RE}$</span>. התגובה הראשונה שלי לתוצאה הייתה “מה?” והתגובה השניה שלי לתוצאה הייתה “מה?!?!”. בפוסט הזה אנסה להסביר מה.</p>
+
+<p>ראשית המאמר עצמו זמין <a href="https://arxiv.org/abs/2001.04383">כאן</a> ואפשר לקרוא אותו. אני לא קראתי אותו מלבד את הפתיחה שלו - הוא כולל 165 עמודים ואין לי סיכוי להבין את הפרטים הטכניים שלו לעומק - אבל אני מקווה שאני מבין מספיק טוב את הרקע כדי להסביר בערך מה המשפט אומר ולמה הוא מעניין. בפשטות, הוא אומר ש<strong>מערכת הוכחה</strong> מסויימת שמתבססת בצורה כלשהי על אפקטים קוונטיים, היא חזקה <strong>בצורה מטורפת ממש</strong> ביחס למערכת הוכחה הדומה לה מאוד שאינה מתבססת על אפקטים קוונטיים. זה משהו שהפתיע קצת את אלו שהכירו את התחום וידעו שהמערכת הזו חזקה בצורה מטורפת; אותי, שבכלל לא ידע על כל זה, זה פשוט הדהים.</p>
+
+<p>אז בואו ננסה להבין מה הולך כאן. לאט.</p>
+
+<p>הפעם אני אסביר מה זו <span>$latex \text{RE}$</span>. <a href="https://gadial.net/2007/09/18/r_and_re/">יש לי פוסט על זה</a> מראשית ימי הבלוג, אבל אני אנסה הפעם להציג את המושג מכיוון קצת שונה, שיעזור לנו גם בהמשך כשנדבר על <span>$latex \text{MIP}^{*}$</span>, כך שאני חושב ששווה לנסות לקרוא גם אם כבר מכירים את <span>$latex \text{RE}$</span>.</p>
+
+<p>בואו נתחיל עם משחק הסודוקו שאני מקווה שמוכר ואהוב על כולנו. או לפחות מוכר.</p>
+
+<p><img src="/assets/img/2020/01/Sudoku.jpg" alt="" /></p>
+
+<p>הרעיון בסודוקו פשוט יחסית: נתון לוח של <span>$latex 9\times9$</span> משבצות שמחולק גם ל-9 תת-לוחות, כל אחד של <span>$latex 3\times3$</span>. בלוח מופיעים כל מני מספרים בין 1 ל-9, והמטרה היא להשלים את הלוח כך שבכל משבצת יהיה מספר בין 1 ל-9 ובנוסף לכך בכל שורה, עמודה ותת-לוח כל המספרים שמופיעים יהיו שונים זה מזה. זה משחק פאזלים חביב בפני עצמו, אבל אני אוהב אותו מאוד בעיקר בגלל שהוא נותן לנו דוגמא יפה לבעיה מהסוג שאנחנו אוהבים לדבר עליהן במדעי המחשב התיאורטיים: בעיה ש<strong>קשה לפתור</strong> אבל <strong>קל לוודא</strong>.</p>
+
+<p>בסודוקו המטרה היא למצוא את הפתרון של הלוח, אבל גם אפשר להצטמצם לבעיה פשוטה יותר: נותנים לכם לוח סודוקו - כלומר, לוח <span>$latex 9\times9$</span> שהוא כבר מלא חלקית במספרים - ושואלים אתכם אם הוא פתיר או לא. <strong>לא כל לוח ממולא חלקית הוא פתיר</strong>! שאלת “כן/לא” כזו נקראת במדעי המחשב <strong>בעיית הכרעה</strong> וזה מה שאנחנו בדרך כלל מעדיפים לדבר עליו, ולא על <strong>בעיית החיפוש</strong> של למצוא את הפתרון, כי על פי רוב אם יש לנו פתרון נחמד לבעיית ההכרעה אפשר גם לבנות בעזרתו פתרון לבעיית החיפוש. במקרה של סודוקו, למשל: בהינתן לוח תבדקו אם הוא פתיר - אם לא פתיר, אפשר לוותר על הכל. אם כן פתיר, אז פשוט תנסו למלא מספרים במשבצות ובכל פעם כזו תשאלו אם הלוח נשאר פתיר גם אחרי המילוי - אם לא, אתם יודעים שהמהלך האחרון שביצעתם היה שגוי וצריך לנסות אחר. זה יוביל אתכם די מהר לפתרון.</p>
+
+<p>עכשיו, להכריע האם לוח סודוקו הוא פתיר יכול להיות עניין קשה לפעמים. יש היוריסטיקות טובות כדי למצוא פתרון, אבל בלוחות “קשים” יהיה צורך להתחיל לנחש איזה ערכים כדאי לשים במשבצות, ואם הניחוש היה לא מוצלח ייתכן שנצטרך לחזור הרבה אחורה בבדיקה שלנו כדי לתקן את זה, וכן הלאה. אז זו בעיית הכרעה ש<strong>קשה לפתור</strong> לעומת זאת, אם מישהי באה אליכם וטוענת שהיא פתרה את הלוח כבר, קל לה מאוד <strong>להוכיח</strong> לכם את זה: היא פשוט תיתן לכם את הלוח הפתור. אתם תסתכלו על הלוח ותבצעו תהליך של <strong>וידוא</strong> שהלוח באמת חוקי (בכל שורה/עמודה/תת-לוח יש את כל המספרים מ-1 עד 9) ושהוא באמת מרחיב את הלוח שיש לכם (כל מספר שהופיע בלוח שלכם מופיע גם בלוח של הפתרון). זה לוקח מעט זמן יחסית. אם כן, <strong>לודא</strong> שמשהו הוא פתרון של הלוח - זה קל.</p>
+
+<p>כשאני אומר “קשה” ו”קל”, למה אני מתכוון? עבורי לפתור סודוקו זה כאב ראש במוח - מרוב דברים לזכור או לרשום בצד, המוח שלי מתפוצץ. אבל עבור מחשב אין הרבה מה לרשום בצד ואין בעיה לזכור דברים - ה”משאב” שהמחשב משקיע הוא <strong>זמן</strong>. זה המשאב המרכזי שעליו מדברים בתורת הסיבוכיות - כמה צעדי חישוב בערך נדרשים בשביל לפתור בעיה.</p>
+
+<p>יש עוד נקודה מהותית בהגדרה של “קל/קשה”. אם נסתכל על סודוקו של <span>$latex 9\times9$</span>, זו כנראה בעיה פתורה וסגורה כבר בימינו. אפילו במקרים הקשים ביותר, מחשב עם אלגוריתם סביר כנראה יוכל לפתור הכל (אני אומר “כנראה” כי אני מנחש, לא בטוח). מה שמעניין אותנו במדעי המחשב התיאורטיים הוא מה קורה <strong>ככל שמגדילים את הבעיה</strong>. קל להגדיל סודוקו - במקום לשחק אותו על לוח של <span>$latex 9\times9$</span>, לשחק אותו על לוח <span>$latex n^{2}\times n^{2}$</span> כללי (סודוקו רגיל הוא המקרה <span>$latex n=3$</span>). אותם אלגוריתם שעובדים בלוח <span>$latex 9\times9$</span> יעבדו גם בלוחות גדולים יותר, אבל ייקח להם יותר זמן. השאלה <strong>כמה</strong> יותר זמן. אם נכפיל את גודל הלוח פי 10, האם הזמן יגדל פי 10? פי 100? פי <span>$latex 2^{10}$</span>? אפשר לתת פונקציה <span>$latex f\left(n\right)$</span> שאומרת בערך מה זמן הריצה כפונקציה של גודל הקלט. אם זמן הריצה הוא בערך פולינום, אז אומרים שהאלגוריתם <strong>יעיל</strong>, ואם הוא גדול יותר מפולינום, נניח <span>$latex 2^{n}$</span>, אומרים שהוא <strong>לא יעיל</strong>. אפשר להעלות הרבה השגות לגבי הגישה הזו אבל לא ניכנס לזה כאן - גם לא חייבים להבין עד הסוף את מה שאמרתי פה כדי להבין את ההמשך.</p>
+
+<p>אני רוצה להכניס קצת פורמליזם לתמונה. בעיית הכרעה אני מסמן לרוב באות <span>$latex L$</span>, ואת האלגוריתם שמנסה לפתור אותה אני מסמן ב-<span>$latex M$</span>. ל-<span>$latex M$</span> נותנים קלט <span>$latex x$</span> כלשהו והוא עונה עליו “כן/לא”, מה שאסמן ב-<span>$latex M\left(x\right)=\text{T}$</span> ו-<span>$latex M\left(x\right)=\text{F}$</span>. כדי לומר ש-<span>$latex M$</span> <strong>פותר</strong> את בעיית ההכרעה <span>$latex L$</span> אני רוצה שיתקיימו שני דברים שאני קורא להם “שלמות” ו”נאותות”:</p>
+
+<ol> <li>(שלמות) אם <span>$latex x\in L$</span> אז <span>$latex M\left(x\right)=\text{T}$</span>.</li>
+
+
+<li>(נאותות) אם <span>$latex x\notin L$</span> אז <span>$latex M\left(x\right)=\text{F}$</span>.</li>
+
+</ol>
+
+<p>אם יש לנו <span>$latex M$</span> יעיל כזה, אומרים שהבעיה שייך ל-P (האות P היא מהמילה Polynomial)</p>
+
+<p>לעומת זאת, <strong>מוודא</strong> <span>$latex V$</span> הוא משהו שקצת יותר קל לו בחיים: הוא מקבל קלט שהוא <strong>זוג</strong> <span>$latex \left(x,\pi\right)$</span>. ה-<span>$latex x$</span> הוא כמו קודם, משהו שצריך לבדוק אם <span>$latex x\in L$</span> או לא. אבל <span>$latex \pi$</span> זו ה”הוכחה” לכך ש-<span>$latex x\in L$</span>. <span>$latex \pi$</span> לא חייב להיות כתוב כמו הוכחה; אין שום דרישה על המבנה של <span>$latex \pi$</span>, אבל כן יש דרישה שהוא לא יהיה ארוך מדי - האורך שלו צריך להיות פולינומי באורך של <span>$latex x$</span> אחרת מוודא שרץ בזמן פולינומי לא יוכל לקרוא את כולו ממילא.</p>
+
+<p>כדי להגיד ש-<span>$latex V$</span> הוא מוודא תקין צריך שיתקיימו שני דברים:</p>
+
+<ol> <li>(שלמות) אם <span>$latex x\in L$</span> אז <strong>קיים</strong> <span>$latex \pi$</span> כך ש-<span>$latex V\left(x,\pi\right)=\text{T}$</span>.</li>
+
+
+<li>(נאותות) אם <span>$latex x\notin L$</span> אז <strong>לכל</strong><span>$latex \pi$</span> מתקיים <span>$latex V\left(x,\pi\right)=\text{F}$</span>.</li>
+
+</ol>
+
+<p>במילים אחרות, מוודא טוב הוא זה שמשתכנע <strong>מכל הוכחה נכונה</strong> אבל אם הטענה שגויה, <strong>שום הוכחה שקרית לא תשכנע אותו</strong>.</p>
+
+<p>אם יש מוודא יעיל עבור <span>$latex L$</span> אומרים ש-<span>$latex L$</span> שייכת ל-<span>$latex \text{NP}$</span> (האותיות הללו הן מלשון Nondeterministic Polynomial שמגיעות מניסוח שקול ופחות מעניין של הגדרת המחלקה).</p>
+
+<p>אחת השאלות הפתוחות המעניינות במדעי המחשב היא האם P=NP. האמונה של רובנו היא שזה לא נכון, אבל לא ארחיב על זה כאן. <a href="https://gadial.net/2010/08/15/p_vs_np_overview/">יש לי פוסט בנושא</a>, למעוניינים.</p>
+
+<p>עכשיו, אחרי שסיימנו להבין מה זה קל/קשה ומה זה P ו-NP. אני רוצה <strong>לזרוק את זה לפח לרגע</strong>. מה אם אנחנו לא מגבילים את משאבי החישוב שלנו בכלל? יש לנו רק דרישה אחת ויחידה מהאלגוריתם שלנו, אבל אחת שהיא עדיין משמעותית למדי - <strong>שיעצור מתישהו עם תשובה</strong>. כי אלגוריתמים שלא עוצרים בכלל זה עסק קצת בעייתי מבחינתנו. עכשיו, כזכור, מטרת האלגוריתם היא <strong>לוודא</strong> בעיית הכרעה כלשהי.</p>
+
+<p>ההגדרות נשארות זהות למה שאמרתי קודם. אחזור עליהן כדי לחדד. <span>$latex L$</span> היא בעיית הכרעה כלשהי, <span>$latex x$</span> הוא קלט אליה, <span>$latex \pi$</span> הוא “הוכחה” ו-<span>$latex V$</span> הוא מוודא. אני <strong>משמיט</strong> את הדרישות שהזכרתי קודם על הסיבוכיות: <span>$latex V$</span> לא חייב לרוץ בזמן פולינומי, ו-<span>$latex \pi$</span> לא צריך להיות מוגבל באורכו בשום צורה.</p>
+
+<p>עם ההגדרות הללו, כדי להגיד ש-<span>$latex V$</span> הוא מוודא תקין צריך שיתקיימו שני דברים:</p>
+
+<ol> <li>(שלמות) אם <span>$latex x\in L$</span> אז <strong>קיים</strong> <span>$latex \pi$</span> כך ש-<span>$latex V\left(x,\pi\right)=\text{T}$</span>.</li>
+
+
+<li>(נאותות) אם <span>$latex x\notin L$</span> אז <strong>לכל</strong> <span>$latex \pi$</span> מתקיים <span>$latex V\left(x,\pi\right)=\text{F}$</span>.</li>
+
+</ol>
+
+<p>אם יש מוודא כזה עבור <span>$latex L$</span> אומרים ש-<span>$latex L$</span> שייכת למחלקה <span>$latex \text{RE}$</span>. כן, זו ה-<span>$latex \text{RE}$</span> שבשוויון <span>$latex \text{MIP}^{*}=\text{RE}$</span>. לא הגדרה כל כך קשה, נכון? הנה הגדרה אלטרנטיבית, שהיא אולי הנפוצה יותר: <span>$latex L$</span> שייכת ל-<span>$latex \text{RE}$</span> אם קיים אלגוריתם <span>$latex M$</span> כך ש:</p>
+
+<ol> <li>(שלמות) אם <span>$latex x\in L$</span> אז <span>$latex M\left(x\right)=\text{T}$</span>.</li>
+
+
+<li>(נאותות חלקית) אם <span>$latex x\notin L$</span> אז או ש-<span>$latex M\left(x\right)=\text{F}$</span> או ש-<span>$latex M$</span> לא עוצרת על <span>$latex x$</span>.</li>
+
+</ol>
+
+<p>שימו לב מה השתנה פה: <span>$latex M$</span> היא לא מוודא אלא משהו שמנסה לפתור את הבעיה בלי לבדוק “הוכחה” כלשהי; אבל אנחנו מקלים מאוד את החיים של <span>$latex M$</span> בכך שאנחנו <strong>כן</strong> מרשים לו לא לעצור על קלטים מסויימים - כאלו שהתשובה להם היא “לא”. אם הייתי דורש נאותות מלאה - כלומר ש-<span>$latex M$</span> תעצור תמיד על קלט <span>$latex x\notin L$</span> ויתקבל <span>$latex \left(x\right)=\text{F}$</span><span>$latex M$</span>, אז זה היה מגדיר מחלקה אחרת, <span>$latex \text{R}$</span>, שהיא האנלוג של <span>$latex \text{P}$</span> רק ללא דרישות סיבוכיות.</p>
+
+<p>בניגוד לשאלת P=NP הפתוחה, שאלת R=RE אינה פתוחה כלל - אנחנו <strong>יודעים</strong> שהתשובה שלילית כי למשל טיורינג הוכיח את זה פשוט על ידי הדגמה מפורשת של בעיה ששייכת ל-RE אבל לא שייכת ל-R: “בעיית העצירה”.</p>
+
+<p>בבעיית העצירה אנחנו מקבלים בתור קלט אלגוריתם <span>$latex M$</span> כלשהו (תניחו שהוא כתוב בשפת התכנות החביבה שלכם, או מתואר בתור מכונת טיורינג - זה לא משנה) וצריכים לקבוע האם כשמריצים אותו הוא עוצר או לא. רגע אחד, אפשר לשאול - מריצים את <span>$latex M$</span> על מה? בדרך כלל נותנים למשהו כמו <span>$latex M$</span> קלט. ובכן, מספיק לי לדבר על הוריאנט של בעיית העצירה שבו אין קלט (או שהקלט “ריק”). <a href="https://gadial.net/2007/09/26/halting_problem/">יש לי פוסט</a> שמסביר מדוע בעיית העצירה לא שייכת ל-R ולא אחזור על זה כאן, אבל להראות שהיא שייכת ל-RE עם ההגדרה-מבוססת-מוודא שנתתי כאן, זה קל: <span>$latex V$</span> יקבל קלט <span>$latex \left(M,\pi\right)$</span>. אם <span>$latex \pi$</span> הוא מספר טבעי <span>$latex n$</span>, אז <span>$latex V$</span> יריץ את <span>$latex M$</span> במשך <span>$latex n$</span> צעדי חישוב. אם בפרק הזמן הזה <span>$latex M$</span> עצרה, נפלא! <span>$latex V$</span> יעצור ויגיד <span>$latex \text{T}$</span>. אם לעומת זאת <span>$latex M$</span> לא עצרה, <span>$latex V$</span> יעצור ויגיד <span>$latex \text{F}$</span>. עכשיו, מה קורה כאן?</p>
+
+<p>אם <span>$latex M$</span> עוצרת, כלומר <span>$latex M\in L$</span>, אז <strong>קיים</strong> <span>$latex n$</span> טבעי שהוא מספר הצעדים שנדרשים ל-<span>$latex M$</span> כדי לעצור. אז <strong>קיים</strong> <span>$latex \pi$</span> כך ש-<span>$latex V\left(x,\pi\right)=\text{T}$</span> - פשוט <span>$latex \pi$</span> שהוא מספר הצעדים <span>$latex n$</span>. לעומת זאת, אם <span>$latex M\notin L$</span> אז <strong>לכל</strong> מספר צעדים שהוא, הרצת <span>$latex V$</span> על <span>$latex M$</span> לא תסתיים ולכן <span>$latex V$</span> תמיד תעצור ותחזיר <span>$latex \text{F}$</span> <strong>לכל</strong> <span>$latex \pi$</span>, כולל <span>$latex \pi$</span>-ים שהם ג’יבריש ולא מספרים.</p>
+
+<p>בואו נקבל שניה אינטואיציה למה בעיית העצירה היא <strong>עד כדי כך</strong> חזקה עד שהגיוני שלא יהיה אפשר לפתור אותה אלגוריתמית. ניקח לדוגמא את השערת גולדבך: לכל מספר זוגי <span>$latex n\ge4$</span> קיימים שני ראשוניים <span>$latex p,q$</span> כך ש-<span>$latex n=p+q$</span>. ההשערה הזו קיימת כבר מאות שנים וטרם נמצאה לה הוכחה או הפרכה. אם היינו יכולים לפתור את בעיית העצירה היינו מסוגלים להשתמש בפתרון הזה כדי לדעת האם השערת גולדבך נכונה או לא: היינו כותבים אלגוריתם <span>$latex M$</span> שפשוט רץ סדרתית על כל ה-<span>$latex n\ge4$</span> הזוגיים, ולכל אחד מהם רץ על כל הראשוניים <span>$latex p&lt;n$</span> ובודק האם <span>$latex n-p$</span> גם ראשוני. אם <span>$latex M$</span> מגלה <span>$latex n$</span> שעבורו <strong>לא קיים</strong> הפירוק <span>$latex n=p+q$</span> הזה, <span>$latex M$</span> עוצר. אחרת הוא עובר ל-<span>$latex n$</span> הבא בתור. כעת, אפשר לתת את <span>$latex M$</span> בתור קלט לבעיית העצירה. אם <span>$latex M\in L$</span> זה אומר ש-<span>$latex M$</span> <strong>עוצר</strong> ולכן השערת גולדבך <strong>לא נכונה</strong> (כי <span>$latex M$</span> מצא לה דוגמא נגדית). אחרת, אם <span>$latex M\notin L$</span>, זה אומר ש-<span>$latex M$</span> <strong>לא עוצר</strong> ולכן השערת גולדבך <strong>נכונה</strong>. באופן דומה אפשר לנצל את בעיית העצירה כדי לפתור עוד בעיות; למעשה, אפשר להראות שכל בעיה ב-<span>$latex \text{RE}$</span> ניתנת לתרגום לא מסובך לבעיית העצירה, כך שאם נוכל לפתור את בעיית העצירה, נוכל לפתור כל בעיה אחרת ב-<span>$latex \text{RE}$</span> (בלשון שאולי אתם מכירים מתורת הסיבוכיות, בעיית העצירה היא <span>$latex \text{RE}$</span>-שלמה, בדומה לבעיות שהן <span>$latex \text{NP}$</span>-שלמות).</p>
+
+<p>למה אני מדבר כל כך הרבה על בעיית העצירה? כי עיקר מה שעושים במאמר של <span>$latex \text{MIP}^{*}=\text{RE}$</span> הוא להוכיח את השייכות של בעיית העצירה ל-<span>$latex \text{MIP}^{*}$</span>, מה שגורר כמעט מיידית את השוויון <span>$latex \text{MIP}^{*}=\text{RE}$</span>. אם כן, הגיע הזמן שנדבר על מהי <span>$latex \text{MIP}^{*}$</span>. זה מה שנעשה בפוסט הבא.</p>
+
+  </div>
+
+  <hr />
+  <p>
+    נהניתם? התעניינתם? אם תרצו, אתם מוזמנים לתת טיפ:
+  </p>
+  <a href='https://ko-fi.com/H2H5XFBQ' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a><div class="PageNavigation">
+    
+      <a class="prev" href="/2020/01/20/what_are_percents/">&laquo; אז מה הקטע עם אחוזים?</a>
+    
+    
+      <a class="next" href="/2020/01/24/what_is_mipstar_equals_re_part_2/">מה זה אומר ש-MIP*=RE? (חלק ב': מה זה אומר MIP*?) &raquo;</a>
+    
+  </div><div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://gadial.net/2020/01/23/what_is_mipstar_equals_re_part_1/';
+      this.page.identifier = 'http://gadial.net/2020/01/23/what_is_mipstar_equals_re_part_1/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://not-precise.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/2020/01/23/what_is_mipstar_equals_re_part_1/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">לא מדויק</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">לא מדויק</li><li><a class="u-email" href="mailto:gadial@gmail.com">gadial@gmail.com</a></li><li>&copy; כל הזכויות שמורות לגדי אלכסנדרוביץ'</li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://www.facebook.com/%D7%9C%D7%90-%D7%9E%D7%93%D7%95%D7%99%D7%A7-163347110378474"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#facebook"></use></svg> <span class="username">לא מדויק</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>RSS</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>בלוג על מתמטיקה ומדעי המחשב</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery-slim.min.js"><\/script>')</script><script src="/assets/js/bootstrap.bundle.js"></script><!-- Default Statcounter code for New blog
+http://www.gadial.net/ -->
+<script type="text/javascript">
+  var sc_project=5444342; 
+  var sc_invisible=1; 
+  var sc_security="4a89cbe4"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="https://c.statcounter.com/5444342/0/4a89cbe4/1/"
+  alt="Web Analytics"></a></div></noscript>
+  <!-- End of Statcounter Code --></body>
+
+</html>

@@ -1,0 +1,2318 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index אינדקס
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+מה זה אומר ש-
+\lang english
+MIP*=RE
+\lang hebrew
+? )חלק ב': מה זה אומר
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+MIP*
+\lang hebrew
+?(
+\end_layout
+
+\begin_layout Description
+קטגוריות: תורת הסיבוכיות
+\end_layout
+
+\begin_layout Description
+תגים: מערכת הוכחה אינטראקטיבית, חישוב קוונטי
+\end_layout
+
+\begin_layout Description
+מזהה:
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+what_is_mipstar_equals_re_part_2
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "בפוסט הקודם"
+target "https://gadial.net/2020/01/23/what_is_mipstar_equals_re_part_1/"
+literal "false"
+
+\end_inset
+
+התחלתי לדבר על ההוכחה ש-
+\begin_inset Formula $\text{MIP}^{*}=\text{RE}$
+\end_inset
+
+ והסברתי מה זו 
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+.
+ הפעם אני ארצה לנסות להבין מה זו 
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+, ולשם כך נבין קודם כל מה זו 
+\begin_inset Formula $\text{MIP}$
+\end_inset
+
+ ולשם כך נבין קודם כל מה זו 
+\begin_inset Formula $\text{IP}$
+\end_inset
+
+ ולשם כך קודם כל ניזכר במה שקרה בפוסט הקודם.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+נקודת המוצא
+\begin_inset Quotes erd
+\end_inset
+
+ שלי בפוסט הקודם הייתה המחלקה 
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+ שכוללת את כל בעיות ההכרעה 
+\begin_inset Formula $L$
+\end_inset
+
+ שיש להן 
+\begin_inset Quotes eld
+\end_inset
+
+מוודא
+\begin_inset Quotes erd
+\end_inset
+
+ יעיל.
+ כלומר, שקיים 
+\begin_inset Formula $V$
+\end_inset
+
+ שפועל בזמן ריצה יעיל )פולינומי בגודל הקלט שלו( כך ש:
+\end_layout
+
+\begin_layout Enumerate
+)שלמות( אם 
+\begin_inset Formula $x\in L$
+\end_inset
+
+ אז 
+\series bold
+קיים
+\series default
+ 
+\begin_inset Formula $\pi$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $V\left(x,\pi\right)=\text{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+)נאותות( אם 
+\begin_inset Formula $x\notin L$
+\end_inset
+
+ אז 
+\series bold
+לכל
+\series default
+ 
+\begin_inset Formula $\pi$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula $V\left(x,\pi\right)=\text{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר 
+\begin_inset Formula $\pi$
+\end_inset
+
+ - ה
+\begin_inset Quotes erd
+\end_inset
+
+הוכחה
+\begin_inset Quotes erd
+\end_inset
+
+ לשייכות 
+\begin_inset Formula $x$
+\end_inset
+
+ ל-
+\begin_inset Formula $L$
+\end_inset
+
+ - פולינומי בגודל של 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אחרי הגדרת 
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+ הגדרתי את 
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+ בצורה דומה מאוד, רק בלי דרישות הסיבוכיות - לא הגבלתי את האורך של 
+\begin_inset Formula $\pi$
+\end_inset
+
+ ולא דרשתי ש-
+\begin_inset Formula $V$
+\end_inset
+
+ ירוץ בזמן יעיל.
+ בצורה הזו נראה ש-
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+ היא מעין הכללה של 
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+ שמתקבלת מהקלה ב
+\begin_inset Quotes erd
+\end_inset
+
+כללי המשחק
+\begin_inset Quotes erd
+\end_inset
+
+ של 
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+.
+ בפועל קרה ההפך - המחלקה 
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+ הייתה מוכרת הרבה לפני שהתחילו לדבר על 
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+, מהטעם הפשוט ש-
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+ הייתה 
+\series bold
+גדולה מדי
+\series default
+.
+ אבל אחרי ש-
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+ הפכה לבת בית רגילה בתורת הסיבוכיות, אכן התחילו לשאול איך עוד אפשר להקל
+ ב
+\begin_inset Quotes erd
+\end_inset
+
+כללי המשחק
+\begin_inset Quotes erd
+\end_inset
+
+ של 
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+ ומה מקבלים אז.
+\end_layout
+
+\begin_layout Standard
+דרך אחת שבה אפשר להקל בכללי המשחק של 
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+ היא על ידי הוספת 
+\series bold
+אינטראקטיביות
+\series default
+ לתהליך הוידוא.
+ מה קורה ב-
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+? אני הוא המוודא 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ אני מקבל לידיים 
+\begin_inset Quotes eld
+\end_inset
+
+הוכחה
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\pi$
+\end_inset
+
+.
+ מה זו ההוכחה הזו? מהיכן היא הגיעה? מהשמיים? ממולטיוואק? מהראש של זאוס?
+ זה לא חלק מהסיפור.
+ יש הוכחה.
+ כל האתגר שלי הוא לבדוק בסיועה האם 
+\begin_inset Formula $x\in L$
+\end_inset
+
+ או לא.
+ במילים אחרות, אין 
+\series bold
+מוכיח
+\series default
+ שהוא חלק מהסיפור.
+ קיבלתי ספר ואני קורא אותו וזהו.
+\end_layout
+
+\begin_layout Standard
+אבל נניח שיש מוכיח.
+ כאן זה כבר פחות לימוד עצמי ויותר כמו לשבת בהרצאה של מתמטיקה ולהציק כל הזמן
+ למרצה בשאלות.
+ אם אני לא מעצבן אותה, היא אפילו תענה לי.
+ יש כאן 
+\series bold
+תהליך אינטראקטיבי
+\series default
+ של למידה, ולחלקנו זה עוזר ללמוד.
+ האם זה עוזר גם להוכיח דברים יותר טוב?
+\end_layout
+
+\begin_layout Standard
+קודם כל נשאל את עצמנו - איך מפרמלים את זה? עד עכשיו היה לי בתמונה אלגוריתם
+ אחד, 
+\begin_inset Formula $V$
+\end_inset
+
+- 
+\begin_inset Quotes eld
+\end_inset
+
+המוודא
+\begin_inset Quotes erd
+\end_inset
+
+.
+ עכשיו אני מכניס לתמונה אלגוריתם חדש, 
+\begin_inset Formula $P$
+\end_inset
+
+ - 
+\begin_inset Quotes eld
+\end_inset
+
+המוכיח
+\begin_inset Quotes erd
+\end_inset
+
+.
+ על 
+\begin_inset Formula $V$
+\end_inset
+
+ יש דרישות סיבוכיות; הוא צריך לרוץ בזמן יעיל.
+ על 
+\begin_inset Formula $P$
+\end_inset
+
+ לעומת זאת אני לא אדרוש שום דבר כזה, כי אם 
+\begin_inset Formula $P$
+\end_inset
+
+ לא יותר חזק מ-
+\begin_inset Formula $V$
+\end_inset
+
+ מה היתרון שבהכנסת 
+\begin_inset Formula $P$
+\end_inset
+
+ למשחק מלכתחילה? אז אני מניח ש-
+\begin_inset Formula $P$
+\end_inset
+
+ יכול לפעול באיזו סיבוכיות זמן שבא לו, אבל 
+\series bold
+העיקר שיעצור בסוף עם תשובה
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+עכשיו מה ש-
+\begin_inset Formula $V$
+\end_inset
+
+ עושה על קלט 
+\begin_inset Formula $x$
+\end_inset
+
+ הוא לבצע חישובים משל עצמו, ובנוסף לכך לשלוח 
+\begin_inset Quotes eld
+\end_inset
+
+שאלות
+\begin_inset Quotes erd
+\end_inset
+
+ ל-
+\begin_inset Formula $P$
+\end_inset
+
+ )בפועל - פשוט מחרוזות; זה לא חייב להיות משהו שמנוסח כשאלה( ולקבל 
+\begin_inset Quotes eld
+\end_inset
+
+תשובות
+\begin_inset Quotes erd
+\end_inset
+
+ מ-
+\begin_inset Formula $P$
+\end_inset
+
+ שהוא יכול להמשיך את החישוב עליהן.
+ אנחנו חושבים על הצעד של 
+\begin_inset Quotes eld
+\end_inset
+
+לשלוח שאלה ולקבל תשובה
+\begin_inset Quotes erd
+\end_inset
+
+ מ-
+\begin_inset Formula $P$
+\end_inset
+
+ בתור משהו שדורש צעד חישוב אחד של 
+\begin_inset Formula $V$
+\end_inset
+
+ ולא משנה כמה זמן לוקח ל-
+\begin_inset Formula $P$
+\end_inset
+
+ לחשוב על תשובה; כך המגבלה שלנו על זמן הריצה של 
+\begin_inset Formula $V$
+\end_inset
+
+ נשארת הגיונית.
+\end_layout
+
+\begin_layout Standard
+המודל הזה חביב ונחמד 
+\series bold
+ולא תורם לנו שום דבר חדש
+\series default
+ כי כל מה שאפשר לעשות בו, אפשר לעשות גם ב-
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+.
+ פשוט תחשבו על ההוכחה 
+\begin_inset Formula $\pi$
+\end_inset
+
+ כאילו היא כוללת את התשובות של המוכיח לשאלות של המוודא - בשביל מה צריך אינטראקטי
+ביות כאן אם המוודא צפוי ואפשר לדעת מראש מה ישאל? תחשבו על ספר ש
+\begin_inset Quotes erd
+\end_inset
+
+מדבר עם הקורא
+\begin_inset Quotes erd
+\end_inset
+
+ כי הוא ניחש מצויין מה הקורא הולך להגיד.
+\end_layout
+
+\begin_layout Standard
+אם כן, כדי שהעניינים יהיו יותר מעניינים, אנחנו הופכים את המוודא ל
+\series bold
+הסתברותי
+\series default
+ - מעכשיו מותר לו להטיל מטבעות ולשאול שאלות בהתאם לתוצאות ההטלה.
+ על פניו לא שיניתי הרבה כי הוכחה 
+\begin_inset Formula $\pi$
+\end_inset
+
+ עדיין יכולה לכלול את התשובות לכל השאלות האפשריות של המוודא - אבל אם המוודא
+ הוא הסתברותי יכולות להיות 
+\series bold
+המון
+\series default
+ שאלות שונות, ולכן ההוכחה 
+\begin_inset Formula $\pi$
+\end_inset
+
+ הזו תהיה 
+\series bold
+ארוכה מדי
+\series default
+ ממה שמותר לה להיות במסגרת 
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+.
+ חשבו על זה כך: אם אני מטיל מטבע 
+\begin_inset Formula $n$
+\end_inset
+
+ פעמים יש לי 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ תוצאות אפשריות של ההטלה, ולכן 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ שאלות אפשריות - זה מספר לא פולינומי ב-
+\begin_inset Formula $n$
+\end_inset
+
+.
+ אם 
+\begin_inset Formula $\pi$
+\end_inset
+
+ כוללת תשובה לכל שאלה כזו אז הגודל שלה יהיה מסדר גודל 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ ואם 
+\begin_inset Formula $n$
+\end_inset
+
+ הוא בערך מסדר הגודל של 
+\begin_inset Formula $x$
+\end_inset
+
+, אז קיבלנו הוכחה ארוכה מדי.
+\end_layout
+
+\begin_layout Standard
+העניין הוא שאם כל מה ששינינו הוא רק את היכולת של המוודא להטיל מטבעות, זה
+ 
+\series bold
+עדיין לא תרם שום דבר חדש
+\series default
+ כי כדי לוודא ש-
+\begin_inset Formula $x\in L$
+\end_inset
+
+ 
+\series bold
+לא צריך
+\series default
+ את כל התשובות לשאלות.
+ בואו נראה במדויק למה.
+ נניח שיש לנו מערכת הוכחה אינטראקטיבית עם מוודא הסתברותי 
+\begin_inset Formula $V$
+\end_inset
+
+ ומוכיח כל יודע 
+\begin_inset Formula $P$
+\end_inset
+
+.
+ עכשיו אני בונה מוכיח 
+\series bold
+חדש
+\series default
+ שאקרא לו 
+\begin_inset Formula $V^{\prime}$
+\end_inset
+
+, שמקבל ליד הוכחה 
+\begin_inset Formula $\pi$
+\end_inset
+
+ לשייכות 
+\begin_inset Formula $x$
+\end_inset
+
+ ל-
+\begin_inset Formula $L$
+\end_inset
+
+ ובודק אותה באופן הבא:
+\end_layout
+
+\begin_layout Standard
+ההוכחה 
+\begin_inset Formula $\pi$
+\end_inset
+
+ של 
+\begin_inset Formula $V^{\prime}$
+\end_inset
+
+ תהיה בעצם תעתיק של שיחה בין 
+\begin_inset Formula $V$
+\end_inset
+
+ המקורי ובין 
+\begin_inset Formula $P$
+\end_inset
+
+.
+ כלומר - אני אראה את השאלות ש-
+\begin_inset Formula $V$
+\end_inset
+
+ שאל את 
+\begin_inset Formula $P$
+\end_inset
+
+ ואת מה ש-
+\begin_inset Formula $P$
+\end_inset
+
+ ענה לו, ובנוסף לכך אראה גם את תוצאות הטלת המטבע של 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ עכשיו אני יכול לבדוק שהתעתיק הזה באמת אמין, במובן זה שאני יכול לבצע סימולציה
+ של 
+\begin_inset Formula $V$
+\end_inset
+
+ המקורי ולראות אם הוא באמת שואל את אותן שאלות כמו בתעתיק, ובסוף אני אענה
+ כמו שהוא ענה.
+\end_layout
+
+\begin_layout Standard
+עכשיו, אם 
+\begin_inset Formula $x\in L$
+\end_inset
+
+ אז קיימת סדרת שאלות ותשובות שבה 
+\begin_inset Formula $P$
+\end_inset
+
+ הצליח לשכנע את 
+\begin_inset Formula $V$
+\end_inset
+
+ לומר 
+\begin_inset Formula $\text{T}$
+\end_inset
+
+ - ולכן גם אני אומר 
+\begin_inset Formula $\text{T}$
+\end_inset
+
+ על התעתיק שמתאר את הסדרה הזו.
+ זה מטפל בדרישת ה
+\begin_inset Quotes erd
+\end_inset
+
+שלמות
+\begin_inset Quotes erd
+\end_inset
+
+.
+ כמו כן, אם 
+\begin_inset Formula $x\notin L$
+\end_inset
+
+ אז לא משנה מה 
+\begin_inset Formula $P$
+\end_inset
+
+ אומר ל-
+\begin_inset Formula $V$
+\end_inset
+
+; אסור ל-
+\begin_inset Formula $V$
+\end_inset
+
+ לטעות, בכלל, אז הוא בודאות יאמר 
+\begin_inset Formula $\text{F}$
+\end_inset
+
+ בסוף וכך גם אני אגיד.
+ בקיצור, גם כל הסיפור הזה נופל בתוך המסגרת של 
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+.
+ אם רוצים להתרחב מעבר אליה חייבים לוותר על עוד משהו.
+ ומה שמוותרים עליו הוא ה
+\series bold
+אמינות
+\series default
+ של התשובה של 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ כלומר, מרשים ל-
+\begin_inset Formula $V$
+\end_inset
+
+ 
+\series bold
+לטעות
+\series default
+ בהסתברות מסויימת.
+\end_layout
+
+\begin_layout Standard
+באופן כללי, אם אלגוריתם הסתברותי שעונה 
+\begin_inset Quotes eld
+\end_inset
+
+כן/לא
+\begin_inset Quotes erd
+\end_inset
+
+ טועה בהסתברות שהיא טובה יותר מ-
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ בפער כלשהו - למשל, 
+\begin_inset Formula $\frac{1}{3}$
+\end_inset
+
+ זה המספר שאוהבים לתת בדרך כלל - אז על ידי מספיק חזרות על האלגוריתם ולקיחת
+ התוצאה שהוא החזיר יותר פעמים אפשר 
+\series bold
+לנפח
+\series default
+ את ההסתברות שנענה תשובה נכונה, ומספיק שנחזור על האלגוריתם מספר 
+\series bold
+פולינומי
+\series default
+ של פעמים כדי להשיג שיפור 
+\series bold
+אקספוננציאלי
+\series default
+ בהסתברות להצליח )זה דורש טיעון הסתברותי כלשהו שמערב משהו שנקרא 
+\series bold
+חסם צ'רנוף
+\series default
+ ולא אכנס אליו כאן(.
+ בגלל זה מסתפקים בלדרוש הסתברות טעות של לכל היותר 
+\begin_inset Formula $\frac{1}{3}$
+\end_inset
+
+ ולא משהו נמוך יותר )כמו לכל היותר 
+\begin_inset Formula $0.000000000001$
+\end_inset
+
+( - כי מבחינה תיאורטית זה כמעט אותו הדבר.
+ 
+\end_layout
+
+\begin_layout Standard
+אחרי שהנקודה הזו הובהרה אפשר לעבור להגדרה הפורמלית.
+ אנחנו אומרים שבעיה 
+\begin_inset Formula $L$
+\end_inset
+
+ שייכת למחלקה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+IP
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)ראשי תיבות של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Interactive Proof
+\lang hebrew
+( אם קיים מוודא הסתברותי יעיל 
+\begin_inset Formula $V$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+)שלמות( אם 
+\begin_inset Formula $x\in L$
+\end_inset
+
+ אז 
+\series bold
+קיים
+\series default
+ מוכיח 
+\begin_inset Formula $P$
+\end_inset
+
+ כך שההסתברות ש-
+\begin_inset Formula $V$
+\end_inset
+
+ יגיד 
+\begin_inset Quotes eld
+\end_inset
+
+כן
+\begin_inset Quotes erd
+\end_inset
+
+ על 
+\begin_inset Formula $x$
+\end_inset
+
+ בסוף הפרוטוקול עם 
+\begin_inset Formula $P$
+\end_inset
+
+ היא לפחות 
+\begin_inset Formula $\frac{2}{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+)נאותות( אם 
+\begin_inset Formula $x\notin L$
+\end_inset
+
+ אז 
+\series bold
+לכל
+\series default
+ מוכיח 
+\begin_inset Formula $P$
+\end_inset
+
+ ההסתברות ש-
+\begin_inset Formula $V$
+\end_inset
+
+ יגיד 
+\begin_inset Quotes eld
+\end_inset
+
+כן
+\begin_inset Quotes erd
+\end_inset
+
+ על 
+\begin_inset Formula $x$
+\end_inset
+
+ בסוף הפרוטוקול עם 
+\begin_inset Formula $P$
+\end_inset
+
+ היא לכל היותר 
+\begin_inset Formula $\frac{1}{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+שימו לב להבדל בין שלמות ונאתות - בשלמות, מספיק שיהיה 
+\begin_inset Formula $P$
+\end_inset
+
+ 
+\series bold
+מסויים
+\series default
+ שעבורו האפקט החיובי מושג )כמו שב-
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+ הספיקה הוכחה אחת נכונה( ולעומת זאת בנאותות צריך להבטיח ש
+\series bold
+כל
+\series default
+ מוכיח כל יודע, לא משנה כמה הוא תחמן ורמאי, לא יצליח לעבוד על 
+\begin_inset Formula $V$
+\end_inset
+
+ יותר מדי.
+ זו גם החשיבה שצריך לאמץ על מערכות הוכחה כאלו באופן כללי: 
+\begin_inset Formula $P$
+\end_inset
+
+ 
+\series bold
+הוא לא חבר שלנו
+\series default
+.
+ הוא האויב.
+ הוא הרוע.
+ הוא מי שמנסה להטעות אותנו בכל צעד ושעל.
+ פרוטוקולי הוכחה אינטראקטיביים בנויים הרבה יותר על להבטיח ש-
+\begin_inset Formula $P$
+\end_inset
+
+ רמאי לא יצליח לרמות אותנו, והרבה פחות על 
+\begin_inset Quotes eld
+\end_inset
+
+הו ידידי הטוב בוא תעזור לי להרחיב את הידע שלנו יחד
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+האם כל הזוועה הזו מהווה שיפור ביחס ל-
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+? ובכן, 
+\series bold
+כנראה שכן
+\series default
+.
+ אחת מהתוצאות היפות והמפתיעות בתורת הסיבוכיות )
+\begin_inset CommandInset href
+LatexCommand href
+name "ויש לי עליה פוסט"
+target "https://gadial.net/2011/03/17/ip_equals_pspace_overview/"
+literal "false"
+
+\end_inset
+
+( הייתה ש-
+\begin_inset Formula $\text{IP=PSPACE}$
+\end_inset
+
+.
+ בפשטות, הטענה הזו אומרת ש-
+\begin_inset Formula $\text{IP}$
+\end_inset
+
+ היא 
+\series bold
+הרבה יותר חזקה ממה שחשבו במבט ראשון
+\series default
+.
+ כמובן, קודם כל צריך להסביר מה זו בכלל 
+\begin_inset Formula $\text{PSPACE}$
+\end_inset
+
+, וזה קל - זו מחלקת כל בעיות הההכרעה שאפשר לפתור עם אלגוריתם שפועל 
+\series bold
+בסיבוכיות זיכרון פולינומית
+\series default
+ )כלומר, המקום שהוא צריך בשביל לאחסן מידע הוא פולינומי בגודל הקלט(.
+ העניין הוא שההגדרה היבשה הזו לא מעבירה טוב עד כמה המחלקה הזו גדולה יחסית
+ - רוב האקשן של תורת הסיבוכיות מתרחש בתוכה.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "הנה פוסט שלי על המחלקה הזו"
+target "https://gadial.net/2011/04/04/what_is_pspace/"
+literal "false"
+
+\end_inset
+
+ שאולי יעזור להבהיר את זה יותר.
+\end_layout
+
+\begin_layout Standard
+אם כן, זו 
+\begin_inset Formula $\text{IP}$
+\end_inset
+
+, אבל מהי 
+\begin_inset Formula $\text{MIP}$
+\end_inset
+
+? זו הכללה די מתבקשת של 
+\begin_inset Formula $\text{IP}$
+\end_inset
+
+ ששואלת את השאלה - מה קורה אם יש לנו שני מוכיחים במקום מוכיח אחד? על פניו,
+ לא אמור לקרות שום דבר חדש.
+ הרי כבר מוכיח אחד הוא כל-יכול מבחינה חישובית, הוא לא צריך שעוד אחד יעזור
+ לו.
+ אבל כזכור, נקודת המבט שלנו על הוכחות אינטראקטיביות היא ש
+\series bold
+המוכיח הוא האויב
+\series default
+ ולכן המטרה של שני מוכיחים במקום אחד היא דווקא לעזור לנו להפיל בפח 
+\begin_inset Quotes eld
+\end_inset
+
+מוכיחים
+\begin_inset Quotes erd
+\end_inset
+
+ רמאים שמנסים לעבוד עלינו.
+\end_layout
+
+\begin_layout Standard
+לרעיון הזה יש אנלוגיה פשוטה מחיי היום יום, שהיא כל כך מתבקשת עד שהופיעה
+ כבר במאמר המקורי שבו 
+\begin_inset Formula $\text{MIP}$
+\end_inset
+
+ הוגדרה: פושעים.
+ חשבו על שני פושעים שביצעו ביחד פשע ולאחר מכן תיאמו ביניהם את האליבי.
+ ואז המשטרה תופסת אותם וחוקרת אותם 
+\series bold
+בנפרד
+\series default
+.
+ החקירה הזו נותנת 
+\series bold
+יתרון
+\series default
+ לחוקרי המשטרה על פני חקירה של אחד מהפושעים ותו לא, כי כך ניתן לגלות 
+\series bold
+סתירות
+\series default
+ בין הגרסאות שלהם, אם תיאום האליבי לא היה טוב מספיק.
+\end_layout
+
+\begin_layout Standard
+את ההגדרה היבשה קל לתת, היא כמעט זהה להגדרה של 
+\begin_inset Formula $\text{IP}$
+\end_inset
+
+: אנחנו אומרים שבעיה 
+\begin_inset Formula $L$
+\end_inset
+
+ שייכת למחלקה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+MIP
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)ראשי תיבות של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Multiprover Interactive Proof
+\lang hebrew
+( אם קיים מוודא הסתברותי יעיל 
+\begin_inset Formula $V$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+)שלמות( אם 
+\begin_inset Formula $x\in L$
+\end_inset
+
+ אז 
+\series bold
+קיימים
+\series default
+ זוג מוכיחים 
+\begin_inset Formula $P_{1},P_{2}$
+\end_inset
+
+ כך שההסתברות ש-
+\begin_inset Formula $V$
+\end_inset
+
+ יגיד 
+\begin_inset Quotes eld
+\end_inset
+
+כן
+\begin_inset Quotes erd
+\end_inset
+
+ על 
+\begin_inset Formula $x$
+\end_inset
+
+ בסוף הפרוטוקול עם המוכיחים היא לפחות 
+\begin_inset Formula $\frac{2}{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+)נאותות( אם 
+\begin_inset Formula $x\notin L$
+\end_inset
+
+ אז 
+\series bold
+לכל
+\series default
+ זוג מוכיחים 
+\begin_inset Formula $P_{1},P_{2}$
+\end_inset
+
+ ההסתברות ש-
+\begin_inset Formula $V$
+\end_inset
+
+ יגיד 
+\begin_inset Quotes eld
+\end_inset
+
+כן
+\begin_inset Quotes erd
+\end_inset
+
+ על 
+\begin_inset Formula $x$
+\end_inset
+
+ בסוף הפרוטוקול עם המוכיחים היא לכל היותר 
+\begin_inset Formula $\frac{1}{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אפשר כמובן לשאול למה רק שני מוכיחים ולא יותר מכך - הסיבה היא פשוט שלא צריך
+ יותר מכך; כבר במאמר שהציג את 
+\begin_inset Formula $\text{MIP}$
+\end_inset
+
+ ניתנה ההוכחה לכך שהוספת מוכיחים נוספים לא מגדילה את המחלקה 
+\begin_inset Formula $\text{MIP}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+כמה שנים אחרי שהוגדרה, התברר שגם 
+\begin_inset Formula $\text{MIP}$
+\end_inset
+
+ גדולה בצורה מרשימה: היא שווה למחלקה שנקראת 
+\begin_inset Formula $\text{NEXP}$
+\end_inset
+
+, שהיא כמו 
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+ רק שהמוודא יכול לרוץ בזמן 
+\series bold
+אקספוננציאלי
+\series default
+.
+ כדי להבין עד כמה זה גדול, חשבו על זה כך: נכון שאמרתי ש-
+\begin_inset Formula $\text{PSPACE}$
+\end_inset
+
+ גדולה ועצומה? למרות כל זה, אין לנו שום הוכחה כרגע ש-
+\begin_inset Formula $\text{P}\ne\text{PSPACE}$
+\end_inset
+
+, כלומר ייתכן שכל מה שקורה בתוך 
+\begin_inset Formula $\text{PSPACE}$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+יקרוס
+\begin_inset Quotes erd
+\end_inset
+
+ לכך שהכל פשוט קל לחישוב וזהו )זה מאוד, מאוד לא סביר שזה מה שיקרה; התעלומה
+ היא פחות האם המחלקות באמת שונות ויותר איך לכל הרוחות אפשר להוכיח דבר כזה(.
+ לעומת זאת עבור 
+\begin_inset Formula $\text{NEXP}$
+\end_inset
+
+ יש הוכחה פשוטה יחסית לכך שהיא שונה מ-
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+, כך ש-
+\begin_inset Formula $\text{MIP}$
+\end_inset
+
+ היא 
+\series bold
+באמת יותר חזקה
+\series default
+ מ-
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+ )לעומת 
+\begin_inset Formula $\text{IP}$
+\end_inset
+
+ שאנחנו פשוט לא יודעים לגביה(.
+\end_layout
+
+\begin_layout Standard
+עכשיו אנחנו מגיעים סוף כל סוף אל 
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+.
+ המחלקה הזו נולדת משאלה פשוטה יחסית - כשאנחנו מתארים אינטואיטיבית את 
+\begin_inset Formula $\text{MIP}$
+\end_inset
+
+ אנחנו אומרים שהמוכיחים יכולים להסכים על דרך פעולה משותפת 
+\series bold
+לפני
+\series default
+ שהחקירה מתחילה אבל לא יכולים לתקשר זה עם זה אחריה.
+ כלומר, יש שלב של 
+\begin_inset Quotes eld
+\end_inset
+
+שיתוף מידע
+\begin_inset Quotes erd
+\end_inset
+
+ לפני שהפרוטוקול מתחיל.
+ מה בדיוק המידע המשותף הזה? בניסוח המקורי של 
+\begin_inset Formula $\text{MIP}$
+\end_inset
+
+ מרשים למוכיחים לשתף ביניהם אינסוף ביטים הסתברותיים - כאילו מטבע הוטל אינסוף
+ פעמים ויש לכל המוכיחים גישה לסדרת התוצאות של ההטלה )זה אומר שהמוכיחים יכולים
+ לבצע חישובים הסתברותיים 
+\begin_inset Quotes eld
+\end_inset
+
+מתואמים
+\begin_inset Quotes erd
+\end_inset
+
+(.
+ אלא שהיכולת הנוספת הזו לא באמת רלוונטית לרוב הדברים שעושים עם המחלקה הזו
+ ולא מוסיפה לה כוח ולכן לפעמים פשוט משמיטים אותה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{MIP}$
+\end_inset
+
+ הופכת ל-
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+ כשהמידע שמשותף לפני תחילת הפרוטוקול הוא 
+\series bold
+מצב קוונטי שזור
+\series default
+.
+ הופס, ביצענו את החטא הקדמון - הוספנו באזוורדס לעולם היפה והנקי של תורת
+ הסיבוכיות! ואכן, 
+\begin_inset Quotes eld
+\end_inset
+
+מצב קוונטי
+\begin_inset Quotes erd
+\end_inset
+
+ נראה במבט ראשון כמו איזה מושג זר לכל מה שדיברנו עליו עד כה - קוונטים זה
+ משהו בפיזיקה ומה בכלל הקשר לאבסטרקציות של חישוב.
+\end_layout
+
+\begin_layout Standard
+בפועל, 
+\begin_inset Quotes eld
+\end_inset
+
+מצב קוונטי
+\begin_inset Quotes erd
+\end_inset
+
+ זה לא משהו שונה במיוחד ברמה העקרונית מהוספת יכולת הסתברותית ולקרוא לה 
+\begin_inset Quotes eld
+\end_inset
+
+מחשב שיכול להטיל מטבעות
+\begin_inset Quotes erd
+\end_inset
+
+.
+ בשני המקרים יש כאן ניצול של תופעת טבע 
+\begin_inset Quotes eld
+\end_inset
+
+חיצונית
+\begin_inset Quotes erd
+\end_inset
+
+ לאלגוריתם כדי לאפשר לו לשפר ביצועים.
+ בשני המקרים זה מגיע עם תורה מתמטית רלוונטית - תורת ההסתברות במקרה של מכונות
+ שמטילות מטבעות, ותורת האינפורמציה הקוונטית במקרה של מצב קוונטי.
+ הבעיה היא שמצב קוונטי קצת יותר קשה להסביר.
+ י
+\begin_inset CommandInset href
+LatexCommand href
+name "ש לי סדרת פוסטים על חישוב קוונטי"
+target "https://gadial.net/2014/07/17/quantum_computing_intro/"
+literal "false"
+
+\end_inset
+
+ ואולי גם אכתוב עוד אחת בעתיד הקרוב אז פה אנסה לתת רק טיפה אינטואיציה.
+\end_layout
+
+\begin_layout Standard
+תורת הקוונטים היא נסיון לעשות סדר בבלאגן שהוא האופן המוזר שבו דברים מתנהגים
+ בסקלות גודל נמוכות - נסיון שהצליח בצורה מרשימה ביותר.
+ הכלי המתמטי הבסיסי שבו משתמשים לצורך עשיית הסדר הזה הוא 
+\series bold
+סופרפוזיציה
+\series default
+: אם יש לנו מערכת שכשאנחנו מודדים אותה אנחנו מגלים שהיא נמצאת באחד מכמה
+ 
+\begin_inset Quotes eld
+\end_inset
+
+מצבי בסיס
+\begin_inset Quotes erd
+\end_inset
+
+ אפשריים - למשל 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+ - אז התיאור הכללי של מצב המערכת הוא בתור 
+\series bold
+צירוף לינארי
+\series default
+ של המצבים הללו, כשהמרחב שלנו חי מעל המספרים הממשיים 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+.
+ כלומר, מצב קוונטי 
+\begin_inset Quotes eld
+\end_inset
+
+כללי
+\begin_inset Quotes erd
+\end_inset
+
+ עבור שני מצבי הבסיס הללו הוא 
+\begin_inset Formula $\alpha\left|0\right\rangle +\beta\left|1\right\rangle $
+\end_inset
+
+ כעוד דרישה היא שהמצב יהיה 
+\series bold
+מנורמה
+\family roman
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\series default
+\numeric off
+, כלומר 
+\begin_inset Formula $\left|\alpha\right|^{2}+\left|\beta\right|^{2}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+בסיטואציה כזו אפשר לעשות שני דברים עם המצב: לשנות אותו בצורה שלא 
+\begin_inset Quotes eld
+\end_inset
+
+שוברת
+\begin_inset Quotes erd
+\end_inset
+
+ את הסופרפוזיציה - זה ניתן לתיאור על ידי הפעלת טרנספורמציה לינארית אוניטרית
+ על המצב - או 
+\begin_inset Quotes eld
+\end_inset
+
+למדוד
+\begin_inset Quotes erd
+\end_inset
+
+ אותו, מה שמכריח את הסופרפוזיציה 
+\begin_inset Quotes eld
+\end_inset
+
+לקרוס
+\begin_inset Quotes erd
+\end_inset
+
+: אחד משני מצבי היסוד נבחר באופן אקראי והמצב משתנה אליו.
+ ה
+\begin_inset Quotes erd
+\end_inset
+
+מידע
+\begin_inset Quotes erd
+\end_inset
+
+ על 
+\begin_inset Formula $\alpha,\beta$
+\end_inset
+
+ פשוט נמחק.
+ הדרך היחידה שבה הוא מתבטא היא בכך שהמצב 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ נבחר לתוצאת המדידה בהסתברות 
+\begin_inset Formula $\left|\alpha\right|^{2}$
+\end_inset
+
+ והמצב 
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+ נבחר בהסתברות 
+\begin_inset Formula $\left|\beta\right|^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+במבט ראשון לא ברור בשביל מה כל זה טוב, אז הנה סיבוך של הסיפור.
+ מה שתיארתי כרגע נקרא 
+\begin_inset Quotes eld
+\end_inset
+
+קיוביט
+\begin_inset Quotes erd
+\end_inset
+
+ - מערכת עם שני מצבי בסיס שקצת מזכירה ביט קלאסי שהוא או
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+או
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+.
+ אבל אפשר גם לבנות מערכות של שני קיוביטים או יותר, והסיפור בהן מסתבך.
+ ל-
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+קיוביטים, למשל, כבר יש שמונה מצבי יסוד אפשריים: 
+\begin_inset Formula $\left|000\right\rangle ,\left|001\right\rangle ,\ldots,\left|111\right\rangle $
+\end_inset
+
+ ולכן סופרפוזיציה של שלושה קיוביטים היא כבר משהו שחי במרחב וקטורי ממימד
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\numeric off
+, ואם תקחו 
+\begin_inset Formula $n$
+\end_inset
+
+ קיוביטים תקבלו מרחב ממימד 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ - יש כאן 
+\series bold
+גידול אקספוננציאלי
+\series default
+ של מה שאנחנו יודעים לייצג.
+ זה לא מתורגם בקלות ליתרון חישובי כלשהו כי יש לנו מגבלות גדולות לגבי מה
+ שאפשר לעשות עם המצב הזה - אבל יש דרכים להפיק ממנו תועלת, כשהמפורסמת שבהם
+ היא 
+\series bold
+האלגוריתם של שור
+\series default
+ לפירוק לגורמים של מספרים בזמן פולינומי.
+ לא נדבר על זה הפעם.
+\end_layout
+
+\begin_layout Standard
+על מה אני כן רוצה לדבר? שזירות.
+ נדבר שניה על מערכת בת שני קיוביטים.
+ נניח שסתם לקחנו שני קיוביטים ושמנו אותם אחד באיזור של השני ואנחנו מנסים
+ לחשוב עליהם בתור מערכת אחת - מה יקרה? אם הראשון הוא 
+\begin_inset Formula $\alpha_{1}\left|0\right\rangle +\beta_{1}\left|1\right\rangle $
+\end_inset
+
+ והשני הוא 
+\begin_inset Formula $\alpha_{2}\left|0\right\rangle +\beta_{2}\left|1\right\rangle $
+\end_inset
+
+ אז אפשר לחשוב על המערכת המשולבת שלהם בתור מין מכפלה של שני אלו:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\alpha_{1}\left|0\right\rangle +\beta_{1}\left|1\right\rangle \right)\left(\alpha_{2}\left|0\right\rangle +\beta_{2}\left|1\right\rangle \right)=\alpha_{1}\alpha_{2}\left|00\right\rangle +\alpha_{1}\beta_{2}\left|01\right\rangle +\beta_{1}\alpha_{2}\left|10\right\rangle +\beta_{1}\beta_{2}\left|11\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אלא שזה 
+\series bold
+לא כל מה שאפשר לעשות עם קיוביטים
+\series default
+.
+ בעזרת מניפולציה קצת יותר מתוחכמת אפשר לייצר את המצב הקוונטי הבא:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+וזה מצב שאם תבדקו קצת תראו שפשוט 
+\series bold
+אי אפשר לקבל
+\series default
+ בעזרת הנוסחה שכתבתי למעלה עם ה-
+\begin_inset Formula $\alpha$
+\end_inset
+
+-ות וה-
+\begin_inset Formula $\beta$
+\end_inset
+
+-ות: אפשר לייצר מצבים קוונטים שהם מהותית יותר מאשר 
+\begin_inset Quotes eld
+\end_inset
+
+שני קיוביטים יושבים אחד ליד השני
+\begin_inset Quotes erd
+\end_inset
+
+.
+ שני הקיוביטים איכשהו 
+\begin_inset Quotes eld
+\end_inset
+
+מעורבבים
+\begin_inset Quotes erd
+\end_inset
+
+ זה עם זה בצורה בלתי פריקה: קוראים לזה 
+\series bold
+מצב שזור
+\series default
+.
+ אם אני לוקח את המצב השזור בדוגמא שלי ומודד את הקיוביט הראשון ומקבל 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ זה מעביר 
+\series bold
+את כל המערכת
+\series default
+ למצב 
+\begin_inset Formula $\left|00\right\rangle $
+\end_inset
+
+, כלומר משפיע גם על מצב הקיוביט השני.
+ והדבר הזה קורה 
+\series bold
+לא משנה איפה ביקום הקיוביט השני הזה נמצא
+\series default
+.
+ גם אם לקחתי שני עצירים לתאי חקירה נפרדים, אבל לכל אחד מהם יש קיוביט משלו
+ מתוך מערכת שזירה, ואחד מהם מודד את הקיוביט הזה, 
+\series bold
+הקיוביט של העציר השני יושפע מזה
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+זה מחזיר אותנו אל 
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+.
+ אנחנו עדיין לא מבינים את הפורמליזם המתמטי )ולא אכנס אליו בפוסט הזה(, אבל
+ תוספת המצב הקוונטי השזור פותחת פתח לתקשורת בין המוכיחים שלא הייתה אפשרית
+ קודם.
+ וכאן מגיע החלק המוזר ביותר בכל הסיפור.
+ על פניו, הוספת היכולת הזו 
+\series bold
+מחזקת
+\series default
+ את המוכיחים.
+ אבל כזכור, 
+\series bold
+המוכיח הוא האויב
+\series default
+.
+ בכך שאנחנו מחזקים אותם ונותנים להם פתח 
+\series bold
+כלשהו
+\series default
+ לתקשורת, אנחנו עוזרים להם לעבוד עלינו ורק 
+\series bold
+מחלישים
+\series default
+ את מה שאנחנו יודעים לעשות עם הוכחות אינטראקטיביות.
+ במאמר שבו 
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+ נולדה, זה מה שעשו - הראו איך פרוטוקולים מסויימים של הוכחות אינטראקטיביות
+ לא יכולות לעבוד יותר.
+ עם זאת, הצביעו גם על כך שזה לא מוכיח ש-
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+ חלשה יותר מ-
+\begin_inset Formula $\text{MIP}$
+\end_inset
+
+; זה שנפסלו פרוטוקולים מסויימים לא אומר שלא יכולים להיות אחרים שמשתמשים
+ איכשהו בשזירות 
+\series bold
+לטובת המוודא
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+בשנים מאז הגדרת 
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+ הגיעו שלל תוצאות מרהיבות שהראו ש
+\series bold
+זה בדיוק המצב
+\series default
+.
+ ראשית, הוכחה ש-
+\begin_inset Formula $\text{NEXP}\subseteq\text{MIP}^{*}$
+\end_inset
+
+, כלומר שמערכות הוכחה קוונטיות שכאלו חזקות 
+\series bold
+לפחות כמו
+\series default
+ מערכות הוכחה קלאסיות.
+ אחר כך, הוכחה ש-
+\begin_inset Formula $\text{NEEXP}\subseteq\text{MIP}^{*}$
+\end_inset
+
+ כאשר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+NEEXP
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)שימו לב ל-
+\lang english
+E
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הנוסף!( היא ההכללה של 
+\begin_inset Formula $\text{NP}$
+\end_inset
+
+ למוודא עם זמן ריצה אקספוננציאלי-כפול )אקספוננציאלי זה סדר גודל של 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+; אקספוננציאלי כפול זה סדר גודל של 
+\begin_inset Formula $2^{2^{n}}$
+\end_inset
+
+(.
+ כאן כבר היה שמשהו מאוד מוזר קורה פה וש-
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+ היא מחלקה חזקה עד להפתיע - אבל עד כמה? מה הגבול העליון? גבול עליון 
+\begin_inset Quotes eld
+\end_inset
+
+טריוויאלי
+\begin_inset Quotes erd
+\end_inset
+
+ היה 
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+, כי עם הכוח החישובי הבלתי מוגבל של מוודא 
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+ אפשר לקבל מה שנראה כמו תעתיק של פרוטוקול 
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+ ולבדוק שהכל עובד בו כמו שצריך - אבל 
+\begin_inset Formula $\text{RE}$
+\end_inset
+
+ הוא חסם עליון מפחיד בגובהו.
+ ואז 
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+ הגיעה בבום אל החסם העליון הזה.
+ זו התוצאה 
+\begin_inset Formula $\text{MIP}^{*}=\text{RE}$
+\end_inset
+
+.
+ הרעיון, כפי שרמזתי בפוסט הקודם, היה להציג פרוטוקול 
+\begin_inset Formula $\text{MIP}^{*}$
+\end_inset
+
+ עבור 
+\series bold
+בעיית העצירה
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+אני עדיין לא מבין איך זה עובד.
+ קראתי כבר סקירות כלליות של הרעיונות הכלליים בלי להיכנס לעומק הפרטים, וזה
+ עדיין מאוד, מאוד מוזר לי.
+ הראש שלי עדיין אומר לי שאם הוספנו למוכיחים שזירות אז רק עזרנו להם לעבוד
+ עלינו, וזהו.
+ המאמרים מנסים לתת אינטואיציה לכך שזה לא המצב: שעכשיו המוודא יכול לערוך
+ למוכיחים מבחנים שלא היה אפשר לבצע קודם, כאלו שיאלצו אותם להוכיח שהמצב הקוונטי
+ המשותף להם קרוב למצב קוונטי 
+\series bold
+ספציפי
+\series default
+.
+ אבל הפרטים עדיין לא מתחברים לי עד הסוף.
+ אם אצליח לחבר אותם קצת יותר טוב, זה יופיע בתור פוסט המשך לשני הפוסטים הנוכחיים.
+\end_layout
+
+\begin_layout Standard
+בכל זאת, לסיום, אני רוצה להבהיר כמה נקודות מבלבלות שכבר ראיתי שצצו בהקשר
+ הזה.
+\end_layout
+
+\begin_layout Standard
+ראשית, מה שקוונטי בסיפור הזה הוא 
+\series bold
+המוכיחים
+\series default
+, לא המוודא.
+ המוודא ממשיך להיות אלגוריתם הסתברותי רגיל.
+ זה שונה מדברים כמו האלגוריתם של שור, שבהם האלגוריתם שפותר את הבעיה הוא
+ בעצמו קוונטי.
+ אם ניקח מערכת הוכחה אינטראקטיבית ונוסיף יכולת קוונטית למוודא אבל לא למוכיחים,
+ 
+\series bold
+זה לא יוסיף כוח למערכת
+\series default
+.
+ כלומר, המחלקה 
+\begin_inset Formula $\text{QIP}$
+\end_inset
+
+ שהוגדרה בתור ההכללה של 
+\begin_inset Formula $\text{IP}$
+\end_inset
+
+ למוודא קוונטי מקיימת 
+\begin_inset Formula $\text{QIP}=\text{IP}=\text{PSPACE}$
+\end_inset
+
+.
+ בדומה, 
+\begin_inset Formula $\text{QMIP}_{\text{NE}}=\text{NEXP}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $\text{QMIP}_{\text{NE}}$
+\end_inset
+
+ היא המחלקה של חישוב מרובה מוכיחים שבו המוודא קוונטי אבל למוכיחים אין מצב
+ שזור קוונטית )זה ה-
+\begin_inset Formula $\text{NE}$
+\end_inset
+
+ שלמטה(.
+\end_layout
+
+\begin_layout Standard
+שנית, אני לא רוצה שיהיה בלבול כלשהו בנקודה הזו - התוצאה הזו 
+\series bold
+לא מראה
+\series default
+ שאפשר להשתמש איכשהו בתורת הקוונטים בשביל לפתור את בעיית העצירה! לא, לא,
+ לא! בעיית העצירה הייתה ונותרה בלתי פתירה.
+ כל ההקשר של הדיון הוא 
+\series bold
+מערכת הוכחה
+\series default
+ עבור בעיית העצירה, וכבר ראינו שמערכת הוכחה 
+\begin_inset Quotes eld
+\end_inset
+
+קלאסית
+\begin_inset Quotes erd
+\end_inset
+
+, שבה המוודא מקבל ליד הוכחה כתובה ותו לא - היא עצמה מספיקה בשביל 
+\series bold
+לוודא
+\series default
+ את בעיית העצירה )לא לפתור - לוודא(.
+ מה שקורה ב-
+\begin_inset Formula $\text{MIP}^{*}=\text{RE}$
+\end_inset
+
+ הוא שאנחנו רואים שאפשר 
+\series bold
+להחליש מאוד את המוודא
+\series default
+ ועדיין להצליח לוודא את בעיית העצירה, אם המוכיחים הם חזקים מספיק.
+ אז בבקשה, אני לא רוצה לראות עוד כותרות כמו 
+\begin_inset Quotes eld
+\end_inset
+
+
+\lang english
+'Remarkable' Mathematical Proof Describes How to Solve Seemingly Impossible
+ Computing Problem
+\lang hebrew
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ המציאות מספיק יפה, לא צריך לגלוש לפנטזיות.
+\end_layout
+
+\end_body
+\end_document

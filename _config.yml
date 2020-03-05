@@ -54,6 +54,7 @@ exclude:
   - Notebooks
   - node_modules
   - raw_posts
+  - bot
 #   - vendor/bundle/
 #   - vendor/cache/
 #   - vendor/gems/

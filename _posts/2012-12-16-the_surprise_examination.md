@@ -87,7 +87,7 @@ tags:
 
 החלק הפנימי אומר הפעם "אם המבחן לא התקיים עד יום {% equation %}n{% endequation %}, אז או שאי אפשר להוכיח שהוא יתקיים ביום {% equation %}n{% endequation %}, או שיש {% equation %}k\ne n{% endequation %} שגם עבורו אפשר להוכיח שהמבחן יתקיים ביום {% equation %}k{% endequation %}".
 
-כעת, נניח שהתלמידים רוצים להוכיח ש-{% equation %}D\ne5{% endequation %}. הם מניחים בשלילה ש-{% equation %}D=5{% endequation %}, וכמו קודם הם מוכיחים ש-{% equation %}\mbox{Pr}_{S}\left[D\ge5\to D=5\right]{% endequation %}. לרוע מזלם, הפעם זה לא מספיק כדי להסיק ש-{% equation %}D\ne5{% endequation %}; חייבים גם להוכיח שעבור {% equation %}1\le k\le4{% endequation %} מתקיים {% equation %}\neg\mbox{Pr}_{S}\left[D\ge5\to D=4\right]{% endequation %}.
+כעת, נניח שהתלמידים רוצים להוכיח ש-{% equation %}D\ne5{% endequation %}. הם מניחים בשלילה ש-{% equation %}D=5{% endequation %}, וכמו קודם הם מוכיחים ש-{% equation %}\mbox{Pr}_{S}\left[D\ge5\to D=5\right]{% endequation %}. לרוע מזלם, הפעם זה לא מספיק כדי להסיק ש-{% equation %}D\ne5{% endequation %}; חייבים גם להוכיח שעבור {% equation %}1\le k\le4{% endequation %} מתקיים {% equation %}\neg\mbox{Pr}_{S}\left[D\ge5\to D=k\right]{% endequation %}.
 
 "רגע אחד!" אולי אתם אומרים. "אבל מה ההגיון בטענה כמו {% equation %}D\ge5\to D=4{% endequation %}? הרי ברור שהיא לא נכונה!" זה כמובן נכון; אבל למה שזה יאמר שהתלמידים לא יהיו מסוגלים להוכיח את זה? הם יהיו מסוגלים להוכיח את זה, <strong>בתנאי שמערכת ההוכחה שלהם לא עקבית</strong>. זה מעלה את השאלה - מהי בכלל מערכת ההוכחה של התלמידים?
 

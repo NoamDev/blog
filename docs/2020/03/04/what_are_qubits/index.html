@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>חישוב קוונטי - מה זה קיוביטים ומה עושים איתם? | לא מדויק</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="חישוב קוונטי - מה זה קיוביטים ומה עושים איתם?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<meta property="og:description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<link rel="canonical" href="http://gadial.net/2020/03/04/what_are_qubits/" />
+<meta property="og:url" content="http://gadial.net/2020/03/04/what_are_qubits/" />
+<meta property="og:site_name" content="לא מדויק" />
+<meta property="og:image" content="http://gadial.net/assets/img/main/default-card.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-04T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://gadial.net/assets/img/main/default-card.png" />
+<meta property="twitter:title" content="חישוב קוונטי - מה זה קיוביטים ומה עושים איתם?" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"headline":"חישוב קוונטי - מה זה קיוביטים ומה עושים איתם?","dateModified":"2020-03-04T00:00:00+00:00","datePublished":"2020-03-04T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2020/03/04/what_are_qubits/"},"url":"http://gadial.net/2020/03/04/what_are_qubits/","image":"http://gadial.net/assets/img/main/default-card.png","description":"לא מדויק - בלוג על מתמטיקה ומדעי המחשב","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://gadial.net/feed.xml" title="לא מדויק" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3924539-2', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$latex','$'] ],
+        processEscapes: true
+      },
+      TeX: {extensions: ["AMSmath.js","AMSsymbols.js"]},
+      "HTML-CSS": { 
+        linebreaks: { automatic: true }
+      },
+      SVG: { 
+        linebreaks: { automatic: true } 
+      }
+    });
+  </script>
+  <!-- "https://www.gadial.net/wp-includes/js/xypic.js" -->
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  
+</head>
+<body><header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/">לא מדויק</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/whats_going_on">מה הולך פה?</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/">דף הבית</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/categories">קטגוריות</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/random">דף אקראי</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/about/">אודות</a>
+            </li>
+            
+        
+      </ul>
+      <form class="form-inline mt-2 mt-md-0" action="/post_list/" method="get">
+        <input class="form-control mr-sm-2" type="text" placeholder="חיפוש" aria-label="חיפוש" name="s">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">חיפוש</button>
+      </form>
+    </div>
+  </nav>
+</header><main class="page-content" aria-label="Content" role="main">
+      <div class="wrapper text-right">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><div class="PageNavigation">
+    
+      <a class="prev" href="/2020/02/28/what_is_a_qubit/">&laquo; חישוב קוונטי - מה זה קיוביט ומה עושים איתו?</a>
+    
+    
+  </div><header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">חישוב קוונטי - מה זה קיוביטים ומה עושים איתם?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-03-04T00:00:00+00:00" itemprop="datePublished">Mar 4, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2>מבוא</h2>
+
+<p><a href="https://gadial.net/2020/02/28/what_is_a_qubit/">בפוסט הקודם דיברתי על מה זה קיוביט</a>. הפעם אני רוצה לדבר על מה זה קיוביטים. ברבים. כי ברגע שיש לנו יותר מקיוביט אחד במערכת, האקשן האמיתי מתחיל.</p>
+
+<p>כמו במקרה של קיוביט בודד, כדאי להתחיל את הסיפור מסקירת מה שקורה בחישוב קלאסי, שם יחידת המידה הבסיסית היא ביטים. כשיש לנו יותר מביט בודד, נהוג לאגד אותם לקבוצה; הקבוצה הנפוצה והשימושית ביותר היא מה שנקרא <strong>בייט</strong> (byte), שהוא קבוצה של שמונה ביטים יחד. איכשהו יצא שבייט, ולא ביט, הוא יחידת המידה הבסיסית שלנו לאינפורמציה - אנחנו מדברים על דיסקים קשיחים של טרה-בייטים ועל זכרון פנימי של ג’יגה-בייטים של מחשב במקום לדבר ברמת הביט. הדבר נובע בעיקר מסיבות היסטוריות; היום יש קבוצות אחרות שרלוונטיות לא פחות (למשל, המעבדים בימינו הם של 64-ביט; לא חשוב מה המשמעות המדויקת של זה, אלא שקיבוץ של 64 ביטים יחד הפך להיות רלוונטי).</p>
+
+<p>את התוכן של בייט אפשר לתאר בתור סדרה של שמונה אפסים ואחדים, למשל 01001101. אפשר לחשוב על כל סדרה כזו כאילו היא מייצגת מספר בתחום שבין <span>$latex 0$</span> ל-<span>$latex 255$</span> (הבייט שכתבתי הוא המספר 77). למה דווקא התחום הזה? כי בתחום הזה כלולים 256 ערכים, ו-<span>$latex 256=2^{8}$</span> - מספר הערכים השונים האפשריים בבייט הוא מכפלה של מספר הערכים השונים האפשריים (2) בביט זה בזה, כשמספר הפעמים שמבצעים את הכפל הוא כמספר הביטים שמשתתפים בבייט (8).</p>
+
+<p>קיוביט בודד, כזכור, היה ב<strong>סופרפוזיציה</strong> של שני ערכי הבסיס של ביטים. סימנתי אותו בצורה הבאה: <span>$latex \left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $</span>, כאשר הדרישה על המספרים המרוכבים <span>$latex \alpha,\beta$</span> היא שמתקיים <span>$latex \left|\alpha\right|^{2}+\left|\beta\right|^{2}=1$</span>. אותו הדבר בדיוק קורה עבור קבוצה של קיוביטים: המערכת הקוונטית שכוללת אותם נמצאת במצב שהוא סופרפוזיציה של כל מצבי הבסיס האפשריים; כלומר, אם היו לנו שמונה קיוביטים היו לנו 256 מצבי בסיס אפשריים והמצב הקוונטי של המערכת היה צירוף לינארי של כולם. כדי לשמור את העניינים פשוטים בואו נדבר רק על מערכת של שני קיוביטים: אז מצבי הבסיס שלה הם דברים כמו <span>$latex \left|0\right\rangle \left|1\right\rangle $</span>, וכדי לשמור על הסימון נחמד, במקום לכתוב <span>$latex \left|0\right\rangle \left|1\right\rangle $</span> אני אכתוב <span>$latex \left|01\right\rangle $</span>.</p>
+
+<p>אם כן, מערכת של שני קיוביטים נמצאת בסופרפוזיציה מהצורה <span>$latex \left|\psi\right\rangle =\alpha_{00}\left|00\right\rangle +\alpha_{01}\left|01\right\rangle +\alpha_{10}\left|10\right\rangle +\alpha_{11}\left|11\right\rangle $</span> כאשר המקדמים מקיימים את אותה משוואה כמו קודם: <span>$latex \sum_{x\in\left\{ 0,1\right\} ^{2}}\left|\alpha_{x}\right|^{2}=1$</span>. שימו לב לאופן שבו אני מקצר עניינים על ידי סימן הסכימה ואינדקס סכימה שרץ על כל הערכים האפשריים של סדרות מאורך 2 של 0 ו-1; אני אמשיך להשתמש בקיצורים הללו בהמשך.</p>
+
+<p>מה שאנחנו רואים פה הוא שכמות האינפורמציה שאנחנו זקוקים לה כדי לייצג מצב קוונטי <strong>גדלה אקספוננציאלית</strong> כתלות במספר הקיוביטים. כדי לייצג את הערך של בייט, אנחנו צריכים שמונה ביטים; כדי לייצר את הערך של “קיובייט”, כלומר של מערכת בת שמונה קיוביטים, אנחנו צריכים 256 מספרים מרוכבים (לכאורה כבר מספר מרוכב בודד מכיל אינסוף מידע, אבל בפועל אפשר לדבר על מספר מרוכב כפי שהוא מיוצג במחשב, עם דיוק סופי בהחלט). זו הסיבה הבסיסית שבגללה חישוב קוונטי הוא משהו שקשה למחשב רגיל לעשות: אם נרצה לבצע סימולציה של חישוב קוונטי, יהיה לנו <strong>קל מאוד</strong> לכתוב קוד שעושה את זה; חישוב קוונטי הוא בסך הכל כפל של מטריצות בוקטור ומדי פעם איזו הגרלה של אחת מבין כמה אפשרויות, כשמבצעים מדידה. הקושי פה טמון בכך שהוקטור (והמטריצות שכופלים בו) עשוי להיות <strong>מאוד גדול</strong>; כבר ב-50 קיוביטים זו הופכת למשימה שרק מחשבי-על יכולים להתמודד איתה, ועל דברים כמו סימולציה של מחשב קוונטי עם 70 קיוביטים לא מדברים בכלל. זה כנראה לעולם לא יהיה אפשרי. לא על ידי שמירה מפורשת של הוקטור.</p>
+
+<p>האם קיימות דרכים <strong>אחרות</strong>, יעילות יותר, לבצע סימולציה של חישוב קוונטי גם עבור מספר קיוביטים גבוה? התשובה היא שבאופן כללי לא, אבל ב<strong>מקרים פרטיים</strong> מסויימים אפשר לעשות דברים ממש מגניבים. אני אזכיר את אחד מהמקרים הללו בחטף בהמשך, אם לא אשכח להוסיף אותו לפוסט הזה.</p>
+
+<h2>מכפלות טנזוריות של קיוביטים</h2>
+
+<p>בואו נעבור לפורמליזם המתמטי. הכלי החדש שאנחנו משתמשים בו פה נקרא <strong>מכפלה טנזורית</strong> של מרחבים וקטוריים. <a href="https://gadial.net/2014/06/10/vector_space_tensor_product/">יש לי פוסט על זה</a>, אבל הנה תזכורת רלוונטית: אם <span>$latex V,W$</span> הם שני מרחבים וקטוריים עם בסיסים <span>$latex \left\{ e_{1},\ldots,e_{n}\right\} $</span> ו-<span>$latex \left\{ f_{1},\ldots,f_{m}\right\} $</span> בהתאמה, אז המכפלה הטנזורית <span>$latex V\otimes W$</span> היא מרחב וקטורי שנפרש על ידי קבוצת האיברים <span>$latex \left\{ e_{i}\otimes f_{j}\ |\ 1\le i\le n,1\le j\le m\right\} $</span>. אנחנו חושבים על <span>$latex e_{i}\otimes f_{j}$</span> כעל “אטומים” שיוצרים את המרחב ולא ניתנים לחלוקה בעצמם, וכל איבר אחר במרחב הוא צירוף לינארי שלהם. זו הגדרה שהיא מאוד תלויית-בסיס, אבל אפשר גם לוותר על הגדרות תלויות בסיס לגמרי; זה מה שקורה בפוסט ההוא שלי, אבל הפעם אני לא צריך להיכנס לזה.</p>
+
+<p>במקרה של קיוביטים, המרחבים שאני כופל הם כולם בעלי הבסיס <span>$latex \left\{ \left|0\right\rangle ,\left|1\right\rangle \right\} $</span> ולכן מכפלה של שני מרחבים נפרשת על ידי איברים כמו <span>$latex \left|0\right\rangle \otimes\left|1\right\rangle $</span>, ואת הסימון הזה כבר קיצרתי ל-<span>$latex \left|01\right\rangle $</span> אבל מבחינה פורמלית הכתיב הנכון הוא <span>$latex \left|0\right\rangle \otimes\left|1\right\rangle $</span>. נקודה רלוונטית שבלבלה אותי כשהתחלתי ללמוד על מכפלות טנזוריות היא שאמנם בהחלט אפשר לקחת איבר <span>$latex v\in V$</span> ו-<span>$latex w\in W$</span> ואז לדבר על האיבר <span>$latex v\otimes w\in V\otimes W$</span>, אבל <strong>לא כל האיברים</strong> של <span>$latex V\otimes W$</span> ניתנים לייצוג כזה. הדבר הזה חשוב שבעתיים כשמדברים על קיוביטים, אבל גם יש לנו דרך לקבל אינטואיציה “פיזיקלית” להגיון שמאחורי זה, אז בואו ניכנס לעובי הקורה.</p>
+
+<p>ראשית, בואו ניקח את המצב הקוונטי של קיוביט יחיד בסופרפוזיציה אחידה: <span>$latex \left|+\right\rangle =\frac{\left|0\right\rangle +\left|1\right\rangle }{\sqrt{2}}$</span>. אם אני רוצה להבין מה המשמעות של <span>$latex \left|+\right\rangle \otimes\left|+\right\rangle $</span> אני משתמש בתכונת <strong>הבילינאריות</strong> של האופרטור <span>$latex \otimes$</span> - תכונה שאפשר לתאר כך:</p>
+
+<ol> <li><span>$latex \left(a+b\right)\otimes c=a\otimes c+b\otimes c$</span></li>
+
+
+<li><span>$latex a\otimes\left(b+c\right)=a\otimes b+a\otimes c$</span></li>
+
+
+<li><span>$latex \lambda a\otimes b=\lambda\left(a\otimes b\right)$</span></li>
+
+
+<li><span>$latex a\otimes\lambda b=\lambda\left(a\otimes b\right)$</span></li>
+
+</ol>
+
+<p>עם התכונות הללו, קל לראות ש-<span>$latex \left|+\right\rangle \otimes\left|+\right\rangle $</span> יוצא פשוט <span>$latex \frac{\left|00\right\rangle +\left|01\right\rangle +\left|10\right\rangle +\left|11\right\rangle }{2}$</span> - המצב שהוא הסופרפוזיציה האחידה על ארבעת ערכי הבסיס האפשריים. וזה, אני מניח, לא מפתיע. האינטואיציה פה הוא שכל אחד מהקיוביטים <span>$latex \left|+\right\rangle $</span> חי לו בעצמו בסבבה בסופרפוזיציה שלו, ואז פתאום קירבנו את המערכות של שני הקיוביטים זו לזו והתחלנו לחשוב עליהן בתור מערכת אחת, ואז המערכת האחת הזו מורכבת משתי הסופרפוזיציות הללו ביחד. כמו להטיל שתי קוביות - אפשר להסתכל על כל אחת בנפרד, ולראות התפלגות אחידה בין 1 ל-6; ואפשר להסתכל על שתיהן ביחד ולראות התפלגות מעניינת יותר בין 2 ל-12, אבל כזו שבנויה פשוט מהתפלגות אחידה על כל הזוגות <span>$latex \left(x,y\right)$</span> כך ש-<span>$latex 1\le x,y\le6$</span> (ואגלה לכם סוד? לא באמת צריך לקרב את המערכות של שני הקיוביטים זו לזו; הן יכולות להיות בקצוות הרחוקים של היקום והמתמטיקה תהיה זהה).</p>
+
+<p>ועכשיו למשהו שונה לגמרי - המצב <span>$latex \frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$</span>. בדיקה זריזה תראה שזה מצב קוונטי חוקי על שני קיוביטים - הנורמה שלו היא 1 והוא צירוף לינארי של אברי בסיס של המכפלה הטנזורית. יש לו גם שם: מצב <strong>בל </strong>(וגם אפשר לקרוא לו “זוג EPR” אבל נעזוב את זה). האם אפשר לכתוב את מצב בל הזה בתור <span>$latex \left|\psi_{1}\right\rangle \otimes\left|\psi_{2}\right\rangle $</span> עבור שני מצבים קוונטיים <span>$latex \left|\psi_{1}\right\rangle ,\left|\psi_{2}\right\rangle $</span> של קיוביט יחיד כל אחד? התשובה היא ש<strong>אי אפשר</strong> בשום פנים ואופן לעשות את זה. המשמעות הפיזיקלית היא ש-<span>$latex \frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$</span> מתאר לנו מערכת פיזיקלית של שני קיוביטים שפשוט לא ניתן לחשוב עליה בתור שתי מערכות נפרדות של קיוביטים, שכל אחת מהן חיה לה בסבבה בלי קשר לשניה; הן קשורות אחרת לשניה בצורה בלתי פריקה. כפי שאומרים הפיזיקאים, הן <strong>שזורות</strong>. השזירה הזו של קיוביטים - היכולת לבנות מהם מצבים קוונטיים שלא פריקים למכפלה של קיוביטים בודדים - היא <strong>חלק מהותי</strong> מהכוח של חישוב קוונטי.</p>
+
+<p>למה אי אפשר לקבל את <span>$latex \frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$</span> כמכפלה טנזורית בודדת של שני איברים? ובכן, אין כאן משהו מעניין מעבר לאלגברה לינארית פשוטה. ניקח שני קיוביטים כלליים, <span>$latex \left|\psi_{1}\right\rangle =\alpha_{1}\left|0\right\rangle +\beta_{1}\left|1\right\rangle $</span> ו-<span>$latex \left|\psi_{2}\right\rangle =\alpha_{2}\left|0\right\rangle +\beta_{2}\left|1\right\rangle $</span>, נכפול אותם טנזורית ונקבל את המצב</p>
+
+<p><span>$latex \alpha_{1}\alpha_{2}\left|00\right\rangle +\beta_{1}\alpha_{2}\left|10\right\rangle +\alpha_{1}\beta_{2}\left|01\right\rangle +\beta_{1}\beta_{2}\left|11\right\rangle $</span></p>
+
+<p>את המקדמים של <span>$latex \left|10\right\rangle $</span> ו-<span>$latex \left|01\right\rangle $</span> צריך להשוות לאפס, כך שאנחנו מקבלים</p>
+
+<p><span>$latex \beta_{1}\alpha_{2}=0$</span></p>
+
+<p><span>$latex \alpha_{1}\beta_{2}=0$</span></p>
+
+<p>עכשיו, אנחנו חיים מעל המספרים המרוכבים. במספרים המרוכבים, <span>$latex \beta_{1}\alpha_{2}=0$</span> גורר שבהכרח או <span>$latex \beta_{1}=0$</span> או <span>$latex \alpha_{2}=0$</span>. אם <span>$latex \beta_{1}=0$</span> אז גם המקדם <span>$latex \beta_{1}\beta_{2}$</span> של <span>$latex \left|11\right\rangle $</span> יהיה אפס. אם <span>$latex \alpha_{2}=0$</span> אז המקדם של <span>$latex \left|00\right\rangle $</span> יהיה אפס. שום דבר מסובך.</p>
+
+<p>אוקיי, אז ראינו ש-<span>$latex \frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$</span> הוא מצב קוונטי “מעניין”. הנה לכם שאלה - איך בכלל אפשר להגיע למצב הקוונטי המעניין הזה אם, נאמר, המערכת שלנו מתחילה במצב <span>$latex \left|00\right\rangle $</span>? או, טוב ששאלתם. בואו נדבר עכשיו על הפעולות שאפשר לבצע על מערכות של קיוביטים.</p>
+
+<h2>מכפלות טנזוריות של מטריצות ושערים קוונטיים</h2>
+
+<p>תיארתי מכפלה טנזורית בתור משהו אבסטרקטי למדי, שלוקח שני וקטורי בסיס <span>$latex e_{i},f_{j}$</span> ויוצר מהם איזה איבר חדש <span>$latex e_{i}\otimes f_{j}$</span> שהוא משהו מסוג שלא נראה קודם ואין לנו איך להבין את הבפנוכו שלו. אבל למעשה, אפשר גם לתת תיאור “חישובי” מאוד קונקרטי למכפלות טנזוריות אם במקום לדבר על מרחבים וקטוריים ואופרטורים עליהם אפשר לעבור לדבר על הייצוג החביב עלינו באלגברה לינארית לוקטורים ואופרטורים: מטריצות.</p>
+
+<p>כזכור, אם יש לי מרחב וקטור <span>$latex V$</span> ובסיס <span>$latex B=\left\{ b_{1},\ldots,b_{n}\right\} $</span> עבורו, אז לכל וקטור <span>$latex v\in V$</span> מתאימה מטריצה מסדר <span>$latex n\times1$</span>, מה שנקרא <strong>וקטור עמודה</strong>, של <strong>הקואורדינטות</strong> של <span>$latex v$</span> לפי הבסיס <span>$latex B$</span>. למה הכוונה? מהתכונות של בסיס, ידוע שקיים ל-<span>$latex v$</span> ייצוג <strong>יחיד </strong>מהצורה <span>$latex v=\sum\lambda_{i}b_{i}$</span> והוקטור שמותאם ל-<span>$latex v$</span> בצורה הזו הוא פשוט <span>$latex \left[v\right]_{B}\triangleq\left(\begin{array}{c} \lambda_{1}\\ \vdots\\ \lambda_{n} \end{array}\right)$</span>. באופן דומה, אם יש לנו אופרטור לינארי <span>$latex T:V\to V$</span> אז יש לו <strong>מטריצה מייצגת</strong> <span>$latex \left[T\right]_{B}$</span> שהעמודות שלה הן בדיוק וקטורי הקואורדינטות של <span>$latex T\left(b_{1}\right),\ldots,T\left(b_{n}\right)$</span>. היופי בוקטורי קואורדינטות ומטריצות מייצגות הוא שמתקיים</p>
+
+<p><span>$latex \left[T\left(v\right)\right]_{B}=\left[T\right]_{B}\cdot\left[v\right]_{B}$</span></p>
+
+<p>כלומר, ביצענו מעין רדוקציה של הפעלת הטרנספורמציה הכללית <span>$latex T$</span> על האיבר <span>$latex v$</span> לפעולה הקונקרטית של חישוב כפל מטריצה בוקטור.</p>
+
+<p>בפוסט הקודם על קיוביטים נקטתי בגישה הזו בלי למצמץ; את <span>$latex \left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $</span> תיארתי בחופשיות גם בתור <span>$latex \left(\begin{array}{c} \alpha\\ \beta \end{array}\right)$</span> ואופרטורים כמו <span>$latex H$</span> תיארתי בחופשיות עם מטריצות, למשל <span>$latex H=\frac{1}{\sqrt{2}}\left(\begin{array}{cc} 1 &amp; 1\\ 1 &amp; -1 \end{array}\right)$</span>. אבל איך התיאור הזה מוכלל כשמדברים על מכפלות טנזוריות? כשיש לנו שני קיוביטים אז הבסיס החדש הוא <span>$latex \left|00\right\rangle ,\left|01\right\rangle ,\left|10\right\rangle ,\left|11\right\rangle $</span> אבל האם זה באמת הסדר “הנכון” בין אברי הבסיס? מה הגישה המסודרת לעניין?</p>
+
+<p>ובכן, ביטוי המפתח הטכני לסיפור הזה הוא מה שנקרא <strong>מכפלת קרונקר</strong>, או סתם “מכפלה טנזורית” של מטריצות. אם <span>$latex A,B$</span> הן מטריצות (לאו דווקא מאותו סדר או ריבועיות!) כך ש-<span>$latex A$</span> היא מסדר <span>$latex n\times m$</span>, אז מכפלת קרונקר שלהן מוגדרת בתור</p>
+
+<p><span>$latex A\otimes B=\left(\begin{array}{ccc} a_{11}B &amp; \ldots &amp; a_{1m}B\\ \vdots &amp;  &amp; \vdots\\ a_{n1}B &amp; \ldots &amp; a_{nm}B \end{array}\right)$</span></p>
+
+<p>כלומר, <span>$latex A\times B$</span> היא <strong>מטריצת בלוקים</strong> שבנויה מהרבה בלוקים של המטריצה <span>$latex B$</span>, כשבכל פעם המטריצה <span>$latex B$</span> הזו מוכפלת בכניסה אחרת של <span>$latex A$</span>. ואני אתן דוגמאות קונקרטיות פשוטות: <span>$latex X\otimes H$</span> ו-<span>$latex Z\otimes H$</span>, כאשר <span>$latex X=\left(\begin{array}{cc} 0 &amp; 1\\ 1 &amp; 0 \end{array}\right)$</span> ו-<span>$latex Z=\left(\begin{array}{cc} 1 &amp; 0\\ 0 &amp; -1 \end{array}\right)$</span> הן עוד מטריצות שראינו בפוסט הקודם.</p>
+
+<p><span>$latex X\otimes H=\frac{1}{\sqrt{2}}\left(\begin{array}{cccc} 0 &amp; 0 &amp; 1 &amp; 1\\ 0 &amp; 0 &amp; 1 &amp; -1\\ 1 &amp; 1 &amp; 0 &amp; 0\\ 1 &amp; -1 &amp; 0 &amp; 0 \end{array}\right)$</span></p>
+
+<p><span>$latex Z\otimes H=\frac{1}{\sqrt{2}}\left(\begin{array}{cccc} 1 &amp; 1 &amp; 0 &amp; 0\\ 1 &amp; -1 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; -1 &amp; -1\\ 0 &amp; 0 &amp; -1 &amp; 1 \end{array}\right)$</span></p>
+
+<p>עוד נקודה שכדאי לתת עליה את הדעת היא שהמכפלה הטנזורית הזו היא בוודאי לא קומוטטיבית:</p>
+
+<p><span>$latex X\otimes Z=\left(\begin{array}{cccc} 0 &amp; 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; -1\\ 1 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; -1 &amp; 0 &amp; 0 \end{array}\right)\ne\left(\begin{array}{cccc} 0 &amp; 1 &amp; 0 &amp; 0\\ 1 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; -1\\ 0 &amp; 0 &amp; -1 &amp; 0 \end{array}\right)=Z\otimes X$</span></p>
+
+<p>בואו נעשה את זה עכשיו עבור קיוביטים. ניקח את הקיוביט <span>$latex \left|\psi_{1}\right\rangle =\alpha_{1}\left|0\right\rangle +\beta_{1}\left|1\right\rangle $</span> והקיוביט <span>$latex \left|\psi_{2}\right\rangle =\alpha_{2}\left|0\right\rangle +\beta_{2}\left|1\right\rangle $</span>. הם מיוצגים על ידי הוקטור <span>$latex \left(\begin{array}{c} \alpha_{1}\\ \beta_{1} \end{array}\right),\left(\begin{array}{c} \alpha_{2}\\ \beta_{2} \end{array}\right)$</span>, וכעת</p>
+
+<p><span>$latex \left(\begin{array}{c} \alpha_{1}\\ \beta_{1} \end{array}\right)\otimes\left(\begin{array}{c} \alpha_{2}\\ \beta_{2} \end{array}\right)=\left(\begin{array}{c} \alpha_{1}\alpha_{2}\\ \alpha_{1}\beta_{2}\\ \beta_{1}\alpha_{2}\\ \beta_{1}\beta_{2} \end{array}\right)$</span></p>
+
+<p>בפרט, אנחנו רואים ש-<span>$latex \left|00\right\rangle $</span> מתאים לוקטור <span>$latex \left(\begin{array}{c} 1\\ 0\\ 0\\ 0 \end{array}\right)$</span>, <span>$latex \left|01\right\rangle $</span> מתאים לוקטור <span>$latex \left(\begin{array}{c} 0\\ 1\\ 0\\ 0 \end{array}\right)$</span>, <span>$latex \left|10\right\rangle $</span> מתאים לוקטור <span>$latex \left(\begin{array}{c} 0\\ 0\\ 1\\ 0 \end{array}\right)$</span> ו-<span>$latex \left|11\right\rangle $</span> מתאים לוקטור <span>$latex \left(\begin{array}{c} 0\\ 0\\ 0\\ 1 \end{array}\right)$</span>. זה בעצם מלמד אותנו מה הסדר ה”נכון” של הבסיס: הוא צריך להיות <span>$latex \left\{ \left|00\right\rangle ,\left|01\right\rangle ,\left|10\right\rangle ,\left|11\right\rangle \right\} $</span>.</p>
+
+<p>בואו נכליל את זה עכשיו: אם <span>$latex V,W$</span> הם שני מרחבים וקטוריים עם בסיסים <span>$latex E=\left\{ e_{1},\ldots,e_{n}\right\} $</span> ו-<span>$latex F=\left\{ f_{1},\ldots,f_{m}\right\} $</span>, אז אני אסמן את הבסיס למכפלה הטנזורית שלהם בתור <span>$latex E\otimes F\triangleq\left\{ e_{1}\otimes f_{1},e_{1}\otimes f_{2},\ldots,e_{1}\otimes f_{m},\ldots,e_{n}\otimes f_{m}\right\} $</span> ועכשיו אני יכול לכתוב נוסחה שאומרת, מילולית, שמכפלת קרונקר משחקת יפה עם מכפלה טנזורית בכל הנוגע לטרנספורמציות שפועלות על מרחבים שהם מכפלות טנזוריות.</p>
+
+<p>פורמלית, אם <span>$latex T:V\to V$</span> ו-<span>$latex S:W\to W$</span> הם שני אופרטורים ו-<span>$latex v\in V,w\in W$</span> הם וקטורים, אז הנוסחה שלי אומרת ש-</p>
+
+<p><span>$latex \left[T\left(v\right)\otimes S\left(w\right)\right]_{E\otimes F}=\left(\left[T\right]_{E}\otimes\left[S\right]_{F}\right)\cdot\left(\left[v\right]_{E}\otimes\left[w\right]_{F}\right)$</span></p>
+
+<p>השורה התחתונה של הסיפור היא שאם אנחנו רוצים לבנות אופרטור שפועל על שני קיוביטים מתוך אופרטורים שפועלים על קיוביט יחיד, אנחנו צריכים לבצע מכפלת קרונקר של המטריצות שלהן. בואו נראה דוגמא אחת של זה כדי שהעניין יישב לנו בנוחות.</p>
+
+<p>נניח שאני מסתכל על הקיוביט <span>$latex \left|\psi_{1}\right\rangle =\left|0\right\rangle $</span> והקיוביט הנוסף <span>$latex \left|\psi_{2}\right\rangle =\left|1\right\rangle $</span>. עכשיו אני מתעלל בשניהם, אבל בדרכים אחרות: על <span>$latex \left|\psi_{1}\right\rangle $</span> אני מפעיל את האופרטור <span>$latex X$</span> ומקבל <span>$latex \left|1\right\rangle $</span>; על <span>$latex \left|\psi_{2}\right\rangle $</span> אני מפעיל את האופרטור <span>$latex Z$</span> ומקבל <span>$latex -\left|1\right\rangle $</span> (ששקול ל-<span>$latex \left|1\right\rangle $</span> אבל תזרמו עם הדוגמא, אני מנסה לשמור את הדברים פשוטים). עכשיו, אם אני אסתכל על שני הקיוביטים בתור מערכת משולבת, מה קרה פה? התחלתי מהמצב <span>$latex \left|01\right\rangle $</span> וסיימתי במצב <span>$latex -\left|11\right\rangle $</span>. האם הייתי יכול גם לקבל את זה בתור כפל מטריצות?</p>
+
+<p>המכפלה <span>$latex \left|0\right\rangle \otimes\left|1\right\rangle $</span> מיוצגת על ידי הוקטור <span>$latex \left(\begin{array}{c} 0\\ 1\\ 0\\ 0 \end{array}\right)$</span> כפי שכבר ראינו, וגם את המטריצה ל-<span>$latex X\otimes Z$</span> כבר ראינו. נכפול אותן:</p>
+
+<p><span>$latex \left(\begin{array}{cccc} 0 &amp; 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; -1\\ 1 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; -1 &amp; 0 &amp; 0 \end{array}\right)\cdot\left(\begin{array}{c} 0\\ 1\\ 0\\ 0 \end{array}\right)=\left(\begin{array}{c} 0\\ 0\\ 0\\ -1 \end{array}\right)$</span></p>
+
+<p>קיבלנו בדיוק את הוקטור עבור <span>$latex -\left|11\right\rangle $</span>. איזה יופי! דברים עובדים!</p>
+
+<p>עכשיו אנחנו מסוגלים להבין איך עובד מה שנקרא “שער קוונטי” ברמת הפורמליזם. שער קוונטי הוא אופרטור שמופעל על כמות ספציפית של קיוביטים - למשל, שער שפועל על קיוביט יחיד, או על שני קיוביטים, וכדומה. כשיש לנו מערכת עם מספר קיוביטים גדול יותר מאלו שהשער פועל עליהם, הרעיון הוא שלוקחים את השער ומבצעים מכפלת קרונקר שלו עם אופרטורי הזהות, <span>$latex I$</span>, על שאר הקיוביטים. למשל, אם יש לנו מערכת בת 4 קיוביטים ואנחנו רוצים להפעיל שער <span>$latex H$</span> על הקיוביט השלישי, אנחנו מפעילים את האופרטור <span>$latex I\otimes I\otimes H\otimes I$</span> על המערכת כולה.</p>
+
+<p>זה מסביר לנו שערים של קיוביט בודד. אבל מה עם שני קיוביטים? או! זו שאלה טובה!</p>
+
+<h2>שערים קוונטיים של שני קיוביטים</h2>
+
+<p>לפני רגע ראינו שער קוונטי שפועל על שני קיוביטים: <span>$latex X\otimes Z$</span>. גם שער שפועל על קיוביט אחד ולא עושה כלום לקיוביט השני, כמו למשל <span>$latex H\otimes I$</span>, הוא משהו שאפשר לחשוב עליו בתור “שער של שני קיוביטים”. השאלה המעניינת היא האם יש יותר מכך - והתשובה היא “בוודאי”.</p>
+
+<p>שאלתי קודם את השאלה איך אפשר להגיע למצב השזור <span>$latex \frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$</span> אם מתחילים מהמצב <span>$latex \left|00\right\rangle $</span>. התשובה היא שאי אפשר להגיע אליו עם השערים שכבר ראינו: חייבים שער של שני קיוביטים שלא ניתן לתיאור בתור הפעלה של שני שערי קיוביט בודד. הסיבה לכך היא שכפי שראינו, אי אפשר לכתוב את <span>$latex \frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$</span> בתור מכפלה טנזורית של שני קיוביטים. אם היינו מתחילים מהמכפלה הטנזורית <span>$latex \left|00\right\rangle $</span> ומפעילים על כל קיוביט פעולה שאפשר לחשוב עליה במנותק מהקיוביט השני, היינו מקבלים כתוצאה מכפלה טנזורית של שני קיוביטי התוצאה.</p>
+
+<p>אם כן, צריך סוג חדש של שער על שני קיוביטים - כזה שהוא לא מכפלה טנזורית של שני שערים על קיוביט בודד. יש הרבה שערים כאלו, אבל הנה האחד שהוא הנפוץ ביותר: שער <span>$latex \text{CX}$</span>, או Controlled-X או Controlled-Not, איך שלא תרצו לקרוא לו. הרעיון שלו הוא פשוט כשחושבים איך הוא פועל על מצבי בסיס: בהינתן מצב הבסיס <span>$latex \left|0b\right\rangle $</span>, כאשר <span>$latex b\in\left\{ 0,1\right\} $</span>, הוא לא עושה כלום, כלומר מחזיר את <span>$latex \left|0b\right\rangle $</span>; ובהינתן מצב הבסיס <span>$latex \left|1b\right\rangle $</span> הוא מחזיר את <span>$latex \left|1b^{\prime}\right\rangle $</span> כאשר <span>$latex b^{\prime}=1-b$</span>, כלומר הוא הופך את הקיוביט הזה (Not) או אם תרצו - מפעיל עליו שער X. המילה Controlled מגיעה מכך שהביט הראשון “שולט” על השאלה אם להפעיל את X או לא.</p>
+
+<p>ככה זה נראה כשכותבים זאת במפורש:</p>
+
+<p><span>$latex \text{CX}\left|00\right\rangle =\left|00\right\rangle $</span></p>
+
+<p><span>$latex \text{CX}\left|01\right\rangle =\left|01\right\rangle $</span></p>
+
+<p><span>$latex \text{CX}\left|10\right\rangle =\left|11\right\rangle $</span></p>
+
+<p><span>$latex \text{CX}\left|11\right\rangle =\left|10\right\rangle $</span></p>
+
+<p>וככה זה נראה בתור מטריצה:</p>
+
+<p><span>$latex \text{CX}=\left(\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 1\\ 0 &amp; 0 &amp; 1 &amp; 0 \end{array}\right)$</span></p>
+
+<p>קחו רגע כדי לשכנע את עצמכם שאי אפשר לכתוב את המטריצה הזו בתור מכפלת קרונקר של שתי מטריצות <span>$latex 2\times2$</span>. זה לא קשה; בסך הכל צריך לשים לב לכך שיש ב-<span>$latex \text{CX}$</span> הזו שני בלוקים שבוודאי לא יכולים להתקבל מתוך כפל בסקלרים שונים של אותה מטריצה.</p>
+
+<p>כעת, איך משתמשים ב-<span>$latex \text{CX}$</span> כדי לקבל את מצב בל, <span>$latex \frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$</span>, מתוך <span>$latex \left|00\right\rangle $</span>? זה פשוט למדי. קודם כל מפעילים <span>$latex H$</span> על הקיוביט הראשון, ומקבלים את המצב <span>$latex \frac{\left|00\right\rangle +\left|10\right\rangle }{\sqrt{2}}$</span>; אחר כך מפעילים את <span>$latex \text{CX}$</span> על המצב הזה. מקבלים</p>
+
+<p><span>$latex \text{CX}\left(\frac{\left|00\right\rangle +\left|10\right\rangle }{\sqrt{2}}\right)=\frac{\text{CX}\left(\left|00\right\rangle \right)+\text{CX}\left(\left|10\right\rangle \right)}{\sqrt{2}}=\frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$</span></p>
+
+<p>וזה סוגר את הפינה הזו - עכשיו אנחנו מבינים איך כותבים שערים קוונטיים באופן כללי על שני קיוביטים ואפשר להתקדם לשלב הבא… חוץ מבעיה פרקטית קטנה. אמרתי קודם שאני יכול להציג כל שער קוונטי בתור מטריצה גדולה שמוכפלת בוקטור הגדול שמייצג את כל המערכת הקוונטית. אבל זה היה כשכל האופרטורים שלי פעלו על קיוביט בודד ולכן היה אפשר לקבל את המטריצה הגדולה על ידי מכפלות קרונקר של כולן. עם CX אי אפשר לעשות את זה. איך אפשר, למשל, לקבל את CX שמופעלת על מערכת בת <strong>שלושה</strong> קיוביטים כאשר, נניח, קיוביט הבקרה הוא דווקא קיוביט מס’ 3 ואילו הקיוביט שהופכים הוא קיוביט מס’ 1?</p>
+
+<p>ובכן, הנה דרך מועילה להסתכל על זה מבחינה חישובית. שער CX (ושערים דומים לו שגם הם מהצורה של קיוביט בקרה + קיוביט שעליו פועל שער של קיוביט בודד) הוא אמנם לא מכפלת קרונקר אבל הוא <strong>סכום</strong> של שתי מכפלות קרונקר פשוטות. בואו ניזכר שאני משתמש בסימון <span>$latex \left|0\right\rangle \left\langle 0\right|$</span> כדי לתאר את האופרטור <span>$latex \left(\begin{array}{cc} 1 &amp; 0\\ 0 &amp; 0 \end{array}\right)$</span> ובסימון <span>$latex \left|1\right\rangle \left\langle 1\right|$</span> כדי לתאר את האופרטור <span>$latex \left(\begin{array}{cc} 0 &amp; 0\\ 0 &amp; 1 \end{array}\right)$</span>. עכשיו קל לראות שמתקיים</p>
+
+<p><span>$latex \text{CX}=\left|0\right\rangle \left\langle 0\right|\otimes I+\left|1\right\rangle \left\langle 1\right|\otimes X$</span></p>
+
+<p>עם הביטוי <strong>הזה</strong> אפשר לשחק איך שרוצים כשבאים לשלב אותו במערכת קוונטית גדולה יותר. למשל, בדוגמא שלי, של מערכת של שלושה קיוביטים שבה אני משתמש בקיוביט 3 בתור בקרה ובקיוביט 1 בתור היעד, אופרטור ה-CX ה”מורחב” שלי יהיה</p>
+
+<p><span>$latex \underset{q_{1}}{\underbrace{I}}\otimes\underset{q_{2}}{\underbrace{I}}\otimes\underset{q_{3}}{\underbrace{\left|0\right\rangle \left\langle 0\right|}}+\underset{q_{1}}{\underbrace{X}}\otimes\underset{q_{2}}{\underbrace{I}}\otimes\underset{q_{3}}{\underbrace{\left|1\right\rangle \left\langle 1\right|}}$</span></p>
+
+<p>אפשר, כמובן, להתלונן שאני משתמש כאן בתעלול שעובד יפה לשער מהצורה “בקרה/פעולה” כמו CX אבל לא יעבוד לשערים קוונטיים <strong>כלליים</strong> של שני קיוביטים, וזה גם נכון; המתמטיקה של המקרה הכי כללי היא נטולת פתרונות אלגנטיים, אבל מצד שני אנחנו גם לא זקוקים לה על פי רוב ולכן לא אכנס אליה כאן.</p>
+
+<h2>מדידות במערכת של שני קיוביטים</h2>
+
+<p>מה שנשאר לנו לעשות כדי להבין איך מערכות של כמה קיוביטים עובדות הוא להבין איך מתבצעת <strong>מדידה</strong> בהן. למרבה המזל, בעצם כבר ראינו את ההגדרה עבורן בפעם הקודמת - דיברתי אז על מערכת של קיוביט בודד, אבל ההגדרה תקפה לכל מערכת. מדידה, כזכור, הוגדרה באמצעות סדרה של אופרטורים <span>$latex \left\{ M_{m}\right\} $</span> כך ש-<span>$latex \sum M_{m}^{\dagger}M_{m}=I$</span>. ה-<span>$latex m$</span>-ים הקטנים היו התוצאות המספריות האפשריות של המדידה, וביצוע של מדידה על המצב <span>$latex \left|\psi\right\rangle $</span> כלל שני חלקים:</p>
+
+<ol> <li>בחירת התוצאה המספרית <span>$latex m$</span> בהסתברות <span>$latex p\left(m\right)=\left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle $</span></li>
+
+
+<li>בהינתן שהתוצאה <span>$latex m$</span> נבחרה, העברה של המערכת הקוונטית למצב <span>$latex \frac{M_{m}\left|\psi\right\rangle }{\sqrt{\left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle }}$</span></li>
+
+</ol>
+
+<p>ההגדרה הזו עובדת כמו שהיא גם כשהמערכת הקוונטית שלנו מורכבת מיותר מקיוביט אחד, כל עוד האופרטורים <span>$latex M_{m}$</span> מקיימים את התנאי שנדרש מהם.</p>
+
+<p>עוד דבר שראינו בפעם הקודמת היה <strong>מדידה פרוייקטיבית</strong>: זו הייתה דרך “לייצר” סדרת אופרטורים ותוצאות מדידה אפשריות מתוך אופרטור הרמיטי בודד; ערכי המדידה היו <strong>הערכים העצמיים</strong> של האופרטור הבודד הזה, וה-<span>$latex M_{m}$</span>-ים היו <strong>ההטלות</strong> על המרחבים העצמיים שלו (וסימנתי אותן ב-<span>$latex P_{\lambda}$</span> במקום ב-<span>$latex M_{m}$</span>).</p>
+
+<p>גם הרעיון הזה תקף גם כאן, אבל בואו נראה אותו בפעולה בכמה דוגמאות כדי שנרגיש שאנחנו מבינים אותו.</p>
+
+<p>ראשית, אם בקיוביט בודד מדידה “רגילה” הייתה מה שקראתי לו “מדידה בבסיס <span>$latex Z$</span>” כי לקחנו את האופרטור ההרמיטי <span>$latex Z=\left(\begin{array}{cc} 1 &amp; 0\\ 0 &amp; -1 \end{array}\right)$</span> והסקנו ממנו את אופרטורי המדידה <span>$latex \left|0\right\rangle \left\langle 0\right|$</span> ו-<span>$latex \left|1\right\rangle \left\langle 1\right|$</span>, מה קורה אם מנסים להסתכל על <span>$latex Z\otimes Z$</span> בתור אופרטור מדידה עבור שני קיוביטים? זה עובד, אבל אולי לא לגמרי בצורה שאנחנו מצפים לה. לכל <span>$latex b_{1},b_{2}\in\left\{ 0,1\right\} $</span></p>
+
+<p>כל <span>$latex \left|b_{1}b_{2}\right\rangle $</span> הוא וקטור עצמי של <span>$latex Z\otimes Z$</span>, עם הערך העצמי שהוא <strong>המכפלה</strong> של הערכים העצמיים שמתאימים ל-<span>$latex \left|b_{1}\right\rangle $</span> ו-<span>$latex \left|b_{2}\right\rangle $</span>. אני אדגים:</p>
+
+<p><span>$latex Z\otimes Z\left(\left|0\right\rangle \otimes\left|1\right\rangle \right)=Z\left|0\right\rangle \otimes Z\left|1\right\rangle =\left(+1\cdot\left|0\right\rangle \right)\otimes\left(-1\cdot\left|1\right\rangle \right)$</span></p>
+
+<p><span>$latex =\left(+1\right)\cdot\left(-1\right)\left|0\right\rangle \otimes\left|1\right\rangle $</span></p>
+
+<p>זה נובע מכך שבאופן כללי במכפלה טנזורית יש לנו לינאריות: <span>$latex \left(\lambda_{1}v_{1}\right)\otimes\left(\lambda_{2}v_{2}\right)=\left(\lambda_{1}\lambda_{2}\right)\left(v_{1}\otimes v_{2}\right)$</span>.</p>
+
+<p>כלומר, למרות שיש לנו שני קיוביטים, לאופרטור המדידה <span>$latex Z\otimes Z$</span> עדיין יש רק שני ערכי תצפית אפשריים שונים: <span>$latex +1$</span> ו-<span>$latex -1$</span>. אינטואיטיבית היינו רוצים <strong>ארבעה</strong> ערכי תצפית שונים, כדי לתפוס את ערכי הבסיס <span>$latex \left|00\right\rangle ,\left|01\right\rangle ,\left|10\right\rangle ,\left|11\right\rangle $</span> שמתאימים לחשיבה שלנו “בגישה הנאיבית” על מה זו מדידה.</p>
+
+<p>אחדד: מדידה “בגישה הנאיבית” היא הדבר הבא: בהינתן המצב הקוונטי <span>$latex \left|\psi\right\rangle =\alpha_{00}\left|00\right\rangle +\alpha_{01}\left|01\right\rangle +\alpha_{10}\left|10\right\rangle +\alpha_{11}\left|11\right\rangle $</span>, ומצב בסיס <span>$latex \left|b_{1}b_{2}\right\rangle $</span> עם <span>$latex b_{1},b_{2}\in\left\{ 0,1\right\} $</span> המדידה מחזירה את התוצאה המספרית שמתאימה ל-<span>$latex \left|b_{1}b_{2}\right\rangle $</span> בהסתברות <span>$latex \left|\alpha_{b_{1}b_{2}}\right|^{2}$</span> ומעבירה את המערכת למצב <span>$latex \left|b_{1}b_{2}\right\rangle $</span>.</p>
+
+<p>השאלה, אם כן, היא מה “התוצאה המספרית שמתאימה ל-<span>$latex \left|b_{1}b_{2}\right\rangle $</span>”. אם אנחנו רוצים תוצאה מספרית שונה לכל אחד מארבעת הערכים, אפשר לנקוט בתעלול: להשתמש, למשל, באופרטור מדידה כמו <span>$latex 2Z\otimes I+I\otimes Z$</span>. כאן <span>$latex \left|00\right\rangle $</span> הוא וקטור עצמי של הערך העצמי 3, <span>$latex \left|01\right\rangle $</span> של הערך העצמי 1, <span>$latex \left|10\right\rangle $</span> של הערך העצמי <span>$latex -1$</span> ו-<span>$latex \left|11\right\rangle $</span> של הערך העצמי <span>$latex -3$</span>.</p>
+
+<p>כל זה קצת מסורבל, אבל בחישוב קוונטי ממילא אנחנו בדרך כלל לא מודדים את כל הקיוביטים בבת אחת, אלא קיוביט אחד בכל פעם. כשיש לנו מערכת של שני קיוביטים, אז מדידה “רגילה” של הקיוביט הראשון מתבצעת באמצעות האופרטור <span>$latex Z\otimes I$</span> ומדידה של הקיוביט השני מתבצעת באמצעות <span>$latex I\otimes Z$</span>.</p>
+
+<p>כדי לקבל תחושה של מה בעצם קורה במדידה “חלקית” שכזו, בואו נסתכל שוב על מצב קוונטי כללי: <span>$latex \left|\psi\right\rangle =\alpha_{00}\left|00\right\rangle +\alpha_{01}\left|01\right\rangle +\alpha_{10}\left|10\right\rangle +\alpha_{11}\left|11\right\rangle $</span>. הוקטורים העצמיים של <span>$latex Z\otimes I$</span> הם <span>$latex \left|00\right\rangle $</span> ו-<span>$latex \left|01\right\rangle $</span> עבור הערך העצמי <span>$latex +1$</span>, ו-<span>$latex \left|10\right\rangle ,\left|11\right\rangle $</span> עבור הערך העצמי <span>$latex -1$</span>. אופרטורי ההטלה הם <span>$latex \left|00\right\rangle \left\langle 00\right|+\left|01\right\rangle \left\langle 01\right|$</span> ו-<span>$latex \left|10\right\rangle \left\langle 10\right|+\left|11\right\rangle \left\langle 11\right|$</span>. לכן נקבל את הדבר הבא:</p>
+
+<ul> <li>בהסתברות <span>$latex \left|\alpha_{00}\right|^{2}+\left|\alpha_{01}\right|^{2}$</span> תוצאת המדידה היא 1<span>$latex +$</span> והמערכת עוברת למצב <span>$latex \frac{\alpha_{00}\left|00\right\rangle +\alpha_{01}\left|01\right\rangle }{\sqrt{\left|\alpha_{00}\right|^{2}+\left|\alpha_{01}\right|^{2}}}$</span></li>
+
+
+<li>בהסתברות <span>$latex \left|\alpha_{10}\right|^{2}+\left|\alpha_{11}\right|^{2}$</span> תוצאת המדידה היא 1<span>$latex -$</span> והמערכת עוברת למצב <span>$latex \frac{\alpha_{00}\left|10\right\rangle +\alpha_{01}\left|11\right\rangle }{\sqrt{\left|\alpha_{10}\right|^{2}+\left|\alpha_{11}\right|^{2}}}$</span></li>
+
+</ul>
+
+<p>זה כבר יותר מסובך ממדידה של קיוביט יחיד - אבל לא באמת כל כך נורא, החשבון הוא יחסית פשוט.</p>
+
+<p>לסיום, אני רוצה שנראה מה קורה אם מודדים שני מצבים קוונטיים שונים על פי הקיוביט הראשון. המצב הראשון יהיה המצב של הסופרפוזיציה “האחידה”: <span>$latex \frac{\left|00\right\rangle +\left|01\right\rangle +\left|10\right\rangle +\left|11\right\rangle }{2}$</span>. המקדם של כל מצב בסופרפוזיציה הוא <span>$latex \frac{1}{2}$</span> ולכן אם נבצע את החישוב שהצגתי לפני רגע, נראה שבהסתברות <span>$latex \frac{1}{2}$</span> תוצאת המדידה תהיה <span>$latex +1$</span> והמצב הקוונטי יעבור לסופרפוזיציה <span>$latex \frac{\left|00\right\rangle +\left|01\right\rangle }{\sqrt{2}}$</span> ובהסתברות <span>$latex \frac{1}{2}$</span> התוצאה תהיה <span>$latex -1$</span> והמצב הקוונטי יעבור לסופרפוזיציה <span>$latex \frac{\left|10\right\rangle +\left|11\right\rangle }{\sqrt{2}}$</span>.</p>
+
+<p>שימו לב שהמצב <span>$latex \frac{\left|00\right\rangle +\left|01\right\rangle }{\sqrt{2}}$</span> הוא לא מצב שזור; הוא בעצם שווה ל-<span>$latex \left|0\right\rangle \otimes\frac{\left|0\right\rangle +\left|1\right\rangle }{\sqrt{2}}$</span>. כלומר, אפשר לחשוב על מה שהגענו אליו בתור שתי מערכות נפרדות של קיוביטים, שבהן הקיוביט הראשון נמדד וערכו התקבע על <span>$latex \left|0\right\rangle $</span>, והקיוביט השני נותר בסופרפוזיציה שבה היה קודם וכלום לא השתנה מבחינתו. זה אכן מה שהגיוני לצפות לו פיזיקלית.</p>
+
+<p>עכשיו בואו נעבור למצב השזור <span>$latex \frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}$</span> שבו המצב שונה בתכלית. כאן עדיין נקבל <span>$latex +1$</span> בהסתברות <span>$latex \frac{1}{2}$</span>, אבל אז המערכת תעבור למצב הקוונטי <span>$latex \left|00\right\rangle $</span>; ובהסתברות <span>$latex \frac{1}{2}$</span> נקבל <span>$latex -1$</span> והמערכת תעבור למצב הקוונטי <span>$latex \left|11\right\rangle $</span>. גם אלו לא מצבים שזורים, כלומר המדידה “השמידה” את השזירות, אבל תראו מה קרה פה - הקיוביט <strong>השני</strong>, זה שלא נמדד, גם כן הוקרס! הסופרפוזיציה שבה הוא היה קודם (ולא הייתה בלתי תלויה בסופרפוזיציה של הקיוביט הראשון) נעלמה! התופעה הספציפית הזו היא-היא הסיבה לכוח ששזירה מוסיפה לחישובים קוונטיים. נסו לזכור את האינטואיציה הזו.</p>
+
+<h2>דברי סיכום ופרידה</h2>
+
+<p>הגענו לשלב שבו אנחנו מבינים פחות או יותר את כל המודל המתמטי שמאחורי חישוב קוונטי. מרחבים וקטוריים, מטריצות, מכפלות טנזוריות, מכפלות פנימיות, לכסון ספקטרלי של אופרטורים הרמיטיים - זה בערך כל מה שיש פה. כל היתר הם דברים נחמדים שנבנים מעל זה. בפרט, עכשיו אנחנו מסוגלים להבין את האופן שבו נפתר “ריבוע הקסם” של פרס ומרמין, אז זה יהיה הדבר הבא שאני אדבר עליו.</p>
+
+<p>אבל אולי כדאי בכל זאת לומר לרגע בצורה מפורשת - מה זה בעצם חישוב קוונטי? הרעיון הוא שלוקחים <span>$latex n$</span>-קיוביטים, ואז מאתחלים איזה שהוא מצב קוונטי - בדרך כלל <span>$latex \left|0^{n}\right\rangle $</span>, ואז מתחילים להפעיל עליו אופרטורים אוניטריים, מה שבדרך כלל אומר שמפעילים אופרטור של “שער קוונטי” שפועל רק על קיוביט או שניים ומורחב לפעול כמו הזהות על שאר הקיוביטים. בסיום של החישוב מבצעים מדידה של כל הקיוביטים ומקבלים מחרוזת של <span>$latex n$</span> ביטים “קלאסיים” שמגיעה מתוך התפלגות כלשהי. על הניסוי הזה אפשר לחזור מספר רב של פעמים כדי לקבל הערכה טובה להתפלגות הזו (למשל, שקיבלנו <span>$latex 00$</span> ב-<span>$latex \frac{1}{2}$</span> מהפעמים, ב-<span>$latex \frac{1}{3}$</span> מהן קיבלנו 01 וב-<span>$latex \frac{1}{6}$</span> מהן קיבלנו 11).</p>
+
+<p>בפועל אפשר לבצע מדידות גם <strong>באמצע</strong> החישוב הקוונטי, ואפילו לשנות את המשך החישוב בהתאם לתוצאת המדידה; ולא חייבים למדוד את <strong>כל</strong> הקיוביטים בסוף. אבל זהו בערך.</p>
+
+<p>האם זה גם מה שקורה במציאות? כן ולא. במציאות קשה מאוד כיום לבצע חישובים שכאלו. לאתחל מצב כמו <span>$latex \left|0^{n}\right\rangle $</span>? זה קשה. מה שמקבלים בפועל הוא סופרפוזיציה של מצבים שאנחנו מקווים ש-<span>$latex \left|0^{n}\right\rangle $</span> דומיננטי בהם מספיק. ולהפעיל אופרטור כמו <span>$latex X$</span>? זה קשה, אנחנו מנסים לכייל את המחשבים ללא הרף כדי שהפעולה שהם מבצעים (במחשבים בני זמננו - על פי רוב באמצעות שליחת פולס אלקטרומנגטי בתדירות מתאימה) תהיה <strong>מספיק קרובה</strong> ל-<span>$latex X$</span>. ולמדוד קיוביטים? זה <strong>ממש</strong> קשה מבחינת זה שיש רעשים במדידה. ובנוסף לקשיים הללו יש גם רעשים שמגיעים מבחוץ ויקלקלו את החישוב אפילו אם ננסה פשוט לשמור את המצב <span>$latex \left|0^{n}\right\rangle $</span> ולא נעשה לו כלום. בקיצור, כל התורה היפה הזו של חישוב קוונטי, כשבאים ליישם אותה בעולם האמיתי, חייבת הרחבה מהותית - חייבים לדבר על <strong>רעש</strong> וההשפעות שלו. זה כבר שייך לתחום שנקרא <strong>אינפורמציה קוונטית</strong> והוא יפה ומעניין בפני עצמו אבל אני לא אדחוף אותו לפוסט הזה. אנחנו מקווים שיום אחד נגיע למצב שבו יש לנו <strong>קודים לתיקון שגיאות</strong> בחישוב קוונטי שעובדים בצורה מספיק טובה כדי שאפשר יהיה לדמיין את המחשבים הקוונטיים כאילו הם עובדים במודל היפה והנקי שהצגתי פה שהוא חסין לרעשים; זה מה שקורה בחישוב קלאסי, שבו יש מנגנונים לטיפול ברעשים שמתכנת ממוצע לא צריך לחשוב עליהם ביומיום שלו.</p>
+
+<p>אבל אני לא יכול לסיים ממש בלי להכניס טיזר למשהו מגניב במיוחד שרמזתי עליו עוד בתחילת הפוסט. בואו נסקור לרגע את השערים שראינו עד כה בחישוב קוונטי: שערי <span>$latex X,Y,Z$</span>; שער <span>$latex H$</span>; שער <span>$latex S$</span> ושער <span>$latex S^{\dagger}$</span>; והפעם ראינו גם את השער <span>$latex \text{CX}$</span> וגם על מדידה אפשר לחשוב בתור שער.</p>
+
+<p>ובכן, אם אני עושה חישוב קוונטי שמתבסס רק על השערים הללו, <strong>אפשר לבצע סימולציה שלו במחשב קלאסי בסיבוכיות לינארית</strong>. מה זה אומר בפועל? זה אומר שכל מה שאפשר לעשות במחשב קוונטי עם השערים הללו אפשר לעשות <strong>בקלי קלות</strong> גם במחשב רגיל; רק צריך להשתמש בשיטת סימולציה שהיא שונה לגמרי מגישת ה”נכפול מטריצה בוקטור”. התוצאה הזו נקראת “משפט Gottesman–Knill”; הרעיון מאחוריה היא שאפשר לייצג מצבים קוונטיים מסויימים בעזרת <strong>יוצרים של חבורת המייצבים</strong> שלהם (לא חשוב כרגע מה זה אומר…) והרעיון הזה הוא הבסיס לכמה וכמה עניינים לא טריוויאליים בחישוב קוונטי.</p>
+
+<p>זה אומר שכדי להשלים את התמונה אני צריך להוסיף עוד שער כלשהו למשחק - כזה שמאפשר לייצר חישובים מסובכים יותר שהמשפט לא תופס. השער הזה נקרא <span>$latex T$</span>, והוא בסך הכל שער תמים מאוד שמקיים <span>$latex T^{2}=S$</span> (בדומה לאיך ש-<span>$latex S^{2}=Z$</span>). הוא מוגדר בתור <span>$latex T=\left(\begin{array}{cc} 1 &amp; 0\\ 0 &amp; e^{\frac{i\pi}{4}} \end{array}\right)$</span>.</p>
+
+<p>עכשיו הידע הבסיסי שלנו שלם, פחות או יותר, ואפשר לגשת לדבר על הדברים המגניבים באמת.</p>
+
+  </div>
+
+  <hr />
+  <p>
+    נהניתם? התעניינתם? אם תרצו, אתם מוזמנים לתת טיפ:
+  </p>
+  <a href='https://ko-fi.com/H2H5XFBQ' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a><div class="PageNavigation">
+    
+      <a class="prev" href="/2020/02/28/what_is_a_qubit/">&laquo; חישוב קוונטי - מה זה קיוביט ומה עושים איתו?</a>
+    
+    
+  </div><div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://gadial.net/2020/03/04/what_are_qubits/';
+      this.page.identifier = 'http://gadial.net/2020/03/04/what_are_qubits/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://not-precise.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/2020/03/04/what_are_qubits/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">לא מדויק</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">לא מדויק</li><li><a class="u-email" href="mailto:gadial@gmail.com">gadial@gmail.com</a></li><li>&copy; כל הזכויות שמורות לגדי אלכסנדרוביץ'</li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://www.facebook.com/%D7%9C%D7%90-%D7%9E%D7%93%D7%95%D7%99%D7%A7-163347110378474"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#facebook"></use></svg> <span class="username">לא מדויק</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>RSS</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>בלוג על מתמטיקה ומדעי המחשב</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery-slim.min.js"><\/script>')</script><script src="/assets/js/bootstrap.bundle.js"></script><!-- Default Statcounter code for New blog
+http://www.gadial.net/ -->
+<script type="text/javascript">
+  var sc_project=5444342; 
+  var sc_invisible=1; 
+  var sc_security="4a89cbe4"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="https://c.statcounter.com/5444342/0/4a89cbe4/1/"
+  alt="Web Analytics"></a></div></noscript>
+  <!-- End of Statcounter Code --></body>
+
+</html>

@@ -1,0 +1,3754 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index אינדקס
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+חישוב קוונטי - מה זה קיוביט ומה עושים איתו?
+\end_layout
+
+\begin_layout Description
+קטגוריות: פיזיקה, תורת הסיבוכיות
+\end_layout
+
+\begin_layout Description
+תגים: חישוב קוונטי
+\end_layout
+
+\begin_layout Description
+מזהה:
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+what_is_a_qubit
+\end_layout
+
+\begin_layout Section
+מבוא
+\end_layout
+
+\begin_layout Standard
+בפוסטים הקודמים בבלוג דיברתי על 
+\begin_inset CommandInset href
+LatexCommand href
+name "ריבוע הקסם של פרס-מרמין"
+target "https://gadial.net/2020/01/31/mermin_peres_magic_square/"
+literal "false"
+
+\end_inset
+
+ ו
+\begin_inset CommandInset href
+LatexCommand href
+name "על המשפט"
+target "https://gadial.net/2020/01/24/what_is_mipstar_equals_re_part_2/"
+literal "false"
+
+\end_inset
+
+ שאומר ש-
+\begin_inset Formula $\text{MIP}^{*}=\text{RE}$
+\end_inset
+
+.
+ אלו שתי תוצאות מרהיבות )אחת פשוטה ואחת מאוד מסובכת( שמתבססות על 
+\series bold
+קיוביטים
+\series default
+, שהם מושג מתמטי שיש כל מני דרכים לממש במציאות.
+ בפוסט הזה אני רוצה לדבר על המושג המתמטי.
+ זה ייתן לנו בסיס שעליו נוכל להסביר ענייני חישוב קוונטי ואינפורמציה קוונטית
+ בצורה רחבה יותר מאשר 
+\begin_inset CommandInset href
+LatexCommand href
+name "עשיתי בבלוג בשעתו בסדרת הפוסטים שלי"
+target "https://gadial.net/2014/07/17/quantum_computing_intro/"
+literal "false"
+
+\end_inset
+
+ על חישוב קוונטי.
+ בפעם ההיא המטרה שלי הייתה להגיע כמה שיותר מהר לדברים מגניבים כמו האלגוריתמים
+ של גרובר ושור, והפעם אני בכלל לא הולך להתעניין בתוצאות המחץ הללו אלא אנסה
+ ליהנות מהדרך - מכמה שהמתמטיקה שמעורבת בסיפור היא ממש יפה בזכות עצמה.
+\end_layout
+
+\begin_layout Standard
+המתמטיקה שמעורבת בסיפור היא אלגברה לינארית, ובפרט דברים שבאופן קלאסי נלמדים
+ בקורס שני באלגברה לינארית ולא הגעתי אל כולם בבלוג - מכפלות פנימיות, משפט
+ הלכסון הספקטרלי, דברים כאלה.
+ אני אניח היכרות כלשהי עם הנושאים הללו או לכל הפחות יכולת לעצור ולחפש הסברים
+ עליהם במקומות אחרים, אבל אנסה לא להיות קריפטי לחלוטין רוב הזמן.
+ אני לא רוצה להפחיד - בניגוד לתורת הקוונטים 
+\begin_inset Quotes eld
+\end_inset
+
+באופן כללי
+\begin_inset Quotes erd
+\end_inset
+
+ שיכולה להיות מאתגרת למדי מתמטית, אפשר לחשוב על קיוביטים בתור מין 
+\begin_inset Quotes eld
+\end_inset
+
+צמצום
+\begin_inset Quotes erd
+\end_inset
+
+ של תורת הקוונטים לסיטואציה מאוד פשוטה ונשלטת יחסית, והמתמטיקה שלה היא דווקא
+ 
+\series bold
+פשוטה
+\series default
+ בהתאם.
+ זה חלק מהיופי - איך ממתמטיקה פשוטה יוצאים ניסים ונפלאות שכאלו.
+\end_layout
+
+\begin_layout Standard
+עוד הערה אחת לפני שנתחיל: הפוסט הזה מדבר על 
+\begin_inset Quotes eld
+\end_inset
+
+קיוביט
+\begin_inset Quotes erd
+\end_inset
+
+, ביחיד.
+ הפוסט הבא ידבר על 
+\begin_inset Quotes eld
+\end_inset
+
+קיוביטים
+\begin_inset Quotes erd
+\end_inset
+
+, ברבים, כי האופן שבו משלבים כמה קיוביטים יחד מערב עוד מתמטיקה, ורק שם יתגלה
+ הכוח האמיתי של כל העסק הזה.
+ אז אם מה שאני מדבר עליו פה ייראה חסר פואנטה, זכרו - יש פואנטה, היא תגיע
+ בהמשך, יקרו ניסים ונפלאות, אבל בואו ניהנה כרגע מהדרך.
+ הרבה יותר קל להבין את המתמטיקה שבהמשך אם מבינים אותה עבור קיוביט בודד.
+\end_layout
+
+\begin_layout Section
+מה זה קיוביט?
+\end_layout
+
+\begin_layout Standard
+ובכן, מה זה קיוביט? מה שעוזר כאן הוא האנלוגיה למושג של 
+\series bold
+ביט
+\series default
+ שאנחנו רגילים מחישוב 
+\begin_inset Quotes eld
+\end_inset
+
+רגיל
+\begin_inset Quotes erd
+\end_inset
+
+.
+ ביט 
+\begin_inset Formula $x$
+\end_inset
+
+ הוא משהו שיכול להיות בעל ערך שנמצא בתוך הקבוצה 
+\begin_inset Formula $\mathbb{Z}_{2}=\left\{ 0,1\right\} $
+\end_inset
+
+.
+ אנחנו עושים עם ביט יחיד שני דברים עיקריים:
+\end_layout
+
+\begin_layout Enumerate
+מבצעים עליו 
+\series bold
+פעולות
+\series default
+ כלשהן שמשנות את ערכו, למשל 
+\begin_inset Formula $\text{NOT}\left(x\right)=1-x$
+\end_inset
+
+ )כשיש לנו שני ביטים ויותר יש פעולות מעניינות יותר...(
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+משווים
+\series default
+ את הערך שלו לדברים, כלומר בודקים האם 
+\begin_inset Formula $x=0$
+\end_inset
+
+ או 
+\begin_inset Formula $x=1$
+\end_inset
+
+ ופועלים בהתאם לכך.
+ אם תרצו, אפשר לומר שאנחנו 
+\series bold
+מודדים
+\series default
+ את הערך של הביט.
+\end_layout
+
+\begin_layout Standard
+קיוביט זה אותו דבר, פרט לכך שהערכים שקיוביט יכולים לקבל שייכים לקבוצה גדולה
+ ומסובכת יותר, ובהתאם לכך הפעולות שאפשר לבצע על קיוביט הן מסובכות יותר,
+ והמדידות שניתן לבצע הן מסובכות יותר.
+\end_layout
+
+\begin_layout Standard
+היקום שבו קיוביט בודד חי הוא המרחב הוקטורי 
+\begin_inset Formula $\mathbb{C}^{2}$
+\end_inset
+
+ עם 
+\series bold
+המכפלה הפנימית הסטנדרטית
+\series default
+ עליו.
+ בואו נזכיר את המרחב הזה.
+ אני מסמן איברים של המרחב בתור 
+\series bold
+וקטורי עמודה
+\series default
+, כלומר איבר כללי הוא משהו מהצורה 
+\begin_inset Formula $v=\left(\begin{array}{c}
+\alpha\\
+\beta
+\end{array}\right)$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $\alpha,\beta\in\mathbb{C}$
+\end_inset
+
+.
+ על המרחב הזה אני מגדיר 
+\series bold
+מכפלה פנימית
+\series default
+ שהיא פונקציה שלוקחת זוג איברים במרחב ומחזירה סקלר: אם 
+\begin_inset Formula $v=\left(\begin{array}{c}
+\alpha\\
+\beta
+\end{array}\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $u=\left(\begin{array}{c}
+\gamma\\
+\delta
+\end{array}\right)$
+\end_inset
+
+ אז אני מגדיר 
+\begin_inset Formula $\left\langle u|v\right\rangle =\alpha\overline{\gamma}+\beta\overline{\delta}$
+\end_inset
+
+ כך שקו מעל מספר מסמן את 
+\series bold
+הצמוד המרוכב
+\series default
+ שלו: 
+\begin_inset Formula $\overline{a+bi}=a-bi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אם תסתכלו על 
+\begin_inset CommandInset href
+LatexCommand href
+name "הפוסט שלי"
+target "https://gadial.net/2012/02/06/inner_products_intro/"
+literal "false"
+
+\end_inset
+
+ על מכפלות פנימיות אתם תראו שהשתמשתי בסימונים אחרים: 
+\begin_inset Formula $x\cdot y$
+\end_inset
+
+ או 
+\begin_inset Formula $\left\langle x,y\right\rangle $
+\end_inset
+
+, כאשר דווקא 
+\begin_inset Formula $y$
+\end_inset
+
+ הוא זה שמצמידים את הכניסות שלו, ואילו אצלי הפעם, בסימון 
+\begin_inset Formula $\left\langle u|v\right\rangle $
+\end_inset
+
+ זה דווקא 
+\begin_inset Formula $u$
+\end_inset
+
+ השמאלי שמצמידים את הכניסות שלו.
+ מה שקורה פה הוא שאני מאמץ את שיטות הסימון בפיזיקה לעניינים הללו כי יהיה
+ להן יתרון בהמשך וכי זו השפה של התחום בכל מקרה - אני מקווה שזה לא יבלבל
+ אותנו יותר מדי או לפחות שנתרגל מהר.
+\end_layout
+
+\begin_layout Standard
+הנה עוד סימון מועיל ביותר: אם 
+\begin_inset Formula $A\in M_{n,m}\left(\mathbb{C}\right)$
+\end_inset
+
+ היא מטריצה כלשהי )לאו דווקא ריבועית( עם כניסות שהן מספרים מרוכבים, אז אני
+ מגדיר את המטריצה הצמודה שלה 
+\begin_inset Formula $A^{\dagger}$
+\end_inset
+
+ באופן הבא: 
+\begin_inset Formula $\left[A^{\dagger}\right]_{ij}=\overline{\left[A\right]_{ji}}$
+\end_inset
+
+.
+ במילים אחרות, אנחנו משחלפים את 
+\begin_inset Formula $A$
+\end_inset
+
+ ומצמידים את הכניסות שלה.
+ גם פה הסימון שלי קצת שונה מבדרך כלל: במתמטיקה כותבים 
+\begin_inset Formula $A^{*}$
+\end_inset
+
+ ואילו בפיזיקה משתמשים בכוכבית למטרה אחרת ולכן כותבים 
+\begin_inset Formula $A^{\dagger}$
+\end_inset
+
+ )הסימן הזה נקרא 
+\begin_inset Quotes eld
+\end_inset
+
+דגר
+\begin_inset Quotes erd
+\end_inset
+
+, פגיון(.
+\end_layout
+
+\begin_layout Standard
+בסימון הזה קל להבין את המכפלה הפנימית שלנו גם בעזרת כפל מטריצות 
+\begin_inset Quotes eld
+\end_inset
+
+רגיל
+\begin_inset Quotes erd
+\end_inset
+
+: 
+\begin_inset Formula $\left\langle u|v\right\rangle =u^{\dagger}v$
+\end_inset
+
+ )אם חושבים על 
+\begin_inset Formula $u,v$
+\end_inset
+
+ בתור וקטורי עמודה(.
+ בואו נזכור את הגישה הזו בהמשך, כי פתאום נדבר גם על יצור כמו 
+\begin_inset Formula $\left|v\right\rangle \left\langle u\right|=vu^{\dagger}$
+\end_inset
+
+ שהולך בכלל להיות מטריצה 
+\begin_inset Formula $2\times2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+הנורמה
+\series default
+ של איבר 
+\begin_inset Formula $v$
+\end_inset
+
+ במרחב מכפלה פנימית מוגדרת בתור 
+\begin_inset Formula $\sqrt{\left\langle v|v\right\rangle }=\sqrt{\left|\alpha\right|^{2}+\left|\beta\right|^{2}}$
+\end_inset
+
+ - אפשר לחשוב אותה בתור משהו שמייצג הכללה של מושג 
+\series bold
+האורך
+\series default
+ של וקטור, ומכפלה פנימית היא סוג של משהו שמערב את מכפלת האורכים של שני וקטורים
+ ואת קוסינוס הזווית ביניהם.
+\end_layout
+
+\begin_layout Standard
+מכפלות פנימיות ונורמות מאפשרות לנו לדבר על בסיסים 
+\begin_inset Quotes eld
+\end_inset
+
+נחמדים במיוחד
+\begin_inset Quotes erd
+\end_inset
+
+ למרחב: בסיסים 
+\series bold
+אורתונורמליים
+\series default
+.
+ בסיס 
+\begin_inset Formula $B=\left\{ b_{1},\ldots,b_{n}\right\} $
+\end_inset
+
+ למרחב מכפלה פנימית כלשהו הוא 
+\series bold
+אורתונורמלי
+\series default
+ אם 
+\begin_inset Formula $\left\langle b_{i},b_{j}\right\rangle =\delta_{ij}$
+\end_inset
+
+, כלומר המכפלה הפנימית של כל שני איברים שונים זה מזה בו היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\numeric off
+, וכל איבר בו הוא מנורמה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+.
+ הקסם בבסיס כזה הוא שבהינתן איבר 
+\begin_inset Formula $v$
+\end_inset
+
+ כלשהו במרחב, קל מאוד לגלות מה המקדמים שלו בצירוף הלינארי 
+\begin_inset Formula $v=\sum\alpha_{i}b_{i}$
+\end_inset
+
+: אם תחשבו את 
+\begin_inset Formula $\left\langle b_{i}|v\right\rangle $
+\end_inset
+
+ ותשתמשו בתכונות המכפלה הפנימית ובכך שהבסיס אורתונורמלי תגלו ש-
+\begin_inset Formula $\left\langle b_{i}|v\right\rangle =\alpha_{i}$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $v=\sum\left\langle b_{i}|v\right\rangle b_{i}$
+\end_inset
+
+.
+ אני קורא לרוב למקדמים 
+\begin_inset Formula $\left\langle b_{i}|v\right\rangle $
+\end_inset
+
+ הללו בשם 
+\series bold
+מקדמי פורייה
+\series default
+ של 
+\begin_inset Formula $v$
+\end_inset
+
+ על פי הבסיס 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+עכשיו אפשר להגיד מה זה בעצם קיוביט: זה משהו שהערכים שהוא יכול לקבל הם כל
+ האיברים ב-
+\begin_inset Formula $\mathbb{C}^{2}$
+\end_inset
+
+ 
+\series bold
+שהם מנורמה 
+\numeric on
+1
+\series default
+\numeric off
+.
+ אני מסמן ערך כזה לרוב ב-
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ - הסימון הזה נקרא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+ket
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+וכמובן שיש הגיון מאחורי והדמיון שלו לסימונים של מכפלה פנימית לא מקרי, אבל
+ מבחינה יבשה הוא בסך הכל דרך סימון של וקטור ב-
+\begin_inset Formula $\mathbb{C}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+עוד הערה אחת על הערכים של קיוביט: אם שני ערכים נבדלים זה מזה רק בכפל בסקלר,
+ אני מתייחס אליהם בתור אותו הערך )בפיזיקאית אני אגיד שהם 
+\begin_inset Quotes eld
+\end_inset
+
+רק נבדלים בפאזה
+\begin_inset Quotes erd
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Standard
+בואו נעבור לייצוג טיפה יותר קונקרטי של קיוביטים.
+ אני יכול לסמן את הבסיס הסטנדרטי של 
+\begin_inset Formula $\mathbb{C}^{2}$
+\end_inset
+
+ עם הסימונים 
+\begin_inset Formula $\left|0\right\rangle =\left(\begin{array}{c}
+1\\
+0
+\end{array}\right),\left|1\right\rangle =\left(\begin{array}{c}
+0\\
+1
+\end{array}\right)$
+\end_inset
+
+ ואז אפשר לכתוב קיוביט כללי בתור 
+\begin_inset Formula $\left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $
+\end_inset
+
+ כאשר 
+\begin_inset Formula $\alpha,\beta\in\mathbb{C}$
+\end_inset
+
+ נקראים 
+\series bold
+האמפליטודות
+\series default
+ של הקיוביט והדרישה של 
+\begin_inset Quotes eld
+\end_inset
+
+נורמה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+
+\begin_inset Quotes erd
+\end_inset
+
+ מתורגמת לדרישה 
+\begin_inset Formula $\left|\alpha\right|^{2}+\left|\beta\right|^{2}=1$
+\end_inset
+
+.
+ האינטואיציה הפיזיקלית מאחורי ההגדרות הללו היא ש-
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ נמצא במשהו שנקרא 
+\series bold
+סופרפוזיציה 
+\series default
+של מצבי היסוד 
+\begin_inset Formula $\left|0\right\rangle ,\left|1\right\rangle $
+\end_inset
+
+ אבל אני לא אכנס יותר מדי לפיזיקה בפוסט הזה.
+\end_layout
+
+\begin_layout Standard
+עכשיו, אמרתי קודם שעם ביט רגיל אפשר לעשות שני דברים: 
+\series bold
+פעולות
+\series default
+ ו
+\series bold
+מדידה
+\series default
+.
+ ואמרתי שעם קיוביט זה אותו דבר, רק מסובך יותר.
+ נתחיל עם פעולות.
+ ההסבר הפיזיקלי לאיך המערכת הקוונטית שקיוביט מתאר מתפתחת עם הזמן דורש כניסה
+ למושגים כמו המילטוניאן וכאלו ואני נמנע מההסבר הזה לחלוטין כי אין בו צורך
+ - השורה התחתונה שאפשר לקפוץ אליה באובייקט פשוט כמו קיוביט היא שהפעולות
+ שאפשר להפעיל על קיוביטים הן 
+\series bold
+טרנספורמציות לינאריות
+\series default
+.
+ כלומר, לוקחים מטריצה 
+\begin_inset Formula $U\in M_{2\times2}\left(\mathbb{C}\right)$
+\end_inset
+
+ וכופלים אותה ב-
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+.
+ רק מה, אמרתי קודם שהערכים שקיוביט מקבל הם 
+\series bold
+מנורמה
+\family roman
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\series default
+\numeric off
+.
+ כלומר, גם הפלט צריך להיות מנורמה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+, כלומר אני מצפה מ-
+\begin_inset Formula $U$
+\end_inset
+
+ 
+\series bold
+לשמר נורמה
+\series default
+.
+ יוצא ש-
+\begin_inset Formula $U$
+\end_inset
+
+ צריכה להיות 
+\series bold
+טרנספורמציה אוניטרית
+\series default
+, כלומר טרנספורמציה לינארית שמקיימת 
+\begin_inset Formula $U^{\dagger}=U^{-1}$
+\end_inset
+
+.
+ בפרט 
+\begin_inset Formula $U$
+\end_inset
+
+ הפיכה - זה קצת מנוגד לאינטואיציה שלנו, כי למשל פעולת ה-
+\lang english
+AND
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על שני ביטים קלאסיים היא לא הפיכה )אם הפלט היה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\numeric off
+, מה היה הקלט?(.
+\end_layout
+
+\begin_layout Standard
+בואו נראה כמה דוגמאות לטרנספורמציות אוניטריות שכאלו, שיהיו חשובות מאוד בהמשך
+ הדרך: ראשית, המקבילה של פעולת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+NOT
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+רק בקיוביטים.
+ זו טרנספורמציה שמעבירה את 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ ל-
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+ ואת 
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+ ל-
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ ומסומנת ב-
+\begin_inset Formula $X$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X\left|0\right\rangle =\left|1\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X\left|1\right\rangle =\left|0\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אפשר לתאר את זה במטריצה הבאה, שאני מסמן גם ב-
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+ כשיותר נוח לי, מסיבות של 
+\begin_inset Quotes eld
+\end_inset
+
+זה הסימון המקובל בפיזיקה
+\begin_inset Quotes erd
+\end_inset
+
+(:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X=\left(\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+פעולה אחרת, שאין לה מקבילה קלאסית, היא 
+\series bold
+היפוך פאזה
+\series default
+ שמתוארת באות 
+\begin_inset Formula $Z$
+\end_inset
+
+ ונראית כך:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z\left|0\right\rangle =\left|0\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z\left|1\right\rangle =-\left|1\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z=\left(\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר, 
+\begin_inset Formula $Z$
+\end_inset
+
+ לא עושה כלום למצב 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ אבל כופלת את 
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+ במינוס
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+.
+ למה זה מעניין בכלל? הרי אמרתי שאני מחשיב שני קיוביטים כזהים אם הם נבדלים
+ בפאזה.
+ ובכן, כן, אבל זכרו שקיוביט 
+\begin_inset Quotes eld
+\end_inset
+
+כללי
+\begin_inset Quotes erd
+\end_inset
+
+ הוא תערובת של שני מצבי הבסיס הללו.
+ כלומר אם 
+\begin_inset Formula $\left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $
+\end_inset
+
+ אז 
+\begin_inset Formula $Z\left|\psi\right\rangle =\alpha\left|0\right\rangle -\beta\left|1\right\rangle $
+\end_inset
+
+ וזה כבר שינוי של ממש - הפאזה 
+\series bold
+בין
+\series default
+ שני הרכיבים של 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ השתנתה.
+\end_layout
+
+\begin_layout Standard
+עוד פעולה רלוונטית היא 
+\begin_inset Formula $Y$
+\end_inset
+
+, שהיא סוג של שילוב בין 
+\begin_inset Formula $X,Z$
+\end_inset
+
+ ומספרים מרוכבים:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Y=\left(\begin{array}{cc}
+0 & -i\\
+i & 0
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אם תבדקו תגלו ש-
+\begin_inset Formula $ZX=iY$
+\end_inset
+
+, ובכלל שמתקיים הקשר הנחמד הבא:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $XY=iZ$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $YZ=iX$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ZX=iY$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שבטח מזכיר את הקווטרניונים לאלו מכם שמכירים אותם.
+\end_layout
+
+\begin_layout Standard
+שלוש המטריצות הללו נקראות 
+\series bold
+מטריצות פאולי
+\series default
+, ויחד עם מטריצת היחידה הן הבסיס למשהו שנקרא 
+\series bold
+חבורת פאולי
+\series default
+ והוא מאוד שימושי בכל ענייני הקוונטים אבל נגיע לכך בהמשך.
+ לבינתיים הנה הדוגמא האחרונה שלי לטרנספורמציה אוניטרית.
+ עד עכשיות מה שהצגתי היה קצת מוזר כי הטרנספורמציות לא יצרו שום קשר בין 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ ובין 
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+ אז לא היה ברור מה ההבדל בין קיוביטים ובין סתם ביטים.
+ אבל הנה משהו שונה, שנקרא 
+\series bold
+מטריצת הדאמר
+\series default
+ )
+\lang english
+Hadamard
+\lang hebrew
+(:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H\left|0\right\rangle =\frac{\left|0\right\rangle +\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H\left|1\right\rangle =\frac{\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+1 & 1\\
+1 & -1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הטרנספורמציה הזו יוצרת 
+\series bold
+סופרפוזיציה
+\series default
+ של 
+\begin_inset Formula $\left|0\right\rangle ,\left|1\right\rangle $
+\end_inset
+
+ מתוך כל אחד ממצבי הבסיס הללו.
+ החלוקה ב-
+\begin_inset Formula $\sqrt{2}$
+\end_inset
+
+ היא כדי להבטיח שהתוצאה עדיין תהיה מנורמה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+.
+ עכשיו, מכיוון שהמצבים של הסופרפוזיציה הזו הם כל כך חשובים, יש להם סימון
+ משל עצמם ועוד נפגוש אותם בהמשך:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left|+\right\rangle =\frac{\left|0\right\rangle +\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left|-\right\rangle =\frac{\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+עכשיו, גם 
+\begin_inset Formula $\left|0\right\rangle ,\left|1\right\rangle $
+\end_inset
+
+ וגם 
+\begin_inset Formula $\left|+\right\rangle ,\left|-\right\rangle $
+\end_inset
+
+ מהווים 
+\series bold
+בסיס אורתונורמלי 
+\series default
+למרחב 
+\begin_inset Formula $\mathbb{C}^{2}$
+\end_inset
+
+, כלומר הם קבוצות פורשות, בלתי תלויות, של וקטורים מנורמה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שאורתוגונליים זה לזה )המכפלה הפנימית של איברים שונים היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\numeric off
+(.
+ צריך להבין שאין בסיס 
+\begin_inset Quotes eld
+\end_inset
+
+נכון
+\begin_inset Quotes erd
+\end_inset
+
+ למרחב הזה - שני הבסיסיים לגיטימיים באותה מידה.
+ אם גם בפועל אנחנו משתמשים רוב הזמן ב-
+\begin_inset Formula $\left|0\right\rangle ,\left|1\right\rangle $
+\end_inset
+
+, זו לרוב החלטת סימון שרירותית )כלומר: יש לנו מערכת פיזיקלית 
+\begin_inset Quotes eld
+\end_inset
+
+אמיתית
+\begin_inset Quotes erd
+\end_inset
+
+ עם שני מצבים מובחנים, ואנחנו בוחרים 
+\series bold
+לקרוא להם
+\series default
+ בשמות 
+\begin_inset Formula $\left|0\right\rangle ,\left|1\right\rangle $
+\end_inset
+
+(.
+ על 
+\begin_inset Formula $H$
+\end_inset
+
+ אפשר לחשוב בתור מטריצה שמעבירה אותנו מבסיס אחד לבסיס השני, וגם בחזרה; כי
+ 
+\begin_inset Formula $HH=I$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $H=H^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+מדידות, גרסה א'
+\end_layout
+
+\begin_layout Standard
+עד עכשיו כל מה שעשינו היה קצת משחק נחמד באלגברה לינארית אבל עדיין לא ברור
+ מה מוזר פה, בעצם.
+ כדי שהעסק ייעשה מוזר צריך להכניס לתמונה את האופן שבו מתבצעת 
+\series bold
+מדידה
+\series default
+ קוונטית.
+ גם פה אני לא אכנס לשאלה מהי מדידה, מבחינה פיזיקלית; זו 
+\series bold
+אינטראקציה
+\series default
+ כלשהי עם המערכת הפיזיקלית שהיא ברוטלית מספיק כדי לאלץ את המערכת לספר לנו
+ משהו, וזו האינטואיציה שאדבוק בה.
+ מן הסתם במערכות פיזיקליות שונות טיב ההתערבות הוא שונה )במחשבים קוונטיים
+ של זמננו ההתערבות הזו היא פולס אלקטרומגנטי שמפגיז את האובייקט הפיזיקלי
+ שמייצג את הקיוביט(, אבל האבסטרקציה המתמטית היא זהה.
+\end_layout
+
+\begin_layout Standard
+אם קיובטים היו מתנהגים כמו בחישוב קלאסי, מה 
+\series bold
+היינו מצפים
+\series default
+ שיקרה כשאנחנו מודדים אותם? לכאורה, הרעיון הוא כזה: יש לי קיוביט עם הערך
+ 
+\begin_inset Formula $\left(\begin{array}{c}
+\alpha\\
+\beta
+\end{array}\right)$
+\end_inset
+
+.
+ אני מביא וקטור משל עצמי של מספרים מרוכבים 
+\begin_inset Formula $\left(\begin{array}{c}
+x\\
+y
+\end{array}\right)$
+\end_inset
+
+ ושואל - האם 
+\begin_inset Formula $\left(\begin{array}{c}
+\alpha\\
+\beta
+\end{array}\right)=\left(\begin{array}{c}
+x\\
+y
+\end{array}\right)$
+\end_inset
+
+? התשובה היא 
+\begin_inset Quotes eld
+\end_inset
+
+כן
+\begin_inset Quotes erd
+\end_inset
+
+ אם 
+\begin_inset Formula $\alpha=x$
+\end_inset
+
+ ו-
+\begin_inset Formula $\beta=y$
+\end_inset
+
+ ו
+\begin_inset Quotes erd
+\end_inset
+
+לא
+\begin_inset Quotes erd
+\end_inset
+
+ אחרת.
+ מכיוון שהמספרים המעורבים הם מרוכבים, ייתכן ש
+\begin_inset Quotes erd
+\end_inset
+
+כן
+\begin_inset Quotes erd
+\end_inset
+
+ יהיה תלוי ברמת הדיוק שלנו )כלומר נחשיב כלגיטימי את השוויון הלא נכון מתמטית
+ 
+\begin_inset Formula $0.999999=1$
+\end_inset
+
+ - שימו לב שכאן אין שלוש נקודות!(.
+ אחר כך נמשיך לעבוד עם 
+\begin_inset Formula $\left(\begin{array}{c}
+\alpha\\
+\beta
+\end{array}\right)$
+\end_inset
+
+ כמקודם.
+ כך עובד חישוב קלאסי.
+\end_layout
+
+\begin_layout Standard
+חישוב קוונטי 
+\series bold
+לא עובד כך בכלל
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+בחישוב קוונטי, אין לי 
+\begin_inset Quotes eld
+\end_inset
+
+גישה ישירה
+\begin_inset Quotes erd
+\end_inset
+
+ לערכים 
+\begin_inset Formula $\alpha,\beta$
+\end_inset
+
+.
+ יותר גרוע מכך - בחישוב קוונטי, אחרי שמדדתי את 
+\begin_inset Formula $\left(\begin{array}{c}
+\alpha\\
+\beta
+\end{array}\right)$
+\end_inset
+
+, המצב הזה 
+\series bold
+נהרס
+\series default
+ ומוחלף במצב אחר, 
+\series bold
+באופן לא הפיך
+\series default
+.
+ עוד יותר גרוע: התוצאה של המדידה היא 
+\series bold
+הסתברותית
+\series default
+.
+ ברוכים הבאים לעולם חדש.
+\end_layout
+
+\begin_layout Standard
+אז איך מדידה מוגדרת, פורמלית, מתמטית? יש לזה כמה תשובות, כל אחת מכלילה את
+ הקודמת.
+ בואו נתחיל מהסוג הכי פשוט של מדידה, שהוא גם זה שהכי נפוץ להיתקל בו בתיאורים
+ פופולריים של הנושא.
+ בגישה הזו, 
+\begin_inset Quotes eld
+\end_inset
+
+מדידה
+\begin_inset Quotes erd
+\end_inset
+
+ היא משהו שלוקח את המצב 
+\begin_inset Formula $\left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $
+\end_inset
+
+ ומחזיר את המצב 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ בהסתברות 
+\begin_inset Formula $\left|\alpha\right|^{2}$
+\end_inset
+
+ ואת המצב 
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+ בהסתברות 
+\begin_inset Formula $\left|\beta\right|^{2}$
+\end_inset
+
+.
+ מכאן הדרישה 
+\begin_inset Formula $\left|\alpha\right|^{2}+\left|\beta\right|^{2}=1$
+\end_inset
+
+ מגיעה - שהאמפליטודות ייצגו הסתברויות בצורה כלשהי.
+ מדידה כזו היא 
+\series bold
+הרסנית
+\series default
+: אחרי שמדדנו את המצב, האמפליטודות 
+\begin_inset Formula $\alpha,\beta$
+\end_inset
+
+ מתפוגגות ונעלמות - כל מה שנשאר לנו ביד הוא 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ או 
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אני לא אוהב את התיאור הזה גם כי הוא מתאר מקרה פרטי מדי, וגם כי הוא קצת מנפנף
+ בידיים.
+ מה זה אומר 
+\begin_inset Quotes eld
+\end_inset
+
+מחזיר את המצב 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+? נאמר, בתיאור הפופולרי של 
+\series bold
+החתול של שרדינגר
+\series default
+, 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ הוא המצב 
+\begin_inset Quotes eld
+\end_inset
+
+החתול חי
+\begin_inset Quotes erd
+\end_inset
+
+.
+ ה
+\begin_inset Quotes erd
+\end_inset
+
+מדידה
+\begin_inset Quotes erd
+\end_inset
+
+ שלנו היא פתיחת הקופסה שבה החתול נמצא.
+ אז מה זה אומר שקיבלנו 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+? המדידה שלנו מתבטאת בחתול שמזנק עלינו בזעם ושורט אותנו - השריטות הללו הן
+ לא מצב קוונטי 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ אלא איזו שהיא תוצאה של המדידה.
+ בגישה יותר פיזקאית, נגיד שאנחנו מצפים שתוצאה של מדידה תהיה 
+\series bold
+מספר ממשי
+\series default
+ כלשהו.
+ במקרה הנוכחי התוצאות האפשריות של המדידה יהיו המספרים 
+\begin_inset Formula $+1$
+\end_inset
+
+ ו-
+\begin_inset Formula $-1$
+\end_inset
+
+, ואם זה נראה מוזר שזה הם ולא נניח 
+\begin_inset Formula $0$
+\end_inset
+
+ ו-
+\begin_inset Formula $1$
+\end_inset
+
+, תכף אכליל את הסיפור והם ייראו טבעיים יותר.
+\end_layout
+
+\begin_layout Standard
+אם כן, מדידה גרסה א' היא הדבר הבא: בהינתן מצב קוונטי 
+\begin_inset Formula $\left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $
+\end_inset
+
+ קורה בדיוק אחד משני הדברים הבאים:
+\end_layout
+
+\begin_layout Itemize
+בהסתברות 
+\begin_inset Formula $\left|\alpha\right|^{2}$
+\end_inset
+
+: המדידה מחזירה את הערך 
+\begin_inset Formula $+1$
+\end_inset
+
+ והופכת את 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ למצב 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+בהסתברות 
+\begin_inset Formula $\left|\beta\right|^{2}$
+\end_inset
+
+: המדידה מחזירה את הערך 
+\begin_inset Formula $-1$
+\end_inset
+
+ והופכת את 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ למצב 
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+מדידות, גרסה ב'
+\end_layout
+
+\begin_layout Standard
+בואו נעבור עכשיו לדרך כללית הרבה יותר לתאר מדידות בצורה פורמלית.
+ הרעיון הוא שבאופן כללי, מדידה תיוצג על ידי 
+\series bold
+קבוצה של אופרטורים
+\series default
+ 
+\begin_inset Formula $\left\{ M_{m}\right\} $
+\end_inset
+
+ כאשר 
+\begin_inset Formula $m$
+\end_inset
+
+ הוא אינדקס שרץ על כל התוצאות האפשריות של המדידה )מה שהיה 
+\begin_inset Formula $\pm1$
+\end_inset
+
+ בדוגמא הקודמת שלי(.
+ כאשר מודדים את 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ על פי קבוצת האופרטורים הזו, אחת מהתוצאות 
+\begin_inset Formula $m$
+\end_inset
+
+ הולכת לעלות בגורל בצורה אקראית והיא תהיה תוצאת המדידה, ואחריה המערכת תעבור
+ למצב 
+\begin_inset Formula $M_{m}\left|\psi\right\rangle $
+\end_inset
+
+ כשהוא מנורמל.
+ ומה ההסתברות שהתוצאה 
+\begin_inset Formula $m$
+\end_inset
+
+ תעלה בגורל? היא בדיוק הנורמה בריבוע של 
+\begin_inset Formula $M_{m}\left|\psi\right\rangle $
+\end_inset
+
+ הזה.
+\end_layout
+
+\begin_layout Standard
+אפשר לחשוב על זה כך: 
+\begin_inset Formula $M_{m}$
+\end_inset
+
+ 
+\series bold
+מטיל
+\series default
+ את 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ לתוך תת-מרחב, וככל שההיטל הזה גדול יותר כך גדול יותר הסיכוי שהוא יעלה בגורל
+ של המדידה; אחר כך אנחנו מעבירים את המערכת לתת-המרחב הזה באמצעות ההטלה אבל
+ חייבים 
+\begin_inset Quotes eld
+\end_inset
+
+לנפח
+\begin_inset Quotes erd
+\end_inset
+
+ קצת את התוצאה אחרת הנורמה שלה לא תהיה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+אם אני אנסה לכתוב מתמטית את התיאור הזה, אני אראה די מהר שהסימונים שלי יוצרים
+ משהו 
+\begin_inset Quotes eld
+\end_inset
+
+לא יפה
+\begin_inset Quotes erd
+\end_inset
+
+.
+ כי מה זו הנורמה בריבוע של 
+\begin_inset Formula $M_{m}\left|\psi\right\rangle $
+\end_inset
+
+? באופן כללי, אם 
+\begin_inset Formula $v$
+\end_inset
+
+ הוא וקטור אז הנורמה בריבוע שלו היא פשוט המכפלה הפנימית שלו בעצמו: 
+\begin_inset Formula $\|v\|^{2}=\left\langle v|v\right\rangle $
+\end_inset
+
+.
+ אבל אם אני אכתוב משהו כמו 
+\begin_inset Formula $\left\langle M_{m}\left|\psi\right\rangle |M_{m}\left|\psi\right\rangle \right\rangle $
+\end_inset
+
+ יכה בי עצב גדול.
+ למרבה המזל, שיטת הסימון שאני נוקט בה מיועדת בדיוק כדי להפוך סימונים לפשוטים
+ יותר.
+\end_layout
+
+\begin_layout Standard
+הפיזיקאי אומר כך: ראשית, אם 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ מסמן וקטור, אז אני אסמן את 
+\begin_inset Formula $\left|\psi\right\rangle ^{\dagger}$
+\end_inset
+
+ )שחלוף + הצמדה( שלו בתור 
+\begin_inset Formula $\left\langle \psi\right|$
+\end_inset
+
+ )הסימון הזה נקרא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+bra
+\lang hebrew
+(.
+ זה יוצר לי את האלגנטיות הבאה: אם יש לי שני וקטורים 
+\begin_inset Formula $\left|\psi_{1}\right\rangle ,\left|\psi_{2}\right\rangle $
+\end_inset
+
+ ואני רוצה לחשב את המכפלה הפנימית שלהם, על פי הגדרה היא שווה ל-
+\begin_inset Formula $\left|\psi_{2}\right\rangle ^{\dagger}\cdot\left|\psi_{1}\right\rangle $
+\end_inset
+
+ )תעיפו מבט מוקדם יותר בפוסט: כתבתי שם 
+\begin_inset Formula $\left\langle u|v\right\rangle =u^{\dagger}v$
+\end_inset
+
+(.
+ על פי הסימון שכרגע הצגתי 
+\begin_inset Formula $\left|\psi_{2}\right\rangle ^{\dagger}\cdot\left|\psi_{1}\right\rangle =\left\langle \psi_{2}\right|\cdot\left|\psi_{1}\right\rangle $
+\end_inset
+
+.
+ כלומר, 
+\begin_inset Formula $\left\langle \psi_{2}\right|\cdot\left|\psi_{1}\right\rangle =\left\langle \psi_{2}|\psi_{1}\right\rangle $
+\end_inset
+
+.
+ מה שקרה פה הוא שהסימון של וקטורים עם הסוגריים המשולשים בא לדמות את האופן
+ שבו אנחנו כותבים מכפלה פנימית, כך שכפל מטריצות רגיל של שני וקטורים שאחד
+ מהם הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+bra
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+והשני הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+ket
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+יוצר מכפלה פנימית )שמסומנת על ידי סוגריים משולשים - מה שנקרא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+braket
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+באנגלית, ומכאן השמות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+bra
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ו-
+\lang english
+ket
+\lang hebrew
+(.
+\end_layout
+
+\begin_layout Standard
+עכשיו, אם יש לי את הוקטור 
+\begin_inset Formula $M_{m}\left|\psi\right\rangle $
+\end_inset
+
+ ואני רוצה לקחת את הצמוד שלו, אני אקבל 
+\begin_inset Formula $\left(M_{m}\left|\psi\right\rangle \right)^{\dagger}=\left\langle \psi\right|M_{m}^{\dagger}$
+\end_inset
+
+, ולכן המכפלה הפנימית של 
+\begin_inset Formula $M_{m}\left|\psi\right\rangle $
+\end_inset
+
+ בעצמו היא 
+\begin_inset Formula $\left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle $
+\end_inset
+
+, מה שויזואלית נראה די...
+ נחמד?
+\end_layout
+
+\begin_layout Standard
+עכשיו אני יכול לנסח במפורש איך מדידה על פי קבוצת האופרטורים 
+\begin_inset Formula $\left\langle M_{m}\right\rangle $
+\end_inset
+
+ עובדת:
+\end_layout
+
+\begin_layout Itemize
+בהסתברות 
+\begin_inset Formula $p\left(m\right)=\left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle $
+\end_inset
+
+ מוחזרת התוצאה 
+\begin_inset Formula $m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+אם התוצאה 
+\begin_inset Formula $m$
+\end_inset
+
+ נבחרה, המצב הקוונטי החדש של המערכת עובר להיות 
+\begin_inset Formula $\frac{M_{m}\left|\psi\right\rangle }{\sqrt{\left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle }}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+עכשיו, אי אפשר סתם לתת קבוצה 
+\begin_inset Formula $\left\langle M_{m}\right\rangle $
+\end_inset
+
+ אקראית של אופרטורים ולהגיד שהיא מגדירה מדידה.
+ הכיוון הלוגי הוא הפוך: אם יש לנו מערכת פיזקלית, אז כל מדידה שלה תהיה ניתנת
+ לתיאור בצורה המתמטית הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל, אבל זה לא אומר שכל קבוצת אופרטורים תייצג מדידה של המערכת.
+ בפרט, יש קריטריון פשוט שחייב להתקיים עבור 
+\begin_inset Formula $\left\langle M_{m}\right\rangle $
+\end_inset
+
+ אם אנחנו רוצים שיהיה בכלל שמץ של סיכוי שהיא תתאר מדידה חוקית: ההסתברויות
+ צריכות להסתכם ל-
+\numeric on
+1
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+בואו ניזכר לרגע איך הסתברות קלאסית עובדת: יש לנו ניסוי אקראי כלשהו שמתבצע
+ ויש לו כמה תוצאות שונות 
+\begin_inset Formula $m$
+\end_inset
+
+ שלכל אחת מהן הסתברות 
+\begin_inset Formula $p\left(m\right)$
+\end_inset
+
+.
+ אנחנו דורשים ראשית כל שיתקיים 
+\begin_inset Formula $0\le p\left(m\right)$
+\end_inset
+
+ לכל תוצאה 
+\begin_inset Formula $m$
+\end_inset
+
+, ושנית ש-
+\begin_inset Formula $\sum_{m}p\left(m\right)=1$
+\end_inset
+
+.
+ כך זה באופן כללי בהסתברות, לא רק בחישוב קוונטי.
+\end_layout
+
+\begin_layout Standard
+עכשיו, במקרה שלנו ההסתברות 
+\begin_inset Formula $p\left(m\right)$
+\end_inset
+
+ הוגדרה באמצעות מכפלה פנימית, ולכן תכונת ה-
+\begin_inset Formula $0\le p\left(m\right)$
+\end_inset
+
+ מתקיימת אוטומטית - זו אחת מהאקסיומות של מכפלה פנימית.
+ מה שעדיין חייבים שיתקיים הוא 
+\begin_inset Formula $\sum p\left(m\right)=1$
+\end_inset
+
+, שמוביל לנוסחה הבאה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $1=\sum_{m}\left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle =\left\langle \psi\right|\left(\sum_{m}M_{m}^{\dagger}M_{m}\right)\left|\psi\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ה
+\begin_inset Quotes erd
+\end_inset
+
+הכנסה של הסכום פנימה
+\begin_inset Quotes erd
+\end_inset
+
+ הזו אולי נראית חשודה, אבל תזכרו שכל מה שיש בביטוי 
+\begin_inset Formula $\left\langle \psi\right|M_{m}^{\dagger}M_{m}\left|\psi\right\rangle $
+\end_inset
+
+ הוא בסך הכל סדרה של מכפלות של מטריצות.
+ כפל מטריצות הוא דיסטריביוטיבי: בפרט 
+\begin_inset Formula $AB+AC=A\left(B+C\right)$
+\end_inset
+
+.
+ זה מוביל אל השוויון שביצעתי למעלה בקלילות ואמשיך לבצע.
+ נקודה שצריך לקחת איתנו הלאה: 
+\series bold
+אלגברה לינארית זה נחמד ולכן המתמטיקה של חישוב קוונטי יוצאת נחמדה
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+עכשיו, כדי שיתקיים 
+\begin_inset Formula $\left\langle \psi\right|\left(\sum_{m}M_{m}^{\dagger}M_{m}\right)\left|\psi\right\rangle =1$
+\end_inset
+
+ אפשר לדרוש ש-
+\begin_inset Formula $\sum_{m}M_{m}^{\dagger}M_{m}=I$
+\end_inset
+
+.
+ במקרה הזה הסכום יהפוך להיות 
+\begin_inset Formula $\left\langle \psi|\psi\right\rangle $
+\end_inset
+
+ ששווה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כי 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ מלכתחילה היה איבר מנורמה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+.
+ אז 
+\begin_inset Formula $\sum_{m}M_{m}^{\dagger}M_{m}=I$
+\end_inset
+
+ היא הדרישה שתהיה לי מאופרטורי מדידה.
+\end_layout
+
+\begin_layout Section
+הטלות
+\end_layout
+
+\begin_layout Standard
+אחרי שהגדרתי מדידה בצורה סופר-אבסטרקטית, הדבר ההגיוני לעשות הוא לתת דוגמא
+ - בפרט, להראות איך המדידה ה
+\begin_inset Quotes erd
+\end_inset
+
+פשוטה
+\begin_inset Quotes erd
+\end_inset
+
+ שהצגתי בהתחלה היא מקרה פרטי של המושג הכללי.
+ אני רוצה לעשות בדיוק את זה, אבל כדי שאוכל לעשות את זה בצורה נחמדה אני רוצה
+ להכניס עוד סימון אחד, שמאפשר לנו לתאר 
+\series bold
+אופרטורים
+\series default
+ בצורה שמתאימה לשיטת הסימון של ה-
+\lang english
+bra ket
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+נתחיל עם מה שאנחנו מכירים מאלגברה לינארית 
+\begin_inset Quotes eld
+\end_inset
+
+רגילה
+\begin_inset Quotes erd
+\end_inset
+
+.
+ נניח שיש לי שני וקטורים, 
+\begin_inset Formula $v=\left(\begin{array}{c}
+a_{1}\\
+b_{1}
+\end{array}\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $u=\left(\begin{array}{c}
+a_{2}\\
+b_{2}
+\end{array}\right)$
+\end_inset
+
+.
+ אם אני אסתכל על המכפלה 
+\begin_inset Formula $u^{\dagger}v$
+\end_inset
+
+ אני אקבל 
+\series bold
+מכפלה פנימית
+\series default
+.
+ אבל אני יכול לכפול אותם בסדר ההפוך ולקבל את מה שנקרא 
+\series bold
+מכפלה חיצונית
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $vu^{\dagger}=\left(\begin{array}{c}
+a_{1}\\
+b_{1}
+\end{array}\right)\cdot\left(\overline{a_{2}}\ \overline{b_{2}}\right)=\left(\begin{array}{cc}
+a_{1}\overline{a_{2}} & a_{1}\overline{b_{2}}\\
+b_{1}\overline{a_{2}} & b_{1}\overline{b_{2}}
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+זה נובע מחוקי כפל המטריצות הבסיסיים.
+ אם אני כבר בשוונג, שימו לב לכך שה
+\series bold
+עקבה
+\series default
+ של המכפלה החיצונית שווה למכפלה הפנימית: 
+\begin_inset Formula $\text{tr}\left(vu^{\dagger}\right)=u^{\dagger}v$
+\end_inset
+
+, אבל לא אשתמש בזה הפעם.
+\end_layout
+
+\begin_layout Standard
+עכשיו, איך זה נראה בסימונים של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+bra
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ו-
+\lang english
+ket
+\lang hebrew
+? התשובה היא ש
+\series bold
+יותר נחמד
+\series default
+: אם 
+\begin_inset Formula $\left|\psi_{1}\right\rangle ,\left|\psi_{2}\right\rangle $
+\end_inset
+
+ הם שני הוקטורים שלי, אז המכפלה החיצונית שלהם היא 
+\begin_inset Formula $\left|\psi_{1}\right\rangle \left\langle \psi_{2}\right|$
+\end_inset
+
+.
+ למה זה נחמד? כי זה מרמז לי מה קורה כשאני לוקח את האופרטור הזה ו
+\series bold
+מפעיל
+\series default
+ אותו.
+ בואו ניקח 
+\begin_inset Formula $\left|\varphi\right\rangle $
+\end_inset
+
+ תמים כלשהו.
+ אם ניקח את המכפלה החיצונית ונפעיל עליו, נקבל 
+\begin_inset Formula $\left|\psi_{1}\right\rangle \left\langle \psi_{2}\right|\cdot\left|\varphi\right\rangle $
+\end_inset
+
+ על פי חוקי כפל המטריצות הרגילים.
+ אבל מה זה 
+\begin_inset Formula $\left\langle \psi_{2}\right|\cdot\left|\varphi\right\rangle $
+\end_inset
+
+? זו בסך הכל המכפלה הפנימית 
+\begin_inset Formula $\left\langle \psi_{2}|\varphi\right\rangle $
+\end_inset
+
+ שיוצאת סקלר.
+ אם כן, מה שנקבל בסופו של דבר הוא את הסקלר 
+\begin_inset Formula $\left\langle \psi_{2}|\varphi\right\rangle $
+\end_inset
+
+ שמוכפל בוקטור 
+\begin_inset Formula $\left|\psi_{1}\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+זה מלמד אותנו מה בעצם האופרטור 
+\begin_inset Formula $\left|\psi_{1}\right\rangle \left\langle \psi_{2}\right|$
+\end_inset
+
+ עושה: הוא מחליף את הקלט שלו במשהו שנפרש על ידי 
+\begin_inset Formula $\left|\psi_{1}\right\rangle $
+\end_inset
+
+ לבדו, כשהמקדם של 
+\begin_inset Formula $\left|\psi_{1}\right\rangle $
+\end_inset
+
+ נקבע על פי המכפלה הפנימית של הקלט עם 
+\begin_inset Formula $\left\langle \psi_{2}\right|$
+\end_inset
+
+.
+ מקרה פשוט במיוחד של זה מתרחש כאשר 
+\begin_inset Formula $\left|\psi_{1}\right\rangle =\left|\psi_{2}\right\rangle $
+\end_inset
+
+; במקרה הזה האופרטור 
+\begin_inset Formula $\left|\psi_{1}\right\rangle \left\langle \psi_{1}\right|$
+\end_inset
+
+ הוא פשוט 
+\series bold
+הטלה
+\series default
+ על המרחב שנפרש בידי 
+\begin_inset Formula $\left|\psi_{1}\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+עכשיו אפשר לחזור למדידה המקורית שהצגתי.
+ מה שקורה שם הוא שהאופרטורים הם 
+\begin_inset Formula $M_{1}=\left|0\right\rangle \left\langle 0\right|$
+\end_inset
+
+ ו-
+\begin_inset Formula $M_{-1}=\left|1\right\rangle \left\langle 1\right|$
+\end_inset
+
+.
+ קל לראות את זה: בואו ניקח 
+\begin_inset Formula $\left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $
+\end_inset
+
+ ועכשיו נפעיל עליו את 
+\begin_inset Formula $\left|0\right\rangle \left\langle 0\right|$
+\end_inset
+
+: נקבל
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left|0\right\rangle \left\langle 0\right|\left|\psi\right\rangle =\left[\alpha\left\langle 0|0\right\rangle +\beta\left\langle 0|1\right\rangle \right]\left|0\right\rangle =\alpha\left|0\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כי 
+\begin_inset Formula $\left\langle 0|0\right\rangle =1$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left\langle 0|1\right\rangle =0$
+\end_inset
+
+ )זו המשמעות של כך ש-
+\begin_inset Formula $\left|0\right\rangle ,\left|1\right\rangle $
+\end_inset
+
+ הוא בסיס אורתונורמלי(.
+\end_layout
+
+\begin_layout Standard
+באופן דומה, 
+\begin_inset Formula $\left|1\right\rangle \left\langle 1\right|\left|\psi\right\rangle =\beta\left|1\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+עכשיו אפשר להסיק ש-
+\begin_inset Formula $p\left(1\right)=\left\langle 0\right|\alpha^{\dagger}\alpha\left|0\right\rangle =\left|\alpha\right|^{2}$
+\end_inset
+
+ ובדומה 
+\begin_inset Formula $p\left(-1\right)=\left|\beta\right|^{2}$
+\end_inset
+
+, ואלו אכן ההסתברויות שהיו קיימות בהגדרה המקורית שנתתי.
+ לבסוף, אם התוצאה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עלתה בגורל, אז מעבירים את המערכת למצב 
+\begin_inset Formula $\frac{\alpha\left|0\right\rangle }{\sqrt{\left|\alpha\right|^{2}}}=\frac{\alpha}{\left|\alpha\right|}\left|0\right\rangle $
+\end_inset
+
+ ובדומה אם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עלה בגורל המערכת תעבור למצב 
+\begin_inset Formula $\frac{\beta}{\left|\beta\right|}\left|1\right\rangle $
+\end_inset
+
+.
+ שימו לב שזה 
+\series bold
+שונה
+\series default
+ ממה שאמרתי קודם - קודם אמרתי שהמערכת תעבור 
+\series bold
+בדיוק
+\series default
+ למצבים 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+ וכאן זה מתרחש רק אם 
+\begin_inset Formula $\alpha,\beta$
+\end_inset
+
+ הם ממשיים חיוביים; אבל כאמור, שני מצבים קוונטיים שנבדלים זה מזה בכפל בקבוע
+ נחשבים זהים, כך שההבדל הזה לא באמת משנה משהו.
+\end_layout
+
+\begin_layout Section
+מדידות פרוייקטיביות
+\end_layout
+
+\begin_layout Standard
+אחרי שהצגנו את האופן הכללי שבו אני מגדיר מדידה, אני רוצה להצטמצם טיפה ולדבר
+ על תת-קבוצה של מדידות שמוגדרות בצורה שהיא נחמדה במיוחד: מספיק לי לתת מעט
+ מידע כדי לקבל את קבוצת האופרטורים תוך כדי שמובטח לי שהתנאי 
+\begin_inset Formula $\sum_{m}M_{m}^{\dagger}M_{m}=I$
+\end_inset
+
+ מתקיים אוטומטית וכל האופרטורים הם הטלות פשוטות.
+\end_layout
+
+\begin_layout Standard
+כדי להבין איך זה הולך, צריך להכניס לתמונה עוד חתיכה של אלגברה לינארית: מטריצות
+ הרמיטיות ומשפט הפירוק הספקטרלי.
+\end_layout
+
+\begin_layout Standard
+ראשית, מטריצה )או טרנספורמציה, או אופרטור; אני לא אבדיל בין המושגים( 
+\begin_inset Formula $A$
+\end_inset
+
+ היא 
+\series bold
+הרמיטית
+\series default
+ אם 
+\begin_inset Formula $A^{\dagger}=A$
+\end_inset
+
+.
+ מטריצות הרמיטיות הן דבר נחמד באופן כללי, ובפרט בשני אספקטים שרלוונטיים
+ לי כאן: 
+\end_layout
+
+\begin_layout Standard
+הראשון, 
+\series bold
+הערכים העצמיים
+\series default
+ של מטריצה הרמיטית 
+\begin_inset Formula $A$
+\end_inset
+
+ הם מספרים ממשיים )לעומת מטריצה כללית מעל 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+ שהערכים העצמיים שלה יכולים להיות מספרים מרוכבים כלליים(.
+\end_layout
+
+\begin_layout Standard
+השני, למטריצה הרמיטית יש 
+\series bold
+פירוק ספקטרלי
+\series default
+.
+ זה אומר שהיא לא סתם לכסינה - היא לכסינה בצורה מאוד נחמדה.
+ יש למרחב שעליו היא פועלת 
+\series bold
+בסיס אורתונורמלי
+\series default
+ של וקטורים עצמיים שלה, ונובע מכך שאפשר לכתוב 
+\begin_inset Formula $A=\sum_{\lambda}\lambda P_{\lambda}$
+\end_inset
+
+ כאשר האינדקס 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ רץ על הערכים העצמיים של 
+\begin_inset Formula $A$
+\end_inset
+
+ ו-
+\begin_inset Formula $P_{\lambda}$
+\end_inset
+
+ היא הטלה אורתוגונלית למרחב העצמי של 
+\begin_inset Formula $A$
+\end_inset
+
+ שמתאים לערך העצמי 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+עכשיו אפשר להסביר מה זו מדידה פרוייקטיבית: בהינתן אופרטור הרמיטי 
+\begin_inset Formula $M$
+\end_inset
+
+, האופרטור 
+\begin_inset Formula $M$
+\end_inset
+
+ הזה מגדיר, כפי שכבר ראינו, קבוצה של אופרטורי הטלה 
+\begin_inset Formula $\left\{ P_{\lambda}\right\} $
+\end_inset
+
+.
+ הרעיון הוא שהקבוצה הזו מגדירה לנו מדידה במובן שראינו קודם, כאשר התוצאות
+ האפשריות של המדידה הן הערכים העצמיים 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ הללו.
+ כדי להבין למה התנאי 
+\begin_inset Formula $\sum_{\lambda}P_{\lambda}^{\dagger}P_{\lambda}=I$
+\end_inset
+
+ מתקיים במקרה הזה צריך להיזכר בתכונות של הטלות אורתוגונליות שלא אוכיח כאן:
+ הן הרמיטיות, ולכן 
+\begin_inset Formula $P_{\lambda}^{\dagger}=P_{\lambda}$
+\end_inset
+
+; הן הטלות, כלומר 
+\begin_inset Formula $P_{\lambda}^{2}=P_{\lambda}$
+\end_inset
+
+; ומתקיים 
+\begin_inset Formula $\sum_{\lambda}P_{\lambda}=I$
+\end_inset
+
+.
+ אם כן, האופרטור 
+\begin_inset Formula $M$
+\end_inset
+
+ לבדו נתן לנו קבוצת אופרטורים שמגדירה מדידה - מדידה שהתוצאות שלה הן בדיוק
+ הספקטרום של 
+\begin_inset Formula $M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+מכיוון שזה מבלבל נורא בואו נראה איך זה עובד עבור המטריצה 
+\begin_inset Formula $Z$
+\end_inset
+
+ שהצגתי קודם שבמפתיע )!( היא הרמיטית:
+\end_layout
+
+\begin_layout Standard
+כזכור, 
+\begin_inset Formula $Z=\left(\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right)$
+\end_inset
+
+.
+ קל לראות ש-
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ הוא וקטור עצמי שלה עם הערך העצמי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ואילו 
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+ הוא וקטור עצמי שלה עם הערך העצמי 
+\begin_inset Formula $-1$
+\end_inset
+
+.
+ מעניין איך אפשר לגלות כזה דבר! אולי בגלל ש-
+\begin_inset Formula $Z$
+\end_inset
+
+ היא בעצמה כבר בצורה אלכסונית? לא...
+ בטח הייתה תחבולה כלשהי מעורבת בכך! מכל מקום, גם אם רואים את זה עדיין אולי
+ לא ברור איך כותבים את ההטלות 
+\begin_inset Formula $P_{1}$
+\end_inset
+
+ ו-
+\begin_inset Formula $P_{-1}$
+\end_inset
+
+ הרלוונטיות.
+ כאן אפשר לנצל את העובדה ש-
+\begin_inset Formula $\left|0\right\rangle ,\left|1\right\rangle $
+\end_inset
+
+ הם 
+\series bold
+בסיס אורתונורמלי
+\series default
+ למרחב כולו, ולכן אם 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ הוא וקטור כלשהו אז אנחנו יודעים איך נראים המקדמים שלו בצירוף הלינארי של
+ 
+\begin_inset Formula $\left|0\right\rangle ,\left|1\right\rangle $
+\end_inset
+
+ שנותן אותו - זה מה שקראתי לו קודם 
+\series bold
+מקדמי פורייה
+\series default
+: 
+\begin_inset Formula $\left|\psi\right\rangle =\left\langle 0|\psi\right\rangle \left|0\right\rangle +\left\langle 1|\psi\right\rangle \left|1\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ההטלה של 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ על תת-המרחב שפורש 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ פשוט מוחקת את הרכיב של 
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+ בצירוף הלינארי הזה, כלומר זו הפונקציה 
+\begin_inset Formula $\left|\psi\right\rangle \mapsto\left\langle 0|\psi\right\rangle \left|0\right\rangle $
+\end_inset
+
+ שהיא בסך הכל האופרטור 
+\begin_inset Formula $\left|0\right\rangle \left\langle 0\right|$
+\end_inset
+
+.
+ שהוא גם המטריצה 
+\begin_inset Formula $\left(\begin{array}{cc}
+1 & 0\\
+0 & 0
+\end{array}\right)$
+\end_inset
+
+ באופן דומה, ההטלה על המרחב העצמי של 
+\begin_inset Formula $-1$
+\end_inset
+
+ היא פשוט 
+\begin_inset Formula $\left|1\right\rangle \left\langle 1\right|$
+\end_inset
+
+ ולכן הלכסון הספקטרלי של 
+\begin_inset Formula $Z$
+\end_inset
+
+ הוא פשוט 
+\begin_inset Formula $Z=\left(+1\right)\left|0\right\rangle \left\langle 0\right|+\left(-1\right)\left|1\right\rangle \left\langle 1\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+קיבלנו, אם כן, את אותה קבוצה של אופרטורי מדידה שהצגתי קודם בתור הפורמליזם
+ של מדידה 
+\begin_inset Quotes eld
+\end_inset
+
+רגילה
+\begin_inset Quotes erd
+\end_inset
+
+: 
+\begin_inset Formula $M_{1}=\left|0\right\rangle \left\langle 0\right|\text{ו}-M_{-1}=\left|1\right\rangle \left\langle 1\right|$
+\end_inset
+
+.
+ למדידה הזו קוראים לפעמים 
+\begin_inset Quotes eld
+\end_inset
+
+מדידה בבסיס 
+\begin_inset Formula $Z$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ בגלל השימוש באופרטור 
+\begin_inset Formula $Z$
+\end_inset
+
+ בתור מה ש
+\begin_inset Quotes erd
+\end_inset
+
+מייצר
+\begin_inset Quotes erd
+\end_inset
+
+ לנו את אופרטורי המדידה.
+\end_layout
+
+\begin_layout Standard
+בשלב הזה קופצת לראש שאלה שנראית מתבקשת: אנחנו מבינים מה המשמעות של הפעלת
+ ההטלות שהסקנו מ-
+\begin_inset Formula $Z$
+\end_inset
+
+ על הקיוביט 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+.
+ אבל מה המשמעות של הפעלת 
+\begin_inset Formula $Z$
+\end_inset
+
+ עצמה על 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+? ובאופן כללי, אם אופרטור 
+\begin_inset Formula $M$
+\end_inset
+
+ מגדיר לנו מדידה פרוייקטיבית, מה המשמעות של הפעלת 
+\begin_inset Formula $M$
+\end_inset
+
+ עצמו על הקיוביט? ובכן, מכיוון שבאופן כללי 
+\begin_inset Formula $M=\sum_{\lambda}\lambda P_{\lambda}$
+\end_inset
+
+ אז אפשר לעשות את התעלול הבא:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left\langle \psi\right|M\left|\psi\right\rangle =\sum_{\lambda}\lambda\left\langle \psi\right|P_{\lambda}\left|\psi\right\rangle =\sum_{\lambda}\lambda p\left(\lambda\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מה יש לנו כאן? 
+\series bold
+סכום משוקלל
+\series default
+ שבו כל ערך עצמי 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ מוכפל בהסתברות שבה אותו 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ יכול להתקבל כתוצאה מהמדידה של 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+.
+ לסכום משוקלל הסתברותי כזה יש שם: 
+\series bold
+תוחלת
+\series default
+.
+ בהתאם לכך, לערך המספרי 
+\begin_inset Formula $\left\langle \psi\right|M\left|\psi\right\rangle $
+\end_inset
+
+ הזה יש שם - 
+\series bold
+ערך התצפית
+\series default
+ של האופרטור 
+\begin_inset Formula $M$
+\end_inset
+
+ על 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+.
+ לא ארחיב על זה יותר כרגע.
+\end_layout
+
+\begin_layout Section
+דוגמאות אחרונות ופרידה
+\end_layout
+
+\begin_layout Standard
+לסיום בואו נראה עוד שתי דוגמאות - וכפי שאני מניח שברור, אלו לא דוגמאות אקראיות
+ אלא אבני הבניין העיקריות שאני עוד צריך כדי להשלים את סיפור ריבוע הקסם שממנו
+ הגיעה המוטיבציה הראשונית שלי.
+\end_layout
+
+\begin_layout Standard
+הדוגמא הראשונה היא 
+\begin_inset Formula $X=\left(\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right)$
+\end_inset
+
+.
+ כאן כבר יותר טריקי לגלות את הערכים והוקטורים העצמיים, אבל זה תרגיל סטנדרטי
+ באלגברה לינארית אז אני פשוט אגלה את הפתרון.
+ הערכים העצמיים הם 
+\series bold
+שוב
+\series default
+ 
+\begin_inset Formula $+1$
+\end_inset
+
+ ו-
+\begin_inset Formula $-1$
+\end_inset
+
+ והוקטורים העצמיים הם מצבים שכבר נתתי להם סימון מיוחד קודם: 
+\begin_inset Formula $\left|+\right\rangle =\frac{\left|0\right\rangle +\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|-\right\rangle =\frac{\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ .
+ בדיקה זריזה תראה לכם ש-
+\begin_inset Formula $\sigma_{x}\left|0\right\rangle =\left|1\right\rangle $
+\end_inset
+
+ ו-
+\begin_inset Formula $\sigma_{x}\left|1\right\rangle =\left|0\right\rangle $
+\end_inset
+
+ ולכן 
+\begin_inset Formula $\left|+\right\rangle $
+\end_inset
+
+ הוא הוקטור העצמי שמתאים ל-
+\begin_inset Formula $+1$
+\end_inset
+
+ ואילו 
+\begin_inset Formula $\left|-\right\rangle $
+\end_inset
+
+ הוא הוקטור העצמי המתאים ל-
+\begin_inset Formula $-1$
+\end_inset
+
+ ולכן הפירוק הספקטרלי הוא 
+\begin_inset Formula $X=\left(+1\right)\left|+\right\rangle \left\langle +\right|+\left(-1\right)\left|-\right\rangle \left\langle -\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הנה נקודה נחמדה שכדאי להתייחס אליה כאן.
+ נניח שאנחנו רוצים לבצע מדידה בבסיס 
+\begin_inset Formula $X$
+\end_inset
+
+, אבל התקן הניסוי שלנו תומך רק בביצוע מדידות בבסיס 
+\begin_inset Formula $Z$
+\end_inset
+
+.
+ מה עושים? בואו נזכור את האופרטור 
+\begin_inset Formula $H$
+\end_inset
+
+ שראינו קודם; הוא מקיים 
+\begin_inset Formula $H\left|+\right\rangle =\left|0\right\rangle $
+\end_inset
+
+ ו-
+\begin_inset Formula $H\left|-\right\rangle =\left|1\right\rangle $
+\end_inset
+
+ ולכן אם 
+\begin_inset Formula $\left|\psi\right\rangle =\alpha\left|+\right\rangle +\beta\left|-\right\rangle $
+\end_inset
+
+ אז 
+\begin_inset Formula $H\left|\psi\right\rangle =\alpha\left|0\right\rangle +\beta\left|1\right\rangle $
+\end_inset
+
+ ולכן מדידת 
+\begin_inset Formula $H\left|\psi\right\rangle $
+\end_inset
+
+ בבסיס 
+\begin_inset Formula $Z$
+\end_inset
+
+ תיתן את אותה התפלגות תוצאות כמו מדידת 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ בבסיס 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+לבסוף, הדוגמא האחרונה היא 
+\begin_inset Formula $Y=\left(\begin{array}{cc}
+0 & -i\\
+i & 0
+\end{array}\right)$
+\end_inset
+
+.
+ גם פה אני לא חושב שזו תהיה הפתעה לגלות שהערכים העצמיים הם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $+1$
+\end_inset
+
+ ו-
+\begin_inset Formula $-1$
+\end_inset
+
+ ואפשר לבדוק בקלות שהוקטורים העצמיים הם 
+\begin_inset Formula $\frac{i\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ ו-
+\begin_inset Formula $\frac{\left|0\right\rangle -i\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+.
+ כמקודם, אפשר לשאול איך אפשר למדוד בבסיס 
+\begin_inset Formula $Y$
+\end_inset
+
+ אם כל מה שיש לנו הוא מדידה בבסיס 
+\begin_inset Formula $Z$
+\end_inset
+
+, והתשובה דומה - קודם כל נפעיל אופרטורים על 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ ואז נמדוד בבסיס 
+\begin_inset Formula $Z$
+\end_inset
+
+ ונקבל אותה התפלגות הסתברויות כמו שמדידה בבסיס 
+\begin_inset Formula $Y$
+\end_inset
+
+ הייתה מניבה.
+ 
+\end_layout
+
+\begin_layout Standard
+זה אומר שאני רוצה איכשהו להעביר את 
+\begin_inset Formula $\frac{i\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ אל 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+.
+ איך? אם אני אעביר את 
+\begin_inset Formula $\frac{i\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ אל 
+\begin_inset Formula $i\frac{\left|0\right\rangle +\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ כל מה שיישאר אחר כך הוא להפעיל 
+\begin_inset Formula $H$
+\end_inset
+
+.
+ בשביל זה אני צריך טרנספורמציה 
+\begin_inset Formula $A$
+\end_inset
+
+ שמבצעת את הפעולה הבאה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A\left|0\right\rangle =\left|0\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A\left|1\right\rangle =-i\left|1\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שימו לב לכך ש-
+\begin_inset Formula $A$
+\end_inset
+
+ תעביר את 
+\begin_inset Formula $\frac{\left|0\right\rangle -i\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ אל 
+\begin_inset Formula $\frac{\left|0\right\rangle -\left|1\right\rangle }{\sqrt{2}}$
+\end_inset
+
+ ואחרי 
+\begin_inset Formula $H$
+\end_inset
+
+ נגיע אל 
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+ כך שזה מסתדר לנו יפה.
+ רק נשאר לתת שם ל-
+\begin_inset Formula $A$
+\end_inset
+
+ הזו.
+ השם הסטנדרטי הוא דווקא לטרנספורמציה טיפה שונה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S=\left(\begin{array}{cc}
+1 & 0\\
+0 & i
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שדי מזכירה את 
+\begin_inset Formula $Z$
+\end_inset
+
+, פרט לכך שהיא כופלת ב-
+\begin_inset Formula $i$
+\end_inset
+
+ ולא ב-
+\begin_inset Formula $-1$
+\end_inset
+
+.
+ למעשה, 
+\begin_inset Formula $S$
+\end_inset
+
+ היא פשוט ה
+\begin_inset Quotes erd
+\end_inset
+
+שורש
+\begin_inset Quotes erd
+\end_inset
+
+ של 
+\begin_inset Formula $Z$
+\end_inset
+
+ במובן זה ש-
+\begin_inset Formula $S^{2}=Z$
+\end_inset
+
+.
+ כעת, 
+\begin_inset Formula $S^{\dagger}=\left(\begin{array}{cc}
+1 & 0\\
+0 & -i
+\end{array}\right)$
+\end_inset
+
+ היא הטרנספורמציה שנזקקתי לה.
+\end_layout
+
+\begin_layout Standard
+אם כן, סיימנו להבין איך 
+\begin_inset Quotes eld
+\end_inset
+
+עובד
+\begin_inset Quotes erd
+\end_inset
+
+ קיוביט יחיד מבחינה מתמטית.
+ כדי להשלים את התמונה נצטרך להבין איך 
+\begin_inset Quotes eld
+\end_inset
+
+עובדים
+\begin_inset Quotes erd
+\end_inset
+
+ שני קיוביטים ביחד, מה שידרוש הכנסת מתמטיקה חדשה לתמונה - ומשם נמשיך באינדוקציה.
+\end_layout
+
+\end_body
+\end_document

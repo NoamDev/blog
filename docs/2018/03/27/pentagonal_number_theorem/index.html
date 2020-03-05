@@ -126,7 +126,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>ראשית, מה זה מספר מחומש? זה מספר מהצורה <span>$latex \frac{k\left(3k-1\right)}{2}$</span> כאשר <span>$latex k$</span> הוא מספר טבעי חיובי. השם “מספר מחומש” מגיע מכך שצורה מוזרה שבה אפשר לקבל את המספרים היא לצייר סדרה של <span>$latex k$</span> מחומשים אחד בתוך השני, כשבמחומש ה-<span>$latex k$</span> יש בדיוק <span>$latex k$</span> נקודות על כל צלע, ואז לספור כמה נקודות יש בסך הכל. המחומש הראשון, זה עם נקודה אחת על כל צלע, הוא “מנוון” ונראה כמו נקודה בודדת:</p>
 
-<p><img class="alignnone size-medium wp-image-3572" src="http://gadial.net/wp-content/uploads/2018/03/pengaton_numbers.jpg" alt="" width="300" height="138" /></p>
+<p><img class="alignnone size-medium wp-image-3572" src="/assets/img/2018/03/pengaton_numbers.jpg" alt="" width="300" height="138" /></p>
 
 <p>זו דרך די מוזרה להגדיר סדרת מספרים, ואני אכן לא אחזור אליה בכלל. יותר מכך - אני אדבר גם על המספרים שמתקבלים כשמציבים בתוך <span>$latex k$</span> ערכים <strong>שליליים</strong>; גם במקרה הזה מקבלים מספרים חיוביים. השיטה היא להציב מספר טבעי ואז את המינוס שלו, ואז את המספר הטבעי הבא וכן הלאה. הצבות של <span>$latex k=1,-1,2,-2,\dots$</span> מניבות את סדרת המספרים <span>$latex 1,2,5,7,12,15,22,26,\dots$</span>.</p>
 
@@ -138,11 +138,11 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>אפשר לתאר חלוקות בדרך ציורית בעזרת <strong>טבלת יאנג</strong>. טבלת יאנג כוללת בסך הכל כמה שורות של ריבועים, כשכל שורה לא ארוכה יותר מאלו שבאות מתחתיה. סכום הריבועים הכולל בטבלה הוא <span>$latex n$</span>, והאורך של כל שורה מייצג את אחד מהאיברים בפירוק. הנה דוגמא עבור הפירוקים של 4:</p>
 
-<p><strong><img class="alignnone size-medium wp-image-3573" src="http://gadial.net/wp-content/uploads/2018/03/young1.png" alt="" width="300" height="81" /></strong></p>
+<p><strong><img class="alignnone size-medium wp-image-3573" src="/assets/img/2018/03/young1.png" alt="" width="300" height="81" /></strong></p>
 
 <p>הכלל הנוסף של “אותו מספר לא מופיע פעמיים בפירוק” מתורגם אצלנו ל”בטבלת יאנג, כל שורה קצרה יותר מזו שמתחתיה”. לכן הטבלה הזו לא חוקית מבחינתנו:</p>
 
-<p><img class="alignnone wp-image-3574 size-thumbnail" src="http://gadial.net/wp-content/uploads/2018/03/young2.png" alt="" width="150" height="150" /></p>
+<p><img class="alignnone wp-image-3574 size-thumbnail" src="/assets/img/2018/03/young2.png" alt="" width="150" height="150" /></p>
 
 <p>מספר החלוקות של <span>$latex n$</span> הוא מספר טבלאות היאנג החוקיות שקיימות עבורו. עכשיו בואו נבדיל בין שני סוגי טבלאות: כאלו עם מספר <strong>זוגי</strong> של שורות, מה שאקרא לו “חלוקה זוגית”, וכאלו עם מספר <strong>אי-זוגי</strong> של שורות - “חלוקה אי-זוגית”. אסמן ב-<span>$latex p_{\text{odd}}\left(n\right)$</span> את מספר החלוקות האי-זוגיות של <span>$latex n$</span> וב-<span>$latex p_{\text{even}}\left(n\right)$</span> את מספר החלוקות הזוגיות. אנחנו יודעים ש-<span>$latex p_{\text{odd}}\left(n\right)+p_{\text{even}}\left(n\right)$</span> שווה למספר החלוקות של <span>$latex n$</span> בסך הכל; אבל למה שווה ההפרש, <span>$latex p_{\text{odd}}\left(n\right)-p_{\text{even}}\left(n\right)$</span>? ובכן, זה בדיוק התוכן של משפט המספרים המחומשים: הוא אומר שכמעט תמיד מספר החלוקות הזוגיות יהיה שווה למספר החלוקות האי-זוגיות, כלומר ההפרש ביניהם יהיה 0; המקרים היחידים שבהם זה לא יהיה כך יהיו עבור <span>$latex n$</span> שהוא מספר מחומש, ובמקרה הזה ההפרש יהיה פלוס-מינוס 1, כשהפלוס-או-מינוס נקבע על פי זוגיות ה-<span>$latex k$</span> שמגדיר את המספר. בכתיבה פורמלית:</p>
 
@@ -168,35 +168,35 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>האינטואיציה של הבניה קלה להדהים כשמסתכלים עליה ציורית עם טבלאות יאנג. בואו נביט על טבלת היאנג של הפירוק <span>$latex 4+6+8+9+10$</span> של <span>$latex 37$</span>:</p>
 
-<p><strong><img class="alignnone wp-image-3576 size-medium" src="http://gadial.net/wp-content/uploads/2018/03/young3.png" alt="" width="300" height="150" /></strong></p>
+<p><strong><img class="alignnone wp-image-3576 size-medium" src="/assets/img/2018/03/young3.png" alt="" width="300" height="150" /></strong></p>
 
 <p>אנחנו רוצים לבנות מהטבלה הזו טבלה שמייצגת מספר שונה ב-1 של מחוברים. כל מחובר מתאים ל<strong>שורה</strong> בטבלת היאנג, כך ששתי דרכי הפעולה הטבעיות ביותר הן: או <strong>להוסיף שורה</strong> מעל השורה העליונה, שתיבנה מקוביות שניקח מהשורות האחרות; או <strong>להסיר</strong> את השורה העליונה ולחלק אותה לשורות האחרות. ואנחנו רוצים שהכלל שמכתיב לנו באיזו משתי הדרכים כדאי לנקוט יהיה כזה ש”הופך את עצמו” אחרי שימוש אחד. אז הנה הטריק: בואו נמספר ב-<span>$latex r$</span> את מספר הקוביות בשורה העליונה (“המחובר הקטן ביותר בסכום”) וב-<span>$latex s$</span> נמספר את האורך של <strong>האלכסון</strong> בצד ימין למטה של הטבלה. באיור אצבע את השורה העליונה בירוק ואת האלכסון באדום:</p>
 
-<p><strong> <img class="alignnone size-medium wp-image-3577" src="http://gadial.net/wp-content/uploads/2018/03/young4.png" alt="" width="300" height="150" /></strong></p>
+<p><strong> <img class="alignnone size-medium wp-image-3577" src="/assets/img/2018/03/young4.png" alt="" width="300" height="150" /></strong></p>
 
 <p>הגדרה פורמלית יותר של <span>$latex s$</span> היא זו: אורך הסדרה של המחוברים בסכום שמתחילה במחובר הגדול ביותר, עוברת עליהם מהגדול לקטן, ומסתיימת לפני האיבר הראשון ששונה מקודמו לפחות ב-2. והנה ניסוח עוד יותר פורמלי: אם נסמן חלוקה <span>$latex \lambda$</span> בתור <span>$latex \lambda=\left(\lambda_{1},\lambda_{2},\dots,\lambda_{k}\right)$</span> כך ש-<span>$latex \lambda_{1}&gt;\lambda_{2}&gt;\dots&gt;\lambda_{k}$</span> אז <span>$latex r=\lambda_{k}$</span> ו-<span>$latex s$</span> הוא המספר הגדול ביותר עבורו מתקיים <span>$latex \left(\lambda_{1},\dots,\lambda_{s}\right)=\left(\lambda_{1},\lambda_{1}-1,\dots,\lambda_{1}-\left(s-1\right)\right)$</span>.</p>
 
 <p>ומה האינבולוציה עושה? אם <span>$latex r&gt;s$</span> אז אנחנו מפרקים את האלכסון ובונים ממנו שורה חדשה מעל השורה העליונה; בגלל ש-<span>$latex r&gt;s$</span> מובטח לנו שהשורה הזו תהיה קצרה מזו שמתחתיה, כדרוש. אם לעומת זאת <span>$latex r&lt;s$</span> אנחנו מפרקים את השורה העליונה ובונים ממנה אלכסון חדש, כלומר מוסיפים קוביה אחת לכל <span>$latex r$</span> השורות הראשונות; מכיוון ש-<span>$latex r&lt;s$</span> אנחנו יודעים שיש מספיק שורות כאלו.</p>
 
-<p><strong><img class="alignnone size-medium wp-image-3578" src="http://gadial.net/wp-content/uploads/2018/03/young5.png" alt="" width="300" height="200" /></strong></p>
+<p><strong><img class="alignnone size-medium wp-image-3578" src="/assets/img/2018/03/young5.png" alt="" width="300" height="200" /></strong></p>
 
 <p>מתי <strong>עשויה</strong> להיות בעיה? במקרה שבו <span>$latex r=s$</span>. כאן העסק עלול להתקלקל אבל לא <strong>חייב</strong> להתקלקל. בואו נראה דוגמא, שמתאימה ל-<span>$latex 3+6+8+9+10$</span> של <span>$latex 36$</span>:</p>
 
-<p><strong><img class="alignnone size-medium wp-image-3579" src="http://gadial.net/wp-content/uploads/2018/03/young6.png" alt="" width="300" height="150" /></strong></p>
+<p><strong><img class="alignnone size-medium wp-image-3579" src="/assets/img/2018/03/young6.png" alt="" width="300" height="150" /></strong></p>
 
 <p>ברור שבמקרה הזה אי אפשר לייצר שורה חדשה, כי היא תהיה באותה אורך כמו זו שמתחתיה; חייבים לפרק את השורה הקיימת, ואז מקבלים את הפירוק <span>$latex 6+9+10+11$</span>:</p>
 
-<p><strong><img class="alignnone size-medium wp-image-3580" src="http://gadial.net/wp-content/uploads/2018/03/young7.png" alt="" width="300" height="110" /></strong></p>
+<p><strong><img class="alignnone size-medium wp-image-3580" src="/assets/img/2018/03/young7.png" alt="" width="300" height="110" /></strong></p>
 
 <p>הפירוק הזה תקין לגמרי, וכשנפעיל עליו את האינבולוציה נחזור לסיטואציה המקורית והכל טוב. מתי כן הייתה עלולה לצוץ בעיה? רק אם לא היו לנו <span>$latex r$</span> שורות לחלק את הקוביות של השורה העליונה אליהן. מתי זה עלול לקרות? אנחנו הרי יודעים שיש לפחות <span>$latex s$</span> שורות, ואת המספר הכולל של השורות סימנתי ב-<span>$latex k$</span>. כלומר <span>$latex r=s\le k$</span>; לכן כדי שתוכל להיווצר בעיה, הכרחי שיתקיים <span>$latex s=k$</span>: במצב הזה מכיוון שאנחנו <strong>מפרקים</strong> את השורה העליונה, אנחנו נשארים בסוף עם קוביה בודדת שאין לנו שורה להכניס אותה אליה.</p>
 
 <p>איך נראית טבלה שבה <span>$latex s=k$</span>? היא תואמת כל חלוקה שבה הפער בין <strong>כל</strong> המחוברים הסמוכים הוא 1. למשל <span>$latex 1+2+3+4$</span>:</p>
 
-<p><strong><img class="alignnone wp-image-3582 size-medium" src="http://gadial.net/wp-content/uploads/2018/03/young8.png" alt="" width="300" height="300" /></strong></p>
+<p><strong><img class="alignnone wp-image-3582 size-medium" src="/assets/img/2018/03/young8.png" alt="" width="300" height="300" /></strong></p>
 
 <p>אבל כאן, כמובן, אין בעיה, כי <span>$latex r&lt;s$</span> ולכן אפשר לפרק את השורה העליונה. לכן המקרה <strong>היחיד</strong> שבו יכולה להיות בעיה הוא זה שבו <span>$latex s=r=k$</span>. למשל, הטבלה הזו:</p>
 
-<p><strong><img class="alignnone size-medium wp-image-3584" src="http://gadial.net/wp-content/uploads/2018/03/young9-1.png" alt="" width="300" height="180" /></strong></p>
+<p><strong><img class="alignnone size-medium wp-image-3584" src="/assets/img/2018/03/young9-1.png" alt="" width="300" height="180" /></strong></p>
 
 <p>וכאן אנחנו אכן מקבלים מספר מחומש, <span>$latex 12$</span>. ובאופן כללי?</p>
 
@@ -204,7 +204,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>אז רגע, מה פספסנו? איך ערכים שליליים של <span>$latex k$</span> נכנסים לתמונה? ובכן, רימיתי אתכם קודם והשמטתי עוד מקרה קצה אחד. האם עליתם על הרמאות שלי? הבעיה היא במקרה שבו <span>$latex r&gt;s$</span>. במקרה הזה, כזכור, הרעיון הוא לפרק את האלכסון ולדחוף את האיברים שלו בשורה מעל העליונה; אבל כאן עלולה להיווצר בעיה אם <strong>גם השורה העליונה השתתפה באלכסון</strong>, כי אז כשאני מפרק את האלכסון אני מסיר ממנה איבר אחד. הנה מקרה שבו זה קורה:</p>
 
-<p><strong><img class="alignnone wp-image-3587 size-medium" src="http://gadial.net/wp-content/uploads/2018/03/young10.png" alt="" width="300" height="151" /></strong></p>
+<p><strong><img class="alignnone wp-image-3587 size-medium" src="/assets/img/2018/03/young10.png" alt="" width="300" height="151" /></strong></p>
 
 <p>כאן האלכסון הוא מגודל 3 ולכאורה אין עם זה בעיה כי השורה העליונה היא מגודל 4, אבל כמובן - אחרי שנסיר את אברי האלכסון ניוותר עם שורה מגודל 3. לכן יכולה להיווצר בעיה בדיוק במקרה שבו <span>$latex r=s+1$</span> ו-<span>$latex s=k$</span> (כי <span>$latex s=k$</span> פירושו “גם השורה העליונה משתתפת באלכסון). במקרה הזה, החלוקה היא מהצורה <span>$latex \left(k+1,k+2,\dots,k+k\right)$</span> והסכום יוצא <span>$latex \frac{k\left(3k+1\right)}{2}$</span>. זה כמובן לא מתאים לנוסחה שלנו של מספר מחומש, אז אם רוצים לקבל את האחידות היפה בנוסחה שיש לנו, בואו נשים לב לכך ש-<span>$latex t\left(3t-1\right)=3t^{2}-t$</span> ולכן אם נגדיר <span>$latex t=-k$</span> נקבל</p>
 

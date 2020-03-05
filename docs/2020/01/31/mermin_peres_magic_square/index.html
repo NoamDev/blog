@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>ריבוע הקסם של פרס-מרמין (או: איך תורת הקוונטים עוזרת לטלפתיה) | לא מדויק</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="ריבוע הקסם של פרס-מרמין (או: איך תורת הקוונטים עוזרת לטלפתיה)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<meta property="og:description" content="לא מדויק - בלוג על מתמטיקה ומדעי המחשב" />
+<link rel="canonical" href="http://gadial.net/2020/01/31/mermin_peres_magic_square/" />
+<meta property="og:url" content="http://gadial.net/2020/01/31/mermin_peres_magic_square/" />
+<meta property="og:site_name" content="לא מדויק" />
+<meta property="og:image" content="http://gadial.net/%7B%7Bsite.baseurl%7D%7D%7B%7Bsite.post_images%7D%7D/2020/01/magic_square3.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-31T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://gadial.net/%7B%7Bsite.baseurl%7D%7D%7B%7Bsite.post_images%7D%7D/2020/01/magic_square3.png" />
+<meta property="twitter:title" content="ריבוע הקסם של פרס-מרמין (או: איך תורת הקוונטים עוזרת לטלפתיה)" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"headline":"ריבוע הקסם של פרס-מרמין (או: איך תורת הקוונטים עוזרת לטלפתיה)","dateModified":"2020-01-31T00:00:00+00:00","datePublished":"2020-01-31T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://gadial.net/2020/01/31/mermin_peres_magic_square/"},"url":"http://gadial.net/2020/01/31/mermin_peres_magic_square/","image":"http://gadial.net/%7B%7Bsite.baseurl%7D%7D%7B%7Bsite.post_images%7D%7D/2020/01/magic_square3.png","description":"לא מדויק - בלוג על מתמטיקה ומדעי המחשב","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://gadial.net/feed.xml" title="לא מדויק" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3924539-2', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$latex','$'] ],
+        processEscapes: true
+      },
+      TeX: {extensions: ["AMSmath.js","AMSsymbols.js"]},
+      "HTML-CSS": { 
+        linebreaks: { automatic: true }
+      },
+      SVG: { 
+        linebreaks: { automatic: true } 
+      }
+    });
+  </script>
+  <!-- "https://www.gadial.net/wp-includes/js/xypic.js" -->
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  
+</head>
+<body><header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/">לא מדויק</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/whats_going_on">מה הולך פה?</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/">דף הבית</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/categories">קטגוריות</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/random">דף אקראי</a>
+            </li>
+            
+        
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/about/">אודות</a>
+            </li>
+            
+        
+      </ul>
+      <form class="form-inline mt-2 mt-md-0" action="/post_list/" method="get">
+        <input class="form-control mr-sm-2" type="text" placeholder="חיפוש" aria-label="חיפוש" name="s">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">חיפוש</button>
+      </form>
+    </div>
+  </nav>
+</header><main class="page-content" aria-label="Content" role="main">
+      <div class="wrapper text-right">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><div class="PageNavigation">
+    
+      <a class="prev" href="/2020/01/24/what_is_mipstar_equals_re_part_2/">&laquo; מה זה אומר ש-MIP*=RE? (חלק ב': מה זה אומר MIP*?)</a>
+    
+    
+      <a class="next" href="/2020/02/28/what_is_a_qubit/">חישוב קוונטי - מה זה קיוביט ומה עושים איתו? &raquo;</a>
+    
+  </div><header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">ריבוע הקסם של פרס-מרמין (או: איך תורת הקוונטים עוזרת לטלפתיה)</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-01-31T00:00:00+00:00" itemprop="datePublished">Jan 31, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>הפוסט הזה נולד מתוך <a href="https://gadial.net/2020/01/23/what_is_mipstar_equals_re_part_1/">הפוסטים</a> על ההוכחה ש-<span>$latex \text{MIP}^{*}=\text{RE}$</span> אבל הוא מיועד לעמוד בפני עצמו ולכן לא אזכיר את עניין <span>$latex \text{MIP}^{*}=\text{RE}$</span> כאן; בפוסט בהמשך אחזור אליו ואז אתבסס על הדברים שאני רוצה להראות הפעם, שהם מגניבים ביותר בלי קשר לשום דבר אחר. מה שאני רוצה להראות הפעם הוא משחק חביב ותמים למראה שמוכיח שתורת הקוונטים מאפשרת לנו לעשות קסמים שפשוט בלתי אפשריים בלעדיה. זה ייתן לנו תירוץ טוב לפוסט נפרד שמתאר את הפורמליזם של החלק שרלוונטי לנו מתורת הקוונטים, כדי שנבין איך הקסם בכלל עובד.</p>
+
+<p>בשביל פוסט האינטואיציה הזה עדיף לא להיכנס להגדרות פורמליות אלא להתחיל מתיאור של משחק, שנקרא “משחק ריבוע הקסם”. במשחק משתתפים שני שחקנים: אליס ובוב. הם לא משחקים זו נגד זה, אלא ההפך - המטרה שלהם היא לשתף פעולה כדי לנצח ביחד במשחק; הקושי הוא שהם משחקים <strong>בנפרד</strong>. הם יכולים להיפגש לפני שהמשחק מתחיל ולהחליט על אסטרטגיה משותפת, אבל אחר כך מכניסים אותם לחדרים נפרדים ומרגע זה ואילך הם לא יכולים לשלוח זה לזו שום אינפורמציה. ואז המשחק מתחיל.</p>
+
+<p>המשחק משוחק על לוח משבצות <span>$latex 3\times3$</span> שנראה ככה:
+<img src="/assets/img/2020/01/magic_square1.PNG" alt="" /></p>
+
+<p>כל משבצת בלוח אפשר לצבוע בירוק או באדום, ואני הולך להשתמש ב-<span>$latex +1$</span> כדי לסמן ירוק וב-<span>$latex -1$</span> כדי לסמן אדום. למה דווקא שני אלו ולא <span>$latex 0,1$</span> למשל? יש סיבה טובה שתתברר בהמשך.</p>
+
+<p>עכשיו, המשחק הולך כך: אחרי שאליס נכנסת לחדר נותנים לה מספר שנבחר באקראי (בהתפלגות אחידה) בין 1 ל-3 והיא צריכה לצבוע את <strong>השורה</strong> שזה המספר שלה, כך שבשורה יהיה <strong>מספר זוגי</strong> של משבצות אדומות, כלומר משבצות עם <span>$latex -1$</span> (או 0 או 2). גם בוב מקבל מספר אקראי בין 1 ל-3 והוא צריך לצבוע את <strong>העמודה</strong> שזה המספר שלה, כך שבעמודה יהיה <strong>מספר אי זוגי</strong> של משבצות אדומות. והנה האתגר: לא משנה איזה שורה ועמודה אליס ובוב קיבלו, תהיה בדיוק משבצת אחת שמשותפת לשניהם. הם צריכים לצבוע את הצביעות שלהם כך שאותה משבצת נצבעת <strong>באותו הצבע</strong>. אם הם הצליחו - הם מנצחים. אם הם נכשלו - הם מפסידים.</p>
+
+<p>הנה דוגמא למשחק שהסתדר טוב מבחינת אליס ובוב:
+<img src="/assets/img/2020/01/magic_square2.PNG" alt="" /></p>
+
+<p>מה שקרה פה הוא שאליס קיבלה את המספר 1 ובחרה לצבוע את השורה שלה כך: ירוק-אדום-אדום. בוב קיבל את המספר 2 ובחר לצבוע את העמודה שלו אדום-ירוק-ירוק. בשורה של אליס יש שני אדומים (זוגי) ובשורה של בוב יש אדום אחד (אי זוגי) ובנוסף לכך המשבצת המשותפת שלהם, <span>$latex \left(1,2\right)$</span>, צבועה בצבע אדום בשתי הצביעות שלהם. כך שהם ניצחו.</p>
+
+<p>עכשיו, למה בכלל יש פה אתגר לאליס ובוב ואי אפשר לנצח בכל פעם? אם הם יכלו לתקשר זו עם זה מן הסתם לא הייתה להם בעיה - את אותה הצביעה שהראיתי כאן הם יכלו לעשות לכל משבצת אחרת. אז חוסר היכולת לתקשר הוא בעיה, אבל מה עם זה שהם יכולים להסכים מראש על אסטרטגיה, זה לא עוזר?</p>
+
+<p>על פניו אפשר היה לחשוב על התרחיש האופטימי הבא: נניח שאפשר לצבוע את הלוח בצורה כזו ש<strong>כל</strong> שורה כוללת מספר זוגי של משבצות אדומות ו<strong>כל</strong> עמודה כוללת מספר אי זוגי של משבצות אדומות. במקרה הזה אליס ובוב היו מסכימים מראש על צביעה מוצלחת שכזו, ובמשחק עצמו היו צובעים את השורה/עמודה שלהם בהתאם לצביעה שעליה הוסכם מראש. זה היה מבטיח שהמשבצת המשותפת שלהם תהיה צבועה באותו הצבע. אז הבעיה, כפי שודאי ניחשתם, היא ש<strong>אין</strong> צביעה מוצלחת שכזו שבה בכל שורה מספר זוגי של משבצות אדומות ובכל עמודה מספר אי זוגי שלהן. הרי אם בכל שורה היה מספר זוגי של משבצות כאלו, אז מספר המשבצות האדומות הכולל בלוח היה 3 כפול מספר זוגי, כלומר מספר זוגי; ואם בכל עמודה היה מספר אי זוגי של משבצות כאלו אז מספר המשבצות האדומות הכולל בלוח היה 3 כפול מספר אי זוגי, כלומר מספר אי זוגי. אי אפשר ליישב את הסתירה הזו.</p>
+
+<p>מה שכן אפשר לעשות הוא לצבוע <strong>כמעט</strong> את כל הלוח בצורה מוצלחת, כך שתהיה בעיה רק במשבצת אחת:</p>
+
+<p><img src="/assets/img/2020/01/magic_square3.PNG" alt="" /></p>
+
+<p>שורות 1-2 ועמודות 1-2 בריבוע הזה עונות על התנאים שנדרשים מהן. אם נצבע את המשבצת <span>$latex \left(3,3\right)$</span> באדום אז התנאי של שורה 3 יתקיים; אם נצבע אותה בירוק, אז התנאי של עמודה 3 יתקיים. אבל שני התנאים הללו לא יכולים להתקיים בו זמנית.</p>
+
+<p>אל תאבדו תקווה! האיור הזה עוזר להמחיש איך אליס ובוב יכולים להסכים מראש על אסטרטגיה שתבטיח להם ניצחון במשחק ב-<span>$latex \frac{8}{9}$</span> מהפעמים שבהן משחקים. הם פשוט יצבעו את השורה/עמודה שקיבלו על פי מה שמופיע באיור, כאשר אם הם יצטרכו לצבוע את <span>$latex \left(3,3\right)$</span> הם יצבעו אותה על פי מה שטוב להם. מכיוון שהם צובעים על פי אותו הלוח, האפשרות היחידה שבה הם סותרים זו את זה היא כאשר <span>$latex \left(3,3\right)$</span> היא המשבצת המשותפת לשניהם. מכיוון שהשורה/עמודה שהם מקבלים נבחרת באקראי ובהתפלגות אחידה, ההסתברות שזה יקרה היא <span>$latex \frac{1}{9}$</span> ולכן הסתברות ההצלחה שלהם היא <span>$latex \frac{8}{9}$</span>.</p>
+
+<p>אם כן, אליס ובוב יכולים לנצח <strong>ברוב הפעמים</strong>. אבל האם הם יכולים לנצח <strong>תמיד</strong>? התשובה היא <strong>לא</strong> מהדהד. בואו נשתכנע שזה המצב. ראשית, אני מניח שאליס ובוב יכולים לפעול בצורה הסתברותית - להטיל מטבעות ולהחליט על פיהן איך לצבוע את השורה/עמודה שלהם. אבל אם אני שואל אם אליס ובוב יכולים לנצח <strong>תמיד</strong> כל ההסתברות הזו לא רלוונטית - אם הם מנצחים תמיד, הם מנצחים בפרט כשכל ההטלות שלהם יוצאות “עץ” ולכן מספיק להסתכל על מה שקורה אז.</p>
+
+<p>עכשיו, בואו נסתכל על מה אליס עושה כשהיא מקבלת את הקלטים 1,2,3. היא הולכת למלא כך את כל הריבוע, בצורה שהיא חוקית ברמת השורות, ובלתי תלויה לגמרי במה שבוב עושה כי היא לא קיבלה שום מידע על מה שבוב עושה. אני טוען שהמילוי של הריבוע על ידי אליס יהיה חוקי גם ברמת העמודות. למה? כי בואו ניקח לדוגמא את עמודה מס’ 1 ונסתכל על <strong>שלוש</strong> ריצות של המשחק שבהן בוב קיבל 1 ואליס קיבלה 1,2,3 בהתאמה. בכל הפעמים הללו אליס ובוב ניצחו - כלומר, העמודה שבוב אומר כשאומרים לו 1 שווה בדיוק לעמודה מס’ 1 במילוי הטבלה שאליס ביצעה. לכן העמודה הזו חוקית (הרי בוב ממלא עמודות בצורה חוקית) וכך גם לכל הטבלה. ואמרנו כבר ש<strong>אי אפשר</strong> למלא את כל הטבלה בצורה חוקית.</p>
+
+<p>זה לכאורה סותם את הגולל על המשחק הזה - אליס ובוב לא יכולים לנצח בכל פעם.</p>
+
+<p>אלא אם כן… נכניס את תורת הקוונטים למשחק. כי אם לאליס ובוב יהיו שני זוגות <strong>שזורים</strong> של קיוביטים, הם יוכלו לנצח <strong>בודאות</strong>, בכל פעם. תמיד. מה שמעלה את השאלה האקוטית - מה זה בכלל אומר, “שני זוגות שזורים של קיוביטים”? שהיא בעצם השאלה שכל הפוסט הזה בא לתת לה מוטיבציה. כאן אני אסתפק בתיאור עם נפנופי ידיים; בפוסט הבא יגיע הפורמליזם המתמטי, ואחר כך אפשר יהיה לחזור לריבוע הקסם ולהסביר פורמלית מה עושים בו.</p>
+
+<p>קיוביט זה <strong>מושג מתמטי</strong> שאפשר לממש פיזית בכל מני דרכים שונות. האנלוגיה המתאימה היא לביטים “רגילים” של מחשב “רגיל”: במחשב רגיל אנחנו חושבים על המידע בתור 0 או 1 וקוראים ליחידת מידע בסיסית כזו “ביט”, ויש <strong>פעולות לוגיות</strong> שאנחנו יודעים להפעיל על יחידות המידע הזה שאפשר מתמטית לחשוב עליהן בתור פעולות בשדה <span>$latex \mathbb{Z}_{2}$</span>: למשל הפעולה AND שאפשר לתאר בתור <span>$latex \text{AND}\left(x,y\right)=x\cdot y$</span>, או הפעולה NOT שאפשר לתאר בתור <span>$latex \text{NOT}\left(x\right)=1-x$</span>. מהפעולות הפשוטות הללו אפשר לבנות את כל האלגוריתמים שהמחשב מבצע.</p>
+
+<p>כל זה הוא תיאור <strong>מתמטי</strong> של מה ביטים עושים. אבל מה קורה בפועל, בעולם האמיתי, בתוך מחשבים אמיתיים? בלי להיכנס לפרטים כי מה אני מבין בעצם, מחשבים בני זמננו משתמשים ב<strong>אלקטרוניקה</strong> כדי לייצג ביטים. ערך של 1 מיוצג על ידי <strong>מתח חשמלי גבוה</strong> בתוך רכיב מסויים בעוד ש-0 מיוצג על ידי <strong>מתח חשמלי נמוך</strong>, ופעולות לוגיות ממומשות על ידי מניפולציה אלקטרונית. אפשר גם לחשוב על מימושים שונים לגמרי של אותו רעיון - למשל שביט ייוצג על ידי <strong>מים</strong>: כמות גדולה של מים ברכיב כלשהו מייצגת 1, כמות קטנה מיצגת 0, ופעולות לוגיות מתבצעות על ידי שפיכה של מים בצורות שונות ומשונות.</p>
+
+<p>אותו הדבר עם קיוביטים: על קיוביטים אפשר לחשוב מתמטית בתור משהו שחי בעולם טיפה יותר מורכב מאשר <span>$latex \mathbb{Z}_{2}$</span> אבל לא <strong>הרבה</strong> יותר מורכב. מבחינה מעשית, האופן שבו יצור כזה ממומש דורש התבססות על טכנולוגיה שמסוגלת לרתום את האספקטים המוזרים של תורת הקוונטים לשימוש שלנו - וזה אתגר גדול מאוד שעדיין מקשה מאוד על בניית מחשבים קוונטיים יעילים כיום. השיטה הפופולרית כיום היא שימוש ב<strong>על-מוליכים</strong>; יש רכיב של על מוליך ש<strong>הזרם</strong> שבתוכו מתנהג בצורה קוונטית מסויימת כך שאפשר לחשוב עליו בתור ייצוג של קיוביט, והמניפולציות שאפשר לבצע בו מתרחשות על ידי שליחת פולסים אלקטרומגנטיים אליו (שליטה על התדירות של הפולס משפיעה על סוג הפעולה שמתבצעת). זה לא פוסט על מחשבים קוונטיים אז לא אכנס לעוד פרטים בסגנון, אבל מה שכן קריטי להגיד הוא ש<strong>זה עובד</strong>. זה קיים כבר כיום. כשאומרים “קיוביט” לא מתכוונים לאיזה יצור דמיוני אלא למשהו שאנחנו בהחלט יודעים ליצור ולשלוט בו בשלל דרכים. הקושי הוא לעבוד עם כמות גדולה שלהם לאורך זמן (אפילו 50 זה כבר קשה, בימינו), אבל את מה שנעשה עוד רגע עם המשחק של אליס ובוב <strong>אפשר לבצע במציאות</strong>. זה קריטי להדגיש את הנקודה הזו כי אחרת נראה שמה שנעשה עם אליס ובוב הוא פשוט רמאות.</p>
+
+<p>כמו שאפשר להסתכל על ביט ולבדוק מה הערך שלו, גם קיוביט אפשר <strong>למדוד</strong> כדי לקבל ערך, אבל כאן צריך להיזהר - מדידה כזו לא נותנת את הערך שהקיוביט החזיק, אלא <strong>מכריחה אותו לבחור ערך מסויים בצורה הסתברותית</strong> ולהחזיר אותו, ואחרי כן הערך של הקיוביט משתנה כדי להתאים לערך שהוא החזיר. זו כבר תופעה שלא לגמרי קיימת במחשבים קלאסיים למרות שלא קשה לממש אותה בעזרת אלגוריתם. מה שנותן לקיוביטים את הכוח הגדול שלהם בסיפור הזה הוא היכולת <strong>לשזור </strong>אותם - לקחת <strong>שני</strong> קיוביטים ולא רק קיוביט אחד ואיכשהו ליצור משניהם ביחד מצב שאי אפשר לחשוב עליו כאילו הוא מורכב משני איברים נפרדים שאין ביניהם קשר (מה שלא קיים בביטים רגילים). בפרט המשמעות של שזירה כזו היא ש<strong>מדידת קיוביט אחד משפיעה על מצב הקיוביט השני</strong>. לשזירה יש עוד אפקט קסום - <strong>היא לא תלויה במרחק</strong>. אם יצרנו שני קיוביטים שזורים ואז הרחקנו אותם זה מזה מאות קילומטרים, עדיין מדידה של אחד מהם תשפיע על השני. הקסם המוזר הזה הוא מה שנקרא <a href="https://gadial.net/2014/08/03/heisenberg_epr_and_bell/">פרדוקס EPR</a> למרות שזה בעצם לא פרדוקס.</p>
+
+<p>זה מסביר מהיכן מגיע היתרון של אליס ובוב. לפני שהמשחק מתחיל הם חולקים זו עם זה קיוביטים שזורים. אחר כך, במהלך המשחק, אליס מודדת את הקיוביט שלה וזה משפיע על הקיוביט של בוב ולכן על התוצאה שבוב יקבל (בהנחה שאליס מודדת לפני בוב, אבל אותו דבר יקרה גם אם בוב מודד לפני אליס). אם כן, בפועל <strong>יש תיאום</strong> בין אליס ובוב; הוא פשוט נעזר במשאב קוונטי שמאפשר לאליס ובוב להיות מרוחקים זו מזה ולא להעביר אינפורמציה “קלאסית” בשום צורה.</p>
+
+<p>אז איך משחק ריבוע הקסם של אליס ובוב ייפתר? כאמור, אליס ובוב חולקים <strong>שני זוגות</strong> של קיוביטים שזורים. אליס מקבלת שורה ובוב מקבל עמודה. על פי השורה שאליס קיבלה היא מבצעת שלוש מדידות שונות לכל אחד מהקיוביטים שיש ברשותה בשני הזוגות השזורים. כל מדידה של כל קיוביט שזור מחזירה <span>$latex +1$</span> או <span>$latex -1$</span> כך שאליס מקבלת שלושה זוגות של מספרים כשבכל זוג הערכים הם <span>$latex +1$</span> או <span>$latex -1$</span>. היא כופלת את האיברים של כל זוג, ומקבלת את הערך שהיא צריכה למלא בתא הזה בשורה. בוב עושה את אותו הדבר. התוצאה תהיה מילוי חוקי של השורה/עמודה עבור שניהם.</p>
+
+<p>כמובן, אמרתי כמעט הכל אבל לא אמרתי כלום. הרכיב הקריטי שחסר לנו פה הוא המידע <strong>איזה מדידות אליס ובוב</strong> מבצעים<strong>. </strong>זה כבר רומז שיש “כמה סוגים” שונים של מדידות קוונטיות, ולכן להבין מה זה אומר יהיה מה שננסה לעשות בפוסט הבא, שבו נצלול לתוך המתמטיקה של כל העסק הזה. אל אליס ובוב נחזור בהמשך.</p>
+
+  </div>
+
+  <hr />
+  <p>
+    נהניתם? התעניינתם? אם תרצו, אתם מוזמנים לתת טיפ:
+  </p>
+  <a href='https://ko-fi.com/H2H5XFBQ' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a><div class="PageNavigation">
+    
+      <a class="prev" href="/2020/01/24/what_is_mipstar_equals_re_part_2/">&laquo; מה זה אומר ש-MIP*=RE? (חלק ב': מה זה אומר MIP*?)</a>
+    
+    
+      <a class="next" href="/2020/02/28/what_is_a_qubit/">חישוב קוונטי - מה זה קיוביט ומה עושים איתו? &raquo;</a>
+    
+  </div><div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://gadial.net/2020/01/31/mermin_peres_magic_square/';
+      this.page.identifier = 'http://gadial.net/2020/01/31/mermin_peres_magic_square/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://not-precise.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/2020/01/31/mermin_peres_magic_square/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">לא מדויק</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">לא מדויק</li><li><a class="u-email" href="mailto:gadial@gmail.com">gadial@gmail.com</a></li><li>&copy; כל הזכויות שמורות לגדי אלכסנדרוביץ'</li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://www.facebook.com/%D7%9C%D7%90-%D7%9E%D7%93%D7%95%D7%99%D7%A7-163347110378474"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#facebook"></use></svg> <span class="username">לא מדויק</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>RSS</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>בלוג על מתמטיקה ומדעי המחשב</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery-slim.min.js"><\/script>')</script><script src="/assets/js/bootstrap.bundle.js"></script><!-- Default Statcounter code for New blog
+http://www.gadial.net/ -->
+<script type="text/javascript">
+  var sc_project=5444342; 
+  var sc_invisible=1; 
+  var sc_security="4a89cbe4"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="https://c.statcounter.com/5444342/0/4a89cbe4/1/"
+  alt="Web Analytics"></a></div></noscript>
+  <!-- End of Statcounter Code --></body>
+
+</html>
